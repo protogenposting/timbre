@@ -14,3 +14,6 @@ global.keyboardBinds={
 		down: ord("S"),
 	}
 }
+global.levelData=-4
+
+global.song=-4

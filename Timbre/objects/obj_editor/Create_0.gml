@@ -20,16 +20,18 @@ songLoaded=-4
 
 audio=-4
 
+currentZoom=4
+
+zooms=[5,4,3,2,1,0.5,1/3,0.25,1/5,1/6,1/7,1/8,1/9,1/10]
+
 zoom=1
 
 startingBeat=0
 
 function save_level(_levelName,_songName){
-	if(!directory_exists(_levelName))
-	{
-		directory_create(_levelName)
-	}
-	save_file({songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset},_levelName+"/data.json")
+	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset}
+	save_file(data,game_save_id+_levelName+"/data.json")
+	return data
 }
 function load_song(_fileName){
 	try{
@@ -137,9 +139,9 @@ button[3]={
 			var _levelDir=get_open_filename("","data.json")
 			if(_levelDir!="")
 			{
-				file_copy(_levelDir,name+"/"+filename_name(_levelDir))
+				file_copy(_levelDir,game_save_id+name+"/"+filename_name(_levelDir))
 				songName=filename_name(_levelDir)
-				load_song(name+"/"+filename_name(_levelDir))
+				load_song(game_save_id+name+"/"+filename_name(_levelDir))
 			}
 		}
 	},
@@ -210,6 +212,24 @@ button[7]={
 	},
 	size:{x:256,y:128},
 	position:{x:456,y:200+128+128},
+	sizeMod:0
+}
+button[8]={
+	name:"test",
+	func: function(){
+		with(obj_editor)
+		{
+			if(name=="")
+			{
+				name=get_string("name",name)
+			}
+			global.levelData=save_level(name,songName)
+			global.song=songLoaded
+			room_goto(rm_gameplay)
+		}
+	},
+	size:{x:256,y:128},
+	position:{x:456,y:200+128+128+128},
 	sizeMod:0
 }
 /*button[7]={

@@ -2,11 +2,20 @@
 // You can write your code in this editor
 //game_set_speed(360,gamespeed_fps)
 
+paused=false
+
 axeRotations=[0,0]
 
-songID=snd_song1
+if(global.song!=-4)
+{
+	songID=global.song
+}
+else
+{
+	songID=snd_song1
+}
 
-bpm=250/4
+bpm=250
 
 currentBeat=0
 
@@ -18,7 +27,7 @@ audio=-4
 
 songMilliseconds=0
 
-gridSize=512
+gridSize=128
 
 songLength=[audio_sound_length(songID)*1000,audio_sound_length(songID)/(60/bpm)]
 
@@ -61,7 +70,16 @@ function get_turns(){
 	return array
 }
 
+offset=0
+
 notes=[]
+
+if(global.levelData!=-4)
+{
+	notes=global.levelData.notes
+	bpm=global.levelData.bpm
+	offset=global.levelData.offset
+}
 
 turns=get_turns()
 
