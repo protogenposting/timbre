@@ -15,3 +15,18 @@ currentFracBeat=0
 barPercentage=0
 
 currentShroomPose=0
+
+treeLine={x:room_width/2,y:room_height/2+600}
+
+gooberLocation={x:room_width/2,y:room_height-64}
+
+button[0]={
+	sprite: spr_play_button,
+	func: function(){
+		//make this go to level select later
+		room_goto(rm_gameplay)
+	},
+	size:{x:256,y:128},
+	position:{x:room_width/2,y:room_height/2 -128},
+	sizeMod:0
+}

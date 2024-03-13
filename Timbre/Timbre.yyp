@@ -26,7 +26,9 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"Camellia-GHOST-_from-Cyphisonia-E.P._.ogg","CopyToMask":-1,"filePath":"datafiles","name":"Camellia-GHOST-_from-Cyphisonia-E.P._.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -51,9 +53,11 @@
     {"id":{"name":"spr_cloud","path":"sprites/spr_cloud/spr_cloud.yy",},},
     {"id":{"name":"spr_dancc","path":"sprites/spr_dancc/spr_dancc.yy",},},
     {"id":{"name":"spr_log","path":"sprites/spr_log/spr_log.yy",},},
+    {"id":{"name":"spr_play_button","path":"sprites/spr_play_button/spr_play_button.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_reverse_arrow","path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},},
     {"id":{"name":"spr_sun","path":"sprites/spr_sun/spr_sun.yy",},},
+    {"id":{"name":"spr_treeline","path":"sprites/spr_treeline/spr_treeline.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

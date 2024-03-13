@@ -13,3 +13,19 @@ if(frac(barPercentage)<frac(barPercentageLast))
 {
 	currentShroomPose++
 }
+
+if(treeLine.y>room_height-128)
+{
+	treeLine.y-=(treeLine.y-(room_height-128))/60
+}
+treeLine.x+=3
+if(treeLine.x>512)
+{
+	treeLine.x-=512
+}
+
+if(gooberLocation.y<room_height)
+{
+	gooberLocation.y-=(gooberLocation.y-room_height)/60
+}
+show_debug_message(treeLine)

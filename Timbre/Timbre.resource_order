@@ -29,7 +29,9 @@
     {"name":"spr_cloud","order":5,"path":"sprites/spr_cloud/spr_cloud.yy",},
     {"name":"spr_dancc","order":4,"path":"sprites/spr_dancc/spr_dancc.yy",},
     {"name":"spr_log","order":3,"path":"sprites/spr_log/spr_log.yy",},
+    {"name":"spr_play_button","order":7,"path":"sprites/spr_play_button/spr_play_button.yy",},
     {"name":"spr_reverse_arrow","order":2,"path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},
     {"name":"spr_sun","order":6,"path":"sprites/spr_sun/spr_sun.yy",},
+    {"name":"spr_treeline","order":8,"path":"sprites/spr_treeline/spr_treeline.yy",},
   ],
 }
