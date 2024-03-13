@@ -46,8 +46,8 @@ if(nextBeatPercentage>1||nextBeatPercentage<=0)
 	nextBeatPercentage=0
 }
 var playerPoint=point_between_points(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y,nextBeatPercentage)
-var _currentX=playerPoint.x+lengthdir_x(sin(current_time/1000),currentDirection)
-var _currentY=playerPoint.y+lengthdir_y(sin(current_time/1000),currentDirection)
+var _currentX=playerPoint.x//+lengthdir_x(sin(current_time/1000),currentDirection)
+var _currentY=playerPoint.y//+lengthdir_y(sin(current_time/1000),currentDirection)
 
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)

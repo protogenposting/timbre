@@ -61,20 +61,7 @@ function get_turns(){
 	return array
 }
 
-enum noteTypes{
-	log,
-	turn,
-}
-
-enum noteDirections{
-	right,
-	up,
-	left,
-	down,
-}
-
-notes=[{beat: 2, type: noteTypes.log,direction: noteDirections.right,wasHit:false},{beat: 5.5, type: noteTypes.log,direction: noteDirections.left,wasHit:false},
-{beat: 2, type: noteTypes.turn,direction: noteDirections.up},{beat: 2.75, type: noteTypes.turn,direction: noteDirections.left},{beat: 4, type: noteTypes.turn,direction: noteDirections.down},{beat: 6, type: noteTypes.turn,direction: noteDirections.right},{beat: 7.5, type: noteTypes.turn,direction: noteDirections.left},{beat: 7.75, type: noteTypes.turn,direction: noteDirections.up},{beat: 8, type: noteTypes.turn,direction: noteDirections.down},{beat: 10, type: noteTypes.turn,direction: noteDirections.left},{beat: 10.75, type: noteTypes.turn,direction: noteDirections.up}]
+notes=[]
 
 turns=get_turns()
 

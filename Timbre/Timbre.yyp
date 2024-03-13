@@ -27,7 +27,7 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"Camellia-GHOST-_from-Cyphisonia-E.P._.ogg","CopyToMask":-1,"filePath":"datafiles","name":"Camellia-GHOST-_from-Cyphisonia-E.P._.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"ghost.ogg","CopyToMask":-1,"filePath":"datafiles/ghost","name":"ghost.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
@@ -36,12 +36,17 @@
   },
   "name":"Timbre",
   "resources":[
+    {"id":{"name":"obj_editor","path":"objects/obj_editor/obj_editor.yy",},},
     {"id":{"name":"obj_main_game","path":"objects/obj_main_game/obj_main_game.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
     {"id":{"name":"clouds","path":"particles/clouds/clouds.yy",},},
+    {"id":{"name":"rm_editor","path":"rooms/rm_editor/rm_editor.yy",},},
     {"id":{"name":"rm_gameplay","path":"rooms/rm_gameplay/rm_gameplay.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},},
+    {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
+    {"id":{"name":"save_file","path":"scripts/save_file/save_file.yy",},},
+    {"id":{"name":"create_note","path":"scripts/create_note/create_note.yy",},},
     {"id":{"name":"snd_hit_tree","path":"sounds/snd_hit_tree/snd_hit_tree.yy",},},
     {"id":{"name":"snd_hit","path":"sounds/snd_hit/snd_hit.yy",},},
     {"id":{"name":"snd_menu_music","path":"sounds/snd_menu_music/snd_menu_music.yy",},},
@@ -52,6 +57,8 @@
     {"id":{"name":"spr_axes","path":"sprites/spr_axes/spr_axes.yy",},},
     {"id":{"name":"spr_cloud","path":"sprites/spr_cloud/spr_cloud.yy",},},
     {"id":{"name":"spr_dancc","path":"sprites/spr_dancc/spr_dancc.yy",},},
+    {"id":{"name":"spr_difficulties","path":"sprites/spr_difficulties/spr_difficulties.yy",},},
+    {"id":{"name":"spr_edit_button","path":"sprites/spr_edit_button/spr_edit_button.yy",},},
     {"id":{"name":"spr_log","path":"sprites/spr_log/spr_log.yy",},},
     {"id":{"name":"spr_play_button","path":"sprites/spr_play_button/spr_play_button.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
@@ -64,6 +71,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_gameplay","path":"rooms/rm_gameplay/rm_gameplay.yy",},},
+    {"roomId":{"name":"rm_editor","path":"rooms/rm_editor/rm_editor.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
