@@ -17,3 +17,5 @@ global.keyboardBinds={
 global.levelData=-4
 
 global.song=-4
+
+global.dataLocation=""

@@ -28,6 +28,19 @@ zoom=1
 
 startingBeat=0
 
+if(global.song!=-4)
+{
+	songLoaded=global.song
+}
+if(global.levelData!=-4)
+{
+	songName=global.levelData.songName
+	notes=global.levelData.notes
+	bpm=global.levelData.bpm
+	offset=global.levelData.offset
+	name=global.dataLocation
+}
+
 function save_level(_levelName,_songName){
 	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset}
 	save_file(data,game_save_id+_levelName+"/data.json")
@@ -60,6 +73,7 @@ function load_level(_levelData){
 		bpm=struct.bpm
 		offset=struct.offset
 		name=directoryName
+		global.dataLocation=name
 		button[4].name="name: "+directoryName
 	}	
 }
@@ -106,7 +120,8 @@ button[1]={
 			{
 				name=get_string("name",name)
 			}
-			save_level(name,songName)
+			global.levelData=save_level(name,songName)
+			global.song=songLoaded
 		}
 	},
 	size:{x:256,y:128},
@@ -123,6 +138,7 @@ button[2]={
 			if(_levelDir!="")
 			{
 				load_level(_levelDir)
+				global.levelData=save_level(name,songName)
 			}
 		}
 	},
@@ -225,6 +241,8 @@ button[8]={
 			}
 			global.levelData=save_level(name,songName)
 			global.song=songLoaded
+			global.reloadFile=name
+			global.dataLocation=name
 			room_goto(rm_gameplay)
 		}
 	},

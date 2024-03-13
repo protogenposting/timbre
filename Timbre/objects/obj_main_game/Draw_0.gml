@@ -1,11 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_set_color(c_black)
-
 for(var i=0;i<array_length(points)-1;i++)
 {
 	//draw_line(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
-	draw_sprite_ext(spr_reverse_arrow,0,points[i].x,points[i].y,1,1,points[i].direction*90,c_white,1)
+	if(!points[i].wasHit)
+	{
+		draw_sprite_ext(spr_reverse_arrow,0,points[i].x,points[i].y,1,1,points[i].direction*90,c_white,1)
+	}
 	if(abs(songMilliseconds-points[i].timeMS)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit)
 	{
 		audio_play_sound(snd_turn,1000,false)
@@ -13,7 +14,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	if(points[i].timeMS-songMilliseconds<msWindow*4&&!points[i].wasHit)
 	{
-		draw_circle(points[i].x,points[i].y,(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1)*16,true)
+		draw_sprite_ext(spr_reverse_arrow,0,points[i].x,points[i].y,(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,c_white,0.3)
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
 	{
@@ -25,13 +26,16 @@ for(var i=0;i<array_length(points)-1;i++)
 for(var o=0; o<array_length(notes);o++)
 {
 	var dir=notes[o].direction*90
-	draw_sprite(spr_log,notes[o].wasHit,notes[o].x,notes[o].y)
+	draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,c_white,1)
 	if(abs(songMilliseconds-notes[o].timeMS)<=msWindow&&attackKey[notes[o].direction])
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
 		notes[o].wasHit=true
 	}
-	
+	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow)
+	{
+		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,c_white,0.3)
+	}
 }
 
 var currentDirection=point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)

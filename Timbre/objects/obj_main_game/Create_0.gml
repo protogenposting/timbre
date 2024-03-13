@@ -76,7 +76,10 @@ notes=[]
 
 if(global.levelData!=-4)
 {
-	notes=global.levelData.notes
+	for(var i=0;i<array_length(global.levelData.notes);i++)
+	{
+		global.levelData.notes[i]=global.levelData.notes[i]
+	}
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset
 }

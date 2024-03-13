@@ -36,6 +36,18 @@ axeRotations[1]-=axeRotations[1]/10
 if(!audio_is_playing(songID)&&(array_contains(attackKey,1)||array_contains(turnKey,1)))
 {
 	audio=audio_play_sound(songID,1000,false)
-	audio_sound_set_track_position(audio,offset)
+	audio_sound_set_track_position(audio,offset/1000)
 }
 
+if(paused)
+{
+	audio_pause_sound(audio)
+	if(keyboard_check_pressed(vk_space))
+	{
+		room_goto(rm_menu)
+	}
+}
+if(!paused)
+{
+	audio_resume_sound(audio)
+}
