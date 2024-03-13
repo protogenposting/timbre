@@ -35,7 +35,8 @@
   "name":"Timbre",
   "resources":[
     {"id":{"name":"obj_main_game","path":"objects/obj_main_game/obj_main_game.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"rm_gameplay","path":"rooms/rm_gameplay/rm_gameplay.yy",},},
+    {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},},
     {"id":{"name":"snd_hit_tree","path":"sounds/snd_hit_tree/snd_hit_tree.yy",},},
     {"id":{"name":"snd_hit","path":"sounds/snd_hit/snd_hit.yy",},},
@@ -44,14 +45,15 @@
     {"id":{"name":"snd_swipe","path":"sounds/snd_swipe/snd_swipe.yy",},},
     {"id":{"name":"snd_turn","path":"sounds/snd_turn/snd_turn.yy",},},
     {"id":{"name":"spr_axes","path":"sprites/spr_axes/spr_axes.yy",},},
+    {"id":{"name":"spr_log","path":"sprites/spr_log/spr_log.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_reverse_arrow","path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},},
-    {"id":{"name":"spr_log","path":"sprites/spr_log/spr_log.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rm_gameplay","path":"rooms/rm_gameplay/rm_gameplay.yy",},},
+    {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
