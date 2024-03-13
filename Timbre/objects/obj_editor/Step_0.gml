@@ -28,11 +28,11 @@ if(mouse_wheel_down())
 		{
 			currentZoom=0
 		}
+		startingBeat=round(startingBeat)
 	}
 	else{
 		startingBeat+=zoom
 	}
-	startingBeat=round(startingBeat)
 }
 if(mouse_wheel_up())
 {

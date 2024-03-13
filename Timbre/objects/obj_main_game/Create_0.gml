@@ -78,10 +78,15 @@ if(global.levelData!=-4)
 {
 	for(var i=0;i<array_length(global.levelData.notes);i++)
 	{
-		global.levelData.notes[i]=global.levelData.notes[i]
+		notes[i]=global.levelData.notes[i]
 	}
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset
+}
+
+for(var i=0;i<array_length(notes);i++)
+{
+	notes[i].wasHit=false
 }
 
 turns=get_turns()

@@ -7,7 +7,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	{
 		draw_sprite_ext(spr_reverse_arrow,0,points[i].x,points[i].y,1,1,points[i].direction*90,c_white,1)
 	}
-	if(abs(songMilliseconds-points[i].timeMS)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit)
+	if(abs(songMilliseconds-points[i].timeMS)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
 	{
 		audio_play_sound(snd_turn,1000,false)
 		points[i].wasHit=true
@@ -27,10 +27,14 @@ for(var o=0; o<array_length(notes);o++)
 {
 	var dir=notes[o].direction*90
 	draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,c_white,1)
-	if(abs(songMilliseconds-notes[o].timeMS)<=msWindow&&attackKey[notes[o].direction])
+	if(abs(songMilliseconds-notes[o].timeMS)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(songMilliseconds-notes[o].timeMS)<=msWindow/4&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
 		notes[o].wasHit=true
+	}
+	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
+	{
+		notes[o].wasHit=2
 	}
 	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow)
 	{

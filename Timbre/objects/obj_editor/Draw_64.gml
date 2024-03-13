@@ -9,6 +9,13 @@ if(audio!=-4&&audio_is_playing(songLoaded))
 	draw_rectangle(0,0,room_width*(audio_sound_get_track_position(audio)/audio_sound_length(audio)),32,false)
 	draw_text(room_width/2,64,"playing song")
 }
+else
+{
+	for(var i=0;i<array_length(notes);i++)
+	{
+		notes[i].wasHit=false
+	}
+}
 
 var beatLength=60/bpm
 
@@ -48,6 +55,11 @@ repeat(16)
 		if(noteOnBeat!=-1)
 		{
 			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
+			if(currentFracBeat>=beat+1&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit)
+			{
+				audio_play_sound(snd_turn,1000,false)
+				notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
+			}
 		}
 		draw_sprite_ext(spr_reverse_arrow,0,_x,_y,0.5,0.5,noteDirection*90,c_white,1)
 		draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
@@ -77,6 +89,11 @@ repeat(16)
 		if(noteOnBeat!=-1)
 		{
 			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
+			if(currentFracBeat>=beat+1&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit)
+			{
+				audio_play_sound(snd_hit_tree,1000,false)
+				notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
+			}
 		}
 		draw_sprite_ext(spr_log,0,_x,_y,0.5,0.5,noteDirection*90,c_white,1)
 		draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)

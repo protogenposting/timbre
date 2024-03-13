@@ -189,11 +189,17 @@ button[5]={
 					audio=audio_play_sound(songLoaded,1000,false)
 					var beatLength=60/bpm
 					audio_sound_set_track_position(audio,beatLength*startingBeat +offset/1000)
+					audio_sound_gain(audio,0.2,0)
 				}
 				else
 				{
 					audio_stop_sound(audio)
 					audio=-4
+					for(var i=0;i<array_length(notes);i++)
+					{
+						notes[i].wasHit=false
+					}
+					currentBeat=0
 				}
 			}
 			catch(e)
