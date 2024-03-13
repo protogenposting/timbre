@@ -25,6 +25,7 @@ button[0]={
 	func: function(){
 		//make this go to level select later
 		room_goto(rm_gameplay)
+		audio_stop_all()
 	},
 	size:{x:256,y:128},
 	position:{x:room_width/2,y:room_height/2 -128},

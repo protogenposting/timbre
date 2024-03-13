@@ -2,10 +2,10 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 global.keyboardBinds={
 	turning:{
-		left:vk_left,
-		right:vk_right,
-		up:vk_up,
-		down:vk_down,
+		left: ord("J"),
+		right: ord("L"),
+		up: ord("I"),
+		down: ord("K"),
 	},
 	attacking:{
 		left: ord("A"),
