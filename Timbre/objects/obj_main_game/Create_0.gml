@@ -83,22 +83,16 @@ if(global.levelData!=-4)
 	offset=global.levelData.offset
 }
 
-array_sort(notes,function(elm1, elm2)
-{
-    return elm1.beat - elm2.beat;
-})
-
 for(var i=0;i<array_length(notes);i++)
 {
 	notes[i].wasHit=false
 }
 
+notes=sort_array(notes)
+
 turns=get_turns()
 
-array_sort(turns,function(elm1, elm2)
-{
-    return elm1.beat - elm2.beat;
-})
+turns=sort_array(turns)
 
 function point_between_points(x1,y1,x2,y2,percentage)
 {
@@ -122,23 +116,7 @@ function create_points(){
 	var lastBeat=0
 	var lastBeatFrom=0
 	
-	var newTurns=turns
-	var swaps=1
-	while(swaps>0)
-	{
-		for(var i=0;i<array_length(turns)-1;i++)
-		{
-			swaps=0
-			if(newTurns[i].beat>newTurns[i+1].beat)
-			{
-				var temp=newTurns[i].beat
-				newTurns[i].beat=newTurns[i+1].beat
-				newTurns[i+1].beat=temp
-				swaps++
-			}
-		}
-	}
-	turns=newTurns
+	show_message(turns)
 	
 	for(var i=0;i<array_length(turns);i++)
 	{

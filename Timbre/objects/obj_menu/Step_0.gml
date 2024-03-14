@@ -28,4 +28,3 @@ if(gooberLocation.y<room_height)
 {
 	gooberLocation.y-=(gooberLocation.y-room_height)/60
 }
-show_debug_message(treeLine)

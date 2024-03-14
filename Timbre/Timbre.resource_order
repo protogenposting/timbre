@@ -24,6 +24,7 @@
     {"name":"create_note","order":3,"path":"scripts/create_note/create_note.yy",},
     {"name":"load_file","order":2,"path":"scripts/load_file/load_file.yy",},
     {"name":"save_file","order":1,"path":"scripts/save_file/save_file.yy",},
+    {"name":"sort_array","order":4,"path":"scripts/sort_array/sort_array.yy",},
     {"name":"snd_hit_tree","order":4,"path":"sounds/snd_hit_tree/snd_hit_tree.yy",},
     {"name":"snd_hit","order":1,"path":"sounds/snd_hit/snd_hit.yy",},
     {"name":"snd_menu_music","order":6,"path":"sounds/snd_menu_music/snd_menu_music.yy",},

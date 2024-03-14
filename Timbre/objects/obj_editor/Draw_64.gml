@@ -25,9 +25,6 @@ var boxSize=20
 
 var relativeBeat=((songMilliseconds/1000)/beatLength)-1
 
-show_debug_message(relativeBeat)
-show_debug_message(currentBeat)
-
 var beat=startingBeat
 repeat(16)
 {
