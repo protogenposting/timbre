@@ -122,16 +122,27 @@ function create_points(){
 	var lastBeat=0
 	var lastBeatFrom=0
 	
-	array_sort(turns,function(elm1, elm2)
+	var newTurns=turns
+	var swaps=1
+	while(swaps>0)
 	{
-	    return elm1.beat - elm2.beat;
-	})
+		for(var i=0;i<array_length(turns)-1;i++)
+		{
+			swaps=0
+			if(newTurns[i].beat>newTurns[i+1].beat)
+			{
+				var temp=newTurns[i].beat
+				newTurns[i].beat=newTurns[i+1].beat
+				newTurns[i+1].beat=temp
+				swaps++
+			}
+		}
+	}
+	turns=newTurns
 	
 	for(var i=0;i<array_length(turns);i++)
 	{
 		var gridSizeCurrent=gridSize*(turns[i].beat-lastBeatFrom)
-		show_message(turns)
-		show_message(turns[i].beat-lastBeatFrom)
 		_x+=lengthdir_x(gridSizeCurrent,currentDirection)
 		_y+=lengthdir_y(gridSizeCurrent,currentDirection)
 		lastBeat=max(turns[i].beat,lastBeat)

@@ -88,8 +88,6 @@ nextBeatPercentage)
 var _currentX=previousPlayerPos.x
 var _currentY=previousPlayerPos.y
 
-show_debug_message(timeBetweenPoints)
-
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
 if(attackKey[loop_rotation((currentDirection+90))/90])
