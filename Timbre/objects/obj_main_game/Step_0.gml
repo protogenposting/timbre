@@ -1,7 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-INCREMENT+=0.01
-
 songMilliseconds=audio_sound_get_track_position(audio)*1000
 
 var barPercentageLast = barPercentage

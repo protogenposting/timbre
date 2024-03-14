@@ -60,8 +60,12 @@ for(var o=0; o<array_length(notes);o++)
 
 var currentDirection=point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)
 
-var nextBeatPercentage=(songMilliseconds-points[currentPoint].timeMS)/
-(points[currentPoint+1].timeMS-points[currentPoint].timeMS)
+var timeSinceLastPoint = songMilliseconds-points[currentPoint].timeMS
+
+var timeBetweenPoints=points[currentPoint+1].timeMS-points[currentPoint].timeMS
+
+var nextBeatPercentage=timeSinceLastPoint/timeBetweenPoints
+
 if(nextBeatPercentage>=1)
 {
 	currentPoint+=1
@@ -70,13 +74,13 @@ if(nextBeatPercentage>1||nextBeatPercentage<=0)
 {
 	nextBeatPercentage=0
 }
-nextBeatPercentage=INCREMENT
+//nextBeatPercentage=INCREMENT
 var playerPoint=point_between_points(points[currentPoint].x,points[currentPoint].y,
 points[currentPoint+1].x,points[currentPoint+1].y,
 nextBeatPercentage)
 
-var _currentX=playerPoint.x//+(playerPoint.x-previousPlayerPos.x)
-var _currentY=playerPoint.y//+(playerPoint.x-previousPlayerPos.x)
+var _currentX=previousPlayerPos.x
+var _currentY=previousPlayerPos.y
 
 show_debug_message(playerPoint.x-previousPlayerPos.x)
 
@@ -95,9 +99,13 @@ if(attackKey[loop_rotation((currentDirection-90))/90])
 	audio_play_sound(snd_swipe,1000,false)
 }
 
+cameraOffset.x-=(cameraOffset.x-lengthdir_x(gridSize/2,currentDirection))/10
+
+cameraOffset.y-=(cameraOffset.y-lengthdir_y(gridSize/2,currentDirection))/10
+
 camera_set_view_pos(view_camera[0],
-playerPoint.x-1366/2,
-playerPoint.y-768/2)
+playerPoint.x-1366/2+cameraOffset.x,
+playerPoint.y-768/2+cameraOffset.y)
 
 draw_sprite_ext(spr_player,0,_currentX,_currentY,1,1,currentDirection,c_white,1)
 

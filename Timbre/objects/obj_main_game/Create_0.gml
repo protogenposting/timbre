@@ -166,4 +166,4 @@ turnKey=[]
 
 previousPlayerPos={x:0,y:0}
 
-INCREMENT=0
+cameraOffset={x:0,y:0}
