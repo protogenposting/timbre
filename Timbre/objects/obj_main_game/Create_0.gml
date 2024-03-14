@@ -103,6 +103,7 @@ function point_between_points(x1,y1,x2,y2,percentage)
 	var _x=lengthdir_x(currentDistance,currentDirection)
 	var _y=lengthdir_y(currentDistance,currentDirection)
 	
+	
 	return {x: x1+_x,y: y1+_y}
 }
 
@@ -164,3 +165,5 @@ attackKey=[]
 turnKey=[]
 
 previousPlayerPos={x:0,y:0}
+
+INCREMENT=0
