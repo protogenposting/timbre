@@ -60,7 +60,7 @@ for(var o=0; o<array_length(notes);o++)
 
 var currentDirection=point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)
 
-var nextBeatPercentage=(currentFracBeat-points[currentPoint].beat)/(points[currentPoint+1].beat-points[currentPoint].beat)
+var nextBeatPercentage=(songMilliseconds-points[currentPoint].timeMS)/(points[currentPoint+1].timeMS-points[currentPoint].timeMS)
 if(nextBeatPercentage>=1)
 {
 	currentPoint+=1
@@ -70,8 +70,14 @@ if(nextBeatPercentage>1||nextBeatPercentage<=0)
 	nextBeatPercentage=0
 }
 var playerPoint=point_between_points(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y,nextBeatPercentage)
-var _currentX=playerPoint.x//+lengthdir_x(sin(current_time/1000),currentDirection)
-var _currentY=playerPoint.y//+lengthdir_y(sin(current_time/1000),currentDirection)
+var _currentX=playerPoint.x//+(playerPoint.x-previousPlayerPos.x)
+var _currentY=playerPoint.y//+(playerPoint.x-previousPlayerPos.x)
+
+show_debug_message(playerPoint.x-previousPlayerPos.x)
+
+show_debug_message(playerPoint.y-previousPlayerPos.y)
+
+show_debug_message(songMilliseconds)
 
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
@@ -88,3 +94,7 @@ if(attackKey[loop_rotation((currentDirection-90))/90])
 draw_sprite_ext(spr_player,0,_currentX,_currentY,1,1,currentDirection,c_white,1)
 
 camera_set_view_pos(view_camera[0],camera_get_view_x(view_camera[0])-(camera_get_view_x(view_camera[0])-((playerPoint.x+lengthdir_x(gridSize/2,currentDirection))-1366/2))/15,camera_get_view_y(view_camera[0])-(camera_get_view_y(view_camera[0])-((playerPoint.y+lengthdir_y(gridSize/2,currentDirection))-768/2))/15)
+
+previousPlayerPos.x=playerPoint.x
+
+previousPlayerPos.y=playerPoint.y

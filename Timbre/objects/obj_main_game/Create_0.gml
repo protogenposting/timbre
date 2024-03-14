@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-//game_set_speed(360,gamespeed_fps)
 
 paused=false
 
@@ -84,6 +83,11 @@ if(global.levelData!=-4)
 	offset=global.levelData.offset
 }
 
+array_sort(notes,function(elm1, elm2)
+{
+    return elm1.beat - elm2.beat;
+})
+
 for(var i=0;i<array_length(notes);i++)
 {
 	notes[i].wasHit=false
@@ -158,3 +162,5 @@ msWindow=100
 attackKey=[]
 
 turnKey=[]
+
+previousPlayerPos={x:0,y:0}
