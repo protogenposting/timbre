@@ -26,7 +26,7 @@ audio=-4
 
 songMilliseconds=0
 
-gridSize=128
+gridSize=256
 
 songLength=[audio_sound_length(songID)*1000,audio_sound_length(songID)/(60/bpm)]
 
@@ -95,6 +95,11 @@ for(var i=0;i<array_length(notes);i++)
 
 turns=get_turns()
 
+array_sort(turns,function(elm1, elm2)
+{
+    return elm1.beat - elm2.beat;
+})
+
 function point_between_points(x1,y1,x2,y2,percentage)
 {
 	var currentDirection=point_direction(x1,y1,x2,y2)
@@ -116,9 +121,17 @@ function create_points(){
 	array_push(pointArray,{x:_x,y:_y,beat: 0, timeMS: 0, wasHit:true ,direction: 0})
 	var lastBeat=0
 	var lastBeatFrom=0
+	
+	array_sort(turns,function(elm1, elm2)
+	{
+	    return elm1.beat - elm2.beat;
+	})
+	
 	for(var i=0;i<array_length(turns);i++)
 	{
 		var gridSizeCurrent=gridSize*(turns[i].beat-lastBeatFrom)
+		show_message(turns)
+		show_message(turns[i].beat-lastBeatFrom)
 		_x+=lengthdir_x(gridSizeCurrent,currentDirection)
 		_y+=lengthdir_y(gridSizeCurrent,currentDirection)
 		lastBeat=max(turns[i].beat,lastBeat)
@@ -152,6 +165,11 @@ function create_points(){
 	}
 	return pointArray
 }
+
+array_sort(notes,function(elm1, elm2)
+{
+    return elm1.beat - elm2.beat;
+})
 
 currentPoint=0
 iteration=0

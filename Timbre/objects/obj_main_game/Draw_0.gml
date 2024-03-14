@@ -46,6 +46,7 @@ for(var o=0; o<array_length(notes);o++)
 	if(abs(songMilliseconds-notes[o].timeMS)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(songMilliseconds-notes[o].timeMS)<=msWindow/4&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
+		attackKey[notes[o].direction]=true
 		notes[o].wasHit=true
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
@@ -70,6 +71,11 @@ if(nextBeatPercentage>=1)
 {
 	currentPoint+=1
 }
+
+while(songMilliseconds>=points[currentPoint+1].timeMS)
+{
+	currentPoint+=1
+}
 if(nextBeatPercentage>1||nextBeatPercentage<=0)
 {
 	nextBeatPercentage=0
@@ -82,9 +88,7 @@ nextBeatPercentage)
 var _currentX=previousPlayerPos.x
 var _currentY=previousPlayerPos.y
 
-show_debug_message(playerPoint.x-previousPlayerPos.x)
-
-show_debug_message(playerPoint.y-previousPlayerPos.y)
+show_debug_message(timeBetweenPoints)
 
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
 draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
