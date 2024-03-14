@@ -22,21 +22,20 @@ var beatLength=60/bpm
 var _x=512+256
 var _y=32
 var boxSize=20
-if(audio!=-4&&audio_is_playing(songLoaded))
-{
-	var relativeBeat=((currentFracBeat)-startingBeat)*2/zoom
-	if(currentFracBeat>startingBeat+17*zoom)
-	{
-		startingBeat+=16*zoom
-	}
-	draw_line(_x,_y+boxSize*relativeBeat-boxSize,_x+boxSize*9,_y+boxSize*relativeBeat-boxSize)
-	show_debug_message(barPercentage)
-	show_debug_message(songMilliseconds)
-}
+
+var relativeBeat=((songMilliseconds/1000)/beatLength)-1
+
+show_debug_message(relativeBeat)
+show_debug_message(currentBeat)
 
 var beat=startingBeat
 repeat(16)
 {
+	draw_set_color(c_white)
+	if(beat>=relativeBeat&&beat<relativeBeat+zoom)
+	{
+		draw_set_color(c_green)
+	}
 	var notesInBeat=[]
 	var notesInBeatEquivelants=[]
 	for(var i=0;i<array_length(notes);i++)
@@ -57,7 +56,7 @@ repeat(16)
 		if(noteOnBeat!=-1)
 		{
 			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
-			if(currentFracBeat>=beat&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
+			if(songMilliseconds/1000>=beat*beatLength&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
 			{
 				audio_play_sound(snd_turn,1000,false)
 				notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
@@ -91,7 +90,7 @@ repeat(16)
 		if(noteOnBeat!=-1)
 		{
 			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
-			if(currentFracBeat>=beat&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
+			if(songMilliseconds/1000>=beat*beatLength&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
 			{
 				audio_play_sound(snd_hit_tree,1000,false)
 				notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true

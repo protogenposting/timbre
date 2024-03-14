@@ -8,6 +8,10 @@ if(audio==-4)
 }
 
 var barPercentageLast = barPercentage
+if(barPercentageLast<0)
+{
+	button[5].func()
+}
 var beatLength=60/bpm
 var needle = songMilliseconds/1000 
 var left = currentBeat * beatLength;

@@ -184,23 +184,15 @@ button[5]={
 		with(obj_editor)
 		{
 			try{
-				if(audio==-4)
+				audio_stop_all()
+				for(var i=0;i<array_length(notes);i++)
 				{
-					audio=audio_play_sound(songLoaded,1000,false)
-					var beatLength=60/bpm
-					audio_sound_set_track_position(audio,beatLength*startingBeat)
-					audio_sound_gain(audio,0.2,0)
+					notes[i].wasHit=false
 				}
-				else
-				{
-					audio_stop_all()
-					audio=-4
-					for(var i=0;i<array_length(notes);i++)
-					{
-						notes[i].wasHit=false
-					}
-					currentBeat=0
-				}
+				currentBeat=0
+				audio=audio_play_sound(songLoaded,1000,false)
+				var beatLength=60/bpm
+				audio_sound_set_track_position(audio,beatLength*startingBeat)
 			}
 			catch(e)
 			{
@@ -213,6 +205,25 @@ button[5]={
 	sizeMod:0
 }
 button[6]={
+	name:"stop song",
+	func: function(){
+		with(obj_editor)
+		{
+			try{
+				audio_stop_all()
+				audio=-4
+			}
+			catch(e)
+			{
+				show_message("no song loaded!")
+			}
+		}
+	},
+	size:{x:256,y:128},
+	position:{x:456,y:200+128},
+	sizeMod:0
+}
+button[7]={
 	name:"change bpm",
 	func: function(){
 		with(obj_editor)
@@ -221,10 +232,10 @@ button[6]={
 		}
 	},
 	size:{x:256,y:128},
-	position:{x:456,y:200+128},
+	position:{x:456,y:200+128+128},
 	sizeMod:0
 }
-button[7]={
+button[8]={
 	name:"test",
 	func: function(){
 		with(obj_editor)
