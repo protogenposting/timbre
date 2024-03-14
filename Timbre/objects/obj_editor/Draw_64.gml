@@ -30,6 +30,8 @@ if(audio!=-4&&audio_is_playing(songLoaded))
 		startingBeat+=16*zoom
 	}
 	draw_line(_x,_y+boxSize*relativeBeat-boxSize,_x+boxSize*9,_y+boxSize*relativeBeat-boxSize)
+	show_debug_message(barPercentage)
+	show_debug_message(songMilliseconds)
 }
 
 var beat=startingBeat
@@ -55,7 +57,7 @@ repeat(16)
 		if(noteOnBeat!=-1)
 		{
 			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
-			if(currentFracBeat>=beat+1&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit)
+			if(currentFracBeat>=beat&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
 			{
 				audio_play_sound(snd_turn,1000,false)
 				notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
@@ -89,7 +91,7 @@ repeat(16)
 		if(noteOnBeat!=-1)
 		{
 			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
-			if(currentFracBeat>=beat+1&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit)
+			if(currentFracBeat>=beat&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
 			{
 				audio_play_sound(snd_hit_tree,1000,false)
 				notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true

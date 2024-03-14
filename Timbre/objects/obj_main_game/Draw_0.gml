@@ -1,11 +1,27 @@
 /// @description Insert description here
 // You can write your code in this editor
+var positionsUsed=[]
+
 for(var i=0;i<array_length(points)-1;i++)
 {
+	var shouldContinue=false
 	//draw_line(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
+	for(var o=0;o<array_length(positionsUsed)-1;o++)
+	{
+		if(positionsUsed[o][0]==points[i].x&&positionsUsed[o][1]==points[i].y)
+		{
+			shouldContinue=true
+			break;
+		}
+	}
+	if(shouldContinue)
+	{
+		continue
+	}
 	if(!points[i].wasHit)
 	{
 		draw_sprite_ext(spr_reverse_arrow,0,points[i].x,points[i].y,1,1,points[i].direction*90,c_white,1)
+		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
 	if(abs(songMilliseconds-points[i].timeMS)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
 	{
@@ -71,4 +87,4 @@ if(attackKey[loop_rotation((currentDirection-90))/90])
 }
 draw_sprite_ext(spr_player,0,_currentX,_currentY,1,1,currentDirection,c_white,1)
 
-camera_set_view_pos(view_camera[0],camera_get_view_x(view_camera[0])-(camera_get_view_x(view_camera[0])-(playerPoint.x-1366/2))/15,camera_get_view_y(view_camera[0])-(camera_get_view_y(view_camera[0])-(playerPoint.y-768/2))/15)
+camera_set_view_pos(view_camera[0],camera_get_view_x(view_camera[0])-(camera_get_view_x(view_camera[0])-((playerPoint.x+lengthdir_x(gridSize/2,currentDirection))-1366/2))/15,camera_get_view_y(view_camera[0])-(camera_get_view_y(view_camera[0])-((playerPoint.y+lengthdir_y(gridSize/2,currentDirection))-768/2))/15)

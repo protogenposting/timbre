@@ -27,7 +27,7 @@ audio=-4
 
 songMilliseconds=0
 
-gridSize=128
+gridSize=256
 
 songLength=[audio_sound_length(songID)*1000,audio_sound_length(songID)/(60/bpm)]
 

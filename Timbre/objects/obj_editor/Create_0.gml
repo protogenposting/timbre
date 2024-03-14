@@ -188,12 +188,12 @@ button[5]={
 				{
 					audio=audio_play_sound(songLoaded,1000,false)
 					var beatLength=60/bpm
-					audio_sound_set_track_position(audio,beatLength*startingBeat +offset/1000)
+					audio_sound_set_track_position(audio,beatLength*startingBeat)
 					audio_sound_gain(audio,0.2,0)
 				}
 				else
 				{
-					audio_stop_sound(audio)
+					audio_stop_all()
 					audio=-4
 					for(var i=0;i<array_length(notes);i++)
 					{
@@ -225,18 +225,6 @@ button[6]={
 	sizeMod:0
 }
 button[7]={
-	name:"change offset",
-	func: function(){
-		with(obj_editor)
-		{
-			offset=get_integer("offset (in milliseconds)",offset)
-		}
-	},
-	size:{x:256,y:128},
-	position:{x:456,y:200+128+128},
-	sizeMod:0
-}
-button[8]={
 	name:"test",
 	func: function(){
 		with(obj_editor)
