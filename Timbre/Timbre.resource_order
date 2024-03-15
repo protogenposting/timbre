@@ -17,6 +17,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fn_font_big","order":1,"path":"fonts/fn_font_big/fn_font_big.yy",},
     {"name":"obj_editor","order":2,"path":"objects/obj_editor/obj_editor.yy",},
     {"name":"obj_menu","order":1,"path":"objects/obj_menu/obj_menu.yy",},
     {"name":"rm_editor","order":2,"path":"rooms/rm_editor/rm_editor.yy",},
@@ -36,11 +37,11 @@
     {"name":"spr_dancc","order":4,"path":"sprites/spr_dancc/spr_dancc.yy",},
     {"name":"spr_difficulties","order":9,"path":"sprites/spr_difficulties/spr_difficulties.yy",},
     {"name":"spr_edit_button","order":10,"path":"sprites/spr_edit_button/spr_edit_button.yy",},
+    {"name":"spr_grass","order":3,"path":"sprites/spr_grass/spr_grass.yy",},
     {"name":"spr_log","order":3,"path":"sprites/spr_log/spr_log.yy",},
     {"name":"spr_play_button","order":7,"path":"sprites/spr_play_button/spr_play_button.yy",},
     {"name":"spr_reverse_arrow","order":2,"path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},
     {"name":"spr_sun","order":6,"path":"sprites/spr_sun/spr_sun.yy",},
     {"name":"spr_treeline","order":8,"path":"sprites/spr_treeline/spr_treeline.yy",},
-    {"name":"spr_grass","order":3,"path":"sprites/spr_grass/spr_grass.yy",},
   ],
 }

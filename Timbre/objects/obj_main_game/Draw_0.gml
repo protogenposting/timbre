@@ -35,7 +35,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		points[i].wasHit=true
 		combo++
 		totalScore+=msWindow-abs(timing)
-		hitTime=3
+		hitTime=1.33
 		hitMessage=get_timing(timing)
 	}
 	if(points[i].timeMS-songMilliseconds<msWindow*4&&!points[i].wasHit)
@@ -49,6 +49,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		audio_play_sound(snd_spinout,1000,false)
 		points[i].wasHit=true
 		misses++
+		fullCombo=false
 	}
 }
 
@@ -64,13 +65,14 @@ for(var o=0; o<array_length(notes);o++)
 		notes[o].wasHit=true
 		totalScore+=msWindow-abs(timing)
 		combo++
-		hitTime=3
+		hitTime=1.33
 		hitMessage=get_timing(timing)
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
 	{
 		notes[o].wasHit=2
 		misses++
+		fullCombo=false
 	}
 	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow)
 	{

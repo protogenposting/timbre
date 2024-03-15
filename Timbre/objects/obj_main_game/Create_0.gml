@@ -156,8 +156,8 @@ function create_points(){
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
 				var dist=point_between_points(pointArray[i].x,pointArray[i].y,pointArray[i+1].x,pointArray[i+1].y,percentage)
 				var dir=notes[o].direction*90
-				notes[o].x=dist.x+lengthdir_x(32,dir)
-				notes[o].y=dist.y+lengthdir_y(32,dir)
+				notes[o].x=dist.x+lengthdir_x(64,dir)
+				notes[o].y=dist.y+lengthdir_y(64,dir)
 				notes[o].timeMS=notes[o].beat*beatLength*1000
 			}
 		}
@@ -203,3 +203,28 @@ playerFrame=0
 axeFrames=[0,0]
 
 alarm[0]=60/12
+
+finished=false
+
+finishTimer=0
+
+finishTimerLast=0
+
+finishHitSound=snd_hit_tree
+
+fullCombo=true
+
+totalPossibleScore=msWindow*(array_length(points)+array_length(notes))
+
+ranks=[{percent:101,name:"P"},{percent:99,name:"S"},{percent:95,name:"A+"},{percent:90,name:"A"},{percent:85,name:"B+"},{percent:80,name:"B"},{percent:70,name:"C"},{percent:60,name:"D"},{percent:0,name:"F"}]
+
+function get_rank(accuracyPercentage){
+	for(var i=0;i<array_length(ranks);i++)
+	{
+		if(accuracyPercentage>ranks[i].percent)
+		{
+			return ranks[i].name
+		}
+	}
+	return "???"
+}

@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+draw_set_font(fn_font)
+
 draw_set_halign(fa_center)
 for(var i=0;i<array_length(button);i++)
 {

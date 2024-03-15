@@ -2,17 +2,17 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 global.keyboardBinds={
 	turning:{
+		left: ord("A"),
+		right: ord("D"),
+		up: ord("W"),
+		down: ord("S"),
+	},
+	attacking:{
 		left: ord("J"),
 		right: ord("L"),
 		up: ord("I"),
 		down: ord("K"),
 	},
-	attacking:{
-		left: ord("A"),
-		right: ord("D"),
-		up: ord("W"),
-		down: ord("S"),
-	}
 }
 global.levelData=-4
 
