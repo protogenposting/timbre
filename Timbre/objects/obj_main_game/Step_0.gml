@@ -20,6 +20,7 @@ if(frac(barPercentage)<frac(barPercentageLast))
 	if(finished)
 	{
 		finishTimer++
+		showingFinalMessage=!showingFinalMessage
 	}
 	//audio_play_sound(snd_metronome,1000,false)
 }

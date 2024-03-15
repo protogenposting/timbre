@@ -58,7 +58,11 @@ if(finished)
 	draw_set_font(fn_font)
 	if(!audio_is_playing(songID)||finishTimer>10)
 	{
-		draw_text(1366/2,room_height/3 + 256 + 64,"Press any button to return to menu")
+		finishTimer=999
+		if(showingFinalMessage)
+		{
+			draw_text(1366/2,room_height/3 + 256 + 64,"Press any button to return to menu")
+		}
 		if(keyboard_check_pressed(vk_anykey))
 		{
 			room_goto(rm_menu)
