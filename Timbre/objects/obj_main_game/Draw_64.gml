@@ -12,6 +12,9 @@ hitTime-=(hitTime-1)/10
 
 if(finished)
 {
+	draw_set_alpha(0.33)
+	draw_rectangle_color(0,0,1366,768,c_black,c_black,c_black,c_black,false)
+	draw_set_alpha(1)
 	var accuracy = (totalScore/totalPossibleScore)*100
 	draw_text(1366/2,room_height/3,"finished!")
 	if(finishTimer>0)
@@ -20,6 +23,10 @@ if(finished)
 		if(fullCombo)
 		{
 			draw_text(1366/2,room_height/3 + 64+32,"(+10% FC bonus)")
+		}
+		else
+		{
+			draw_text(1366/2,room_height/3 + 64+32,"/"+string(totalPossibleScore))
 		}
 		if(finishTimerLast<=0)
 		{
@@ -52,7 +59,15 @@ if(finished)
 		draw_text(1366/2,room_height/3 + 256,get_rank(accuracy))
 		if(finishTimerLast<=3)
 		{
-			audio_play_sound(snd_slap2,1000,false)
+			if(get_rank(accuracy)=="F")
+			{
+				audio_stop_all()
+				audio_play_sound(snd_SHIT,1000,false)
+			}
+			else
+			{
+				audio_play_sound(snd_slap2,1000,false)
+			}
 		}
 	}
 	draw_set_font(fn_font)
@@ -62,12 +77,17 @@ if(finished)
 		{
 			if(get_rank(accuracy)=="F")
 			{
-				audio_stop_all()
-				audio_play_sound(snd_SHIT,1000,false)
+				
 			}
 			else
 			{
 				audio_play_sound(snd_slap3,1000,false)
+			}
+			var rank=get_rank_id(accuracy)
+			if(variable_struct_exists(ranks[rank],"messages"))
+			{
+				hitMessage=ranks[rank].messages[irandom(array_length(ranks[rank].messages)-1)]
+				hitTime=3
 			}
 		}
 		finishTimer=999

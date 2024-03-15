@@ -172,7 +172,7 @@ iteration=0
 
 points=create_points()
 
-msWindow=100
+msWindow=125
 
 var msWindowTemp=msWindow
 
@@ -218,14 +218,31 @@ totalPossibleScore=msWindow*(array_length(points)+array_length(notes))
 
 showingFinalMessage=false
 
-ranks=[{percent:100,name:"P"},{percent:95,name:"S"},{percent:90,name:"A+"},{percent:85,name:"A"},{percent:80,name:"B+"},{percent:75,name:"B"},{percent:50,name:"C"},{percent:30,name:"D"},{percent:0,name:"F"}]
+ranks=[{percent:100,name:"P",messages:["OMG UR SO GOOD!","S is for, SHIT UR GOOD!"]},
+{percent:95,name:"S",messages:["OMG UR SO GOOD!","S is for, SHIT UR GOOD!"]},
+{percent:85,name:"A",messages:["Great job!","A is for... AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"]},
+{percent:75,name:"B",messages:["Cool!","B is for... BOOTYHOLE"]},
+{percent:50,name:"C",messages:["Good job i guess","C is for... corn!"]},
+{percent:30,name:"D",messages:["Needs some work...","D is for... Detention! >:("]},
+{percent:0,name:"F",messages:["Did you even try?","F is for... FIVE NIGHT FREDDY?!?!?!?"]}]
 
 function get_rank(accuracyPercentage){
 	for(var i=0;i<array_length(ranks);i++)
 	{
-		if(accuracyPercentage>ranks[i].percent)
+		if(accuracyPercentage>=ranks[i].percent)
 		{
 			return ranks[i].name
+		}
+	}
+	return "???"
+}
+
+function get_rank_id(accuracyPercentage){
+	for(var i=0;i<array_length(ranks);i++)
+	{
+		if(accuracyPercentage>=ranks[i].percent)
+		{
+			return i
 		}
 	}
 	return "???"
