@@ -14,6 +14,16 @@ else
 	songID=snd_song1
 }
 
+totalScore=0
+
+combo=0
+
+misses=0
+
+hitMessage="..."
+
+hitTime=1
+
 bpm=250
 
 currentBeat=0
@@ -163,6 +173,22 @@ iteration=0
 points=create_points()
 
 msWindow=100
+
+var msWindowTemp=msWindow
+
+timings=[{distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."}]
+
+function get_timing(time)
+{
+	for(var i=0;i<array_length(timings);i++)
+	{
+		if(abs(time)<timings[i].distance)
+		{
+			return timings[i].name+" "+string(time)
+		}
+	}
+	return "???"
+}
 
 attackKey=[]
 

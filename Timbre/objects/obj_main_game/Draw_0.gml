@@ -4,6 +4,10 @@ var positionsUsed=[]
 
 for(var i=0;i<array_length(points)-1;i++)
 {
+	if(!variable_struct_exists(points[i],"frame"))
+	{
+		points[i].frame=0
+	}
 	var shouldContinue=false
 	//draw_line(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
 	for(var o=0;o<array_length(positionsUsed)-1;o++)
@@ -20,22 +24,31 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	if(!points[i].wasHit)
 	{
-		draw_sprite_ext(spr_reverse_arrow,0,points[i].x,points[i].y,1,1,points[i].direction*90,c_white,1)
+		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
+		points[i].direction*90,c_white,1)
 		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
-	if(abs(songMilliseconds-points[i].timeMS)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
+	var timing=songMilliseconds-points[i].timeMS
+	if(abs(timing)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/7&&!points[i].wasHit)
 	{
 		audio_play_sound(snd_turn,1000,false)
 		points[i].wasHit=true
+		combo++
+		totalScore+=msWindow-abs(timing)
+		hitTime=3
+		hitMessage=get_timing(timing)
 	}
 	if(points[i].timeMS-songMilliseconds<msWindow*4&&!points[i].wasHit)
 	{
-		draw_sprite_ext(spr_reverse_arrow,0,points[i].x,points[i].y,(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,c_white,0.5)
+		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,
+		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
+		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,c_white,0.5)
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
 	{
 		audio_play_sound(snd_spinout,1000,false)
 		points[i].wasHit=true
+		misses++
 	}
 }
 
@@ -43,15 +56,21 @@ for(var o=0; o<array_length(notes);o++)
 {
 	var dir=notes[o].direction*90
 	draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,c_white,1)
-	if(abs(songMilliseconds-notes[o].timeMS)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(songMilliseconds-notes[o].timeMS)<=msWindow/4&&!notes[o].wasHit)
+	var timing=songMilliseconds-notes[o].timeMS
+	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(songMilliseconds-notes[o].timeMS)<=msWindow/7&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
 		attackKey[notes[o].direction]=true
 		notes[o].wasHit=true
+		totalScore+=msWindow-abs(timing)
+		combo++
+		hitTime=3
+		hitMessage=get_timing(timing)
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
 	{
 		notes[o].wasHit=2
+		misses++
 	}
 	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow)
 	{
@@ -69,12 +88,15 @@ var nextBeatPercentage=timeSinceLastPoint/timeBetweenPoints
 
 if(nextBeatPercentage>=1)
 {
-	currentPoint+=1
+	nextBeatPercentage=0
+	currentPoint++
 }
 
+var addedPoint=false
 while(songMilliseconds>=points[currentPoint+1].timeMS)
 {
 	currentPoint+=1
+	nextBeatPercentage=1
 }
 if(nextBeatPercentage>1||nextBeatPercentage<=0)
 {

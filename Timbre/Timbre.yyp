@@ -27,6 +27,8 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"chronospher.ogg","CopyToMask":-1,"filePath":"datafiles/chronosphere","name":"chronospher.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/chronosphere","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"ghost.ogg","CopyToMask":-1,"filePath":"datafiles/ghost","name":"ghost.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
