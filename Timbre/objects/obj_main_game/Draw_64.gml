@@ -44,7 +44,7 @@ if(finished)
 		draw_text(1366/2,room_height/3 + 128+64,"Rank: ")
 		if(finishTimerLast<=2)
 		{
-			audio_play_sound(snd_hit_tree,1000,false)
+			audio_play_sound(finishHitSound,1000,false)
 		}
 	}
 	if(finishTimer>3)
@@ -52,12 +52,24 @@ if(finished)
 		draw_text(1366/2,room_height/3 + 256,get_rank(accuracy))
 		if(finishTimerLast<=3)
 		{
-			audio_play_sound(snd_hit_tree,1000,false)
+			audio_play_sound(snd_slap2,1000,false)
 		}
 	}
 	draw_set_font(fn_font)
-	if(!audio_is_playing(songID)||finishTimer>10)
+	if(!audio_is_playing(songID)||finishTimer>5)
 	{
+		if(finishTimerLast<=5)
+		{
+			if(get_rank(accuracy)=="F")
+			{
+				audio_stop_all()
+				audio_play_sound(snd_SHIT,1000,false)
+			}
+			else
+			{
+				audio_play_sound(snd_slap3,1000,false)
+			}
+		}
 		finishTimer=999
 		if(showingFinalMessage)
 		{

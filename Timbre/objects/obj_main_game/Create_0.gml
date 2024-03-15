@@ -210,7 +210,7 @@ finishTimer=0
 
 finishTimerLast=0
 
-finishHitSound=snd_hit_tree
+finishHitSound=snd_slap
 
 fullCombo=true
 
