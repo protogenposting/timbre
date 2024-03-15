@@ -26,9 +26,15 @@ audio=-4
 
 songMilliseconds=0
 
-gridSize=256
+gridSize=512
+
+background=layer_get_id("Background")
 
 songLength=[audio_sound_length(songID)*1000,audio_sound_length(songID)/(60/bpm)]
+
+lastLStickRotation=0
+
+lastRStickRotation=0
 
 function loop_rotation(rot){
 	while(rot>=360)
@@ -88,11 +94,7 @@ for(var i=0;i<array_length(notes);i++)
 	notes[i].wasHit=false
 }
 
-notes=sort_array(notes)
-
 turns=get_turns()
-
-turns=sort_array(turns)
 
 function point_between_points(x1,y1,x2,y2,percentage)
 {
@@ -115,8 +117,6 @@ function create_points(){
 	array_push(pointArray,{x:_x,y:_y,beat: 0, timeMS: 0, wasHit:true ,direction: 0})
 	var lastBeat=0
 	var lastBeatFrom=0
-	
-	show_message(turns)
 	
 	for(var i=0;i<array_length(turns);i++)
 	{
@@ -152,13 +152,10 @@ function create_points(){
 			}
 		}
 	}
+	pointArray=sort_array(pointArray)
+	notes=sort_array(notes)
 	return pointArray
 }
-
-array_sort(notes,function(elm1, elm2)
-{
-    return elm1.beat - elm2.beat;
-})
 
 currentPoint=0
 iteration=0

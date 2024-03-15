@@ -42,6 +42,7 @@ if(global.levelData!=-4)
 }
 
 function save_level(_levelName,_songName){
+	notes=sort_array(notes)
 	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset}
 	save_file(data,game_save_id+_levelName+"/data.json")
 	return data

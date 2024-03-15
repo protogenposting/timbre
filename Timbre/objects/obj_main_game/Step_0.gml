@@ -11,6 +11,8 @@ barPercentage = remap(needle, left, right, 0, 1);
 
 if(frac(barPercentage)<frac(barPercentageLast))
 {
+	layer_background_index(background,currentBeat)
+	currentBeat++
 	//audio_play_sound(snd_metronome,1000,false)
 }
 

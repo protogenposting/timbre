@@ -41,5 +41,6 @@
     {"name":"spr_reverse_arrow","order":2,"path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},
     {"name":"spr_sun","order":6,"path":"sprites/spr_sun/spr_sun.yy",},
     {"name":"spr_treeline","order":8,"path":"sprites/spr_treeline/spr_treeline.yy",},
+    {"name":"spr_grass","order":3,"path":"sprites/spr_grass/spr_grass.yy",},
   ],
 }

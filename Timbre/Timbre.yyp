@@ -66,6 +66,7 @@
     {"id":{"name":"spr_reverse_arrow","path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},},
     {"id":{"name":"spr_sun","path":"sprites/spr_sun/spr_sun.yy",},},
     {"id":{"name":"spr_treeline","path":"sprites/spr_treeline/spr_treeline.yy",},},
+    {"id":{"name":"spr_grass","path":"sprites/spr_grass/spr_grass.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

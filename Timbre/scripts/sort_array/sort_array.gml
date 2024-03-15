@@ -5,17 +5,18 @@ function sort_array(array){
 	var swaps=1
 	while(swaps>0)
 	{
+		swaps=0
 		for(var i=0;i<array_length(array)-1;i++)
 		{
-			swaps=0
 			if(newTurns[i].beat>newTurns[i+1].beat)
 			{
-				var temp=newTurns[i].beat
-				newTurns[i].beat=newTurns[i+1].beat
-				newTurns[i+1].beat=temp
+				var temp=newTurns[i]
+				newTurns[i]=newTurns[i+1]
+				newTurns[i+1]=temp
 				swaps++
 			}
 		}
+		show_debug_message(swaps)
 	}
 	return newTurns
 }

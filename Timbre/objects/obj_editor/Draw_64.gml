@@ -23,7 +23,7 @@ var _x=512+256
 var _y=32
 var boxSize=20
 
-var relativeBeat=((songMilliseconds/1000)/beatLength)-1
+var relativeBeat=((songMilliseconds/1000)/beatLength)-zoom
 
 var beat=startingBeat
 repeat(16)
@@ -59,7 +59,7 @@ repeat(16)
 				notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
 			}
 		}
-		draw_sprite_ext(spr_reverse_arrow,0,_x,_y,0.5,0.5,noteDirection*90,c_white,1)
+		draw_sprite_ext(spr_reverse_arrow,0,_x,_y,0.3,0.3,noteDirection*90,c_white,1)
 		draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
 		{
