@@ -216,7 +216,7 @@ fullCombo=true
 
 totalPossibleScore=msWindow*(array_length(points)+array_length(notes))
 
-ranks=[{percent:101,name:"P"},{percent:99,name:"S"},{percent:95,name:"A+"},{percent:90,name:"A"},{percent:85,name:"B+"},{percent:80,name:"B"},{percent:70,name:"C"},{percent:60,name:"D"},{percent:0,name:"F"}]
+ranks=[{percent:100,name:"P"},{percent:95,name:"S"},{percent:90,name:"A+"},{percent:85,name:"A"},{percent:80,name:"B+"},{percent:75,name:"B"},{percent:50,name:"C"},{percent:30,name:"D"},{percent:0,name:"F"}]
 
 function get_rank(accuracyPercentage){
 	for(var i=0;i<array_length(ranks);i++)
