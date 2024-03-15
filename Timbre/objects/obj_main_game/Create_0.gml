@@ -171,3 +171,9 @@ turnKey=[]
 previousPlayerPos={x:0,y:0}
 
 cameraOffset={x:0,y:0}
+
+playerFrame=0
+
+axeFrames=[0,0]
+
+alarm[0]=60/12

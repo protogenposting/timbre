@@ -88,8 +88,8 @@ nextBeatPercentage)
 var _currentX=previousPlayerPos.x
 var _currentY=previousPlayerPos.y
 
-draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
-draw_sprite_ext(spr_axes,0,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
+draw_sprite_ext(spr_axes,axeFrames[0],_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
+draw_sprite_ext(spr_axes,axeFrames[1],_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
 if(attackKey[loop_rotation((currentDirection+90))/90])
 {
 	axeRotations[0]=-90
@@ -109,7 +109,7 @@ camera_set_view_pos(view_camera[0],
 playerPoint.x-1366/2+cameraOffset.x,
 playerPoint.y-768/2+cameraOffset.y)
 
-draw_sprite_ext(spr_player,0,_currentX,_currentY,1,1,currentDirection,c_white,1)
+draw_sprite_ext(spr_player,playerFrame,_currentX,_currentY,1,1,currentDirection,c_white,1)
 
 //show_debug_message(playerPoint.x-(camera_get_view_x(view_camera[0])+1366/2))
 
