@@ -4,6 +4,12 @@ audio_stop_all()
 
 selectedLevel=-4
 
+bpm=0
+
+audio=-4
+
+currentBeat=0
+
 audio_destroy_stream(global.song)
 
 global.song=-4
