@@ -39,6 +39,8 @@ for(var i=0;i<array_length(button);i++)
 
 if(selectedLevel!=-4)
 {
+	draw_set_font(fn_font_big)
+	draw_set_color(c_black)
 	var _x=room_width - 512 + 32
 	var _y=32
 	repeat(abs(_x-room_width)/64 + 1)
@@ -58,4 +60,14 @@ if(selectedLevel!=-4)
 	draw_sprite(difficulties[global.levels[selectedLevel].difficulty].sprite,image_index,_x+256-32,_y)
 	_y+=32
 	draw_text(_x+256-32,_y+32,difficulties[global.levels[selectedLevel].difficulty].name)
+	_y+=128
+	draw_text(_x+256-32,_y+32,"High Score:")
+	_y+=32
+	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].highScore)
+	_y+=128
+	draw_text(_x+256-32,_y+32,"Rank:")
+	_y+=32
+	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].rank)
+	draw_set_color(c_white)
+	draw_set_font(fn_font)
 }

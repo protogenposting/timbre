@@ -32,9 +32,12 @@ var _file=load_file(global.saveName)
 
 if(_file==false)
 {
-	global.levels=[{name:"chronosphere",path: working_directory+"chronosphere\\data.json",difficulty:4,highScore:0,rank:""},{name:"fardstep",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:""}]
+	global.levels=[{name:"chronosphere",path: working_directory+"chronosphere\\data.json",difficulty:4,highScore:0,rank:""},
+	{name:"fardstep",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:""}]
 }
 else
 {
 	global.levels=_file.levels
 }
+
+global.levels=sort_songlist(global.levels)
