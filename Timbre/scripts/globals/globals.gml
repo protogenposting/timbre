@@ -39,6 +39,7 @@ if(_file==false)
 	{name:"Say It Back",artist:"TV Room",path: working_directory+"Say It Back\\data.json",difficulty:1,highScore:0,rank:""},
 	{name:"Party Sirens",artist:"Tanger",path: working_directory+"Party Sirens\\data.json",difficulty:5,highScore:0,rank:""},
 	{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:""},
+	{name:"Reverse",artist:"Caravan Palace",path: working_directory+"Reverse\\data.json",difficulty:3,highScore:0,rank:""},
 	]
 }
 else
@@ -49,11 +50,4 @@ else
 
 global.levels=sort_songlist(global.levels)
 
-var tempDifficulties=[{sprite:spr_easy,name:"Easy",color:c_aqua},
-{sprite:spr_normal,name:"Normal",color:c_lime},
-{sprite:spr_hard,name:"Hard",color:c_orange},
-{sprite:spr_insane,name:"Insane",color:c_red},
-{sprite:spr_expert,name:"Expert",color:c_purple},
-{sprite:spr_expertplus,name:"Expert+",color:c_black},]
-
-#macro difficulties tempDifficulties
+#macro difficulties [{sprite:spr_easy,name:"Easy",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Insane",color:c_red},{sprite:spr_expert,name:"Expert",color:c_purple},{sprite:spr_expertplus,name:"Expert+",color:c_black},]

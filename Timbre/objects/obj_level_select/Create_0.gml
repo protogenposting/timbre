@@ -123,7 +123,7 @@ function reset_buttons()
 		if(_y>room_height/1.1)
 		{
 			_y=64
-			_x+=270
+			_x+=140
 		}
 	}
 
