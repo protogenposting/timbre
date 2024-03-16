@@ -99,6 +99,11 @@ if(global.levelData!=-4)
 	offset=global.levelData.offset
 }
 
+if(bpm>120)
+{
+	gridSize/=(bpm/120)
+}
+
 for(var i=0;i<array_length(notes);i++)
 {
 	notes[i].wasHit=false

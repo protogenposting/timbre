@@ -54,7 +54,7 @@ if(!finished&&!audio_is_playing(songID)&&(array_contains(attackKey,1)||array_con
 	audio_sound_set_track_position(audio,offset/1000)
 }
 
-if(currentPoint>=array_length(points)-2&&currentBeat>array_last(notes).beat+3&&!finished)
+if(currentPoint>=array_length(points)-2&&(array_equals(notes,[])||currentBeat>array_last(notes).beat+3)&&!finished)
 {
 	finished=true
 	audio_play_sound(finishHitSound,1000,false)
