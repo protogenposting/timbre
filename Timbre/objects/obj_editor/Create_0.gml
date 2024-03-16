@@ -181,12 +181,19 @@ button[3]={
 	func: function(){
 		with(obj_editor)
 		{
-			var _levelDir=get_open_filename("","data.json")
-			if(_levelDir!="")
+			if(name!="")
 			{
-				file_copy(_levelDir,game_save_id+name+"/"+filename_name(_levelDir))
-				songName=filename_name(_levelDir)
-				load_song(game_save_id+name+"/"+filename_name(_levelDir))
+				var _levelDir=get_open_filename("","data.json")
+				if(_levelDir!="")
+				{
+					file_copy(_levelDir,game_save_id+name+"/"+filename_name(_levelDir))
+					songName=filename_name(_levelDir)
+					load_song(game_save_id+name+"/"+filename_name(_levelDir))
+				}
+			}
+			else
+			{
+				show_message("name the level first!")
 			}
 		}
 	},
@@ -290,18 +297,24 @@ button[9]={
 	func: function(){
 		with(obj_editor)
 		{
-			difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
-			while(true)
-			{
-				try{
-					show_message("changed to "+difficulties[difficulty].name)
-					return 0
-				}
-				catch(e)
+			try{
+				difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
+				while(true)
 				{
-					show_message("out of range")
-					difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
+					try{
+						show_message("changed to "+difficulties[difficulty].name)
+						return 0
+					}
+					catch(e)
+					{
+						show_message("out of range")
+						difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
+					}
 				}
+			}
+			catch(e)
+			{
+				
 			}
 		}
 	},
