@@ -216,6 +216,17 @@ fullCombo=true
 
 totalPossibleScore=msWindow*(array_length(points)+array_length(notes))
 
+accuracyList=[]
+
+function get_accuracy(){
+	var accuracy=0
+	for(var i=0;i<array_length(accuracyList);i++)
+	{
+		accuracy+=accuracyList[i]
+	}
+	return (accuracy/array_length(accuracyList))*100
+}
+
 showingFinalMessage=false
 
 ranks=[{percent:100,name:"P",messages:["OMG UR SO GOOD!","S is for, SHIT UR GOOD!"]},

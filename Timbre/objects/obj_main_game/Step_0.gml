@@ -13,6 +13,10 @@ barPercentage = remap(needle, left, right, 0, 1);
 
 finishTimerLast=finishTimer
 
+image_index=((songMilliseconds/10)*(bpm/120))/2.5
+
+show_debug_message(image_index)
+
 if(frac(barPercentage)<frac(barPercentageLast))
 {
 	layer_background_index(background,currentBeat)

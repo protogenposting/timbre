@@ -15,7 +15,7 @@ if(finished)
 	draw_set_alpha(0.33)
 	draw_rectangle_color(0,0,1366,768,c_black,c_black,c_black,c_black,false)
 	draw_set_alpha(1)
-	var accuracy = (totalScore/totalPossibleScore)*100
+	var accuracy = get_accuracy()
 	draw_text(1366/2,room_height/3,"finished!")
 	if(finishTimer>0)
 	{
@@ -38,7 +38,7 @@ if(finished)
 		draw_text(1366/2,room_height/3 + 128,"Accuracy: "+string(accuracy)+"%")
 		if(fullCombo)
 		{
-			draw_text(1366/2,room_height/3 + 128+32,"(+3% FC bonus)")
+			draw_text(1366/2,room_height/3 + 128+32,"(+15% FC bonus)")
 			accuracy+=15
 		}
 		if(finishTimerLast<=1)
@@ -104,5 +104,28 @@ if(finished)
 else
 {
 	draw_set_font(fn_font)
-	draw_text(1366/2,32,"score: "+string(totalScore)+"    misses: "+string(misses)+"    combo: "+string(combo))
+	draw_text(1366/2,32,"score: "+string(totalScore)+"    misses: "+string(misses)+"    combo: "+string(combo)+"    accuracy: "+string(get_accuracy()))
+	
+	if(get_accuracy()>=90)
+	{
+		sprite_index=spr_tv_really_good
+	}
+	else if(get_accuracy()>80)
+	{
+		sprite_index=spr_tv_good
+	}
+	else if(get_accuracy()<30)
+	{
+		sprite_index=spr_tv_really_bad
+	}
+	else if(get_accuracy()<50)
+	{
+		sprite_index=spr_tv_bad
+	}
+	else
+	{
+		sprite_index=spr_tv_idle
+	}
+	
+	draw_sprite(sprite_index,image_index,room_width-128,room_height-128)
 }
