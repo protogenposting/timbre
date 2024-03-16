@@ -65,7 +65,14 @@ if(paused)
 	audio_pause_sound(audio)
 	if(keyboard_check_pressed(vk_space))
 	{
-		room_goto(rm_menu)
+		if(global.editing)
+		{
+			room_goto(rm_editor)
+		}
+		else
+		{
+			room_goto(rm_level_select)
+		}
 	}
 }
 if(!paused)

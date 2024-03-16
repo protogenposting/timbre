@@ -18,6 +18,23 @@ global.levelData=-4
 
 global.song=-4
 
+global.selectedLevel=-4
+
 global.dataLocation=""
 
 global.botPlay=false
+
+global.saveName="save_data.TTT"
+
+global.editing=false
+
+var _file=load_file(global.saveName)
+
+if(_file==false)
+{
+	global.levels=[{name:"chronosphere",path: working_directory+"chronosphere\\data.json",difficulty:4,highScore:0,rank:""},{name:"fardstep",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:""}]
+}
+else
+{
+	global.levels=_file.levels
+}

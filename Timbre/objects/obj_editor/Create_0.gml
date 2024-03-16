@@ -6,6 +6,8 @@ songName="level.ogg"
 
 notes=[]
 
+global.editing=true
+
 currentBeat=0
 
 currentFracBeat=0

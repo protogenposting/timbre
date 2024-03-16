@@ -97,7 +97,25 @@ if(finished)
 		}
 		if(keyboard_check_pressed(vk_anykey))
 		{
-			room_goto(rm_menu)
+			if(global.editing)
+			{
+				room_goto(rm_editor)
+			}
+			else
+			{
+				room_goto(rm_level_select)
+				try{
+					global.levels[global.selectedLevel].rank=get_rank(get_accuracy())
+					if(totalScore>global.levels[global.selectedLevel].highScore)
+					{
+						global.levels[global.selectedLevel].highScore=totalScore
+					}
+				}
+				catch(e)
+				{
+					
+				}
+			}
 		}
 	}
 }

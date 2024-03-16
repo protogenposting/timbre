@@ -40,7 +40,7 @@ button[0]={
 	sprite: spr_play_button,
 	func: function(){
 		//make this go to level select later
-		room_goto(rm_gameplay)
+		room_goto(rm_level_select)
 		audio_stop_all()
 	},
 	size:{x:256,y:128},
