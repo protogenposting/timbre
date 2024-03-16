@@ -33,13 +33,13 @@ var _file=load_file(global.saveName)
 if(_file==false)
 {
 	global.levels=[
-	{name:"Chronosphere",artist:"Килджо",path: working_directory+"chronosphere\\data.json",difficulty:4,highScore:0,rank:""},
-	{name:"Fardstep 2",artist:"Protogen Posting",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:""},
-	{name:"Error: Value Exception",artist:"Protogen Posting and ScratchGuy",path: working_directory+"VE\\data.json",difficulty:5,highScore:0,rank:""},
-	{name:"Say It Back",artist:"TV Room",path: working_directory+"Say It Back\\data.json",difficulty:1,highScore:0,rank:""},
-	{name:"Party Sirens",artist:"Tanger",path: working_directory+"Party Sirens\\data.json",difficulty:5,highScore:0,rank:""},
-	{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:""},
-	{name:"Reverse",artist:"Caravan Palace",path: working_directory+"Reverse\\data.json",difficulty:3,highScore:0,rank:""},
+		{name:"Chronosphere",artist:"Килджо",path: working_directory+"chronosphere\\data.json",difficulty:4,highScore:0,rank:""},
+		{name:"Fardstep 2",artist:"Protogen Posting",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:""},
+		{name:"Error: Value Exception",artist:"Protogen Posting and ScratchGuy",path: working_directory+"VE\\data.json",difficulty:5,highScore:0,rank:""},
+		{name:"Say It Back",artist:"TV Room",path: working_directory+"Say It Back\\data.json",difficulty:1,highScore:0,rank:""},
+		{name:"Party Sirens",artist:"Tanger",path: working_directory+"Party Sirens\\data.json",difficulty:5,highScore:0,rank:""},
+		{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:""},
+		{name:"Reverse",artist:"Caravan Palace",path: working_directory+"Reverse\\data.json",difficulty:3,highScore:0,rank:""},
 	]
 }
 else
