@@ -36,6 +36,7 @@ if(_file==false)
 	{name:"chronosphere",path: working_directory+"chronosphere\\data.json",difficulty:4,highScore:0,rank:""},
 	{name:"fardstep",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:""},
 	{name:"VE",path: working_directory+"VE\\data.json",difficulty:5,highScore:0,rank:""},
+	{name:"Say It Back",path: working_directory+"Say It Back\\data.json",difficulty:1,highScore:0,rank:""},
 	]
 }
 else
