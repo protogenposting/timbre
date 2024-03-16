@@ -4,6 +4,8 @@
 draw_set_font(fn_font)
 
 draw_set_halign(fa_center)
+draw_set_valign(fa_middle)
+
 for(var i=0;i<array_length(button);i++)
 {
 	var size=1
@@ -29,7 +31,7 @@ for(var i=0;i<array_length(button);i++)
 		_col,_col,false)
 		draw_rectangle(button[i].position.x-sizeX*button[i].sizeMod,button[i].position.y-sizeY*button[i].sizeMod,
 		button[i].position.x+sizeX*button[i].sizeMod,button[i].position.y+sizeY*button[i].sizeMod,true)
-		draw_text(button[i].position.x,button[i].position.y,button[i].name)
+		draw_text_ext(button[i].position.x,button[i].position.y,button[i].name,32,sizeX*2)
 	}
 	catch(e)
 	{
@@ -58,6 +60,14 @@ if(selectedLevel!=-4)
 	_x=room_width - 512 + 32
 	_y=32
 	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].name)
+	_y+=32
+	try{
+		draw_text(_x+256-32,_y+32,"By " + global.levels[selectedLevel].artist)
+	}
+	catch(e)
+	{
+		global.levels[selectedLevel].artist="???"
+	}
 	_y+=128
 	draw_sprite(difficulties[global.levels[selectedLevel].difficulty].sprite,image_index,_x+256-32,_y)
 	_y+=32

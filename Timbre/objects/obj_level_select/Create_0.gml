@@ -50,6 +50,14 @@ function reset_buttons()
 						{
 							_struct.difficulty=3
 						}
+						if(variable_struct_exists(_str,"artist"))
+						{
+							_struct.artist=_str.artist
+						}
+						else
+						{
+							_struct.artist="???"
+						}
 						array_push(global.levels,_struct)
 						with(obj_level_select)
 						{

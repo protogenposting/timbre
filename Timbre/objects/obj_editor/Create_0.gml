@@ -12,6 +12,8 @@ global.editing=true
 
 currentBeat=0
 
+artist="???"
+
 currentFracBeat=0
 
 barPercentage=0
@@ -50,11 +52,18 @@ if(global.levelData!=-4)
 	{
 		difficulty=0
 	}
+	try{
+		artist=global.levelData.artist
+	}
+	catch(e)
+	{
+		difficulty=0
+	}
 }
 
 function save_level(_levelName,_songName){
 	notes=sort_array(notes)
-	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset,difficulty: obj_editor.difficulty}
+	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset,difficulty: obj_editor.difficulty,artist: obj_editor.artist}
 	save_file(data,game_save_id+_levelName+"/data.json")
 	return data
 }
@@ -84,6 +93,14 @@ function load_level(_levelData){
 		notes=struct.notes
 		bpm=struct.bpm
 		offset=struct.offset
+		try{
+			difficulty=struct.difficulty
+			artist=struct.artist
+		}
+		catch(e)
+		{
+			
+		}
 		name=directoryName
 		global.dataLocation=name
 		button[4].name="name: "+directoryName
@@ -183,6 +200,7 @@ button[4]={
 		with(obj_editor)
 		{
 			name=get_string("name",name)
+			artist=get_string("artist",artist)
 		}
 		name="name: "+obj_editor.name
 	},
