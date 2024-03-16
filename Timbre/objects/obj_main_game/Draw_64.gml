@@ -97,6 +97,7 @@ if(finished)
 		}
 		if(keyboard_check_pressed(vk_anykey))
 		{
+			audio_stop_all()
 			if(global.editing)
 			{
 				room_goto(rm_editor)

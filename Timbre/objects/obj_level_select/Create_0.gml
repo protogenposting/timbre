@@ -12,15 +12,6 @@ global.editing=false
 
 global.selectedLevel=-4
 
-difficulties=[
-	{sprite:spr_easy,name:"Easy",color:c_aqua},
-	{sprite:spr_normal,name:"Normal",color:c_lime},
-	{sprite:spr_hard,name:"Hard",color:c_orange},
-	{sprite:spr_insane,name:"Insane",color:c_red},
-	{sprite:spr_expert,name:"Expert",color:c_purple},
-	{sprite:spr_expertplus,name:"Expert+",color:c_black},
-]
-
 button=[
 {
 	name: "Back",
@@ -29,6 +20,15 @@ button=[
 	},
 	size:{x:128,y:64},
 	position:{x:128,y:64},
+	sizeMod:0
+},
+{
+	name: "Add Song",
+	func: function(){
+		room_goto(rm_menu)
+	},
+	size:{x:128,y:64},
+	position:{x:128,y:64+96},
 	sizeMod:0
 }]
 
@@ -41,12 +41,12 @@ for(var i=0;i<array_length(global.levels);i++)
 		name: global.levels[i].name,
 		path: global.levels[i].path,
 		id:i,
-		color: obj_level_select.difficulties[global.levels[i].difficulty].color,
+		color: difficulties[global.levels[i].difficulty].color,
 		func: function(){
 			var _file=load_file(path)
 			if(_file==false)
 			{
-				show_message_async("failed loading")
+				show_message_async("failed loading, no data file")
 			}
 			else
 			{

@@ -65,6 +65,7 @@ if(paused)
 	audio_pause_sound(audio)
 	if(keyboard_check_pressed(vk_space))
 	{
+		audio_stop_all()
 		if(global.editing)
 		{
 			room_goto(rm_editor)

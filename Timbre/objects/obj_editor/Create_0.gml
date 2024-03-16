@@ -6,6 +6,8 @@ songName="level.ogg"
 
 notes=[]
 
+difficulty=0
+
 global.editing=true
 
 currentBeat=0
@@ -41,11 +43,18 @@ if(global.levelData!=-4)
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset
 	name=global.dataLocation
+	try{
+		difficulty=global.levelData.difficulty
+	}
+	catch(e)
+	{
+		difficulty=0
+	}
 }
 
 function save_level(_levelName,_songName){
 	notes=sort_array(notes)
-	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset}
+	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset,difficulty: obj_editor.difficulty}
 	save_file(data,game_save_id+_levelName+"/data.json")
 	return data
 }
@@ -256,6 +265,30 @@ button[8]={
 	},
 	size:{x:256,y:128},
 	position:{x:456,y:200+128+128+128},
+	sizeMod:0
+}
+button[9]={
+	name:"change difficulty",
+	func: function(){
+		with(obj_editor)
+		{
+			difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
+			while(true)
+			{
+				try{
+					show_message("changed to "+difficulties[difficulty].name)
+					return 0
+				}
+				catch(e)
+				{
+					show_message("out of range")
+					difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
+				}
+			}
+		}
+	},
+	size:{x:256,y:128},
+	position:{x:456,y:200+128+128+128+128},
 	sizeMod:0
 }
 /*button[7]={
