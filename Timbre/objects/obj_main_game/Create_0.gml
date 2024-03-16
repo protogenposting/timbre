@@ -262,6 +262,17 @@ function get_rank(accuracyPercentage){
 	return "???"
 }
 
+function get_rank_id_string(accuracyPercentage){
+	for(var i=0;i<array_length(ranks);i++)
+	{
+		if(accuracyPercentage==ranks[i].name)
+		{
+			return i
+		}
+	}
+	return 8
+}
+
 function get_rank_id(accuracyPercentage){
 	for(var i=0;i<array_length(ranks);i++)
 	{
@@ -270,5 +281,5 @@ function get_rank_id(accuracyPercentage){
 			return i
 		}
 	}
-	return "???"
+	return -4
 }

@@ -106,7 +106,11 @@ if(finished)
 			{
 				room_goto(rm_level_select)
 				try{
-					global.levels[global.selectedLevel].rank=get_rank(get_accuracy())
+					var tempRank=get_rank_id_string(global.levels[global.selectedLevel].rank)
+					if(get_rank_id(accuracy)<tempRank)
+					{
+						global.levels[global.selectedLevel].rank=get_rank(accuracy)
+					}
 					if(totalScore>global.levels[global.selectedLevel].highScore)
 					{
 						global.levels[global.selectedLevel].highScore=totalScore
