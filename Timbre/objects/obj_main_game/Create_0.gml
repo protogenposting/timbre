@@ -99,9 +99,9 @@ if(global.levelData!=-4)
 	offset=global.levelData.offset
 }
 
-if(bpm>120)
+if(bpm>180)
 {
-	gridSize/=(bpm/120)
+	gridSize/=(bpm/180)
 }
 
 for(var i=0;i<array_length(notes);i++)
@@ -178,6 +178,15 @@ iteration=0
 points=create_points()
 
 msWindow=125
+
+if(bpm>120)
+{
+	msWindow/=(bpm/120)
+	if(msWindow<50)
+	{
+		msWindow=50
+	}
+}
 
 var msWindowTemp=msWindow
 

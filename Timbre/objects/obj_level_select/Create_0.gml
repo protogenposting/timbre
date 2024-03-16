@@ -1,5 +1,7 @@
 event_inherited()
 
+gooberLocation.y=room_height
+
 audio_stop_all()
 
 selectedLevel=-4
