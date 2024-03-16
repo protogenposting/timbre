@@ -13,12 +13,12 @@ global.editing=false
 global.selectedLevel=-4
 
 difficulties=[
-	{sprite:spr_easy,name:"Easy"},
-	{sprite:spr_normal,name:"Normal"},
-	{sprite:spr_hard,name:"Hard"},
-	{sprite:spr_insane,name:"Insane"},
-	{sprite:spr_expert,name:"Expert"},
-	{sprite:spr_expertplus,name:"Expert+"},
+	{sprite:spr_easy,name:"Easy",color:c_aqua},
+	{sprite:spr_normal,name:"Normal",color:c_lime},
+	{sprite:spr_hard,name:"Hard",color:c_orange},
+	{sprite:spr_insane,name:"Insane",color:c_red},
+	{sprite:spr_expert,name:"Expert",color:c_purple},
+	{sprite:spr_expertplus,name:"Expert+",color:c_black},
 ]
 
 button=[
@@ -29,39 +29,6 @@ button=[
 	},
 	size:{x:128,y:64},
 	position:{x:128,y:64},
-	sizeMod:0
-},
-{
-	name: "Play",
-	func: function(){
-		if(obj_level_select.selectedLevel!=-4)
-		{
-			room_goto(rm_gameplay)
-			audio_stop_all()
-		}
-	},
-	size:{x:128,y:64},
-	position:{x:128,y:64+96},
-	sizeMod:0
-},
-{
-	name: "Play",
-	func: function(){
-		if(obj_level_select.selectedLevel!=-4)
-		{
-			try{
-				audio_stop_all()
-				global.selectedLevel=obj_level_select.selectedLevel
-				room_goto(rm_gameplay)
-			}
-			catch(e)
-			{
-				obj_level_select.selectedLevel=-4
-			}
-		}
-	},
-	size:{x:128,y:64},
-	position:{x:128,y:64+96},
 	sizeMod:0
 }]
 
@@ -74,6 +41,7 @@ for(var i=0;i<array_length(global.levels);i++)
 		name: global.levels[i].name,
 		path: global.levels[i].path,
 		id:i,
+		color: obj_level_select.difficulties[global.levels[i].difficulty].color,
 		func: function(){
 			var _file=load_file(path)
 			if(_file==false)
@@ -107,3 +75,19 @@ for(var i=0;i<array_length(global.levels);i++)
 }
 
 alarm[0]=1
+
+function start_level()
+{
+	if(obj_level_select.selectedLevel!=-4)
+	{
+		try{
+			audio_stop_all()
+			global.selectedLevel=obj_level_select.selectedLevel
+			room_goto(rm_gameplay)
+		}
+		catch(e)
+		{
+			obj_level_select.selectedLevel=-4
+		}
+	}
+}

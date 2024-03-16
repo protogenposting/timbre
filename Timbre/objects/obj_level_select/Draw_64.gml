@@ -19,9 +19,14 @@ for(var i=0;i<array_length(button);i++)
 	}
 	try{
 		var _n=button[i].name
+		var _col=c_black
+		if(variable_struct_exists(button[i],"color"))
+		{
+			_col=button[i].color
+		}
 		draw_rectangle_color(button[i].position.x-sizeX*button[i].sizeMod,button[i].position.y-sizeY*button[i].sizeMod,
-		button[i].position.x+sizeX*button[i].sizeMod,button[i].position.y+sizeY*button[i].sizeMod,c_black,c_black,
-		c_black,c_black,false)
+		button[i].position.x+sizeX*button[i].sizeMod,button[i].position.y+sizeY*button[i].sizeMod,_col,_col,
+		_col,_col,false)
 		draw_rectangle(button[i].position.x-sizeX*button[i].sizeMod,button[i].position.y-sizeY*button[i].sizeMod,
 		button[i].position.x+sizeX*button[i].sizeMod,button[i].position.y+sizeY*button[i].sizeMod,true)
 		draw_text(button[i].position.x,button[i].position.y,button[i].name)
@@ -31,10 +36,7 @@ for(var i=0;i<array_length(button);i++)
 		draw_sprite_ext(button[i].sprite,0,button[i].position.x,button[i].position.y,
 		button[i].sizeMod,button[i].sizeMod,0,c_white,1)
 	}
-	if(i!=1||selectedLevel!=-4)
-	{
-		button[i].sizeMod-=(button[i].sizeMod-size)/10
-	}
+	button[i].sizeMod-=(button[i].sizeMod-size)/10
 }
 
 if(selectedLevel!=-4)
@@ -68,6 +70,20 @@ if(selectedLevel!=-4)
 	draw_text(_x+256-32,_y+32,"Rank:")
 	_y+=32
 	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].rank)
+	_y+=128
+	var _size=1
+	
+	if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-128+256-32,_y-64,_x+128+256-32,_y+64))
+	{
+		_size=1.2
+		if(mouse_check_button_pressed(mb_left))
+		{
+			start_level()
+		}
+	}
+	
+	draw_sprite_ext(spr_play_button,0,_x+256-32,_y,_size,_size,0,c_white,1)
+	
 	draw_set_color(c_white)
 	draw_set_font(fn_font)
 }
