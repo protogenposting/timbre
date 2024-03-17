@@ -175,7 +175,13 @@ function create_points(){
 currentPoint=0
 iteration=0
 
-points=create_points()
+try{
+	points=create_points()
+}
+catch(e)
+{
+	show_message(e)
+}
 
 msWindow=125
 
