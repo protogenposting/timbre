@@ -24,7 +24,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)&&abs(timing)<=(msWindow*beatLength)*120
-	if(!points[i].wasHit&&inCamera)
+	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
 		points[i].direction*90,c_white,1)
