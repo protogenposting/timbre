@@ -8,7 +8,7 @@ function sort_songlist(array){
 		swaps=0
 		for(var i=0;i<array_length(array)-1;i++)
 		{
-			if(newTurns[i].difficulty>newTurns[i+1].difficulty)
+			if(newTurns[i].difficulty>newTurns[i+1].difficulty||newTurns[i].difficulty==newTurns[i+1].difficulty&&newTurns[i].name>newTurns[i+1].name)
 			{
 				var temp=newTurns[i]
 				newTurns[i]=newTurns[i+1]

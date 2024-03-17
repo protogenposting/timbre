@@ -39,6 +39,7 @@ if(_file==false)
 		{name:"Say It Back",artist:"TV Room",path: working_directory+"Say It Back\\data.json",difficulty:1,highScore:0,rank:""},
 		{name:"Party Sirens",artist:"Tanger",path: working_directory+"Party Sirens\\data.json",difficulty:5,highScore:0,rank:""},
 		{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:""},
+		{name:"Paint",artist:"Celeste Strawberry Jam",path: working_directory+"Paint\\data.json",difficulty:0,highScore:0,rank:""},
 		{name:"Reverse",artist:"Caravan Palace",path: working_directory+"Reverse\\data.json",difficulty:3,highScore:0,rank:""},
 		{name:"Aurora Borealis",artist:"Protogen Posting",path: working_directory+"Aurora Borealis\\data.json",difficulty:2,highScore:0,rank:""},
 	]

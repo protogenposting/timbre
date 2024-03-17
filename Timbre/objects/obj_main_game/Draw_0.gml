@@ -12,10 +12,9 @@ for(var i=0;i<array_length(points)-1;i++)
 	//draw_line(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
 	for(var o=0;o<array_length(positionsUsed)-1;o++)
 	{
-		if(positionsUsed[o][0]==points[i].x&&positionsUsed[o][1]==points[i].y)
+		if(abs(positionsUsed[o][0]-points[i].x)<=4&&abs(positionsUsed[o][1]-points[i].y)<=4)
 		{
 			shouldContinue=true
-			break;
 		}
 	}
 	if(shouldContinue)
@@ -23,11 +22,14 @@ for(var i=0;i<array_length(points)-1;i++)
 		continue;
 	}
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
+	if(!points[i].wasHit)
+	{
+		array_push(positionsUsed,[points[i].x,points[i].y])
+	}
 	if(!points[i].wasHit&&inCamera)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
 		points[i].direction*90,c_white,1)
-		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
 	var timing=songMilliseconds-points[i].timeMS
 	if(abs(timing)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
