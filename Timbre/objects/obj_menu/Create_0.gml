@@ -59,3 +59,15 @@ button[1]={
 	position:{x:room_width/2,y:room_height/2},
 	sizeMod:0
 }
+
+button[2]={
+	sprite: spr_tutorial_button,
+	func: function(){
+		//make this go to level select later
+		room_goto(rm_tutorial)
+		audio_stop_all()
+	},
+	size:{x:256,y:128},
+	position:{x:room_width/2,y:room_height/2 +128},
+	sizeMod:0
+}
