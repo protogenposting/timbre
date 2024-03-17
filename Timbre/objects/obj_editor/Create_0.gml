@@ -322,6 +322,18 @@ button[9]={
 	position:{x:456,y:200+128+128+128+128},
 	sizeMod:0
 }
+button[10]={
+	name:"Tutorial",
+	func: function(){
+		with(obj_editor)
+		{
+			url_open("https://www.youtube.com/watch?v=0304ugJuy5IZ")
+		}
+	},
+	size:{x:256,y:64},
+	position:{x:456,y:200-128},
+	sizeMod:0
+}
 /*button[7]={
 	name:"copy section",
 	func: function(){
