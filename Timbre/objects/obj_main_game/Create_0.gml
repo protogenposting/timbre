@@ -244,7 +244,7 @@ function get_accuracy(){
 showingFinalMessage=false
 
 ranks=[{percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},
-{percent:95,name:"S",messages:["OMG UR SO GOOD!","S is for... SHIT UR GOOD!"]},
+{percent:95,name:"S",messages:["OMG UR SO GOOD!","S is for... SANS UNDERTALE?!?!?!?!"]},
 {percent:85,name:"A",messages:["Great job!","A is for... AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"]},
 {percent:75,name:"B",messages:["Cool!","B is for... BOOTYHOLE"]},
 {percent:50,name:"C",messages:["Good job i guess","C is for... corn!"]},
