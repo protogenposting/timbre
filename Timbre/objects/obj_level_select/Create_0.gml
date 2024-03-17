@@ -81,7 +81,7 @@ function reset_buttons()
 			global.levels=sort_songlist(global.levels)
 		},
 		size:{x:128,y:64},
-		position:{x:128,y:64+96},
+		position:{x:128+140,y:64},
 		sizeMod:0
 	}]
 
@@ -94,7 +94,7 @@ function reset_buttons()
 			name: global.levels[i].name,
 			path: global.levels[i].path,
 			id:i,
-			color: difficulties[global.levels[i].difficulty].color,
+			color: array_index_looped(menuColors,i),
 			func: function(){
 				var _file=load_file(path)
 				if(_file==false)
@@ -115,15 +115,15 @@ function reset_buttons()
 				}
 				obj_level_select.selectedLevel=id
 			},
-			size:{x:128,y:64},
+			size:{x:128,y:48},
 			position:{x: _x,y: _y},
 			sizeMod:0
 		})
-		_y+=96
+		_y+=64
 		if(_y>room_height/1.1)
 		{
-			_y=64
-			_x+=140
+			_y=64+96
+			_x+=160+64
 		}
 	}
 

@@ -53,3 +53,5 @@ else
 global.levels=sort_songlist(global.levels)
 
 #macro difficulties [{sprite:spr_easy,name:"Easy",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Insane",color:c_red},{sprite:spr_expert,name:"Expert",color:c_purple},{sprite:spr_expertplus,name:"Expert+",color:c_black},]
+
+#macro menuColors [c_aqua,c_yellow,c_lime,c_orange,c_purple,c_red,c_black]

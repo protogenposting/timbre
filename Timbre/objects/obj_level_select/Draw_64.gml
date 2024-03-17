@@ -26,12 +26,27 @@ for(var i=0;i<array_length(button);i++)
 		{
 			_col=button[i].color
 		}
-		draw_rectangle_color(button[i].position.x-sizeX*button[i].sizeMod,button[i].position.y-sizeY*button[i].sizeMod,
-		button[i].position.x+sizeX*button[i].sizeMod,button[i].position.y+sizeY*button[i].sizeMod,_col,_col,
-		_col,_col,false)
-		draw_rectangle(button[i].position.x-sizeX*button[i].sizeMod,button[i].position.y-sizeY*button[i].sizeMod,
-		button[i].position.x+sizeX*button[i].sizeMod,button[i].position.y+sizeY*button[i].sizeMod,true)
-		draw_text_ext(button[i].position.x,button[i].position.y,button[i].name,32,sizeX*2)
+		var offset=5
+		draw_rectangle_color(button[i].position.x-sizeX*button[i].sizeMod+offset,
+		button[i].position.y-sizeY*button[i].sizeMod+offset,
+		button[i].position.x+sizeX*button[i].sizeMod+offset,
+		button[i].position.y+sizeY*button[i].sizeMod+offset,
+		c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
+		draw_rectangle_color(button[i].position.x-sizeX*button[i].sizeMod,
+		button[i].position.y-sizeY*button[i].sizeMod,
+		button[i].position.x+sizeX*button[i].sizeMod,
+		button[i].position.y+sizeY*button[i].sizeMod,
+		_col,_col,_col,_col,false)
+		var stringSize=1
+		if(string_width(string_upper(button[i].name))>sizeX*2&&string_pos(" ",string_upper(button[i].name))==0)
+		{
+			stringSize=0.75
+		}
+		draw_text_ext_transformed(button[i].position.x,button[i].position.y,string_upper(button[i].name),16,sizeX*2,stringSize,stringSize,0)
+		if(variable_struct_exists(button[i],"id"))
+		{
+			draw_sprite(difficulties[global.levels[button[i].id].difficulty].sprite,image_index,button[i].position.x+sizeX+32,button[i].position.y)
+		}
 	}
 	catch(e)
 	{

@@ -74,6 +74,7 @@
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
     {"id":{"name":"point_in_camera","path":"scripts/point_in_camera/point_in_camera.yy",},},
     {"id":{"name":"save_file","path":"scripts/save_file/save_file.yy",},},
+    {"id":{"name":"array_index_looped","path":"scripts/array_index_looped/array_index_looped.yy",},},
     {"id":{"name":"sort_array","path":"scripts/sort_array/sort_array.yy",},},
     {"id":{"name":"sort_songlist","path":"scripts/sort_songlist/sort_songlist.yy",},},
     {"id":{"name":"snd_hit_tree","path":"sounds/snd_hit_tree/snd_hit_tree.yy",},},
