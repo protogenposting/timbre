@@ -90,6 +90,7 @@
     {"id":{"name":"spr_dancc","path":"sprites/spr_dancc/spr_dancc.yy",},},
     {"id":{"name":"spr_easy","path":"sprites/spr_easy/spr_easy.yy",},},
     {"id":{"name":"spr_edit_button","path":"sprites/spr_edit_button/spr_edit_button.yy",},},
+    {"id":{"name":"spr_start_button","path":"sprites/spr_start_button/spr_start_button.yy",},},
     {"id":{"name":"spr_expert","path":"sprites/spr_expert/spr_expert.yy",},},
     {"id":{"name":"spr_expertplus","path":"sprites/spr_expertplus/spr_expertplus.yy",},},
     {"id":{"name":"spr_grass","path":"sprites/spr_grass/spr_grass.yy",},},

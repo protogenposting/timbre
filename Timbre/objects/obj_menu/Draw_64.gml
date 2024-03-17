@@ -3,6 +3,13 @@
 
 draw_set_font(fn_font)
 
+font_enable_effects(fn_font, true, {
+    outlineEnable: true,
+    outlineDistance: 2,
+    outlineColour: c_black
+});
+
+
 draw_set_halign(fa_center)
 for(var i=0;i<array_length(button);i++)
 {

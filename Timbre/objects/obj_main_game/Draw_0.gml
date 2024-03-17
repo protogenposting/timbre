@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 var positionsUsed=[]
+var beatLength=60/bpm
 
 for(var i=0;i<array_length(points)-1;i++)
 {
@@ -21,17 +22,14 @@ for(var i=0;i<array_length(points)-1;i++)
 	{
 		continue;
 	}
-	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
-	if(!points[i].wasHit)
-	{
-		array_push(positionsUsed,[points[i].x,points[i].y])
-	}
+	var timing=songMilliseconds-points[i].timeMS
+	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)&&abs(timing)<=(msWindow*beatLength)*120
 	if(!points[i].wasHit&&inCamera)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
 		points[i].direction*90,c_white,1)
+		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
-	var timing=songMilliseconds-points[i].timeMS
 	if(abs(timing)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
 	{
 		audio_play_sound(snd_turn,1000,false)

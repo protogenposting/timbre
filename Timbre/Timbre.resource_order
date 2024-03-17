@@ -45,6 +45,7 @@
     {"name":"spr_cloud","order":5,"path":"sprites/spr_cloud/spr_cloud.yy",},
     {"name":"spr_dancc","order":4,"path":"sprites/spr_dancc/spr_dancc.yy",},
     {"name":"spr_edit_button","order":10,"path":"sprites/spr_edit_button/spr_edit_button.yy",},
+    {"name":"spr_start_button","order":13,"path":"sprites/spr_start_button/spr_start_button.yy",},
     {"name":"spr_expert","order":4,"path":"sprites/spr_expert/spr_expert.yy",},
     {"name":"spr_expertplus","order":5,"path":"sprites/spr_expertplus/spr_expertplus.yy",},
     {"name":"spr_grass","order":3,"path":"sprites/spr_grass/spr_grass.yy",},
