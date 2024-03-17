@@ -48,7 +48,7 @@ else
 {
 	global.levels=_file.levels
 }
-//show_message(working_directory+"VE\\data.json")
+
 
 global.levels=sort_songlist(global.levels)
 
