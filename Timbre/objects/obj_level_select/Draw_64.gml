@@ -11,9 +11,11 @@ for(var i=0;i<array_length(button);i++)
 	var size=1
 	var sizeX=button[i].size.x/2
 	var sizeY=button[i].size.y/2
+	var buttonPosOffset=0
 	if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),button[i].position.x-sizeX,button[i].position.y-sizeY,button[i].position.x+sizeX,button[i].position.y+sizeY))
 	{
 		size=1.3
+		buttonPosOffset=2
 		if(mouse_check_button_pressed(mb_left))
 		{
 			button[i].func()
@@ -32,10 +34,11 @@ for(var i=0;i<array_length(button);i++)
 		button[i].position.x+sizeX*button[i].sizeMod+offset,
 		button[i].position.y+sizeY*button[i].sizeMod+offset,
 		c_dkgray,c_dkgray,c_dkgray,c_dkgray,false)
-		draw_rectangle_color(button[i].position.x-sizeX*button[i].sizeMod,
-		button[i].position.y-sizeY*button[i].sizeMod,
-		button[i].position.x+sizeX*button[i].sizeMod,
-		button[i].position.y+sizeY*button[i].sizeMod,
+		buttonPosOffset+=(mouse_check_button(mb_left)&&buttonPosOffset>0)*3
+		draw_rectangle_color(button[i].position.x-sizeX*button[i].sizeMod+buttonPosOffset,
+		button[i].position.y-sizeY*button[i].sizeMod+buttonPosOffset,
+		button[i].position.x+sizeX*button[i].sizeMod+buttonPosOffset,
+		button[i].position.y+sizeY*button[i].sizeMod+buttonPosOffset,
 		_col,_col,_col,_col,false)
 		var stringSize=1
 		if(string_width(string_upper(button[i].name))>sizeX*2&&string_pos(" ",string_upper(button[i].name))==0)
@@ -53,14 +56,19 @@ for(var i=0;i<array_length(button);i++)
 		draw_sprite_ext(button[i].sprite,0,button[i].position.x,button[i].position.y,
 		button[i].sizeMod,button[i].sizeMod,0,c_white,1)
 	}
-	button[i].sizeMod-=(button[i].sizeMod-size)/10
+	button[i].sizeMod=1
 }
 
 if(selectedLevel!=-4)
 {
 	draw_set_font(fn_font_big)
 	draw_set_color(c_black)
-	var _x=room_width - 512 + 32
+	var _startX=room_width - 512 + 32
+	if(moreStats)
+	{
+		_startX-=256+128
+	}
+	var _x=_startX
 	var _y=32
 	repeat(abs(_x-room_width)/64 + 1)
 	{
@@ -72,7 +80,7 @@ if(selectedLevel!=-4)
 		}
 		_x+=64
 	}
-	_x=room_width - 512 + 32
+	_x=_startX
 	_y=32
 	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].name)
 	_y+=32
@@ -96,6 +104,7 @@ if(selectedLevel!=-4)
 	_y+=32
 	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].rank)
 	_y+=128
+	
 	var _size=1
 	
 	if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-128+256-32,_y-64,_x+128+256-32,_y+64))
@@ -107,7 +116,55 @@ if(selectedLevel!=-4)
 		}
 	}
 	
-	draw_sprite_ext(spr_play_button,0,_x+256-32,_y,_size,_size,0,c_white,1)
+	draw_sprite_ext(spr_start_button,0,_x+256-32,_y,_size,_size,0,c_white,1)
+	
+	_x+=256+128+32
+	
+	_y=128
+	
+	draw_text(_x+256-32,_y,"Average Note Distance")
+	
+	_y+=32
+	
+	draw_text(_x+256-32,_y,"(Higher is easier)")
+	
+	_y+=32
+	
+	draw_text(_x+256-32,_y,string(noteDensity))
+	
+	_y+=64
+	
+	draw_text(_x+256-32,_y,"Song Length")
+	
+	_y+=32
+	
+	draw_text(_x+256-32,_y,string(songLength) + " Seconds")
+	
+	_y+=64
+	
+	draw_text(_x+256-32,_y,"Tree to Turn Ratio")
+	
+	_y+=32
+	
+	draw_text(_x+256-32,_y,leafToTree)
+	
+	_y+=64
+	
+	draw_text(_x+256-32,_y,"Bpm")
+	
+	_y+=32
+	
+	draw_text(_x+256-32,_y,string(bpm))
+	
+	_y+=64
+	
+	draw_text(_x+256-32,_y,"Chance For a Dani C Rank")
+	
+	_y+=32
+	
+	draw_text(_x+256-32,_y,string(daniChance)+"%")
+	
+	_y+=64
 	
 	draw_set_color(c_white)
 	draw_set_font(fn_font)

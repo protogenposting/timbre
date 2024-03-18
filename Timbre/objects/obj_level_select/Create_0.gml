@@ -20,6 +20,16 @@ global.editing=false
 
 global.selectedLevel=-4
 
+noteDensity=0
+
+moreStats=false
+
+songLength=0
+
+leafToTree=""
+
+daniChance=0
+
 function reset_buttons()
 {
 	button=[
@@ -83,7 +93,16 @@ function reset_buttons()
 		size:{x:128,y:64},
 		position:{x:128+140,y:64},
 		sizeMod:0
-	}]
+	},
+	{
+		name: "More Stats",
+		func: function(){
+			obj_level_select.moreStats=!obj_level_select.moreStats
+		},
+		size:{x:128,y:64},
+		position:{x:128+140+140,y:64},
+		sizeMod:0
+	},]
 
 	var _x=128
 	var lastButton=array_last(button)
@@ -107,6 +126,65 @@ function reset_buttons()
 						audio_destroy_stream(global.song)
 						global.song=audio_create_stream(filename_dir(path)+"\\"+_file.songName)
 						global.levelData=_file
+						var _noteBeats=[]
+						
+						var _leafToTreeRatio=[0,0]
+						for(var i=0;i<array_length(_file.notes)-1;i++)
+						{
+							array_push(_noteBeats,abs(_file.notes[i].beat-_file.notes[i+1].beat))
+							_leafToTreeRatio[_file.notes[i].type]++
+						}
+						var _average=0
+						for(var i=0;i<array_length(_noteBeats);i++)
+						{
+							_average+=_noteBeats[i]
+						}
+						obj_level_select.noteDensity=_average/array_length(_noteBeats)
+						
+						var _songLength=array_last(_file.notes).beat-array_first(_file.notes).beat
+						
+						_songLength*=60/_file.bpm
+						
+						obj_level_select.songLength=_songLength
+						obj_level_select.leafToTree=string(_leafToTreeRatio[0])+" : "+string(_leafToTreeRatio[1])
+						var _chance=50
+						if(_leafToTreeRatio[1]>200)
+						{
+							_chance-=5
+						}
+						if(_leafToTreeRatio[0]<100)
+						{
+							_chance+=15
+						}
+						if(_leafToTreeRatio[1]<100)
+						{
+							_chance+=15
+						}
+						if(_file.bpm<=120)
+						{
+							_chance+=15
+						}
+						if(_file.bpm>140)
+						{
+							_chance-=15
+						}
+						if(_songLength>100)
+						{
+							_chance-=10
+						}
+						if(global.levels[id].difficulty==3)
+						{
+							_chance-=60
+						}
+						if(global.levels[id].difficulty>=4)
+						{
+							_chance-=15
+						}
+						if(obj_level_select.noteDensity<=0.83)
+						{
+							_chance-=5
+						}
+						obj_level_select.daniChance=_chance
 					}
 					catch(e)
 					{
