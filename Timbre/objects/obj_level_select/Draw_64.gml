@@ -158,7 +158,7 @@ if(selectedLevel!=-4)
 	
 	_y+=64
 	
-	draw_text(_x+256-32,_y,"Chance For a Dani C Rank")
+	draw_text(_x+256-32,_y,"Chance For a Dani D Rank")
 	
 	_y+=32
 	
