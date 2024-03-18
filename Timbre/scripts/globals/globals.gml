@@ -44,10 +44,18 @@ if(_file==false)
 		{name:"Ice Kingdom",artist:"Protogen Posting",path: working_directory+"Aurora Borealis\\data.json",difficulty:2,highScore:0,rank:""},
 		{name:"Sand Kingdom",artist:"Protogen Posting",path: working_directory+"sand kingdom\\data.json",difficulty:1,highScore:0,rank:""},
 	]
+	global.offset=0
 }
 else
 {
 	global.levels=_file.levels
+	try{
+		global.offset=_file.offset
+	}
+	catch(e)
+	{
+		global.offset=0
+	}
 }
 
 

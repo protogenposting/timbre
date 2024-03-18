@@ -71,3 +71,16 @@ button[2]={
 	position:{x:room_width/2,y:room_height/2 +128},
 	sizeMod:0
 }
+
+/*
+button[3]={
+	sprite: spr_tutorial_button,
+	func: function(){
+		//make this go to level select later
+		room_goto(rm_offset_test)
+		audio_stop_all()
+	},
+	size:{x:256,y:128},
+	position:{x:room_width/2,y:room_height/2 + 128 + 128},
+	sizeMod:0
+}
