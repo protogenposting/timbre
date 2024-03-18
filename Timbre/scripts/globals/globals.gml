@@ -41,7 +41,8 @@ if(_file==false)
 		{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:""},
 		{name:"Paint",artist:"Celeste Strawberry Jam",path: working_directory+"Paint\\data.json",difficulty:0,highScore:0,rank:""},
 		{name:"Reverse",artist:"Caravan Palace",path: working_directory+"Reverse\\data.json",difficulty:3,highScore:0,rank:""},
-		{name:"Aurora Borealis",artist:"Protogen Posting",path: working_directory+"Aurora Borealis\\data.json",difficulty:2,highScore:0,rank:""},
+		{name:"Ice Kingdom",artist:"Protogen Posting",path: working_directory+"Aurora Borealis\\data.json",difficulty:2,highScore:0,rank:""},
+		{name:"Sand Kingdom",artist:"Protogen Posting",path: working_directory+"sand kingdom\\data.json",difficulty:1,highScore:0,rank:""},
 	]
 }
 else
