@@ -79,7 +79,7 @@ for(var o=0; o<array_length(notes);o++)
 		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,c_white,1)
 	}
 	var timing=songMilliseconds-notes[o].timeMS
-	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&timing<=msWindow/4&&!notes[o].wasHit)
+	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=msWindow/4&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
 		attackKey[notes[o].direction]=true
