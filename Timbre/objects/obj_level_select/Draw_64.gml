@@ -83,9 +83,9 @@ if(selectedLevel!=-4)
 	_x=_startX
 	_y=32
 	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].name)
-	_y+=32
+	_y+=40
 	try{
-		draw_text(_x+256-32,_y+32,"By " + global.levels[selectedLevel].artist)
+		draw_text_ext(_x+256-32,_y+32,"By " + global.levels[selectedLevel].artist,24,500)
 	}
 	catch(e)
 	{
