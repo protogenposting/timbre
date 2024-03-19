@@ -68,11 +68,12 @@ if(selectedLevel!=-4)
 	{
 		_startX-=256+128
 	}
+	var _startY=0
 	var _x=_startX
-	var _y=32
+	var _y=_startY
 	repeat(abs(_x-room_width)/64 + 1)
 	{
-		_y=0
+		_y=_startY
 		repeat(abs(_y-room_height)/64 +1)
 		{
 			draw_sprite(spr_grass,image_index,_x,_y)
@@ -81,7 +82,7 @@ if(selectedLevel!=-4)
 		_x+=64
 	}
 	_x=_startX
-	_y=32
+	_y=_startY+32
 	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].name)
 	_y+=40
 	try{

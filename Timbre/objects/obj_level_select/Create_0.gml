@@ -30,6 +30,16 @@ leafToTree=""
 
 daniChance=0
 
+sortMode=0
+
+enum sortTypes{
+	difficulty,
+	bpm
+}
+
+sortNames[sortTypes.difficulty]="Difficulty"
+sortNames[sortTypes.bpm]="Bpm"
+
 function reset_buttons()
 {
 	button=[
@@ -88,7 +98,6 @@ function reset_buttons()
 					}
 				}
 			}
-			global.levels=sort_songlist(global.levels)
 		},
 		size:{x:128,y:64},
 		position:{x:128+140,y:64},
@@ -102,7 +111,22 @@ function reset_buttons()
 		size:{x:128,y:64},
 		position:{x:128+140+140,y:64},
 		sizeMod:0
-	},]
+	},
+	/*{
+		name: "Sort Mode: "+obj_level_select.sortNames[obj_level_select.sortMode],
+		func: function(){
+			obj_level_select.sortMode++
+			if(obj_level_select.sortMode>sortTypes.bpm)
+			{
+				obj_level_select.sortMode=0
+			}
+			name="Sort Mode: "+obj_level_select.sortNames[obj_level_select.sortMode]
+			obj_level_select.alarm[1]=2
+		},
+		size:{x:128,y:64},
+		position:{x:128+140+140+140,y:64},
+		sizeMod:0
+	},*/]
 
 	var _x=128
 	var lastButton=array_last(button)
@@ -207,21 +231,22 @@ function reset_buttons()
 
 	alarm[0]=1
 
-	function start_level()
+}
+
+function start_level()
+{
+	if(obj_level_select.selectedLevel!=-4)
 	{
-		if(obj_level_select.selectedLevel!=-4)
+		try{
+			audio_stop_all()
+			global.selectedLevel=obj_level_select.selectedLevel
+			room_goto(rm_gameplay)
+		}
+		catch(e)
 		{
-			try{
-				audio_stop_all()
-				global.selectedLevel=obj_level_select.selectedLevel
-				room_goto(rm_gameplay)
-			}
-			catch(e)
-			{
-				obj_level_select.selectedLevel=-4
-			}
+			obj_level_select.selectedLevel=-4
 		}
 	}
 }
-
+	
 reset_buttons()
