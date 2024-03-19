@@ -139,7 +139,7 @@ function reset_buttons()
 						{
 							_average+=_noteBeats[i]
 						}
-						obj_level_select.noteDensity=_average/array_length(_noteBeats)
+						obj_level_select.noteDensity=((_average/array_length(_noteBeats))/_file.bpm)*100
 						
 						var _songLength=array_last(_file.notes).beat-array_first(_file.notes).beat
 						
