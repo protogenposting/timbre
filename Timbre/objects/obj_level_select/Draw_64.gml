@@ -63,15 +63,16 @@ if(selectedLevel!=-4)
 {
 	draw_set_font(fn_font_big)
 	draw_set_color(c_black)
-	var _startX=room_width - 512 + 32
-	if(moreStats)
-	{
-		_startX-=256+128
-	}
+	
+	var _startX=room_width - 512 + 32 -point_between_points(0,0,256+128,0,percentageBetweenPoints).x
+	
 	var _startY=0
+	
 	var _x=_startX
+	
 	var _y=_startY
-	repeat(abs(_x-room_width)/64 + 1)
+	
+	repeat((abs(_x-room_width)/64 + 1) + 1)
 	{
 		_y=_startY
 		repeat(abs(_y-room_height)/64 +1)
