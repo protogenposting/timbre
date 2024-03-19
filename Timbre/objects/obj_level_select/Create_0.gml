@@ -107,6 +107,7 @@ function reset_buttons()
 		name: "More Stats",
 		func: function(){
 			obj_level_select.moreStats=!obj_level_select.moreStats
+			audio_play_sound(snd_tab_move_back,1000,false)
 		},
 		size:{x:128,y:64},
 		position:{x:128+140+140,y:64},
