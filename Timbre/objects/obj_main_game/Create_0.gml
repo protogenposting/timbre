@@ -5,6 +5,12 @@ paused=false
 
 axeRotations=[0,0]
 
+early=0
+
+perfect=0
+
+late=0
+
 if(global.song!=-4)
 {
 	songID=global.song

@@ -37,6 +37,19 @@ for(var i=0;i<array_length(points)-1;i++)
 		combo++
 		totalScore+=msWindow-abs(timing)
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
+		if(timing<-timings[0].distance)
+		{
+			early++
+		}
+		else if(timing>timings[0].distance)
+		{
+			late++
+		}
+		else
+		{
+			perfect++
+		}
+		
 		hitTime=1.33
 		hitMessage=get_timing(timing)
 	}
@@ -66,7 +79,7 @@ for(var o=0; o<array_length(notes);o++)
 		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,c_white,1)
 	}
 	var timing=songMilliseconds-notes[o].timeMS
-	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(songMilliseconds-notes[o].timeMS)<=msWindow/4&&!notes[o].wasHit)
+	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&timing<=msWindow/4&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
 		attackKey[notes[o].direction]=true
@@ -74,6 +87,18 @@ for(var o=0; o<array_length(notes);o++)
 		totalScore+=msWindow-abs(timing)
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
 		combo++
+		if(timing<-timings[0].distance)
+		{
+			early++
+		}
+		else if(timing>timings[0].distance)
+		{
+			late++
+		}
+		else
+		{
+			perfect++
+		}
 		hitTime=1.33
 		hitMessage=get_timing(timing)
 	}

@@ -70,6 +70,14 @@ if(finished)
 			}
 		}
 	}
+	if(finishTimer>4)
+	{
+		draw_text(1366/2,96+64,"early: "+string(early)+"    late: "+string(late)+"    perfect: "+string(perfect))
+		if(finishTimerLast<=4)
+		{
+			audio_play_sound(finishHitSound,1000,false)
+		}
+	}
 	draw_set_font(fn_font)
 	if(!audio_is_playing(songID)||finishTimer>5)
 	{
@@ -128,6 +136,8 @@ else
 {
 	draw_set_font(fn_font)
 	draw_text(1366/2,32,"score: "+string(totalScore)+"    misses: "+string(misses)+"    combo: "+string(combo)+"    accuracy: "+string(get_accuracy()))
+	
+	draw_text(1366/2,96+64,"early: "+string(early)+"    late: "+string(late)+"    perfect: "+string(perfect))
 	
 	if(get_accuracy()>=90)
 	{
