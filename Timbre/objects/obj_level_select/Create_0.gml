@@ -183,6 +183,7 @@ function reset_buttons()
 						obj_level_select.previewNotes=_file.notes
 						
 						obj_level_select.songLength=_songLength
+						global.songLength=_songLength
 						obj_level_select.leafToTree=string(_leafToTreeRatio[0])+" : "+string(_leafToTreeRatio[1])
 						var _chance=50
 						if(_leafToTreeRatio[1]>200)

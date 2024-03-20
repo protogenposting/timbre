@@ -113,6 +113,8 @@
     {"id":{"name":"spr_edit_button","path":"sprites/spr_edit_button/spr_edit_button.yy",},},
     {"id":{"name":"spr_expert","path":"sprites/spr_expert/spr_expert.yy",},},
     {"id":{"name":"spr_expertplus","path":"sprites/spr_expertplus/spr_expertplus.yy",},},
+    {"id":{"name":"spr_grass_fc","path":"sprites/spr_grass_fc/spr_grass_fc.yy",},},
+    {"id":{"name":"spr_grass_bad","path":"sprites/spr_grass_bad/spr_grass_bad.yy",},},
     {"id":{"name":"spr_grass","path":"sprites/spr_grass/spr_grass.yy",},},
     {"id":{"name":"spr_hard","path":"sprites/spr_hard/spr_hard.yy",},},
     {"id":{"name":"spr_insane","path":"sprites/spr_insane/spr_insane.yy",},},

@@ -20,6 +20,18 @@ image_index=((songMilliseconds/10)*(bpm/120))/2.5
 if(frac(barPercentage)<frac(barPercentageLast))
 {
 	layer_background_index(background,currentBeat)
+	if(get_accuracy()<=30)
+	{
+		layer_background_sprite(background,spr_grass_bad)
+	}
+	else if(fullCombo&&songMilliseconds/1000>=global.songLength/2)
+	{
+		layer_background_sprite(background,spr_grass_fc)
+	}
+	else
+	{
+		layer_background_sprite(background,spr_grass)
+	}
 	currentBeat++
 	if(finished)
 	{
