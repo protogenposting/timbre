@@ -10,6 +10,8 @@ bpm=0
 
 audio=-4
 
+flowerIndex=0
+
 currentBeat=0
 
 previewNotes=[]
