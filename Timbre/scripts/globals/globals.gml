@@ -28,6 +28,8 @@ global.saveName="save_data.TTT"
 
 global.editing=false
 
+global.improvedControls=false
+
 var _file=load_file(global.saveName)
 
 if(_file==false)
@@ -53,6 +55,7 @@ else
 {
 	global.levels=_file.levels
 	try{
+		global.improvedControls=_file.controlType
 		global.offset=_file.offset
 	}
 	catch(e)

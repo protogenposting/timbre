@@ -14,7 +14,26 @@ draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,1,currentDirection+90
 draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
 draw_sprite_ext(spr_player,image_index,_currentX,_currentY,1,1,currentDirection,c_white,1)
 draw_sprite(spr_log,playerProgress>0.5,points[0].x+128,points[0].y-64)
-draw_text(points[0].x+128,points[0].y-128,"Use J L to hit logs depending on what direction it is to the player")
+if(!global.improvedControls)
+{
+	draw_text(points[0].x+128,points[0].y-128,"(Anthony mode) Use J L to hit logs depending on what direction it is to the player")
+}
+if(global.improvedControls)
+{
+	draw_text(points[0].x+128,points[0].y-128,"(Based mode) Use I J K L to hit logs depending on what direction it is to the player")
+}
+
+var _size=1
+if(point_in_rectangle(mouse_x,mouse_y,points[1].x+256-256,points[1].y-32-32,points[1].x+256+256,points[1].y-32+32))
+{
+	_size=1.1
+	if(mouse_check_button_pressed(mb_left))
+	{
+		global.improvedControls=!global.improvedControls
+	}
+}
+
+draw_text_transformed(points[1].x+256,points[1].y-32,"click here to change controls",_size,_size,0)
 
 
 var currentPoint=(playerProgress>0.5)+2
