@@ -64,7 +64,7 @@ if(selectedLevel!=-4)
 	draw_set_font(fn_font_big)
 	draw_set_color(c_black)
 	
-	var _startX=room_width - 512 + 32 -point_between_points(0,0,256+128,0,percentageBetweenPoints).x
+	var _startX=room_width - 512 + 64 - point_between_points(0,0,256+128,0,percentageBetweenPoints).x
 	
 	var _startY=0
 	
