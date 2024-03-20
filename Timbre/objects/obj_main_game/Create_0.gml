@@ -295,3 +295,13 @@ function get_rank_id(accuracyPercentage){
 	}
 	return -4
 }
+
+turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
+turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
+turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
+turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
+
+attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
+attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
+attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
+attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)

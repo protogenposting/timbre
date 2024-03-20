@@ -15,7 +15,7 @@ finishTimerLast=finishTimer
 
 image_index=((songMilliseconds/10)*(bpm/120))/2.5
 
-show_debug_message(image_index)
+//show_debug_message(image_index)
 
 if(frac(barPercentage)<frac(barPercentageLast))
 {
@@ -41,6 +41,20 @@ axeRotations[1]-=axeRotations[1]/10
 	attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
 	attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
 
+	var funnyMode=true
+	var currentDirection=floor(loop_rotation(point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)+90)/90)
+	attackKey[array_index_looped_index(attackKey,noteDirections.right+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
+	attackKey[array_index_looped_index(attackKey,noteDirections.left+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
+	attackKey[array_index_looped_index(attackKey,noteDirections.up+currentDirection)]=false
+	attackKey[array_index_looped_index(attackKey,noteDirections.down+currentDirection)]=false
+	if(funnyMode)
+	{
+		attackKey[array_index_looped_index(attackKey,noteDirections.right+currentDirection)]=choose(keyboard_check_pressed(global.keyboardBinds.attacking.left),keyboard_check_pressed(global.keyboardBinds.attacking.right))
+		attackKey[array_index_looped_index(attackKey,noteDirections.left+currentDirection)]=choose(keyboard_check_pressed(global.keyboardBinds.attacking.left),keyboard_check_pressed(global.keyboardBinds.attacking.right))
+	}
+	show_debug_message(attackKey)
+	show_debug_message(currentDirection)
+	
 	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
 	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
 	turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)

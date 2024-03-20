@@ -14,7 +14,7 @@ draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,1,currentDirection+90
 draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
 draw_sprite_ext(spr_player,image_index,_currentX,_currentY,1,1,currentDirection,c_white,1)
 draw_sprite(spr_log,playerProgress>0.5,points[0].x+128,points[0].y-64)
-draw_text(points[0].x+128,points[0].y-128,"Use I J K L to hit logs depending on what direction it is to the player")
+draw_text(points[0].x+128,points[0].y-128,"Use J L to hit logs depending on what direction it is to the player")
 
 
 var currentPoint=(playerProgress>0.5)+2

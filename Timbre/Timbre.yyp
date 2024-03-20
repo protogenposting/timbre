@@ -81,6 +81,7 @@
     {"id":{"name":"rm_offset_test","path":"rooms/rm_offset_test/rm_offset_test.yy",},},
     {"id":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
     {"id":{"name":"array_index_looped","path":"scripts/array_index_looped/array_index_looped.yy",},},
+    {"id":{"name":"array_index_looped_index","path":"scripts/array_index_looped_index/array_index_looped_index.yy",},},
     {"id":{"name":"create_note","path":"scripts/create_note/create_note.yy",},},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},},
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},

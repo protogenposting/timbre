@@ -30,6 +30,7 @@
     {"name":"rm_offset_test","order":6,"path":"rooms/rm_offset_test/rm_offset_test.yy",},
     {"name":"rm_tutorial","order":5,"path":"rooms/rm_tutorial/rm_tutorial.yy",},
     {"name":"array_index_looped","order":7,"path":"scripts/array_index_looped/array_index_looped.yy",},
+    {"name":"array_index_looped_index","order":9,"path":"scripts/array_index_looped_index/array_index_looped_index.yy",},
     {"name":"create_note","order":3,"path":"scripts/create_note/create_note.yy",},
     {"name":"load_file","order":2,"path":"scripts/load_file/load_file.yy",},
     {"name":"point_in_camera","order":6,"path":"scripts/point_in_camera/point_in_camera.yy",},
