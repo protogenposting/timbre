@@ -36,12 +36,7 @@ axeRotations[1]-=axeRotations[1]/10
 
 #region controls
 
-	attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
-	attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
-	attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
-	attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
-
-	var funnyMode=true
+	var funnyMode=false
 	var currentDirection=floor(loop_rotation(point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)+90)/90)
 	attackKey[array_index_looped_index(attackKey,noteDirections.right+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
 	attackKey[array_index_looped_index(attackKey,noteDirections.left+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
