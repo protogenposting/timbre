@@ -277,6 +277,7 @@ button[8]={
 	func: function(){
 		with(obj_editor)
 		{
+			audio_stop_all()
 			if(name=="")
 			{
 				name=get_string("name",name)
