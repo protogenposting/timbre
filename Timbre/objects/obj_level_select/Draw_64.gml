@@ -102,7 +102,7 @@ if(selectedLevel!=-4)
 					}
 					if(previewNotes[i].type==noteTypes.turn)
 					{
-						draw_sprite_ext(spr_reverse_arrow,0,_x+previewNotes[i].direction*64,_y,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
+						draw_sprite_ext(spr_reverse_arrow,image_index,_x+previewNotes[i].direction*64,_y,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
 						if(hitThisFrame)
 						{
 							audio_play_sound(snd_turn,1000,false)
@@ -110,7 +110,7 @@ if(selectedLevel!=-4)
 					}
 					if(previewNotes[i].type==noteTypes.log)
 					{
-						draw_sprite_ext(spr_log,0,_x+previewNotes[i].direction*64,_y,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
+						draw_sprite_ext(spr_log,0,_x+previewNotes[i].direction*64,_y+64,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
 						if(hitThisFrame)
 						{
 							audio_play_sound(snd_hit_tree,1000,false)
