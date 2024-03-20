@@ -84,6 +84,42 @@ if(selectedLevel!=-4)
 	}
 	_x=_startX
 	_y=_startY+32
+	for(var i=0;i<array_length(previewNotes);i++)
+	{
+		try{
+			var _percentage=songMilliseconds-previewNotes[i].timeMS
+			if(_percentage>0&&_percentage<1000)
+			{
+				var newPercentage=_percentage/1000
+				var hitThisFrame=false
+				if(!variable_instance_exists(previewNotes[i],"wasHitTemp")||!previewNotes[i].wasHitTemp)
+				{
+					hitThisFrame=true
+					previewNotes[i].wasHitTemp=true
+				}
+				if(previewNotes[i].type==noteTypes.turn)
+				{
+					draw_sprite_ext(spr_reverse_arrow,0,_x,_y,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
+					if(hitThisFrame)
+					{
+						audio_play_sound(snd_turn,1000,false)
+					}
+				}
+				if(previewNotes[i].type==noteTypes.log)
+				{
+					draw_sprite_ext(spr_log,0,_x,_y,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
+					if(hitThisFrame)
+					{
+						audio_play_sound(snd_hit_tree,1000,false)
+					}
+				}
+			}
+		}
+		catch(e)
+		{
+			
+		}
+	}
 	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].name)
 	_y+=40
 	try{

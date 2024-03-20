@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.365714,
+  "duration":3.2,
   "name":"snd_spinout",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_spinout.mp3",
+  "soundFile":"snd_spinout.wav",
   "type":0,
   "volume":1.0,
 }

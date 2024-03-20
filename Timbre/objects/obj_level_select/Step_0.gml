@@ -37,10 +37,11 @@ try{
 	{
 		currentShroomPose++
 	}
+	
 }
 catch(e)
 {
-	
+	songMilliseconds=0
 }
 
 if(treeLine.y<room_height+256)

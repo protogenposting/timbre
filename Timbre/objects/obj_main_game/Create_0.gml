@@ -160,6 +160,7 @@ function create_points(){
 	
 	for(var i=0;i<array_length(pointArray);i++)
 	{
+		pointArray[i].wasHit=false
 		for(var o=0; o<array_length(notes);o++)
 		{
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat&&!notes[o].wasHit)
@@ -170,6 +171,7 @@ function create_points(){
 				notes[o].x=dist.x+lengthdir_x(64,dir)
 				notes[o].y=dist.y+lengthdir_y(64,dir)
 				notes[o].timeMS=notes[o].beat*beatLength*1000
+				notes[o].wasHit=false
 			}
 		}
 	}

@@ -12,6 +12,8 @@ audio=-4
 
 currentBeat=0
 
+previewNotes=[]
+
 audio_destroy_stream(global.song)
 
 global.song=-4
@@ -31,6 +33,8 @@ leafToTree=""
 daniChance=0
 
 sortMode=0
+
+songMilliseconds=0
 
 enum sortTypes{
 	difficulty,
@@ -149,16 +153,20 @@ function reset_buttons()
 				{
 					try{
 						audio_destroy_stream(global.song)
-						global.song=audio_create_stream(filename_dir(path)+"\\"+_file.songName)
-						global.levelData=_file
+						var _leafToTreeRatio=[0,0]
+						var beatLength=60/_file.bpm
 						var _noteBeats=[]
 						
-						var _leafToTreeRatio=[0,0]
 						for(var i=0;i<array_length(_file.notes)-1;i++)
 						{
 							array_push(_noteBeats,abs(_file.notes[i].beat-_file.notes[i+1].beat))
+							_file.notes[i].timeMS=_file.notes[i].beat*beatLength*1000
 							_leafToTreeRatio[_file.notes[i].type]++
 						}
+						
+						global.song=audio_create_stream(filename_dir(path)+"\\"+_file.songName)
+						global.levelData=_file
+						
 						var _average=0
 						for(var i=0;i<array_length(_noteBeats);i++)
 						{
@@ -169,6 +177,10 @@ function reset_buttons()
 						var _songLength=array_last(_file.notes).beat-array_first(_file.notes).beat
 						
 						_songLength*=60/_file.bpm
+						
+						obj_level_select.songMilliseconds=0
+						
+						obj_level_select.previewNotes=_file.notes
 						
 						obj_level_select.songLength=_songLength
 						obj_level_select.leafToTree=string(_leafToTreeRatio[0])+" : "+string(_leafToTreeRatio[1])
