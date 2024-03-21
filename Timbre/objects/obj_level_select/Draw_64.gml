@@ -89,6 +89,47 @@ if(selectedLevel!=-4)
 		_x=_startX+512
 		for(var i=0;i<array_length(previewNotes);i++)
 		{
+			function get_note_key_name(noteDirection,noteType){
+				if(noteType==noteTypes.log)
+				{
+					if(noteDirection==noteDirections.left)
+					{
+						return get_key_name(global.keyboardBinds.attacking.left)
+					}
+					if(noteDirection==noteDirections.right)
+					{
+						return get_key_name(global.keyboardBinds.attacking.right)
+					}
+					if(noteDirection==noteDirections.up)
+					{
+						return get_key_name(global.keyboardBinds.attacking.up)
+					}
+					if(noteDirection==noteDirections.down)
+					{
+						return get_key_name(global.keyboardBinds.attacking.down)
+					}
+				}
+				else
+				{
+					if(noteDirection==noteDirections.left)
+					{
+						return get_key_name(global.keyboardBinds.turning.left)
+					}
+					if(noteDirection==noteDirections.right)
+					{
+						return get_key_name(global.keyboardBinds.turning.right)
+					}
+					if(noteDirection==noteDirections.up)
+					{
+						return get_key_name(global.keyboardBinds.turning.up)
+					}
+					if(noteDirection==noteDirections.down)
+					{
+						return get_key_name(global.keyboardBinds.turning.down)
+					}
+				}
+				return "?"
+			}
 			try{
 				var _percentage=songMilliseconds-previewNotes[i].timeMS
 				if(_percentage>0&&_percentage<1000)
@@ -103,6 +144,7 @@ if(selectedLevel!=-4)
 					if(previewNotes[i].type==noteTypes.turn)
 					{
 						draw_sprite_ext(spr_reverse_arrow,image_index,_x+previewNotes[i].direction*64,_y,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
+						draw_text(_x+previewNotes[i].direction*64,_y,get_note_key_name(previewNotes[i].direction,previewNotes[i].type))
 						if(hitThisFrame)
 						{
 							audio_play_sound(snd_turn,1000,false)
@@ -112,6 +154,7 @@ if(selectedLevel!=-4)
 					if(previewNotes[i].type==noteTypes.log)
 					{
 						draw_sprite_ext(spr_log,0,_x+previewNotes[i].direction*64,_y+64,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
+						draw_text(_x+previewNotes[i].direction*64,_y+64,get_note_key_name(previewNotes[i].direction,previewNotes[i].type))
 						if(hitThisFrame)
 						{
 							audio_play_sound(snd_hit_tree,1000,false)
