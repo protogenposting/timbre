@@ -28,7 +28,7 @@ global.saveName="save_data.TTT"
 
 global.editing=false
 
-global.improvedControls=false
+global.improvedControls=true
 
 var _file=load_file(global.saveName)
 
