@@ -70,6 +70,7 @@ function save_level(_levelName,_songName){
 function load_song(_fileName){
 	try{
 		songLoaded=audio_create_stream(_fileName)
+		global.songLength=audio_sound_length(songLoaded)
 		audio_stop_all()
 	}
 	catch(e)
