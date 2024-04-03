@@ -63,6 +63,10 @@ axeRotations[1]-=axeRotations[1]/10
 		}
 		show_debug_message(attackKey)
 		show_debug_message(currentDirection)
+		timings[0]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
+		timings[1]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
+		timings[2]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
+		timings[3]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
 	}
 	else
 	{
