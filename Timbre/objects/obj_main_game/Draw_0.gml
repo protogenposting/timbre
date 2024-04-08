@@ -60,7 +60,8 @@ for(var i=0;i<array_length(points)-1;i++)
 			points[i].direction*90,c_white,1)
 		}
 	}
-	if(abs(timing)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
+	var hitKey=i>0&&points[i-1].type!=noteTypes.loop&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.loop&&turnKeyReleased[points[i].direction]
+	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
 	{
 		audio_play_sound(snd_turn,1000,false)
 		points[i].wasHit=true
@@ -194,6 +195,10 @@ if(points[currentPoint].type==noteTypes.loop)
 	playerPoint.y+=_transitionAmount.y
 	draw_sprite_ext(spr_spider,0,_currentX-lengthdir_x(64,currentDirection),
 	_currentY-lengthdir_y(64,currentDirection),1,1,currentDirection,c_white,1)
+	if(turnKeyHold[points[currentPoint].direction])
+	{
+		totalScore+=1
+	}
 }
 
 draw_sprite_ext(spr_axes,axeFrames[0],_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)

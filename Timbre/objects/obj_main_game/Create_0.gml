@@ -191,13 +191,18 @@ function create_points(){
 					dist.y+=_dist2.y
 				}
 				var dir=notes[o].direction*90
+				
+				var _current180=loop_rotation(_dir+180)
+				
 				notes[o].x=dist.x+lengthdir_x(64,dir)
 				notes[o].y=dist.y+lengthdir_y(64,dir)
+				notes[o].color=dir
 				notes[o].timeMS=notes[o].beat*beatLength*1000
 				notes[o].wasHit=false
 			}
 		}
 	}
+	pointArray[0].wasHit=true
 	pointArray=sort_array(pointArray)
 	notes=sort_array(notes)
 	return pointArray
@@ -326,7 +331,22 @@ turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turnin
 turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
 turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
 
+turnKeyReleased[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
+turnKeyReleased[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
+turnKeyReleased[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
+turnKeyReleased[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
+
 attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
 attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
 attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
 attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
+
+attackKeyReleased[noteDirections.left]=keyboard_check_released(global.keyboardBinds.attacking.left)
+attackKeyReleased[noteDirections.right]=keyboard_check_released(global.keyboardBinds.attacking.right)
+attackKeyReleased[noteDirections.up]=keyboard_check_released(global.keyboardBinds.attacking.up)
+attackKeyReleased[noteDirections.down]=keyboard_check_released(global.keyboardBinds.attacking.down)
+
+turnKeyHold[noteDirections.left]=keyboard_check(global.keyboardBinds.turning.left)
+turnKeyHold[noteDirections.right]=keyboard_check(global.keyboardBinds.turning.right)
+turnKeyHold[noteDirections.up]=keyboard_check(global.keyboardBinds.turning.up)
+turnKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.turning.down)
