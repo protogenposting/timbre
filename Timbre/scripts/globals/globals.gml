@@ -48,7 +48,7 @@ if(_file==false)
 		{name:"Airship",artist:"Protogen Posting",path: working_directory+"airship\\data.json",difficulty:4,highScore:0,rank:""},
 		{name:"Danger (Hard)",artist:"Z11 Music (Cover by ScratchGuy23)",path: working_directory+"Danger\\data.json",difficulty:5,highScore:0,rank:""},
 		{name:"Schoolhouse Trouble",artist:"Anthony Hampton (Baldi's Basics)",path: working_directory+"Schoolhouse Trouble\\data.json",difficulty:4,highScore:0,rank:""},
-		{name:"Altars of Apostasy",artist:"Hakita",path: working_directory+"Altars of Apostasy\\data.json",difficulty:0,highScore:0,rank:""},
+		{name:"Altars of Apostasy",artist:"Hakita",path: working_directory+"Altars of Apostasy\\data.json",difficulty:1,highScore:0,rank:""},
 		{name:"Danger",artist:"Z11 Music",path: working_directory+"Other Danger\\data.json",difficulty:4,highScore:0,rank:""},
 		{name:"Identity Theft",artist:"ScratchGuy",path: working_directory+"Identity Theft\\data.json",difficulty:5,highScore:0,rank:""},
 	]
