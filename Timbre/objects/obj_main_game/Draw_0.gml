@@ -35,6 +35,31 @@ for(var i=0;i<array_length(points)-1;i++)
 		points[i].direction*90,_color,1)
 		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
+	if(points[i].type==noteTypes.loop)
+	{
+		var _beatDistance=abs(points[i].beat-points[i+1].beat)
+		if(!points[i+1].wasHit)
+		{
+			draw_sprite_ext(spr_loop,0,points[i].x,points[i].y,(loopSize/32)*_beatDistance,1,
+			points[i].direction*90,c_white,1)
+		}
+		if(!points[i].wasHit)
+		{
+			draw_sprite_ext(spr_spider_idle,0,
+			points[i].x-lengthdir_x(64,points[i].direction*90),
+			points[i].y-lengthdir_y(64,points[i].direction*90),
+			1,1,
+			points[i].direction*90,c_white,1)
+		}
+		else if(points[i+1].wasHit)
+		{
+			draw_sprite_ext(spr_spider_hit,0,
+			points[i].x-lengthdir_x(64,points[i].direction*90),
+			points[i].y-lengthdir_y(64,points[i].direction*90),
+			1,1,
+			points[i].direction*90,c_white,1)
+		}
+	}
 	if(abs(timing)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
 	{
 		audio_play_sound(snd_turn,1000,false)
@@ -167,6 +192,8 @@ if(points[currentPoint].type==noteTypes.loop)
 	_currentY+=_transitionAmount.y
 	playerPoint.x+=_transitionAmount.x
 	playerPoint.y+=_transitionAmount.y
+	draw_sprite_ext(spr_spider,0,_currentX-lengthdir_x(64,currentDirection),
+	_currentY-lengthdir_y(64,currentDirection),1,1,currentDirection,c_white,1)
 }
 
 draw_sprite_ext(spr_axes,axeFrames[0],_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
