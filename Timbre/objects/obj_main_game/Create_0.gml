@@ -129,6 +129,8 @@ function point_between_points(x1,y1,x2,y2,percentage)
 	return {x: x1+_x,y: y1+_y}
 }
 
+loopSize=64
+
 function create_points(){
 	var beatLength=60/bpm
 	var pointArray=[]
@@ -180,7 +182,9 @@ function create_points(){
 				var dist=point_between_points(pointArray[i].x,pointArray[i].y,pointArray[i+1].x,pointArray[i+1].y,percentage)
 				if(pointArray[i].type==noteTypes.loop)
 				{
-					var _dist2=in_out_between_points(0,0,-lengthdir_x(128*_beatDist,_dir),-lengthdir_y(128*_beatDist,_dir),percentage)
+					var _dist2=in_out_between_points(0,0,
+					-lengthdir_x(loopSize*2*_beatDist,_dir),
+					-lengthdir_y(loopSize*2*_beatDist,_dir),percentage)
 					dist.x=pointArray[i].x
 					dist.y=pointArray[i].y
 					dist.x+=_dist2.x

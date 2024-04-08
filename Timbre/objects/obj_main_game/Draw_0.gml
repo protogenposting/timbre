@@ -6,7 +6,7 @@ var beatLength=60/bpm
 for(var i=0;i<array_length(points)-1;i++)
 {
 	var _color=c_white
-	if(points[i].type==noteTypes.loop)
+	if(i>0&&points[i-1].type==noteTypes.loop)
 	{
 		_color=c_red
 	}
@@ -23,7 +23,7 @@ for(var i=0;i<array_length(points)-1;i++)
 			shouldContinue=true
 		}
 	}
-	if(shouldContinue)
+	if(shouldContinue&&points[i].type!=noteTypes.loop)
 	{
 		continue;
 	}
@@ -160,8 +160,8 @@ var _transitionAmount={x:0,y:0}
 if(points[currentPoint].type==noteTypes.loop)
 {
 	_transitionAmount=in_out_between_points(0,0,
-	-lengthdir_x(64*_beatDistance,currentDirection),
-	-lengthdir_y(64*_beatDistance,currentDirection),
+	-lengthdir_x(loopSize*_beatDistance,currentDirection),
+	-lengthdir_y(loopSize*_beatDistance,currentDirection),
 	nextBeatPercentage)
 	_currentX+=_transitionAmount.x
 	_currentY+=_transitionAmount.y
@@ -182,15 +182,17 @@ if(attackKey[loop_rotation((currentDirection-90))/90])
 	audio_play_sound(snd_swipe,1000,false)
 }
 
-cameraOffset.x-=(cameraOffset.x-lengthdir_x(128,currentDirection))/10
-
-cameraOffset.y-=(cameraOffset.y-lengthdir_y(128,currentDirection))/10
-
-
 if(_transitionAmount.x!=0||_transitionAmount.y!=0)
 {
-	cameraOffset.x=0
-	cameraOffset.y=0
+	cameraOffset.x-=(cameraOffset.x-0)/10
+
+	cameraOffset.y-=(cameraOffset.y-0)/10
+}
+else
+{
+	cameraOffset.x-=(cameraOffset.x-lengthdir_x(128,currentDirection))/10
+
+	cameraOffset.y-=(cameraOffset.y-lengthdir_y(128,currentDirection))/10
 }
 
 camera_set_view_pos(view_camera[0],
