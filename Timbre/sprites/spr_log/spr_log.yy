@@ -3,7 +3,7 @@
   "%Name":"spr_log",
   "bboxMode":0,
   "bbox_bottom":70,
-  "bbox_left":7,
+  "bbox_left":4,
   "bbox_right":94,
   "bbox_top":24,
   "collisionKind":1,
