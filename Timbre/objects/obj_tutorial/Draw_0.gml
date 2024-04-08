@@ -13,7 +13,7 @@ if(playerProgress==0.5)
 draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
 draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
 draw_sprite_ext(spr_player,image_index,_currentX,_currentY,1,1,currentDirection,c_white,1)
-draw_sprite(spr_log,playerProgress>0.5,points[0].x+128,points[0].y-64)
+draw_sprite_ext(spr_log,playerProgress>0.5,points[0].x+128,points[0].y-64,1,1,90,c_white,1)
 if(!global.improvedControls)
 {
 	draw_text(points[0].x+128,points[0].y-128,"(Anthony mode) Use J L to hit logs depending on what direction it is to the player")

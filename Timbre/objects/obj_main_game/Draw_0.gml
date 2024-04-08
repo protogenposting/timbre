@@ -5,6 +5,11 @@ var beatLength=60/bpm
 
 for(var i=0;i<array_length(points)-1;i++)
 {
+	var _color=c_white
+	if(points[i].type==noteTypes.loop)
+	{
+		_color=c_red
+	}
 	if(!variable_struct_exists(points[i],"frame"))
 	{
 		points[i].frame=0
@@ -27,7 +32,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
-		points[i].direction*90,c_white,1)
+		points[i].direction*90,_color,1)
 		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
 	if(abs(timing)<=msWindow&&turnKey[points[i].direction]&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
@@ -57,7 +62,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
-		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,c_white,0.5)
+		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,_color,0.5)
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
 	{
@@ -116,7 +121,7 @@ for(var o=0; o<array_length(notes);o++)
 	}
 }
 
-var currentDirection=point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)
+var currentDirection=points[currentPoint].direction*90
 
 var timeSinceLastPoint = songMilliseconds-points[currentPoint].timeMS
 
@@ -147,6 +152,18 @@ nextBeatPercentage)
 
 var _currentX=previousPlayerPos.x
 var _currentY=previousPlayerPos.y
+
+if(points[currentPoint].type==noteTypes.loop)
+{
+	var _transitionAmount=in_out_between_points(0,0,
+	-lengthdir_x(64,currentDirection),
+	-lengthdir_y(64,currentDirection),
+	nextBeatPercentage)
+	_currentX+=_transitionAmount.x
+	_currentY+=_transitionAmount.y
+	playerPoint.x+=_transitionAmount.x
+	playerPoint.y+=_transitionAmount.y
+}
 
 draw_sprite_ext(spr_axes,axeFrames[0],_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
 draw_sprite_ext(spr_axes,axeFrames[1],_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)

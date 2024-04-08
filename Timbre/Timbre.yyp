@@ -93,6 +93,7 @@
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
     {"id":{"name":"point_in_camera","path":"scripts/point_in_camera/point_in_camera.yy",},},
     {"id":{"name":"save_file","path":"scripts/save_file/save_file.yy",},},
+    {"id":{"name":"smooth_movement_scripts","path":"scripts/smooth_movement_scripts/smooth_movement_scripts.yy",},},
     {"id":{"name":"sort_array","path":"scripts/sort_array/sort_array.yy",},},
     {"id":{"name":"sort_songlist_bpm","path":"scripts/sort_songlist_bpm/sort_songlist_bpm.yy",},},
     {"id":{"name":"sort_songlist","path":"scripts/sort_songlist/sort_songlist.yy",},},

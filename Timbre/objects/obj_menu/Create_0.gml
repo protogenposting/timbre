@@ -3,6 +3,7 @@
 enum noteTypes{
 	log,
 	turn,
+	loop,
 }
 
 enum noteDirections{
