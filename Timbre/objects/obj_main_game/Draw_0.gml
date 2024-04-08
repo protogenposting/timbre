@@ -150,14 +150,18 @@ var playerPoint=point_between_points(points[currentPoint].x,points[currentPoint]
 points[currentPoint+1].x,points[currentPoint+1].y,
 nextBeatPercentage)
 
+var _beatDistance=abs(points[currentPoint].beat-points[currentPoint+1].beat)
+
 var _currentX=previousPlayerPos.x
 var _currentY=previousPlayerPos.y
 
+var _transitionAmount={x:0,y:0}
+
 if(points[currentPoint].type==noteTypes.loop)
 {
-	var _transitionAmount=in_out_between_points(0,0,
-	-lengthdir_x(64,currentDirection),
-	-lengthdir_y(64,currentDirection),
+	_transitionAmount=in_out_between_points(0,0,
+	-lengthdir_x(64*_beatDistance,currentDirection),
+	-lengthdir_y(64*_beatDistance,currentDirection),
 	nextBeatPercentage)
 	_currentX+=_transitionAmount.x
 	_currentY+=_transitionAmount.y
@@ -181,6 +185,13 @@ if(attackKey[loop_rotation((currentDirection-90))/90])
 cameraOffset.x-=(cameraOffset.x-lengthdir_x(128,currentDirection))/10
 
 cameraOffset.y-=(cameraOffset.y-lengthdir_y(128,currentDirection))/10
+
+
+if(_transitionAmount.x!=0||_transitionAmount.y!=0)
+{
+	cameraOffset.x=0
+	cameraOffset.y=0
+}
 
 camera_set_view_pos(view_camera[0],
 playerPoint.x-1366/2+cameraOffset.x,

@@ -175,7 +175,17 @@ function create_points(){
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat&&!notes[o].wasHit)
 			{
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
+				var _beatDist=abs(pointArray[i+1].beat-pointArray[i].beat)
+				var _dir=pointArray[i].direction*90
 				var dist=point_between_points(pointArray[i].x,pointArray[i].y,pointArray[i+1].x,pointArray[i+1].y,percentage)
+				if(pointArray[i].type==noteTypes.loop)
+				{
+					var _dist2=in_out_between_points(0,0,-lengthdir_x(128*_beatDist,_dir),-lengthdir_y(128*_beatDist,_dir),percentage)
+					dist.x=pointArray[i].x
+					dist.y=pointArray[i].y
+					dist.x+=_dist2.x
+					dist.y+=_dist2.y
+				}
 				var dir=notes[o].direction*90
 				notes[o].x=dist.x+lengthdir_x(64,dir)
 				notes[o].y=dist.y+lengthdir_y(64,dir)
