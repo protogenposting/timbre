@@ -211,9 +211,9 @@ if(attackKey[loop_rotation((currentDirection-90))/90])
 
 if(_transitionAmount.x!=0||_transitionAmount.y!=0)
 {
-	cameraOffset.x-=(cameraOffset.x-0)/10
+	cameraOffset.x-=(cameraOffset.x-lengthdir_x(-128,currentDirection))/10
 
-	cameraOffset.y-=(cameraOffset.y-0)/10
+	cameraOffset.y-=(cameraOffset.y-lengthdir_y(-128,currentDirection))/10
 }
 else
 {
