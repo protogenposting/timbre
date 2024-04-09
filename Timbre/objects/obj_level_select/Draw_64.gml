@@ -151,6 +151,16 @@ if(selectedLevel!=-4)
 							flowerIndex++
 						}
 					}
+					if(previewNotes[i].type==noteTypes.loop)
+					{
+						draw_sprite_ext(spr_spider_idle,image_index,_x+previewNotes[i].direction*64,_y,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)
+						draw_text(_x+previewNotes[i].direction*64,_y,get_note_key_name(previewNotes[i].direction,previewNotes[i].type))
+						if(hitThisFrame)
+						{
+							audio_play_sound(snd_turn,1000,false)
+							flowerIndex++
+						}
+					}
 					if(previewNotes[i].type==noteTypes.log)
 					{
 						draw_sprite_ext(spr_log,0,_x+previewNotes[i].direction*64,_y+64,1-newPercentage,1-newPercentage,previewNotes[i].direction*90,c_white,1-newPercentage)

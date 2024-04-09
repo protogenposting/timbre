@@ -155,7 +155,7 @@ function reset_buttons()
 				{
 					try{
 						audio_destroy_stream(global.song)
-						var _leafToTreeRatio=[0,0]
+						var _leafToTreeRatio=array_create(10)
 						var beatLength=60/_file.bpm
 						var _noteBeats=[]
 						
