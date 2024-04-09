@@ -134,10 +134,11 @@ loopSize=64
 function create_points(){
 	var beatLength=60/bpm
 	var pointArray=[]
+	randomize()
 	var currentDirection=0
 	var _x=room_width/2
 	var _y=room_height/2
-	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, wasHit:true ,direction: 0,continuing:false,color:c_white})
+	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, wasHit:true ,direction: currentDirection,continuing:false,color:c_white})
 	var lastBeat=0
 	var lastBeatFrom=0
 	
