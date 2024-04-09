@@ -54,6 +54,7 @@ if(_file==false)
 		{name:"Altars of Apostasy",artist:"Hakita",path: working_directory+"Altars of Apostasy\\data.json",difficulty:1,highScore:0,rank:""},
 		{name:"Danger",artist:"Z11 Music",path: working_directory+"Other Danger\\data.json",difficulty:4,highScore:0,rank:""},
 		{name:"Identity Theft",artist:"ScratchGuy",path: working_directory+"Identity Theft\\data.json",difficulty:6,highScore:0,rank:""},
+		{name:"ACT RIGHT",artist:"Femtanyl",path: working_directory+"ACT RIGHT\\data.json",difficulty:5,highScore:0,rank:""},
 	]
 	global.offset=0
 }
@@ -73,6 +74,6 @@ else
 
 global.levels=sort_songlist(global.levels)
 
-#macro difficulties [{sprite:spr_easy,name:"Easy",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Insane",color:c_red},{sprite:spr_expert,name:"Expert",color:c_purple},{sprite:spr_expertplus,name:"Grandmaster",color:c_black},{sprite:spr_grandmaster,name:"Bowser Fart",color:c_black}]
+#macro difficulties [{sprite:spr_easy,name:"Easy",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Insane",color:c_red},{sprite:spr_expert,name:"Expert",color:c_purple},{sprite:spr_expertplus,name:"Expert",color:c_black},{sprite:spr_grandmaster,name:"Desolation",color:c_black}]
 
 #macro menuColors [c_aqua,c_yellow,c_lime,c_orange,c_purple,c_red,c_black]

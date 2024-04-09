@@ -29,6 +29,9 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"act right.ogg","CopyToMask":-1,"filePath":"datafiles/ACT RIGHT","name":"act right.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"ACT-RIGHT-femtanyl-_Lyrics-Video_.ogg","CopyToMask":-1,"filePath":"datafiles/ACT RIGHT","name":"ACT-RIGHT-femtanyl-_Lyrics-Video_.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/ACT RIGHT","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Airship","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"snd_music_airship.ogg","CopyToMask":-1,"filePath":"datafiles/Airship","name":"snd_music_airship.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Altars of Apostasy","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
