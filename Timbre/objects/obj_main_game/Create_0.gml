@@ -137,7 +137,7 @@ function create_points(){
 	var currentDirection=0
 	var _x=room_width/2
 	var _y=room_height/2
-	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, wasHit:true ,direction: 0})
+	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, wasHit:true ,direction: 0,continuing:false})
 	var lastBeat=0
 	var lastBeatFrom=0
 	
@@ -153,7 +153,7 @@ function create_points(){
 		var _type=turns[i].type
 		var _pointBeat=turns[i].beat
 		var tempDirection=turns[i].direction
-		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection})
+		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,continuing:false})
 		lastBeatFrom=turns[i].beat
 		currentDirection=turns[i].direction*90
 	}
@@ -162,7 +162,7 @@ function create_points(){
 	_x+=lengthdir_x(gridSize*lastLength,currentDirection)
 	_y+=lengthdir_y(gridSize*lastLength,currentDirection)
 	var _pointBeat=songLength[1]
-	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: currentDirection})
+	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: currentDirection,continuing:false})
 	
 	for(var i=0;i<array_length(pointArray);i++)
 	{

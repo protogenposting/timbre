@@ -30,6 +30,8 @@ global.editing=false
 
 global.improvedControls=true
 
+global.classicView=false
+
 var _file=load_file(global.saveName)
 
 if(_file==false)

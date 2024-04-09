@@ -3,6 +3,7 @@
 var positionsUsed=[]
 var beatLength=60/bpm
 
+//check notes
 for(var i=0;i<array_length(points)-1;i++)
 {
 	var _color=c_white
@@ -16,14 +17,75 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	var shouldContinue=false
 	//draw_line(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
-	for(var o=0;o<array_length(positionsUsed)-1;o++)
+	for(var z=0;z<array_length(positionsUsed);z++)
 	{
-		if(abs(positionsUsed[o][0]-points[i].x)<=4&&abs(positionsUsed[o][1]-points[i].y)<=4)
+		if(abs(positionsUsed[z][0]-points[i].x)<=32&&abs(positionsUsed[z][1]-points[i].y)<=32)
 		{
 			shouldContinue=true
 		}
 	}
-	if(shouldContinue&&points[i].type!=noteTypes.loop)
+	if(shouldContinue)
+	{
+		points[i].continuing=true
+	}
+	else
+	{
+		points[i].continuing=false
+	}
+	if(!points[i].wasHit)
+	{
+		array_push(positionsUsed,[points[i].x,points[i].y])
+	}
+	var timing=songMilliseconds-points[i].timeMS
+	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)&&abs(timing)<=(msWindow*beatLength)*120
+	var hitKey=i>0&&points[i-1].type!=noteTypes.loop&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.loop&&turnKeyReleased[points[i].direction]
+	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
+	{
+		audio_play_sound(snd_turn,1000,false)
+		points[i].wasHit=true
+		combo++
+		totalScore+=msWindow-abs(timing)
+		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
+		if(timing<-timings[0].distance)
+		{
+			early++
+		}
+		else if(timing>timings[0].distance)
+		{
+			late++
+		}
+		else
+		{
+			perfect++
+		}
+		
+		hitTime=1.33
+		hitMessage=get_timing(timing)
+	}
+	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
+	{
+		audio_play_sound(snd_spinout,1000,false)
+		points[i].wasHit=true
+		misses++
+		fullCombo=false
+		combo=0
+		array_push(accuracyList,0)
+	}
+}
+
+//draw notes
+for(var i=array_length(points)-1;i>0;i--)
+{
+	var _color=c_white
+	if(i>0&&points[i-1].type==noteTypes.loop)
+	{
+		_color=c_red
+	}
+	if(!variable_struct_exists(points[i],"frame"))
+	{
+		points[i].frame=0
+	}
+	if(points[i].continuing)
 	{
 		continue;
 	}
@@ -33,7 +95,6 @@ for(var i=0;i<array_length(points)-1;i++)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
 		points[i].direction*90,_color,1)
-		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
 	if(points[i].type==noteTypes.loop)
 	{
@@ -60,44 +121,11 @@ for(var i=0;i<array_length(points)-1;i++)
 			points[i].direction*90,c_white,1)
 		}
 	}
-	var hitKey=i>0&&points[i-1].type!=noteTypes.loop&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.loop&&turnKeyReleased[points[i].direction]
-	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
-	{
-		audio_play_sound(snd_turn,1000,false)
-		points[i].wasHit=true
-		combo++
-		totalScore+=msWindow-abs(timing)
-		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
-		if(timing<-timings[0].distance)
-		{
-			early++
-		}
-		else if(timing>timings[0].distance)
-		{
-			late++
-		}
-		else
-		{
-			perfect++
-		}
-		
-		hitTime=1.33
-		hitMessage=get_timing(timing)
-	}
 	if(points[i].timeMS-songMilliseconds<msWindow*4&&!points[i].wasHit&&inCamera)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,_color,0.5)
-	}
-	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
-	{
-		audio_play_sound(snd_spinout,1000,false)
-		points[i].wasHit=true
-		misses++
-		fullCombo=false
-		combo=0
-		array_push(accuracyList,0)
 	}
 }
 
