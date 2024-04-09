@@ -137,7 +137,7 @@ function create_points(){
 	var currentDirection=0
 	var _x=room_width/2
 	var _y=room_height/2
-	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, wasHit:true ,direction: 0,continuing:false})
+	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, wasHit:true ,direction: 0,continuing:false,color:c_white})
 	var lastBeat=0
 	var lastBeatFrom=0
 	
@@ -149,11 +149,28 @@ function create_points(){
 			_x+=lengthdir_x(gridSizeCurrent,currentDirection)
 			_y+=lengthdir_y(gridSizeCurrent,currentDirection)
 		}
+		var _color=c_white
+		if(i>0&&turns[i-1].direction*90==turns[i].direction*90)
+		{
+			_color=c_green
+		}
+		if(i>0&&loop_rotation(turns[i-1].direction*90 + 180)==turns[i].direction*90)
+		{
+			_color=c_purple
+		}
+		if(i>0&&loop_rotation(turns[i-1].direction*90 - 90)==turns[i].direction*90)
+		{
+			_color=$ffAAAA
+		}
+		if(i>0&&loop_rotation(turns[i-1].direction*90 + 90)==turns[i].direction*90)
+		{
+			_color=$AAAAff
+		}
 		lastBeat=max(turns[i].beat,lastBeat)
 		var _type=turns[i].type
 		var _pointBeat=turns[i].beat
 		var tempDirection=turns[i].direction
-		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,continuing:false})
+		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,continuing:false,color: _color})
 		lastBeatFrom=turns[i].beat
 		currentDirection=turns[i].direction*90
 	}
@@ -162,7 +179,7 @@ function create_points(){
 	_x+=lengthdir_x(gridSize*lastLength,currentDirection)
 	_y+=lengthdir_y(gridSize*lastLength,currentDirection)
 	var _pointBeat=songLength[1]
-	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: currentDirection,continuing:false})
+	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: currentDirection,continuing:false,color:c_white})
 	
 	for(var i=0;i<array_length(pointArray);i++)
 	{
