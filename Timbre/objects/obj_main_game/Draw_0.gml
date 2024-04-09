@@ -24,6 +24,11 @@ for(var i=0;i<array_length(points)-1;i++)
 			shouldContinue=true
 		}
 	}
+	if(points[i].wasHit||abs(songMilliseconds-points[i].timeMS)/1000>30)
+	{
+		points[i].continuing=false
+		continue;
+	}
 	if(shouldContinue)
 	{
 		points[i].continuing=true
@@ -37,7 +42,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		array_push(positionsUsed,[points[i].x,points[i].y])
 	}
 	var timing=songMilliseconds-points[i].timeMS
-	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)&&abs(timing)<=(msWindow*beatLength)*120
+	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
 	var hitKey=i>0&&points[i-1].type!=noteTypes.loop&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.loop&&turnKeyReleased[points[i].direction]
 	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
 	{
@@ -90,8 +95,8 @@ for(var i=array_length(points)-1;i>0;i--)
 		continue;
 	}
 	var timing=songMilliseconds-points[i].timeMS
-	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)&&abs(timing)<=(msWindow*beatLength)*120
-	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120)
+	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
+	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120&&inCamera)
 	{
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
 		points[i].direction*90,_color,1)
