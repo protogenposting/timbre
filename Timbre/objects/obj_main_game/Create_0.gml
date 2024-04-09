@@ -209,7 +209,7 @@ function create_points(){
 				
 				notes[o].x=dist.x+lengthdir_x(64,dir)
 				notes[o].y=dist.y+lengthdir_y(64,dir)
-				notes[o].color=dir
+				notes[o].color=c_white
 				notes[o].timeMS=notes[o].beat*beatLength*1000
 				notes[o].wasHit=false
 			}
