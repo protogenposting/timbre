@@ -42,7 +42,7 @@ if(_file==false)
 		{name:"Fardstep",artist:"Protogen Posting",path: working_directory+"Fardstep 1\\data.json",difficulty:2,highScore:0,rank:""},
 		{name:"Value Exception",artist:"Protogen Posting and ScratchGuy",path: working_directory+"VE\\data.json",difficulty:5,highScore:0,rank:""},
 		{name:"Say It Back",artist:"TV Room",path: working_directory+"Say It Back\\data.json",difficulty:1,highScore:0,rank:""},
-		{name:"Party Sirens",artist:"Tanger",path: working_directory+"Party Sirens\\data.json",difficulty:5,highScore:0,rank:""},
+		{name:"Party Sirens",artist:"Tanger",path: working_directory+"Party Sirens\\data.json",difficulty:6,highScore:0,rank:""},
 		{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:""},
 		{name:"Paint",artist:"Celeste Strawberry Jam",path: working_directory+"Paint\\data.json",difficulty:0,highScore:0,rank:""},
 		{name:"Reverse",artist:"Caravan Palace",path: working_directory+"Reverse\\data.json",difficulty:3,highScore:0,rank:""},
@@ -53,7 +53,7 @@ if(_file==false)
 		{name:"Schoolhouse Trouble",artist:"Anthony Hampton (Baldi's Basics)",path: working_directory+"Schoolhouse Trouble\\data.json",difficulty:4,highScore:0,rank:""},
 		{name:"Altars of Apostasy",artist:"Hakita",path: working_directory+"Altars of Apostasy\\data.json",difficulty:1,highScore:0,rank:""},
 		{name:"Danger",artist:"Z11 Music",path: working_directory+"Other Danger\\data.json",difficulty:4,highScore:0,rank:""},
-		{name:"Identity Theft",artist:"ScratchGuy",path: working_directory+"Identity Theft\\data.json",difficulty:5,highScore:0,rank:""},
+		{name:"Identity Theft",artist:"ScratchGuy",path: working_directory+"Identity Theft\\data.json",difficulty:6,highScore:0,rank:""},
 	]
 	global.offset=0
 }
@@ -73,6 +73,6 @@ else
 
 global.levels=sort_songlist(global.levels)
 
-#macro difficulties [{sprite:spr_easy,name:"Easy",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Insane",color:c_red},{sprite:spr_expert,name:"Expert",color:c_purple},{sprite:spr_expertplus,name:"Expert+",color:c_black},]
+#macro difficulties [{sprite:spr_easy,name:"Easy",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Insane",color:c_red},{sprite:spr_expert,name:"Expert",color:c_purple},{sprite:spr_expertplus,name:"Grandmaster",color:c_black},{sprite:spr_grandmaster,name:"Bowser Fart",color:c_black}]
 
 #macro menuColors [c_aqua,c_yellow,c_lime,c_orange,c_purple,c_red,c_black]
