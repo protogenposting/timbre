@@ -81,7 +81,7 @@ function get_turns(){
 	var array=[]
 	for(var i=0;i<array_length(notes);i++)
 	{
-		if(notes[i].type==noteTypes.turn)
+		if(notes[i].type==noteTypes.turn||notes[i].type==noteTypes.loop)
 		{
 			array_push(array,notes[i])
 			array_delete(notes,i,1)
@@ -150,12 +150,7 @@ function create_points(){
 			_y+=lengthdir_y(gridSizeCurrent,currentDirection)
 		}
 		lastBeat=max(turns[i].beat,lastBeat)
-		var _type=noteTypes.turn
-		if(i<array_length(turns)-1&&turns[i].direction*90==turns[i+1].direction*90)
-		{
-			_type=noteTypes.loop
-			//show_message(i)
-		}
+		var _type=turns[i].type
 		var _pointBeat=turns[i].beat
 		var tempDirection=turns[i].direction
 		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection})

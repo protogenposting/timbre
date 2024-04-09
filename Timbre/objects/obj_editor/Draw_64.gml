@@ -46,83 +46,49 @@ repeat(16)
 	_x=512+256
 	draw_text(_x-64,_y,string(beat))
 	//turns
-	var noteDirection=0
-	repeat(4)
+	var _note=0
+	repeat(array_length(noteSounds))
 	{
-		var noteOnBeat=note_on_beat(notesInBeat,beat,noteTypes.turn,noteDirection)
-		if(noteOnBeat!=-1)
+		var noteDirection=0
+		repeat(4)
 		{
-			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
-			try{
-				if(songMilliseconds/1000>=beat*beatLength&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
-				{
-					audio_play_sound(snd_turn,1000,false)
-					notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
-				}
-			}
-			catch(e)
+			var noteOnBeat=note_on_beat(notesInBeat,beat,_note,noteDirection)
+			if(noteOnBeat!=-1)
 			{
+				draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
+				try{
+					if(songMilliseconds/1000>=beat*beatLength&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
+					{
+						audio_play_sound(noteSounds[_note],1000,false)
+						notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
+					}
+				}
+				catch(e)
+				{
 				
+				}
 			}
-		}
-		draw_sprite_ext(spr_reverse_arrow,0,_x,_y,0.3,0.3,noteDirection*90,c_white,1)
-		draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
-		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
-		{
-			if(mouse_check_button_pressed(mb_left))
+			draw_sprite_ext(noteSprites[_note],0,_x,_y,0.3,0.3,noteDirection*90,c_white,1)
+			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
+			if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
 			{
-				if(noteOnBeat==-1)
+				if(mouse_check_button_pressed(mb_left))
 				{
-					array_push(notes,create_note(beat,noteTypes.turn,noteDirection,false))
-				}
-				else
-				{
-					array_delete(notes,notesInBeatEquivelants[noteOnBeat],1)
+					if(noteOnBeat==-1)
+					{
+						array_push(notes,create_note(beat,_note,noteDirection,false))
+					}
+					else
+					{
+						array_delete(notes,notesInBeatEquivelants[noteOnBeat],1)
+					}
 				}
 			}
+			_x+=boxSize*2
+			noteDirection++
 		}
-		_x+=boxSize*2
-		noteDirection++
-	}
-	_x+=boxSize
-	//logs
-	noteDirection=0
-	repeat(4)
-	{
-		var noteOnBeat=note_on_beat(notesInBeat,beat,noteTypes.log,noteDirection)
-		if(noteOnBeat!=-1)
-		{
-			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
-			try{
-				if(songMilliseconds/1000>=beat*beatLength&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
-				{
-					audio_play_sound(snd_hit_tree,1000,false)
-					notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
-				}
-			}
-			catch(e)
-			{
-				
-			}
-		}
-		draw_sprite_ext(spr_log,0,_x,_y,0.5,0.5,noteDirection*90,c_white,1)
-		draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
-		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
-		{
-			if(mouse_check_button_pressed(mb_left))
-			{
-				if(noteOnBeat==-1)
-				{
-					array_push(notes,create_note(beat,noteTypes.log,noteDirection,false))
-				}
-				else
-				{
-					array_delete(notes,notesInBeatEquivelants[noteOnBeat],1)
-				}
-			}
-		}
-		_x+=boxSize*2
-		noteDirection++
+		_x+=boxSize
+		_note++
 	}
 	_y+=boxSize*2
 	beat+=zoom

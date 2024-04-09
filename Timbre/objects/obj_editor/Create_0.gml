@@ -359,4 +359,10 @@ button[8]={
 	size:{x:256,y:128},
 	position:{x:456,y:200+128+128+128},
 	sizeMod:0
-}
+}*/
+noteSounds[noteTypes.log]=snd_hit_tree
+noteSounds[noteTypes.turn]=snd_turn
+noteSounds[noteTypes.loop]=snd_beat
+noteSprites[noteTypes.log]=spr_log
+noteSprites[noteTypes.turn]=spr_reverse_arrow
+noteSprites[noteTypes.loop]=spr_spider_idle

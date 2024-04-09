@@ -1,7 +1,14 @@
 {
   "artist":"Scratchguy",
   "songName":"Identity_Theft.ogg",
+  "difficulty":0.0,
   "notes":[
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":0.0,
+      "type":2.0
+    },
     {
       "wasHit":false,
       "direction":0.0,
@@ -12,7 +19,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":8.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -24,7 +31,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":16.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -36,16 +43,17 @@
       "wasHit":false,
       "direction":3.0,
       "beat":24.0,
-      "type":1.0
+      "type":2.0
     },
     {
-      "x":2795.0,
+      "x":747.0,
       "y":-2175.9998209581536,
       "beat":26.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":8666.6666666666661,
-      "direction":0.0
+      "color":0.0
     },
     {
       "wasHit":false,
@@ -129,7 +137,7 @@
       "wasHit":false,
       "direction":0.0,
       "beat":38.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -207,7 +215,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":46.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -285,7 +293,7 @@
       "wasHit":false,
       "direction":3.0,
       "beat":54.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -363,7 +371,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":62.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -375,7 +383,7 @@
       "wasHit":false,
       "direction":0.0,
       "beat":64.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -387,7 +395,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":68.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -399,7 +407,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":72.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -408,28 +416,30 @@
       "type":1.0
     },
     {
-      "x":1963.0,
+      "x":-85.0,
       "y":-6079.9998209581536,
       "beat":75.0,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":25000.0,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":75.5,
-      "type":1.0
+      "type":2.0
     },
     {
-      "x":1771.0,
+      "x":-277.0,
       "y":-6320.3378946886223,
       "beat":77.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":25666.666666666664,
-      "direction":0.0
+      "color":0.0
     },
     {
       "wasHit":false,
@@ -438,19 +448,10 @@
       "type":1.0
     },
     {
-      "x":1643.0,
-      "y":-5503.9998209581536,
-      "beat":79.0,
-      "type":0.0,
-      "wasHit":false,
-      "timeMS":26333.333333333332,
-      "direction":2.0
-    },
-    {
       "wasHit":false,
       "direction":0.0,
       "beat":80.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -462,7 +463,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":82.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -474,7 +475,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":84.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -486,7 +487,7 @@
       "wasHit":false,
       "direction":3.0,
       "beat":86.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -498,7 +499,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":87.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -510,7 +511,7 @@
       "wasHit":false,
       "direction":0.0,
       "beat":88.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -522,7 +523,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":89.5,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -532,9 +533,9 @@
     },
     {
       "wasHit":false,
-      "direction":1.0,
+      "direction":0.0,
       "beat":91.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -546,7 +547,7 @@
       "wasHit":false,
       "direction":3.0,
       "beat":92.5,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -558,7 +559,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":94.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -570,106 +571,117 @@
       "wasHit":false,
       "direction":1.0,
       "beat":96.0,
-      "type":1.0
+      "type":2.0
     },
     {
-      "x":1003.0,
+      "x":-1045.0,
       "y":-4859.2399942979973,
       "beat":97.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":32333.333333333328,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":875.0,
+      "x":-1173.0,
       "y":-4689.3529703722161,
       "beat":97.5,
       "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":32500.0,
-      "direction":2.0
+      "color":180.0
     },
     {
-      "x":1003.0,
+      "x":-1045.0,
       "y":-4547.4788248644036,
       "beat":98.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":32666.666666666664,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":875.0,
+      "x":-1173.0,
       "y":-4440.7316935167473,
       "beat":98.5,
       "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":32833.333333333328,
-      "direction":2.0
+      "color":180.0
     },
     {
-      "x":1003.0,
+      "x":-1045.0,
       "y":-4374.4644205675286,
       "beat":99.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":33000.0,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":875.0,
+      "x":-1173.0,
       "y":-4351.9998209581536,
       "beat":99.5,
       "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":33166.666666666664,
-      "direction":2.0
+      "color":180.0
     },
     {
-      "x":1003.0,
+      "x":-1045.0,
       "y":-4374.4644205675286,
       "beat":100.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":33333.333333333328,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":875.0,
+      "x":-1173.0,
       "y":-4440.7316935167473,
       "beat":100.5,
       "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":33500.0,
-      "direction":2.0
+      "color":180.0
     },
     {
-      "x":1003.0,
+      "x":-1045.0,
       "y":-4547.4788248644036,
       "beat":101.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":33666.666666666664,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":875.0,
+      "x":-1173.0,
       "y":-4689.3529703722161,
       "beat":101.5,
       "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":33833.333333333328,
-      "direction":2.0
+      "color":180.0
     },
     {
-      "x":1003.0,
+      "x":-1045.0,
       "y":-4859.2399942979973,
       "beat":102.0,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":34000.0,
-      "direction":0.0
+      "color":0.0
     },
     {
       "wasHit":false,
@@ -681,106 +693,117 @@
       "wasHit":false,
       "direction":0.0,
       "beat":104.0,
-      "type":1.0
+      "type":2.0
     },
     {
-      "x":550.24017333984375,
+      "x":-1497.7598266601562,
       "y":-5823.9998209581536,
       "beat":105.0,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":35000.0,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":380.3531494140625,
+      "x":-1667.6468505859375,
       "y":-5695.9998209581536,
       "beat":105.5,
       "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":35166.666666666664,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":238.47900390625,
+      "x":-1809.52099609375,
       "y":-5823.9998209581536,
       "beat":106.0,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":35333.333333333328,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":131.73187255859375,
+      "x":-1916.2681274414062,
       "y":-5695.9998209581536,
       "beat":106.5,
       "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":35500.0,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":65.464599609375,
+      "x":-1982.535400390625,
       "y":-5823.9998209581536,
       "beat":107.0,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":35666.666666666664,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":43.0,
+      "x":-2005.0,
       "y":-5695.9998209581536,
       "beat":107.5,
       "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":35833.333333333328,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":65.464599609375,
+      "x":-1982.535400390625,
       "y":-5823.9998209581536,
       "beat":108.0,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":36000.0,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":131.73187255859375,
+      "x":-1916.2681274414062,
       "y":-5695.9998209581536,
       "beat":108.5,
       "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":36166.666666666664,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":238.47900390625,
+      "x":-1809.52099609375,
       "y":-5823.9998209581536,
       "beat":109.0,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":36333.333333333328,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":380.3531494140625,
+      "x":-1667.6468505859375,
       "y":-5695.9998209581536,
       "beat":109.5,
       "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":36500.0,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":550.24017333984375,
+      "x":-1497.7598266601562,
       "y":-5823.9998209581536,
       "beat":110.0,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":36666.666666666664,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
@@ -798,7 +821,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":113.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -810,7 +833,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":114.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -822,7 +845,7 @@
       "wasHit":false,
       "direction":0.0,
       "beat":115.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -834,7 +857,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":116.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -846,7 +869,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":117.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -858,7 +881,7 @@
       "wasHit":false,
       "direction":3.0,
       "beat":118.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -870,7 +893,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":120.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -882,7 +905,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":123.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -894,7 +917,7 @@
       "wasHit":false,
       "direction":0.0,
       "beat":126.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -904,7 +927,7 @@
     },
     {
       "wasHit":false,
-      "direction":1.0,
+      "direction":2.0,
       "beat":127.0,
       "type":1.0
     },
@@ -930,7 +953,7 @@
       "wasHit":false,
       "direction":2.0,
       "beat":129.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -942,7 +965,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":130.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -976,9 +999,9 @@
     },
     {
       "wasHit":false,
-      "direction":3.0,
+      "direction":2.0,
       "beat":132.5,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1006,9 +1029,9 @@
     },
     {
       "wasHit":false,
-      "direction":2.0,
+      "direction":0.0,
       "beat":134.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1018,9 +1041,9 @@
     },
     {
       "wasHit":false,
-      "direction":1.0,
+      "direction":0.0,
       "beat":134.5,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1032,18 +1055,12 @@
       "wasHit":false,
       "direction":1.0,
       "beat":135.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
-      "direction":2.0,
-      "beat":135.25,
-      "type":1.0
-    },
-    {
-      "wasHit":false,
-      "direction":2.0,
-      "beat":135.75,
+      "direction":1.0,
+      "beat":135.5,
       "type":1.0
     },
     {
@@ -1074,7 +1091,7 @@
       "wasHit":false,
       "direction":3.0,
       "beat":137.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1089,31 +1106,34 @@
       "type":1.0
     },
     {
-      "x":336.49033355712891,
+      "x":-1749.0,
       "y":-7871.9998209581536,
       "beat":138.25,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":46083.333333333328,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":299.0,
+      "x":-1621.0,
       "y":-7871.9998209581536,
       "beat":138.5,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":46166.666666666664,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":336.49033355712891,
+      "x":-1493.0,
       "y":-7871.9998209581536,
       "beat":138.75,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":46250.0,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
@@ -1125,16 +1145,17 @@
       "wasHit":false,
       "direction":1.0,
       "beat":139.5,
-      "type":1.0
+      "type":2.0
     },
     {
-      "x":747.0,
+      "x":-1045.0,
       "y":-7743.9998209581536,
       "beat":139.75,
       "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":46583.333333333328,
-      "direction":0.0
+      "color":0.0
     },
     {
       "wasHit":false,
@@ -1230,7 +1251,7 @@
       "wasHit":false,
       "direction":0.0,
       "beat":144.25,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1242,7 +1263,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":144.75,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1269,55 +1290,60 @@
       "type":1.0
     },
     {
-      "x":459.0,
+      "x":-1109.0,
       "y":-9535.9998209581536,
       "beat":146.75,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":48916.666666666664,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":388.72312927246094,
+      "x":-981.0,
       "y":-9407.9998209581536,
       "beat":147.0,
       "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":49000.0,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":363.0,
+      "x":-853.0,
       "y":-9535.9998209581536,
       "beat":147.25,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":49083.333333333328,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":388.72312927246094,
+      "x":-725.0,
       "y":-9407.9998209581536,
       "beat":147.5,
       "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":49166.666666666664,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":459.0,
+      "x":-597.0,
       "y":-9535.9998209581536,
       "beat":147.75,
       "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":49250.0,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":148.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1329,7 +1355,7 @@
       "wasHit":false,
       "direction":1.0,
       "beat":149.5,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1521,7 +1547,7 @@
       "wasHit":false,
       "direction":0.0,
       "beat":159.0,
-      "type":1.0
+      "type":2.0
     },
     {
       "wasHit":false,
@@ -1533,1147 +1559,1191 @@
       "wasHit":false,
       "direction":1.0,
       "beat":160.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":160.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":161.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":161.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":162.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":162.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":162.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":162.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":163.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":163.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":163.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":164.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-191.03866577148438,
+      "x":-1215.0386657714844,
       "y":-11583.999820958154,
       "beat":165.0,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":55000.0,
-      "direction":1.0
+      "color":90.0
     },
     {
-      "x":-341.0,
+      "x":-1365.0,
       "y":-11455.999820958154,
       "beat":166.0,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":3.0,
       "timeMS":55333.333333333328,
-      "direction":3.0
+      "color":270.0
     },
     {
-      "x":-191.03866577148438,
+      "x":-1215.0386657714844,
       "y":-11583.999820958154,
       "beat":167.0,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":55666.666666666664,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":168.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":168.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":169.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":169.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":170.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":170.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":171.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":171.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":172.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":172.5,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":173.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":173.5,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":174.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":174.5,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":175.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":175.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":176.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-21.0,
+      "x":-1045.0,
       "y":-12362.980488072411,
       "beat":176.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":58833.333333333328,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":-21.0,
+      "x":-1045.0,
       "y":-12287.999820958154,
       "beat":177.0,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":59000.0,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":-21.0,
+      "x":-1045.0,
       "y":-12362.980488072411,
       "beat":177.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":59166.666666666664,
-      "direction":0.0
+      "color":0.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":178.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-149.0,
+      "x":-1173.0,
       "y":-12362.980488072411,
       "beat":178.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":59500.0,
-      "direction":2.0
+      "color":180.0
     },
     {
-      "x":-149.0,
+      "x":-1173.0,
       "y":-12287.999820958154,
       "beat":179.0,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":59666.666666666664,
-      "direction":2.0
+      "color":180.0
     },
     {
-      "x":-149.0,
+      "x":-1173.0,
       "y":-12362.980488072411,
       "beat":179.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":2.0,
       "timeMS":59833.333333333328,
-      "direction":2.0
+      "color":180.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":180.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-21.0,
+      "x":-1045.0,
       "y":-12287.999820958154,
       "beat":181.0,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":60333.333333333328,
-      "direction":0.0
+      "color":0.0
     },
     {
-      "x":-21.0,
+      "x":-1045.0,
       "y":-12362.980488072411,
       "beat":181.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":0.0,
       "timeMS":60500.0,
-      "direction":0.0
+      "color":0.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":182.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":182.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":183.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":184.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":184.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":184.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":184.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":185.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":185.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":185.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":185.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":186.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":186.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":186.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":186.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":187.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":187.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":187.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":187.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":188.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":188.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":188.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":188.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":189.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":189.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":189.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":189.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":190.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":190.25,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":190.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":190.75,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":191.0,
-      "type":1
+      "type":2.0
+    },
+    {
+      "x":-1530.4903335571289,
+      "y":-14655.999820958154,
+      "beat":191.25,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":63750.0,
+      "color":90.0
+    },
+    {
+      "x":-1493.0,
+      "y":-14655.999820958154,
+      "beat":191.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":63833.333333333328,
+      "color":90.0
+    },
+    {
+      "x":-1530.4903335571289,
+      "y":-14655.999820958154,
+      "beat":191.75,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":63916.666666666664,
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":192.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":193.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":193.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":194.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":194.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":195.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":195.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":196.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":196.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":197.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":197.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":198.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":199.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":200.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":201.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":201.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":202.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":202.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":203.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":203.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":204.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":204.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":205.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":205.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":206.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":207.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":208.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":209.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":209.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":210.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":210.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":211.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":211.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":212.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":212.5,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":213.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":213.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":214.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":215.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":216.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":217.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":217.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":218.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":218.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":219.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":219.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":220.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":220.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":221.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":221.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":222.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":223.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":224.0,
-      "type":1
+      "type":2.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":225.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":225.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":226.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":226.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":227.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":227.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":228.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":228.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":229.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":229.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":230.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-3029.0,
+      "x":-4053.0,
       "y":-18239.999820958154,
       "beat":230.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":76833.333333333328,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":231.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":232.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":233.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":233.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":234.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":234.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":235.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":235.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":236.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":236.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":237.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":237.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":238.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-2517.0,
+      "x":-3541.0,
       "y":-19519.999820958154,
       "beat":238.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":79500.0,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":239.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":240.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":241.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":241.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":242.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":242.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":243.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":243.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":244.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":244.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":245.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":245.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":246.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-3541.0,
+      "x":-4565.0,
       "y":-20799.999820958154,
       "beat":246.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":82166.666666666657,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":247.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":248.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":249.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":249.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":250.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":250.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":251.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":251.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":0.0,
       "beat":252.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":252.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":253.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":3.0,
       "beat":253.5,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":254.0,
-      "type":1
+      "type":2.0
     },
     {
-      "x":-3029.0,
+      "x":-4053.0,
       "y":-21567.999820958154,
       "beat":254.5,
-      "type":0,
+      "type":0.0,
       "wasHit":false,
+      "direction":1.0,
       "timeMS":84833.333333333328,
-      "direction":1.0
+      "color":90.0
     },
     {
       "wasHit":false,
       "direction":2.0,
       "beat":255.0,
-      "type":1
+      "type":1.0
     },
     {
       "wasHit":false,
       "direction":1.0,
       "beat":256.0,
-      "type":1
+      "type":1.0
     }
   ],
-  "difficulty":0.0,
   "offset":0.0,
   "bpm":180.0
 } 
