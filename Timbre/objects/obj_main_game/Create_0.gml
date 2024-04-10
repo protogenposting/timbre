@@ -42,7 +42,7 @@ audio=-4
 
 songMilliseconds=0
 
-gridSize=512
+gridSize=512*global.moveSpeed
 
 background=layer_get_id("Background")
 
