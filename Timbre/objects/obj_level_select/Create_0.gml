@@ -8,6 +8,10 @@ selectedLevel=-4
 
 yOffset=0
 
+yOffsetSpeed=0
+
+yOffsetMaxSpeed=25
+
 bpm=0
 
 audio=-4
@@ -255,7 +259,7 @@ function reset_buttons()
 		if(_x>=_moreStatsPos)
 		{
 			_x=128
-			_yStart+=room_height
+			_yStart+=room_height-256+64
 			_y=_yStart
 		}
 	}
