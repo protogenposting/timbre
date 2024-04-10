@@ -76,6 +76,17 @@ axeRotations[1]-=axeRotations[1]/10
 		attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
 		attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
 	}
+	var currentDirection=points[currentPoint].direction*90
+	if(attackKey[loop_rotation((currentDirection+90))/90])
+	{
+		axeRotations[0]=-90
+		audio_play_sound(snd_swipe,1000,false)
+	}
+	if(attackKey[loop_rotation((currentDirection-90))/90])
+	{
+		axeRotations[1]=-90
+		audio_play_sound(snd_swipe,1000,false)
+	}
 	
 	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
 	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)

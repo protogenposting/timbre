@@ -46,6 +46,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	var hitKey=i>0&&points[i-1].type!=noteTypes.loop&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.loop&&turnKeyReleased[points[i].direction]
 	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
 	{
+		turnKey[points[i].direction]=false
 		audio_play_sound(snd_turn,1000,false)
 		points[i].wasHit=true
 		combo++
@@ -146,7 +147,7 @@ for(var o=0; o<array_length(notes);o++)
 	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=msWindow/4&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
-		attackKey[notes[o].direction]=true
+		attackKey[notes[o].direction]=false
 		notes[o].wasHit=true
 		totalScore+=msWindow-abs(timing)
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
@@ -238,16 +239,7 @@ if(points[currentPoint].type==noteTypes.loop)
 
 draw_sprite_ext(spr_axes,axeFrames[0],_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
 draw_sprite_ext(spr_axes,axeFrames[1],_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
-if(attackKey[loop_rotation((currentDirection+90))/90])
-{
-	axeRotations[0]=-90
-	audio_play_sound(snd_swipe,1000,false)
-}
-if(attackKey[loop_rotation((currentDirection-90))/90])
-{
-	axeRotations[1]=-90
-	audio_play_sound(snd_swipe,1000,false)
-}
+
 
 if(_transitionAmount.x!=0||_transitionAmount.y!=0)
 {
