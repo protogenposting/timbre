@@ -10,7 +10,7 @@ for(var i=0;i<array_length(button);i++)
 {
 	var size=1
 	var sizeX=button[i].size.x/2
-	var sizeY=button[i].size.y/2
+	var sizeY=button[i].size.y/2 + yOffset
 	var buttonPosOffset=0
 	if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),button[i].position.x-sizeX,button[i].position.y-sizeY,button[i].position.x+sizeX,button[i].position.y+sizeY))
 	{

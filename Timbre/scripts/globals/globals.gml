@@ -57,6 +57,7 @@ if(_file==false)
 		{name:"Danger",artist:"Z11 Music",path: working_directory+"Other Danger\\data.json",difficulty:4,highScore:0,rank:""},
 		{name:"Identity Theft",artist:"ScratchGuy",path: working_directory+"Identity Theft\\data.json",difficulty:6,highScore:0,rank:""},
 		{name:"ACT RIGHT",artist:"Femtanyl",path: working_directory+"ACT RIGHT\\data.json",difficulty:5,highScore:0,rank:""},
+		{name:"Fish in A Birdcage",artist:"Fish in A Birdcage",path: working_directory+"Fish in A Birdcage\\data.json",difficulty:2,highScore:0,rank:""},
 	]
 	global.offset=0
 }

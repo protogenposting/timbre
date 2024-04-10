@@ -6,6 +6,8 @@ audio_stop_all()
 
 selectedLevel=-4
 
+yOffset=0
+
 bpm=0
 
 audio=-4
@@ -114,6 +116,10 @@ function reset_buttons()
 		func: function(){
 			obj_level_select.moreStats=!obj_level_select.moreStats
 			audio_play_sound(snd_tab_move_back,1000,false)
+			with(obj_level_select)
+			{
+				reset_buttons()
+			}
 		},
 		size:{x:128,y:64},
 		position:{x:128+140+140,y:64},
@@ -138,6 +144,8 @@ function reset_buttons()
 	var _x=128
 	var lastButton=array_last(button)
 	var _y=lastButton.position.y+96
+	var _yEnd=room_height/1.1
+	var _yStart=_y
 	for(var i=0;i<array_length(global.levels);i++)
 	{
 		array_push(button,{
@@ -238,10 +246,17 @@ function reset_buttons()
 			sizeMod:0
 		})
 		_y+=64
-		if(_y>room_height/1.1)
+		if(_y>_yEnd)
 		{
-			_y=64+96
+			_y=_yStart
 			_x+=160+64
+		}
+		var _moreStatsPos=room_width - 512 + 64 - point_between_points(0,0,256+128,0,obj_level_select.moreStats).x
+		if(_x>=_moreStatsPos)
+		{
+			_x=128
+			_yStart+=room_height
+			_y=_yStart
 		}
 	}
 
