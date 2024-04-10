@@ -249,18 +249,12 @@ function reset_buttons()
 			position:{x: _x,y: _y},
 			sizeMod:0
 		})
-		_y+=64
-		if(_y>_yEnd)
-		{
-			_y=_yStart
-			_x+=160+64
-		}
-		var _moreStatsPos=room_width - 512 + 64 - point_between_points(0,0,256+128,0,obj_level_select.moreStats).x
+		_x+=160+64
+		var _moreStatsPos=room_width - 512 + 64 - point_between_points(0,0,256+128,0,obj_level_select.moreStats).x -128
 		if(_x>=_moreStatsPos)
 		{
+			_y+=64
 			_x=128
-			_yStart+=room_height-256+64
-			_y=_yStart
 		}
 	}
 
