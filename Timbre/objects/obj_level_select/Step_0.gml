@@ -63,9 +63,19 @@ if(mouse_wheel_up())
 {
 	yOffsetSpeed=yOffsetMaxSpeed
 }
-if(mouse_wheel_down())
+if(mouse_wheel_down()&&yOffset>0)
 {
 	yOffsetSpeed=-yOffsetMaxSpeed
+}
+
+while(yOffset>=array_last(button).position.y)
+{
+	yOffset--
+	yOffsetSpeed=0
+}
+while(yOffset<=0)
+{
+	yOffsetSpeed=0
 }
 
 yOffsetSpeed-=sign(yOffsetSpeed)
