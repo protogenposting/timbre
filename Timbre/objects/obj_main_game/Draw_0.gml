@@ -82,7 +82,7 @@ for(var i=0;i<array_length(points)-1;i++)
 for(var i=array_length(points)-1;i>0;i--)
 {
 	var _color=points[i].color
-	if(i>0&&points[i-1].type==noteTypes.loop)
+	if(i>0&&points[i].type==noteTypes.loop)
 	{
 		_color=c_red
 	}
