@@ -300,11 +300,16 @@ showingFinalMessage=false
 
 ranks=[{percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},
 {percent:95,name:"S",messages:["OMG UR SO GOOD!","S is for... SANS UNDERTALE?!?!?!?!"]},
+{percent:90,name:"A+",messages:["Great job... PLUS!","A+ is for... Almost an S! Plus!!!"]},
 {percent:85,name:"A",messages:["Great job!","A is for... AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"]},
+{percent:80,name:"B+",messages:["Cooler than a regular B!","B+ is for... Boi just get an A already! Plus!!!"]},
 {percent:75,name:"B",messages:["Cool!","B is for... BOOTYHOLE"]},
-{percent:50,name:"C",messages:["Good job i guess","C is for... corn!"]},
+{percent:65,name:"C+",messages:["Good job i guess...... PLUS!!!","C+ is for... Can't you just get a B? Plus!!!"]},
+{percent:50,name:"C",messages:["Good job i guess","C is for... Corn!"]},
+{percent:40,name:"D+",messages:["Needs some work... PLUS!!!","D+ is for... DANI?!?!?!??! PLUS?!?!?!?!?"]},
 {percent:30,name:"D",messages:["Needs some work...","D is for... Detention! >:("]},
-{percent:0,name:"F",messages:["Did you even try?","F is for... FIVE NIGHT FREDDY?!?!?!?"]}]
+{percent:0,name:"F",messages:["Did you even try?","F is for... FIVE NIGHT FREDDY?!?!?!?"]},
+{percent:-1,name:"F-",messages:["How did u get an F- lmao"]}]
 
 function get_rank(accuracyPercentage){
 	for(var i=0;i<array_length(ranks);i++)
