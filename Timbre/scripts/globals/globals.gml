@@ -58,7 +58,7 @@ if(_file==false)
 		{name:"Identity Theft",artist:"ScratchGuy",path: working_directory+"Identity Theft\\data.json",difficulty:6,highScore:0,rank:""},
 		{name:"ACT RIGHT",artist:"Femtanyl",path: working_directory+"ACT RIGHT\\data.json",difficulty:5,highScore:0,rank:""},
 		{name:"Fish in A Birdcage",artist:"Fish in A Birdcage",path: working_directory+"Fish in A Birdcage\\data.json",difficulty:2,highScore:0,rank:""},
-		{name:"ARRAY OUT OF BOUNDS",artist:"ARRAY OUT OF BOUNDS",path: working_directory+"ARRAY OUT OF BOUNDS\\data.json",difficulty:6,highScore:0,rank:""},
+		{name:"ARRAY OUT OF BOUNDS",artist:"ARRAY OUT OF BOUNDS",path: working_directory+"ARRAY OUT OF BOUNDS\\data.json",difficulty:7,highScore:0,rank:""},
 	]
 	global.offset=0
 }
@@ -78,6 +78,6 @@ else
 
 global.levels=sort_songlist(global.levels)
 
-#macro difficulties [{sprite:spr_easy,name:"Casual",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Spicy",color:c_red},{sprite:spr_expert,name:"Firey!",color:c_purple},{sprite:spr_expertplus,name:"ASH",color:c_black},{sprite:spr_grandmaster,name:"D E S O L A T I O N",color:c_black}]
+#macro difficulties [{sprite:spr_easy,name:"Casual",color:c_aqua},{sprite:spr_normal,name:"Normal",color:c_lime},{sprite:spr_hard,name:"Hard",color:c_orange},{sprite:spr_insane,name:"Spicy",color:c_red},{sprite:spr_expert,name:"Firey!",color:c_purple},{sprite:spr_expertplus,name:"ASH",color:c_black},{sprite:spr_grandmaster,name:"D E S O L A T I O N",color:c_black},{sprite:spr_truedesolation,name:"T R U E D E S O L A T I O N",color:c_black}]
 
 #macro menuColors [c_aqua,c_yellow,c_lime,c_orange,c_purple,c_red,c_black]

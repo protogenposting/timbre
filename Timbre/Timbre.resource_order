@@ -60,6 +60,7 @@
     {"name":"spr_expert","order":4,"path":"sprites/spr_expert/spr_expert.yy",},
     {"name":"spr_expertplus","order":5,"path":"sprites/spr_expertplus/spr_expertplus.yy",},
     {"name":"spr_grandmaster","order":6,"path":"sprites/spr_grandmaster/spr_grandmaster.yy",},
+    {"name":"spr_truedesolation","order":7,"path":"sprites/spr_truedesolation/spr_truedesolation.yy",},
     {"name":"spr_grass_bad","order":8,"path":"sprites/spr_grass_bad/spr_grass_bad.yy",},
     {"name":"spr_grass_fc","order":7,"path":"sprites/spr_grass_fc/spr_grass_fc.yy",},
     {"name":"spr_grass","order":3,"path":"sprites/spr_grass/spr_grass.yy",},
