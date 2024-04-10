@@ -59,26 +59,17 @@ if(gooberLocation.y>room_height-256)
 	gooberLocation.y-=(gooberLocation.y-(room_height-256))/60
 }
 
-if(mouse_wheel_up())
+if(mouse_wheel_down())
 {
 	yOffsetSpeed=yOffsetMaxSpeed
 }
-if(mouse_wheel_down())
+if(mouse_wheel_up())
 {
 	yOffsetSpeed=-yOffsetMaxSpeed
-}
-
-while(yOffset>=array_last(button).position.y)
-{
-	yOffset=array_last(button).position.y-1
-	yOffsetSpeed=0
-}
-while(yOffset<0)
-{
-	yOffset=0
-	yOffsetSpeed=0
 }
 
 yOffsetSpeed-=sign(yOffsetSpeed)
 
 yOffset+=yOffsetSpeed
+
+yOffset=clamp(yOffset,0,array_last(button).position.y-256)

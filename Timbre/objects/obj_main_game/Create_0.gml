@@ -40,6 +40,8 @@ barPercentage=0
 
 audio=-4
 
+bobs=[]
+
 songMilliseconds=0
 
 gridSize=512*global.moveSpeed
@@ -132,6 +134,7 @@ function point_between_points(x1,y1,x2,y2,percentage)
 loopSize=64
 
 function create_points(){
+	var _bobAmount=array_length(turns)/10
 	var beatLength=60/bpm
 	var pointArray=[]
 	randomize()
@@ -213,6 +216,15 @@ function create_points(){
 				notes[o].timeMS=notes[o].beat*beatLength*1000
 				notes[o].wasHit=false
 			}
+		}
+		if(irandom(5)>=4&&array_length(bobs)<_bobAmount)
+		{
+			var bob={
+				x:pointArray[i].x+choose(256,-256),
+				y:pointArray[i].y+choose(256,-256),
+				frame: irandom(1),
+			}
+			array_push(bobs,bob)
 		}
 	}
 	pointArray[0].wasHit=true

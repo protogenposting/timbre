@@ -19,6 +19,10 @@ image_index=((songMilliseconds/10)*(bpm/120))/2.5
 
 if(frac(barPercentage)<frac(barPercentageLast))
 {
+	for(var i=0;i<array_length(bobs);i++)
+	{
+		bobs[i].frame++
+	}
 	layer_background_index(background,currentBeat)
 	if(get_accuracy()<=30)
 	{

@@ -3,6 +3,11 @@
 var positionsUsed=[]
 var beatLength=60/bpm
 
+for(var i=0;i<array_length(bobs);i++)
+{
+	draw_sprite(spr_bob,bobs[i].frame,bobs[i].x,bobs[i].y)
+}
+
 //check notes
 for(var i=0;i<array_length(points)-1;i++)
 {
@@ -15,6 +20,11 @@ for(var i=0;i<array_length(points)-1;i++)
 	{
 		points[i].frame=0
 	}
+	if(points[i].wasHit||abs(songMilliseconds-points[i].timeMS)/1000>10)
+	{
+		points[i].continuing=true
+		continue;
+	}
 	var shouldContinue=false
 	//draw_line(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
 	for(var z=0;z<array_length(positionsUsed);z++)
@@ -23,11 +33,6 @@ for(var i=0;i<array_length(points)-1;i++)
 		{
 			shouldContinue=true
 		}
-	}
-	if(points[i].wasHit||abs(songMilliseconds-points[i].timeMS)/1000>30)
-	{
-		points[i].continuing=false
-		continue;
 	}
 	if(shouldContinue)
 	{
