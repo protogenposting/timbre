@@ -18,7 +18,8 @@ image_index=((songMilliseconds/10)*(bpm/120))/2.5
 //show_debug_message(image_index)
 
 playerFrame=round(barPercentage*4)
-axeFrames=round(barPercentage*4)
+axeFrames[0]=round(barPercentage*4)
+axeFrames[1]=round(barPercentage*4)
 for(var i=0;i<array_length(points);i++)
 {
 	points[i].frame=round(barPercentage*4)
