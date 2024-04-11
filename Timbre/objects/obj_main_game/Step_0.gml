@@ -22,6 +22,7 @@ for(var i=0;i<array_length(points);i++)
 {
 	points[i].frame=round(barPercentage*4)
 }
+layer_background_index(background,round(barPercentage))
 
 if(frac(barPercentage)<frac(barPercentageLast))
 {
@@ -29,7 +30,7 @@ if(frac(barPercentage)<frac(barPercentageLast))
 	{
 		bobs[i].frame++
 	}
-	layer_background_index(background,currentBeat)
+	
 	if(get_accuracy()<=30)
 	{
 		layer_background_sprite(background,spr_grass_bad)
