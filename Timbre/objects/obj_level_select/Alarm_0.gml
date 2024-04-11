@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-save_file({levels:global.levels,controlType:global.improvedControls},global.saveName)
+save_file({levels:global.levels,controlType:global.improvedControls,},global.saveName)
 
 if(sortMode==sortTypes.difficulty)
 {
