@@ -70,6 +70,7 @@ else
 	try{
 		global.improvedControls=_file.controlType
 		global.offset=_file.offset
+		global.epilepsyMode=_file.epilepsy
 	}
 	catch(e)
 	{
