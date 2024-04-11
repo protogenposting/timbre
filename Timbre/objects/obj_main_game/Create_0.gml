@@ -224,7 +224,18 @@ function create_points(){
 				y:pointArray[i].y+choose(256,-256),
 				frame: irandom(1),
 			}
-			array_push(bobs,bob)
+			var overlap=false
+			for(var o=0;o<array_length(pointArray);o++)
+			{
+				if(point_distance(pointArray[o].x,pointArray[o].y,bob.x,bob.y)<=16)
+				{
+					overlap=true
+				}
+			}
+			if(!overlap)
+			{
+				array_push(bobs,bob)
+			}
 		}
 	}
 	pointArray[0].wasHit=true
