@@ -54,6 +54,7 @@
     {"name":"snd_turn","order":2,"path":"sounds/snd_turn/snd_turn.yy",},
     {"name":"snd_tutorial_sound","order":11,"path":"sounds/snd_tutorial_sound/snd_tutorial_sound.yy",},
     {"name":"spr_axes","order":1,"path":"sprites/spr_axes/spr_axes.yy",},
+    {"name":"spr_bob","order":20,"path":"sprites/spr_bob/spr_bob.yy",},
     {"name":"spr_cloud","order":5,"path":"sprites/spr_cloud/spr_cloud.yy",},
     {"name":"spr_dancc","order":4,"path":"sprites/spr_dancc/spr_dancc.yy",},
     {"name":"spr_edit_button","order":10,"path":"sprites/spr_edit_button/spr_edit_button.yy",},
@@ -82,6 +83,5 @@
     {"name":"spr_tv_good","order":2,"path":"sprites/spr_tv_good/spr_tv_good.yy",},
     {"name":"spr_tv_really_bad","order":3,"path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},
     {"name":"spr_tv_really_good","order":4,"path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},
-    {"name":"spr_bob","order":20,"path":"sprites/spr_bob/spr_bob.yy",},
   ],
 }
