@@ -18,6 +18,8 @@ global.levelData=-4
 
 global.song=-4
 
+global.epilepsyMode=false
+
 global.moveSpeed=1
 
 global.selectedLevel=-4

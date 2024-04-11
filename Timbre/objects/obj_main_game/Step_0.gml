@@ -52,6 +52,11 @@ if(frac(barPercentage)<frac(barPercentageLast))
 	//audio_play_sound(snd_metronome,1000,false)
 }
 
+if(global.epilepsyMode)
+{
+	layer_background_sprite(background,spr_grass_epilepsy)
+}
+
 currentFracBeat=currentBeat+barPercentage
 
 axeRotations[0]-=axeRotations[0]/10

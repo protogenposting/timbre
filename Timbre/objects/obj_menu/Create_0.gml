@@ -73,6 +73,33 @@ button[2]={
 	sizeMod:0
 }
 
+button[3]={
+	sprite: spr_epilepsy_button_off,
+	func: function(){
+		//make this go to level select later
+		global.epilepsyMode=!global.epilepsyMode
+		if(global.epilepsyMode)
+		{
+			sprite=spr_epilepsy_button_on
+		}
+		else
+		{
+			sprite=spr_epilepsy_button_off
+		}
+	},
+	size:{x:256,y:128},
+	position:{x:room_width/2,y:room_height/2 +128+128},
+	sizeMod:0
+}
+if(global.epilepsyMode)
+{
+	button[3].sprite=spr_epilepsy_button_on
+}
+else
+{
+	button[3].sprite=spr_epilepsy_button_off
+}
+
 /*
 button[3]={
 	sprite: spr_tutorial_button,
