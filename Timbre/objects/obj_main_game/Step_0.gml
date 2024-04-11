@@ -17,6 +17,12 @@ image_index=((songMilliseconds/10)*(bpm/120))/2.5
 
 //show_debug_message(image_index)
 
+playerFrame=round(barPercentage*4)
+for(var i=0;i<array_length(points);i++)
+{
+	points[i].frame=round(barPercentage*4)
+}
+
 if(frac(barPercentage)<frac(barPercentageLast))
 {
 	for(var i=0;i<array_length(bobs);i++)
