@@ -59,13 +59,14 @@ comboMissTimer=0
 function miss(struct)
 {
 	audio_play_sound(snd_spinout,1000,false)
-	struct.wasHit=true
+	struct.wasHit=2
 	misses++
 	fullCombo=false
 	if(combo>5)
 	{
 		comboMissTimer=50
-		audio_play_sound(snd_combo_loss,1000,false)
+		var _aud=audio_play_sound(snd_combo_loss,1000,false)
+		audio_sound_gain(_aud,3,0)
 	}
 	combo=0
 	array_push(accuracyList,0)
@@ -171,19 +172,19 @@ function create_points(){
 			_y+=lengthdir_y(gridSizeCurrent,currentDirection)
 		}
 		var _color=c_white
-		if(i>0&&turns[i-1].direction*90==turns[i].direction*90)
+		if(turns[i].direction==noteDirections.left)
 		{
-			_color=c_green
+			_color=$ffffAA
 		}
-		if(i>0&&loop_rotation(turns[i-1].direction*90 + 180)==turns[i].direction*90)
+		else if(turns[i].direction==noteDirections.right)
 		{
-			_color=c_purple
+			_color=$AAffAA
 		}
-		if(i>0&&loop_rotation(turns[i-1].direction*90 - 90)==turns[i].direction*90)
+		if(turns[i].direction==noteDirections.up)
 		{
 			_color=$ffAAAA
 		}
-		if(i>0&&loop_rotation(turns[i-1].direction*90 + 90)==turns[i].direction*90)
+		if(turns[i].direction==noteDirections.down)
 		{
 			_color=$AAAAff
 		}
@@ -205,9 +206,10 @@ function create_points(){
 	for(var i=0;i<array_length(pointArray);i++)
 	{
 		pointArray[i].wasHit=false
+		var _direction=pointArray[i].direction*90
 		for(var o=0; o<array_length(notes);o++)
 		{
-			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat&&!notes[o].wasHit)
+			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)
 			{
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
 				var _beatDist=abs(pointArray[i+1].beat-pointArray[i].beat)
@@ -225,11 +227,24 @@ function create_points(){
 				}
 				var dir=notes[o].direction*90
 				
-				var _current180=loop_rotation(_dir+180)
-				
 				notes[o].x=dist.x+lengthdir_x(64,dir)
 				notes[o].y=dist.y+lengthdir_y(64,dir)
 				notes[o].color=c_white
+				if(dir==loop_rotation(_direction+90))
+				{
+					notes[o].color=c_green
+				}
+				if(dir==loop_rotation(_direction-90))
+				{
+					notes[o].color=c_lime
+				}
+				if(dir==loop_rotation(_direction)||dir==loop_rotation(_direction+180))
+				{
+					notes[o].color=c_gray
+					notes[o].type=noteTypes.movingHit
+					notes[o].startX=notes[o].x
+					notes[o].startY=notes[o].y
+				}
 				notes[o].timeMS=notes[o].beat*beatLength*1000
 				notes[o].wasHit=false
 			}

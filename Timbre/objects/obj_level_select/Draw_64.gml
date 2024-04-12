@@ -1,10 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_font(fn_font)
-
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
+
+songSpeedAlpha-=0.01
+
+var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
+
+if(_hAxis!=0&&global.songSpeed+_hAxis*0.25>0)
+{
+	global.songSpeed+=(_hAxis)*0.25
+	songSpeedAlpha=1
+}
 
 for(var i=0;i<array_length(button);i++)
 {
@@ -238,7 +246,7 @@ if(selectedLevel!=-4)
 	
 	_y+=32
 	
-	draw_text(_x+256-32,_y,string(songLength) + " Seconds")
+	draw_text(_x+256-32,_y,string(songLength/global.songSpeed) + " Seconds")
 	
 	_y+=64
 	
@@ -269,3 +277,7 @@ if(selectedLevel!=-4)
 	draw_set_color(c_white)
 	draw_set_font(fn_font)
 }
+
+draw_set_font(fn_font_big)
+draw_text_transformed_color(1366/2,768/2,"Song Speed: "+string(global.songSpeed),3,3,0,c_white,c_white,c_white,c_white,songSpeedAlpha)
+draw_set_font(fn_font)

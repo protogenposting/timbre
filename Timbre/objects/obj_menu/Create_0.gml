@@ -4,6 +4,7 @@ enum noteTypes{
 	log,
 	turn,
 	loop,
+	movingHit
 }
 
 enum noteDirections{
@@ -92,7 +93,7 @@ button[3]={
 		}
 	},
 	size:{x:256,y:128},
-	position:{x:room_width/2,y:room_height/2 +128+128},
+	position:{x:room_width/2,y:room_height/2 + 128 + 128},
 	sizeMod:0
 }
 if(global.epilepsyMode)

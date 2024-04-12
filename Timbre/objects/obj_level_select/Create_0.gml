@@ -12,6 +12,8 @@ yOffsetSpeed=0
 
 yOffsetMaxSpeed=25
 
+songSpeedAlpha=0
+
 merps=[
 	snd_merp1,
 	snd_merp2,

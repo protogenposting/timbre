@@ -18,7 +18,9 @@ global.levelData=-4
 
 global.song=-4
 
-global.epilepsyMode=false
+global.songSpeed=1
+
+global.epilepsyMode=true
 
 global.moveSpeed=1
 
@@ -61,6 +63,8 @@ if(_file==false)
 		{name:"ACT RIGHT",artist:"Femtanyl",path: working_directory+"ACT RIGHT\\data.json",difficulty:5,highScore:0,rank:""},
 		{name:"Fish in A Birdcage",artist:"Fish in A Birdcage",path: working_directory+"Fish in A Birdcage\\data.json",difficulty:2,highScore:0,rank:""},
 		{name:"ARRAY OUT OF BOUNDS",artist:"Original Soundtrack",path: working_directory+"ARRAY OUT OF BOUNDS\\data.json",difficulty:7,highScore:0,rank:""},
+		{name:"That one song that goes DADADADADA",artist:"That one guy that made it",path: working_directory+"That one song that goes DADADADADA\\data.json",difficulty:3,highScore:0,rank:""},
+		{name:"Cbat",artist:"dont abbreviate solar express",path: working_directory+"Cbat\\data.json",difficulty:3,highScore:0,rank:""},
 	]
 	global.offset=0
 }
