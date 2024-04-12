@@ -13,7 +13,7 @@ barPercentage = remap(needle, left, right, 0, 1);
 
 finishTimerLast=finishTimer
 
-image_index=((songMilliseconds/10)*(bpm/120))/2.5
+image_index=round(barPercentage*24)
 
 //show_debug_message(image_index)
 

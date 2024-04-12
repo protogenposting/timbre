@@ -147,7 +147,11 @@ else
 	
 	comboMissTimer--
 	
-	if(comboMissTimer>0)
+	if(combo>30)
+	{
+		sprite_index=spr_tv_highcombo
+	}
+	else if(comboMissTimer>0)
 	{
 		sprite_index=spr_tv_miss_combo
 	}
