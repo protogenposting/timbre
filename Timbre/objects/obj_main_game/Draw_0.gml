@@ -139,13 +139,10 @@ var hitTree=-1
 
 for(var o=0; o<array_length(notes);o++)
 {
+	var _spr=spr_log
+	
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
 	var dir=notes[o].direction*90
-	
-	if(inCamera)
-	{
-		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
-	}
 	var timing=songMilliseconds-notes[o].timeMS
 	try{
 		if(notes[o].temporaryType==noteTypes.movingHit)
@@ -153,10 +150,19 @@ for(var o=0; o<array_length(notes);o++)
 			notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)/4
 			notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)/4
 		}
+		if(notes[o].temporaryType==noteTypes.wall)
+		{
+			_spr=spr_wall
+		}
 	}
 	catch(e)
 	{
 		
+	}
+	
+	if(inCamera)
+	{
+		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
 	}
 	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=msWindow/4&&!notes[o].wasHit)
 	{
@@ -188,7 +194,7 @@ for(var o=0; o<array_length(notes);o++)
 	}
 	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
 	{
-		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,
+		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,
 		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
 		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,0.5)
 	}

@@ -100,5 +100,6 @@
     {"name":"spr_tv_miss_combo","order":5,"path":"sprites/spr_tv_miss_combo/spr_tv_miss_combo.yy",},
     {"name":"spr_tv_really_bad","order":3,"path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},
     {"name":"spr_tv_really_good","order":4,"path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},
+    {"name":"spr_wall","order":25,"path":"sprites/spr_wall/spr_wall.yy",},
   ],
 }

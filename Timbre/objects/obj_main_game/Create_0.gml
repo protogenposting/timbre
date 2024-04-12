@@ -238,7 +238,14 @@ function create_points(){
 				{
 					notes[o].color=c_lime
 				}
-				if(dir==loop_rotation(_direction)||dir==loop_rotation(_direction+180))
+				if(dir==loop_rotation(_direction+180))
+				{
+					notes[o].color=c_navy
+					notes[o].temporaryType=noteTypes.wall
+					notes[o].startX=notes[o].x
+					notes[o].startY=notes[o].y
+				}
+				if(dir==loop_rotation(_direction))
 				{
 					notes[o].color=c_gray
 					notes[o].temporaryType=noteTypes.movingHit
