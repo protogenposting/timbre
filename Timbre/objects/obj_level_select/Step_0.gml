@@ -36,6 +36,7 @@ try{
 	if(frac(barPercentage)<frac(barPercentageLast))
 	{
 		currentShroomPose++
+		audio_play_sound(merps[irandom(array_length(merps)-1)],1000,false)
 	}
 	
 }

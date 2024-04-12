@@ -12,7 +12,18 @@ barPercentage = remap(needle, left, right, 0, 1);
 if(frac(barPercentage)<frac(barPercentageLast))
 {
 	currentShroomPose++
+	if(currentShroomPose>=4)
+	{
+		currentShroomPose=0
+	}
+	if(currentShroomPose==1||currentShroomPose==3)
+	{
+		logoRotation=45*logoRotationMult
+		logoRotationMult*=-1
+	}
 }
+
+logoRotation-=sign(logoRotation)*3
 
 if(treeLine.y>room_height-128)
 {

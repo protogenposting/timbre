@@ -145,7 +145,13 @@ else
 	
 	draw_text(1366/2,96+64,"early: "+string(early)+"    late: "+string(late)+"    perfect: "+string(perfect))
 	
-	if(get_accuracy()>=90)
+	comboMissTimer--
+	
+	if(comboMissTimer>0)
+	{
+		sprite_index=spr_tv_miss_combo
+	}
+	else if(get_accuracy()>=90)
 	{
 		sprite_index=spr_tv_really_good
 	}

@@ -75,12 +75,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
 	{
-		audio_play_sound(snd_spinout,1000,false)
-		points[i].wasHit=true
-		misses++
-		fullCombo=false
-		combo=0
-		array_push(accuracyList,0)
+		miss(points[i])
 	}
 }
 
@@ -174,11 +169,7 @@ for(var o=0; o<array_length(notes);o++)
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
 	{
-		notes[o].wasHit=2
-		misses++
-		fullCombo=false
-		combo=0
-		array_push(accuracyList,0)
+		miss(notes[o])
 	}
 	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
 	{

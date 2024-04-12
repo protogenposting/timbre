@@ -12,6 +12,19 @@ yOffsetSpeed=0
 
 yOffsetMaxSpeed=25
 
+merps=[
+	snd_merp1,
+	snd_merp2,
+	snd_merp3,
+	snd_merp4,
+	snd_merp5,
+	snd_merp6,
+	snd_merp7,
+	snd_merp8,
+	snd_merp9,
+	snd_merp10,
+]
+
 bpm=0
 
 audio=-4

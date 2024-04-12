@@ -9,6 +9,7 @@ font_enable_effects(fn_font, true, {
     outlineColour: c_black
 });
 
+draw_sprite_ext(spr_logo,0,1366/2,128,0.25,0.25,logoRotation,c_white,1)
 
 draw_set_halign(fa_center)
 for(var i=0;i<array_length(button);i++)

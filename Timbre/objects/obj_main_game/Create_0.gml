@@ -54,6 +54,23 @@ lastLStickRotation=0
 
 lastRStickRotation=0
 
+comboMissTimer=0
+
+function miss(struct)
+{
+	audio_play_sound(snd_spinout,1000,false)
+	struct.wasHit=true
+	misses++
+	fullCombo=false
+	if(combo>5)
+	{
+		comboMissTimer=50
+		audio_play_sound(snd_combo_loss,1000,false)
+	}
+	combo=0
+	array_push(accuracyList,0)
+}
+
 function loop_rotation(rot){
 	while(rot>=360)
 	{
