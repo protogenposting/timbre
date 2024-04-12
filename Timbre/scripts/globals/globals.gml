@@ -18,7 +18,7 @@ global.levelData=-4
 
 global.song=-4
 
-global.epilepsyMode=false
+global.epilepsyMode=true
 
 global.moveSpeed=1
 
