@@ -4,6 +4,7 @@ enum noteTypes{
 	log,
 	turn,
 	loop,
+	movingHit
 }
 
 enum noteDirections{

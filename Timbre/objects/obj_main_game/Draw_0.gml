@@ -139,11 +139,18 @@ for(var o=0; o<array_length(notes);o++)
 {
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
 	var dir=notes[o].direction*90
+	
 	if(inCamera)
 	{
 		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
 	}
 	var timing=songMilliseconds-notes[o].timeMS
+	if(notes[o].type==noteTypes.movingHit)
+	{
+		notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)
+		notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)
+		show_debug_message(timing/1000)
+	}
 	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=msWindow/4&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)

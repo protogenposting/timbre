@@ -107,6 +107,18 @@ axeRotations[1]-=axeRotations[1]/10
 		axeRotations[1]=-90
 		audio_play_sound(snd_swipe,1000,false)
 	}
+	if(attackKey[loop_rotation((currentDirection+180))/90])
+	{
+		axeRotations[0]=45
+		axeRotations[1]=45
+		audio_play_sound(snd_swipe,1000,false)
+	}
+	if(attackKey[loop_rotation((currentDirection))/90])
+	{
+		axeRotations[0]=-90
+		axeRotations[1]=-90
+		audio_play_sound(snd_swipe,1000,false)
+	}
 	
 	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
 	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
