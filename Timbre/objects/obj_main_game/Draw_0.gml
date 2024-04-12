@@ -129,16 +129,28 @@ for(var i=array_length(points)-1;i>0;i--)
 	}
 	if(points[i].timeMS-songMilliseconds<msWindow*4&&!points[i].wasHit&&inCamera)
 	{
+		var _alpha=0.1
+		if(currentPoint+1==i)
+		{
+			_alpha=0.5
+		}
 		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
-		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,_color,0.5)
+		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,_color,_alpha)
 	}
 }
+
+var _nextNote=99999999999999
 
 for(var o=0; o<array_length(notes);o++)
 {
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
 	var dir=notes[o].direction*90
+	
+	if(!notes[o].wasHit)
+	{
+		_nextNote=min(_nextNote,o)
+	}
 	
 	if(inCamera)
 	{
@@ -180,9 +192,14 @@ for(var o=0; o<array_length(notes);o++)
 	}
 	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
 	{
+		var _alpha=0.06
+		if(_nextNote==o)
+		{
+			_alpha=0.6
+		}
 		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,
 		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
-		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,0.5)
+		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,_alpha)
 	}
 }
 
