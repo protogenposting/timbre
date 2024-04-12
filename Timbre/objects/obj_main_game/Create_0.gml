@@ -59,13 +59,14 @@ comboMissTimer=0
 function miss(struct)
 {
 	audio_play_sound(snd_spinout,1000,false)
-	struct.wasHit=true
+	struct.wasHit=2
 	misses++
 	fullCombo=false
 	if(combo>5)
 	{
 		comboMissTimer=50
-		audio_play_sound(snd_combo_loss,1000,false)
+		var _aud=audio_play_sound(snd_combo_loss,1000,false)
+		audio_sound_gain(_aud,3,0)
 	}
 	combo=0
 	array_push(accuracyList,0)

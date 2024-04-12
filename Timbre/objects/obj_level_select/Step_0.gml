@@ -25,6 +25,7 @@ global.botPlay=false
 
 try{
 	bpm=global.levelData.bpm
+	audio_sound_pitch(audio,global.songSpeed)
 	songMilliseconds=audio_sound_get_track_position(audio)*1000
 
 	var barPercentageLast = barPercentage
