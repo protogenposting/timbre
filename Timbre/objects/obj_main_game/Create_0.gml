@@ -172,19 +172,19 @@ function create_points(){
 			_y+=lengthdir_y(gridSizeCurrent,currentDirection)
 		}
 		var _color=c_white
-		if(i>0&&turns[i-1].direction*90==turns[i].direction*90)
+		if(turns[i].direction==noteDirections.left)
 		{
-			_color=c_green
+			_color=$ffffAA
 		}
-		if(i>0&&loop_rotation(turns[i-1].direction*90 + 180)==turns[i].direction*90)
+		else if(turns[i].direction==noteDirections.right)
 		{
-			_color=c_purple
+			_color=$AAffAA
 		}
-		if(i>0&&loop_rotation(turns[i-1].direction*90 - 90)==turns[i].direction*90)
+		if(turns[i].direction==noteDirections.up)
 		{
 			_color=$ffAAAA
 		}
-		if(i>0&&loop_rotation(turns[i-1].direction*90 + 90)==turns[i].direction*90)
+		if(turns[i].direction==noteDirections.down)
 		{
 			_color=$AAAAff
 		}
