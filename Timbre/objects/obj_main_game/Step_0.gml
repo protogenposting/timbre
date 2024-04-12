@@ -106,10 +106,10 @@ axeRotations[1]-=axeRotations[1]/10
 		audio_play_sound(snd_swipe,1000,false)
 	}
 	
-	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)||gamepad_button_check_pressed(4,2)
-	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)||gamepad_button_check_pressed(4,3)
-	turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)||gamepad_button_check_pressed(4,1)
-	turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)||gamepad_button_check_pressed(4,0)
+	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
+	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
+	turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
+	turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
 	
 	turnKeyReleased[noteDirections.left]=keyboard_check_released(global.keyboardBinds.turning.left)
 	turnKeyReleased[noteDirections.right]=keyboard_check_released(global.keyboardBinds.turning.right)

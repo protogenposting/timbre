@@ -255,7 +255,7 @@ catch(e)
 	show_message(e)
 }
 
-msWindow=125
+msWindow=250
 
 if(bpm>120)
 {
@@ -267,8 +267,6 @@ if(bpm>120)
 }
 
 var msWindowTemp=msWindow
-
-timings=[{distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."}]
 
 function get_timing(time)
 {
@@ -320,6 +318,8 @@ function get_accuracy(){
 }
 
 showingFinalMessage=false
+
+timings=[{distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."}]
 
 ranks=[{percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},
 {percent:95,name:"S",messages:["OMG UR SO GOOD!","S is for... SANS UNDERTALE?!?!?!?!"]},
