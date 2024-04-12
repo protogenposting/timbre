@@ -135,6 +135,8 @@ for(var i=array_length(points)-1;i>0;i--)
 	}
 }
 
+var hitTree=-1
+
 for(var o=0; o<array_length(notes);o++)
 {
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
@@ -145,11 +147,16 @@ for(var o=0; o<array_length(notes);o++)
 		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
 	}
 	var timing=songMilliseconds-notes[o].timeMS
-	if(notes[o].type==noteTypes.movingHit)
+	try{
+		if(notes[o].temporaryType==noteTypes.movingHit)
+		{
+			notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)
+			notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)
+		}
+	}
+	catch(e)
 	{
-		notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)
-		notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)
-		show_debug_message(timing/1000)
+		
 	}
 	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=msWindow/4&&!notes[o].wasHit)
 	{
@@ -173,6 +180,7 @@ for(var o=0; o<array_length(notes);o++)
 		}
 		hitTime=1.33
 		hitMessage=get_timing(timing)
+		hitTree=notes[o].direction
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
 	{
@@ -262,6 +270,29 @@ playerPoint.x-1366/2+cameraOffset.x,
 playerPoint.y-768/2+cameraOffset.y)
 
 draw_sprite_ext(spr_player,playerFrame,_currentX,_currentY,1,1,currentDirection,c_white,1)
+
+if(hitTree==loop_rotation((currentDirection+90))/90)
+{
+	axeRotations[0]=-90
+	audio_play_sound(snd_swipe,1000,false)
+}
+if(hitTree==loop_rotation((currentDirection-90))/90)
+{
+	axeRotations[1]=-90
+	audio_play_sound(snd_swipe,1000,false)
+}
+if(hitTree==loop_rotation((currentDirection+180))/90)
+{
+	axeRotations[0]=45
+	axeRotations[1]=45
+	audio_play_sound(snd_swipe,1000,false)
+}
+if(hitTree==loop_rotation((currentDirection))/90)
+{
+	axeRotations[0]=-90
+	axeRotations[1]=-90
+	audio_play_sound(snd_swipe,1000,false)
+}
 
 //show_debug_message(playerPoint.x-(camera_get_view_x(view_camera[0])+1366/2))
 

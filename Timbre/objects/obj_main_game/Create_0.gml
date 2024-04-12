@@ -241,7 +241,7 @@ function create_points(){
 				if(dir==loop_rotation(_direction)||dir==loop_rotation(_direction+180))
 				{
 					notes[o].color=c_gray
-					notes[o].type=noteTypes.movingHit
+					notes[o].temporaryType=noteTypes.movingHit
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
 				}
