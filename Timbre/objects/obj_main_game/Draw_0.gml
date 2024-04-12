@@ -150,8 +150,8 @@ for(var o=0; o<array_length(notes);o++)
 	try{
 		if(notes[o].temporaryType==noteTypes.movingHit)
 		{
-			notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)
-			notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)
+			notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)/4
+			notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)/4
 		}
 	}
 	catch(e)
