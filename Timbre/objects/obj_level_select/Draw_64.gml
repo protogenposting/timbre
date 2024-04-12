@@ -8,7 +8,7 @@ songSpeedAlpha-=0.01
 
 var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
 
-if(_hAxis!=0)
+if(_hAxis!=0&&global.songSpeed+_hAxis*0.25>0)
 {
 	global.songSpeed+=(_hAxis)*0.25
 	songSpeedAlpha=1
@@ -246,7 +246,7 @@ if(selectedLevel!=-4)
 	
 	_y+=32
 	
-	draw_text(_x+256-32,_y,string(songLength) + " Seconds")
+	draw_text(_x+256-32,_y,string(songLength/global.songSpeed) + " Seconds")
 	
 	_y+=64
 	

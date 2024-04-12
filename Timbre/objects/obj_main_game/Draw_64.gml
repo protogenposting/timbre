@@ -121,7 +121,7 @@ if(finished)
 				room_goto(rm_level_select)
 				try{
 					var tempRank=get_rank_id_string(global.levels[global.selectedLevel].rank)
-					if(get_rank_id(accuracy)<tempRank)
+					if(get_rank_id(accuracy)<tempRank&&global.songSpeed>=1)
 					{
 						global.levels[global.selectedLevel].rank=get_rank(accuracy)
 					}

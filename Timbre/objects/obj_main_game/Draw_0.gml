@@ -55,7 +55,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		audio_play_sound(snd_turn,1000,false)
 		points[i].wasHit=true
 		combo++
-		totalScore+=msWindow-abs(timing)
+		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
 		if(timing<-timings[0].distance)
 		{
@@ -149,7 +149,7 @@ for(var o=0; o<array_length(notes);o++)
 		audio_play_sound(snd_hit_tree,1000,false)
 		attackKey[notes[o].direction]=false
 		notes[o].wasHit=true
-		totalScore+=msWindow-abs(timing)
+		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
 		combo++
 		if(timing<-timings[0].distance)
