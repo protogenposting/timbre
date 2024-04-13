@@ -187,6 +187,21 @@ for(var o=0; o<array_length(notes);o++)
 		hitTime=1.33
 		hitMessage=get_timing(timing)
 		hitTree=notes[o].direction
+		
+		if(_spr==spr_log)
+		{
+			var _p=part_system_create(p_log_break)
+			array_push(particles,{time:160,id:_p})
+			part_system_position(_p,notes[o].x,notes[o].y)
+			part_system_angle(_p,notes[o].direction*90)
+		}
+		if(_spr==spr_wall)
+		{
+			var _p=part_system_create(p_wall_break)
+			array_push(particles,{time:160,id:_p})
+			part_system_position(_p,notes[o].x,notes[o].y)
+			part_system_angle(_p,notes[o].direction*90)
+		}
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
 	{

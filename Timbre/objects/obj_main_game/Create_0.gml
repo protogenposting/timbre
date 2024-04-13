@@ -240,15 +240,15 @@ function create_points(){
 				}
 				if(dir==loop_rotation(_direction+180))
 				{
-					notes[o].color=c_navy
-					notes[o].temporaryType=noteTypes.wall
+					notes[o].color=c_gray
+					notes[o].temporaryType=noteTypes.movingHit
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
 				}
 				if(dir==loop_rotation(_direction))
 				{
-					notes[o].color=c_gray
-					notes[o].temporaryType=noteTypes.movingHit
+					notes[o].color=c_aqua
+					notes[o].temporaryType=noteTypes.wall
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
 				}
@@ -430,3 +430,19 @@ turnKeyHold[noteDirections.left]=keyboard_check(global.keyboardBinds.turning.lef
 turnKeyHold[noteDirections.right]=keyboard_check(global.keyboardBinds.turning.right)
 turnKeyHold[noteDirections.up]=keyboard_check(global.keyboardBinds.turning.up)
 turnKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.turning.down)
+
+particles=[]
+
+function update_particles(){
+	for(var i=0;i<array_length(particles);i++)
+	{
+		particles[i].time--
+		if(particles[i].time<=0)
+		{
+			part_system_destroy(particles[i].id)
+			array_delete(particles,i,1)
+			i--
+			continue;
+		}
+	}
+}

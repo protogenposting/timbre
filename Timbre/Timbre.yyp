@@ -96,6 +96,8 @@
     {"id":{"name":"obj_sync","path":"objects/obj_sync/obj_sync.yy",},},
     {"id":{"name":"obj_tutorial","path":"objects/obj_tutorial/obj_tutorial.yy",},},
     {"id":{"name":"clouds","path":"particles/clouds/clouds.yy",},},
+    {"id":{"name":"p_log_break","path":"particles/p_log_break/p_log_break.yy",},},
+    {"id":{"name":"p_wall_break","path":"particles/p_wall_break/p_wall_break.yy",},},
     {"id":{"name":"rm_editor","path":"rooms/rm_editor/rm_editor.yy",},},
     {"id":{"name":"rm_gameplay","path":"rooms/rm_gameplay/rm_gameplay.yy",},},
     {"id":{"name":"rm_level_select","path":"rooms/rm_level_select/rm_level_select.yy",},},

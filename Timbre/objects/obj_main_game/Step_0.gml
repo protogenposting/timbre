@@ -2,6 +2,8 @@
 // You can write your code in this editor
 audio_sound_pitch(audio,global.songSpeed)
 
+update_particles()
+
 songMilliseconds=audio_sound_get_track_position(audio)*1000
 
 playFinishSound=false
