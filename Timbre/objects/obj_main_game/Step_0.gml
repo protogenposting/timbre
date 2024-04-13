@@ -65,8 +65,8 @@ if(global.epilepsyMode)
 
 currentFracBeat=currentBeat+barPercentage
 
-axeRotations[0]-=axeRotations[0]/10
-axeRotations[1]-=axeRotations[1]/10
+axeRotations[0]-=axeRotations[0]/(10*(fps/60))
+axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 
 #region controls
 

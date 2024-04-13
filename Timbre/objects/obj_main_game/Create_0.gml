@@ -433,6 +433,19 @@ turnKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.turning.dow
 
 particles=[]
 
+sprites={
+	player: spr_player,
+	arrow: spr_reverse_arrow,
+	log: spr_log,
+	wall: spr_wall,
+	web: spr_loop,
+	spiderStart: spr_spider_idle,
+	spiderEnd: spr_spider_hit,
+	spiderGrab: spr_spider,
+	axe: spr_axes,
+	bob: spr_bob
+}
+
 function update_particles(){
 	for(var i=0;i<array_length(particles);i++)
 	{
