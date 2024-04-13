@@ -449,11 +449,11 @@ sprites={
 var _dir=""
 if(global.selectedLevel!=-4)
 {
-	_dir=filename_dir(global.levels[global.selectedLevel].path)="\\"
+	_dir=filename_dir(global.levels[global.selectedLevel].path)+"\\"
 }
 else
 {
-	_dir=global.dataLocation="\\"
+	_dir=global.dataLocation+"\\"
 }
 
 var _spritesToGet=struct_get_names(sprites)
