@@ -443,7 +443,8 @@ sprites={
 	spiderEnd: spr_spider_hit,
 	spiderGrab: spr_spider,
 	axe: spr_axes,
-	bob: spr_bob
+	bob: spr_bob,
+	grass: spr_grass
 }
 
 var _dir=""

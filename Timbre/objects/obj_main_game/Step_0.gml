@@ -62,6 +62,10 @@ if(global.epilepsyMode)
 {
 	layer_background_sprite(background,spr_grass_epilepsy)
 }
+if(sprites.grass!=spr_grass)
+{
+	layer_background_sprite(background,sprites.grass)
+}
 
 currentFracBeat=currentBeat+barPercentage
 

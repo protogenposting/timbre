@@ -161,7 +161,7 @@ for(var o=0; o<array_length(notes);o++)
 		//show_debug_message(e)
 	}
 	
-	if(notes[o].wasHit)
+	if(notes[o].wasHit||sprites.log!=spr_log)
 	{
 		notes[o].color=c_white
 	}
