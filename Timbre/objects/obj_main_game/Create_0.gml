@@ -446,6 +446,32 @@ sprites={
 	bob: spr_bob
 }
 
+var _dir=""
+if(global.selectedLevel!=-4)
+{
+	_dir=filename_dir(global.levels[global.selectedLevel].path)="\\"
+}
+else
+{
+	_dir=global.dataLocation="\\"
+}
+
+var _spritesToGet=struct_get_names(sprites)
+
+for(var i=0;i<array_length(_spritesToGet);i++)
+{
+	var _file=_dir+_spritesToGet[i]+".png"
+	if(file_exists(_file))
+	{
+		var _oldSprite=variable_struct_get(sprites,_spritesToGet[i])
+		variable_struct_set(sprites,_spritesToGet[i],sprite_add(_file,sprite_get_number(_oldSprite),
+		false,false,
+		sprite_get_xoffset(_oldSprite),
+		sprite_get_yoffset(_oldSprite)))
+	}
+}
+
+
 function update_particles(){
 	for(var i=0;i<array_length(particles);i++)
 	{

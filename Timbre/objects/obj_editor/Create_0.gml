@@ -287,6 +287,7 @@ button[8]={
 			global.song=songLoaded
 			global.reloadFile=name
 			global.dataLocation=name
+			global.selectedLevel=-4
 			room_goto(rm_gameplay)
 		}
 	},
