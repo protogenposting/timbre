@@ -55,7 +55,7 @@ if(frac(barPercentage)<frac(barPercentageLast))
 		finishTimer++
 		showingFinalMessage=!showingFinalMessage
 	}
-	//audio_play_sound(snd_metronome,1000,false)
+	audio_play_sound(snd_beat,1000,false)
 }
 
 if(global.epilepsyMode)
