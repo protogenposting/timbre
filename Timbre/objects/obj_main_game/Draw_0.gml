@@ -129,7 +129,7 @@ for(var i=array_length(points)-1;i>0;i--)
 	}
 	if(points[i].timeMS-songMilliseconds<msWindow*4&&!points[i].wasHit&&inCamera)
 	{
-		var _alpha=0.1
+		var _alpha=0.03
 		if(currentPoint+1==i)
 		{
 			_alpha=0.5
