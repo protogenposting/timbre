@@ -238,10 +238,17 @@ function create_points(){
 				{
 					notes[o].color=c_lime
 				}
-				if(dir==loop_rotation(_direction)||dir==loop_rotation(_direction+180))
+				if(dir==loop_rotation(_direction+180))
 				{
 					notes[o].color=c_gray
-					notes[o].type=noteTypes.movingHit
+					notes[o].temporaryType=noteTypes.movingHit
+					notes[o].startX=notes[o].x
+					notes[o].startY=notes[o].y
+				}
+				if(dir==loop_rotation(_direction))
+				{
+					notes[o].color=c_aqua
+					notes[o].temporaryType=noteTypes.wall
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
 				}
@@ -423,3 +430,59 @@ turnKeyHold[noteDirections.left]=keyboard_check(global.keyboardBinds.turning.lef
 turnKeyHold[noteDirections.right]=keyboard_check(global.keyboardBinds.turning.right)
 turnKeyHold[noteDirections.up]=keyboard_check(global.keyboardBinds.turning.up)
 turnKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.turning.down)
+
+particles=[]
+
+sprites={
+	player: spr_player,
+	arrow: spr_reverse_arrow,
+	log: spr_log,
+	wall: spr_wall,
+	web: spr_loop,
+	spiderStart: spr_spider_idle,
+	spiderEnd: spr_spider_hit,
+	spiderGrab: spr_spider,
+	axe: spr_axes,
+	bob: spr_bob,
+	grass: spr_grass
+}
+
+var _dir=""
+if(global.selectedLevel!=-4)
+{
+	_dir=filename_dir(global.levels[global.selectedLevel].path)+"\\"
+}
+else
+{
+	_dir=global.dataLocation+"\\"
+}
+
+var _spritesToGet=struct_get_names(sprites)
+
+for(var i=0;i<array_length(_spritesToGet);i++)
+{
+	var _file=_dir+_spritesToGet[i]+".png"
+	if(file_exists(_file))
+	{
+		var _oldSprite=variable_struct_get(sprites,_spritesToGet[i])
+		variable_struct_set(sprites,_spritesToGet[i],sprite_add(_file,sprite_get_number(_oldSprite),
+		false,false,
+		sprite_get_xoffset(_oldSprite),
+		sprite_get_yoffset(_oldSprite)))
+	}
+}
+
+
+function update_particles(){
+	for(var i=0;i<array_length(particles);i++)
+	{
+		particles[i].time--
+		if(particles[i].time<=0)
+		{
+			part_system_destroy(particles[i].id)
+			array_delete(particles,i,1)
+			i--
+			continue;
+		}
+	}
+}

@@ -11,10 +11,10 @@ if(paused)
 {
 	draw_text(1366/2,room_height/2,"press space to return to menu")
 }
-
+draw_set_halign(fa_center)
 draw_set_font(fn_font_big)
 draw_text_transformed(1366/2,96,hitMessage,hitTime,hitTime,0)
-hitTime-=(hitTime-1)/10
+hitTime-=(hitTime-1)/(10*(fps/60))
 
 if(finished)
 {

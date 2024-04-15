@@ -2,6 +2,8 @@
 // You can write your code in this editor
 audio_sound_pitch(audio,global.songSpeed)
 
+update_particles()
+
 songMilliseconds=audio_sound_get_track_position(audio)*1000
 
 playFinishSound=false
@@ -53,18 +55,22 @@ if(frac(barPercentage)<frac(barPercentageLast))
 		finishTimer++
 		showingFinalMessage=!showingFinalMessage
 	}
-	//audio_play_sound(snd_metronome,1000,false)
+	//audio_play_sound(snd_beat,1000,false)
 }
 
 if(global.epilepsyMode)
 {
 	layer_background_sprite(background,spr_grass_epilepsy)
 }
+if(sprites.grass!=spr_grass)
+{
+	layer_background_sprite(background,sprites.grass)
+}
 
 currentFracBeat=currentBeat+barPercentage
 
-axeRotations[0]-=axeRotations[0]/10
-axeRotations[1]-=axeRotations[1]/10
+axeRotations[0]-=axeRotations[0]/(10*(fps/60))
+axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 
 #region controls
 
@@ -97,6 +103,12 @@ axeRotations[1]-=axeRotations[1]/10
 		attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
 	}
 	var currentDirection=points[currentPoint].direction*90
+	
+	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
+	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
+	turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
+	turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
+	
 	if(attackKey[loop_rotation((currentDirection+90))/90])
 	{
 		axeRotations[0]=-90
@@ -119,11 +131,6 @@ axeRotations[1]-=axeRotations[1]/10
 		axeRotations[1]=-90
 		audio_play_sound(snd_swipe,1000,false)
 	}
-	
-	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
-	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
-	turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
-	turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
 	
 	turnKeyReleased[noteDirections.left]=keyboard_check_released(global.keyboardBinds.turning.left)
 	turnKeyReleased[noteDirections.right]=keyboard_check_released(global.keyboardBinds.turning.right)

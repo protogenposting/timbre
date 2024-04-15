@@ -2,6 +2,11 @@
 // You can write your code in this editor
 songMilliseconds=audio_sound_get_track_position(audio)*1000
 
+if(!instance_exists(obj_fps_control))
+{
+	instance_create_depth(0,0,depth,obj_fps_control)
+}
+
 var barPercentageLast = barPercentage
 var beatLength=60/bpm
 var needle = songMilliseconds/1000

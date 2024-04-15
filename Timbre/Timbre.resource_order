@@ -26,6 +26,9 @@
     {"name":"obj_menu","order":1,"path":"objects/obj_menu/obj_menu.yy",},
     {"name":"obj_sync","order":5,"path":"objects/obj_sync/obj_sync.yy",},
     {"name":"obj_tutorial","order":4,"path":"objects/obj_tutorial/obj_tutorial.yy",},
+    {"name":"obj_fps_control","order":6,"path":"objects/obj_fps_control/obj_fps_control.yy",},
+    {"name":"p_log_break","order":1,"path":"particles/p_log_break/p_log_break.yy",},
+    {"name":"p_wall_break","order":2,"path":"particles/p_wall_break/p_wall_break.yy",},
     {"name":"rm_editor","order":2,"path":"rooms/rm_editor/rm_editor.yy",},
     {"name":"rm_level_select","order":4,"path":"rooms/rm_level_select/rm_level_select.yy",},
     {"name":"rm_offset_test","order":6,"path":"rooms/rm_offset_test/rm_offset_test.yy",},
@@ -100,5 +103,6 @@
     {"name":"spr_tv_miss_combo","order":5,"path":"sprites/spr_tv_miss_combo/spr_tv_miss_combo.yy",},
     {"name":"spr_tv_really_bad","order":3,"path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},
     {"name":"spr_tv_really_good","order":4,"path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},
+    {"name":"spr_wall","order":25,"path":"sprites/spr_wall/spr_wall.yy",},
   ],
 }

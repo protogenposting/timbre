@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.2,
+  "duration":0.118639,
   "name":"snd_beat",
   "parent":{
     "name":"Sounds",

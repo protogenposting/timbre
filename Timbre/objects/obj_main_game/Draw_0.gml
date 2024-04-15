@@ -5,7 +5,7 @@ var beatLength=60/bpm
 
 for(var i=0;i<array_length(bobs);i++)
 {
-	draw_sprite(spr_bob,bobs[i].frame,bobs[i].x,bobs[i].y)
+	draw_sprite(sprites.bob,bobs[i].frame,bobs[i].x,bobs[i].y)
 }
 
 //check notes
@@ -49,7 +49,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
 	var hitKey=i>0&&points[i-1].type!=noteTypes.loop&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.loop&&turnKeyReleased[points[i].direction]
-	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/4&&!points[i].wasHit)
+	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=msWindow/7&&!points[i].wasHit)
 	{
 		turnKey[points[i].direction]=false
 		audio_play_sound(snd_turn,1000,false)
@@ -91,7 +91,7 @@ for(var i=array_length(points)-1;i>0;i--)
 	{
 		points[i].frame=0
 	}
-	if(points[i].continuing)
+	if(points[i].continuing&&points[i].type!=noteTypes.loop)
 	{
 		continue;
 	}
@@ -99,7 +99,7 @@ for(var i=array_length(points)-1;i>0;i--)
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
 	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120&&inCamera)
 	{
-		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,1,1,
+		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,1,1,
 		points[i].direction*90,_color,1)
 	}
 	if(points[i].type==noteTypes.loop)
@@ -107,12 +107,12 @@ for(var i=array_length(points)-1;i>0;i--)
 		var _beatDistance=abs(points[i].beat-points[i+1].beat)
 		if(!points[i+1].wasHit)
 		{
-			draw_sprite_ext(spr_loop,0,points[i].x,points[i].y,(loopSize/32)*_beatDistance,1,
+			draw_sprite_ext(sprites.web,0,points[i].x,points[i].y,(loopSize/32)*_beatDistance,1,
 			points[i].direction*90,c_white,1)
 		}
 		if(!points[i].wasHit)
 		{
-			draw_sprite_ext(spr_spider_idle,0,
+			draw_sprite_ext(sprites.spiderStart,0,
 			points[i].x-lengthdir_x(64,points[i].direction*90),
 			points[i].y-lengthdir_y(64,points[i].direction*90),
 			1,1,
@@ -120,7 +120,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		}
 		else if(points[i+1].wasHit)
 		{
-			draw_sprite_ext(spr_spider_hit,0,
+			draw_sprite_ext(sprites.spiderEnd,0,
 			points[i].x-lengthdir_x(64,points[i].direction*90),
 			points[i].y-lengthdir_y(64,points[i].direction*90),
 			1,1,
@@ -134,18 +134,43 @@ for(var i=array_length(points)-1;i>0;i--)
 		{
 			_alpha=0.5
 		}
-		draw_sprite_ext(spr_reverse_arrow,points[i].frame,points[i].x,points[i].y,
+		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,_color,_alpha)
 	}
 }
 
 var _nextNote=99999999999999
+var hitTree=-1
 
 for(var o=0; o<array_length(notes);o++)
 {
+	var _spr=sprites.log
+	
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
 	var dir=notes[o].direction*90
+	var timing=songMilliseconds-notes[o].timeMS
+	try{
+		if(notes[o].temporaryType==noteTypes.movingHit)
+		{
+			notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)/4
+			notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)/4
+			
+		}
+		if(notes[o].temporaryType==noteTypes.wall)
+		{
+			_spr=sprites.wall
+		}
+	}
+	catch(e)
+	{
+		//show_debug_message(e)
+	}
+	
+	if(notes[o].wasHit||sprites.log!=spr_log)
+	{
+		notes[o].color=c_white
+	}
 	
 	if(!notes[o].wasHit)
 	{
@@ -154,16 +179,9 @@ for(var o=0; o<array_length(notes);o++)
 	
 	if(inCamera)
 	{
-		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
+		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
 	}
-	var timing=songMilliseconds-notes[o].timeMS
-	if(notes[o].type==noteTypes.movingHit)
-	{
-		notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)
-		notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)
-		show_debug_message(timing/1000)
-	}
-	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=msWindow/4&&!notes[o].wasHit)
+	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=msWindow/7&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
 		attackKey[notes[o].direction]=false
@@ -185,6 +203,23 @@ for(var o=0; o<array_length(notes);o++)
 		}
 		hitTime=1.33
 		hitMessage=get_timing(timing)
+		hitTree=notes[o].direction
+		
+		if(_spr==sprites.log)
+		{
+			var _p=part_system_create(p_log_break)
+			array_push(particles,{time:160,id:_p})
+			part_system_position(_p,notes[o].x,notes[o].y)
+			part_system_angle(_p,notes[o].direction*90)
+			
+		}
+		if(_spr==sprites.wall)
+		{
+			var _p=part_system_create(p_wall_break)
+			array_push(particles,{time:160,id:_p})
+			part_system_position(_p,notes[o].x,notes[o].y)
+			part_system_angle(_p,notes[o].direction*90)
+		}
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)
 	{
@@ -197,7 +232,7 @@ for(var o=0; o<array_length(notes);o++)
 		{
 			_alpha=0.6
 		}
-		draw_sprite_ext(spr_log,notes[o].wasHit,notes[o].x,notes[o].y,
+		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,
 		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
 		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,_alpha)
 	}
@@ -249,7 +284,7 @@ if(points[currentPoint].type==noteTypes.loop)
 	_currentY+=_transitionAmount.y
 	playerPoint.x+=_transitionAmount.x
 	playerPoint.y+=_transitionAmount.y
-	draw_sprite_ext(spr_spider,0,_currentX-lengthdir_x(64,currentDirection),
+	draw_sprite_ext(sprites.spiderGrab,0,_currentX-lengthdir_x(64,currentDirection),
 	_currentY-lengthdir_y(64,currentDirection),1,1,currentDirection,c_white,1)
 	if(turnKeyHold[points[currentPoint].direction])
 	{
@@ -257,28 +292,51 @@ if(points[currentPoint].type==noteTypes.loop)
 	}
 }
 
-draw_sprite_ext(spr_axes,axeFrames[0],_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
-draw_sprite_ext(spr_axes,axeFrames[1],_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
+draw_sprite_ext(sprites.axe,axeFrames[0],_currentX,_currentY,1,1,currentDirection+90+axeRotations[0],c_white,1)
+draw_sprite_ext(sprites.axe,axeFrames[1],_currentX,_currentY,1,-1,currentDirection-90-axeRotations[1],c_white,1)
 
 
 if(_transitionAmount.x!=0||_transitionAmount.y!=0)
 {
-	cameraOffset.x-=(cameraOffset.x-lengthdir_x(-128,currentDirection))/10
+	cameraOffset.x-=(cameraOffset.x-lengthdir_x(-128,currentDirection))/(10*(fps/60))
 
-	cameraOffset.y-=(cameraOffset.y-lengthdir_y(-128,currentDirection))/10
+	cameraOffset.y-=(cameraOffset.y-lengthdir_y(-128,currentDirection))/(10*(fps/60))
 }
 else
 {
-	cameraOffset.x-=(cameraOffset.x-lengthdir_x(128,currentDirection))/10
+	cameraOffset.x-=(cameraOffset.x-lengthdir_x(128,currentDirection))/(10*(fps/60))
 
-	cameraOffset.y-=(cameraOffset.y-lengthdir_y(128,currentDirection))/10
+	cameraOffset.y-=(cameraOffset.y-lengthdir_y(128,currentDirection))/(10*(fps/60))
 }
 
 camera_set_view_pos(view_camera[0],
 playerPoint.x-1366/2+cameraOffset.x,
 playerPoint.y-768/2+cameraOffset.y)
 
-draw_sprite_ext(spr_player,playerFrame,_currentX,_currentY,1,1,currentDirection,c_white,1)
+draw_sprite_ext(sprites.player,playerFrame,_currentX,_currentY,1,1,currentDirection,c_white,1)
+
+if(hitTree==loop_rotation((currentDirection+90))/90)
+{
+	axeRotations[0]=-90
+	audio_play_sound(snd_swipe,1000,false)
+}
+if(hitTree==loop_rotation((currentDirection-90))/90)
+{
+	axeRotations[1]=-90
+	audio_play_sound(snd_swipe,1000,false)
+}
+if(hitTree==loop_rotation((currentDirection+180))/90)
+{
+	axeRotations[0]=45
+	axeRotations[1]=45
+	audio_play_sound(snd_swipe,1000,false)
+}
+if(hitTree==loop_rotation((currentDirection))/90)
+{
+	axeRotations[0]=-90
+	axeRotations[1]=-90
+	audio_play_sound(snd_swipe,1000,false)
+}
 
 //show_debug_message(playerPoint.x-(camera_get_view_x(view_camera[0])+1366/2))
 
