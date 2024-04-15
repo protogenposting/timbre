@@ -20,6 +20,8 @@ global.song=-4
 
 global.songSpeed=1
 
+global.orderedAlpha=false
+
 global.epilepsyMode=true
 
 global.moveSpeed=1

@@ -319,6 +319,18 @@ function get_timing(time)
 	return "???"
 }
 
+function get_timing_id(time)
+{
+	for(var i=0;i<array_length(timings);i++)
+	{
+		if(abs(time)<timings[i].distance)
+		{
+			return i
+		}
+	}
+	return "???"
+}
+
 attackKey=[]
 
 turnKey=[]

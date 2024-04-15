@@ -72,6 +72,13 @@ for(var i=0;i<array_length(points)-1;i++)
 		
 		hitTime=1.33
 		hitMessage=get_timing(timing)
+		if(get_timing_id(timing)==0)
+		{
+			var _p=part_system_create(p_arrow_perfect)
+			array_push(particles,{time:160,id:_p})
+			part_system_position(_p,points[i].x,points[i].y)
+			part_system_angle(_p,points[i].direction*90)
+		}
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
 	{
@@ -131,6 +138,10 @@ for(var i=array_length(points)-1;i>0;i--)
 	{
 		var _alpha=0.03
 		if(currentPoint+1==i)
+		{
+			_alpha=0.5
+		}
+		if(!global.orderedAlpha)
 		{
 			_alpha=0.5
 		}
@@ -231,6 +242,10 @@ for(var o=0; o<array_length(notes);o++)
 		if(_nextNote==o)
 		{
 			_alpha=0.6
+		}
+		if(!global.orderedAlpha)
+		{
+			_alpha=0.5
 		}
 		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,
 		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
