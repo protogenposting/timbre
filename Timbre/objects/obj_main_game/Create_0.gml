@@ -131,6 +131,8 @@ if(global.levelData!=-4)
 	{
 		notes[i]=notesToGet[i]
 	}
+	sort_array(notes)
+	
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset
 }
@@ -176,7 +178,7 @@ function create_points(){
 	for(var i=0;i<array_length(turns);i++)
 	{
 		var gridSizeCurrent=gridSize*(turns[i].beat-lastBeatFrom)
-		if(pointArray[i].type==noteTypes.turn)
+		if(pointArray[i].type!=noteTypes.loop)
 		{
 			_x+=lengthdir_x(gridSizeCurrent,currentDirection)
 			_y+=lengthdir_y(gridSizeCurrent,currentDirection)

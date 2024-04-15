@@ -103,7 +103,12 @@ if(selectedLevel!=-4)
 	
 	var index=0
 	
-	if(!button[selectedLevel].availableDifficulties[2])
+	if(global.currentDifficulty==2)
+	{
+		index=3
+	}
+	
+	if(!button[selectedLevel+3].availableDifficulties[2])
 	{
 		index=2
 		if(global.currentDifficulty==2)
@@ -119,6 +124,9 @@ if(selectedLevel!=-4)
 			if(mouse_check_button_pressed(mb_left))
 			{
 				global.currentDifficulty=2
+				var selected=obj_level_select.selectedLevel+3
+				obj_level_select.selectedLevel=-4
+				button[selected].func()
 			}
 		}
 	}
@@ -129,7 +137,12 @@ if(selectedLevel!=-4)
 	
 	index=0
 	
-	if(!button[selectedLevel].availableDifficulties[0])
+	if(global.currentDifficulty==0)
+	{
+		index=3
+	}
+	
+	if(!button[selectedLevel+3].availableDifficulties[0])
 	{
 		index=2
 		if(global.currentDifficulty==0)
@@ -145,6 +158,9 @@ if(selectedLevel!=-4)
 			if(mouse_check_button_pressed(mb_left))
 			{
 				global.currentDifficulty=0
+				var selected=obj_level_select.selectedLevel+3
+				obj_level_select.selectedLevel=-4
+				button[selected].func()
 			}
 		}
 	}
@@ -155,7 +171,12 @@ if(selectedLevel!=-4)
 	
 	index=0
 	
-	if(!button[selectedLevel].availableDifficulties[1])
+	if(global.currentDifficulty==1)
+	{
+		index=3
+	}
+	
+	if(!button[selectedLevel+3].availableDifficulties[1])
 	{
 		index=2
 		if(global.currentDifficulty==1)
@@ -171,6 +192,9 @@ if(selectedLevel!=-4)
 			if(mouse_check_button_pressed(mb_left))
 			{
 				global.currentDifficulty=1
+				var selected=obj_level_select.selectedLevel+3
+				obj_level_select.selectedLevel=-4
+				button[selected].func()
 			}
 		}
 	}

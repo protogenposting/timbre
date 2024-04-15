@@ -168,20 +168,20 @@ function reset_buttons()
 	for(var i=0;i<array_length(global.levels);i++)
 	{
 		var _file=load_file(global.levels[i].path)
-		var hasNormal=false
+		var hasNormal=true
 		var hasEasy=false
 		var hasHard=false
 		if(_file!=false)
 		{
-			if(variable_struct_exists(_file,"notesHard")&&array_length(_file.notesHard)>0)
+			if(variable_struct_exists(_file,"notesHard"))
 			{
 				hasHard=true
 			}
-			if(variable_struct_exists(_file,"notes")&&array_length(_file.notes)>0)
+			if(!variable_struct_exists(_file,"notes"))
 			{
-				hasNormal=true
+				hasNormal=false
 			}
-			if(variable_struct_exists(_file,"notesEasy")&&array_length(_file.notesEasy)>0)
+			if(variable_struct_exists(_file,"notesEasy"))
 			{
 				hasEasy=true
 			}
@@ -190,9 +190,12 @@ function reset_buttons()
 			name: global.levels[i].name,
 			path: global.levels[i].path,
 			id:i,
-			availableDifficulties:[hasNormal,hasHard,hasEasy],
 			color: array_index_looped(menuColors,i),
 			func: function(){
+				if(!availableDifficulties[global.currentDifficulty])
+				{
+					global.currentDifficulty=0
+				}
 				if(obj_level_select.selectedLevel==id)
 				{
 					audio_stop_sound(global.song)
@@ -302,6 +305,8 @@ function reset_buttons()
 			position:{x: _x,y: _y},
 			sizeMod:0
 		}
+			
+		_struct.availableDifficulties=[hasNormal,hasHard,hasEasy]
 		array_push(button,_struct)
 		_x+=160+64
 		var _moreStatsPos=room_width - 512 + 64 - point_between_points(0,0,256+128,0,obj_level_select.moreStats).x -128
