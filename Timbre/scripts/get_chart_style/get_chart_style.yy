@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"get_chart_style",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_chart_style",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

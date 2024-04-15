@@ -4,16 +4,26 @@
 // Inherit the parent event
 event_inherited();
 
+notesToDraw=notes
+
+if(currentDifficulty==1)
+{
+	notesToDraw=notesHard
+}
+if(currentDifficulty==2)
+{
+	notesToDraw=notesEasy
+}
+
 if(audio!=-4&&audio_is_playing(songLoaded))
 {
 	draw_rectangle(0,0,room_width*(audio_sound_get_track_position(audio)/audio_sound_length(audio)),32,false)
-	draw_text(room_width/2,64,"playing song")
 }
 else
 {
-	for(var i=0;i<array_length(notes);i++)
+	for(var i=0;i<array_length(notesToDraw);i++)
 	{
-		notes[i].wasHit=false
+		notesToDraw[i].wasHit=false
 	}
 }
 
@@ -35,11 +45,11 @@ repeat(16)
 	}
 	var notesInBeat=[]
 	var notesInBeatEquivelants=[]
-	for(var i=0;i<array_length(notes);i++)
+	for(var i=0;i<array_length(notesToDraw);i++)
 	{
-		if(notes[i].beat>=beat&&notes[i].beat<beat+1)
+		if(notesToDraw[i].beat>=beat&&notesToDraw[i].beat<beat+1)
 		{
-			array_push(notesInBeat,notes[i])
+			array_push(notesInBeat,notesToDraw[i])
 			array_push(notesInBeatEquivelants,i)
 		}
 	}
@@ -57,10 +67,10 @@ repeat(16)
 			{
 				draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
 				try{
-					if(songMilliseconds/1000>=beat*beatLength&&!notes[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
+					if(songMilliseconds/1000>=beat*beatLength&&!notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
 					{
 						audio_play_sound(noteSounds[_note],1000,false)
-						notes[notesInBeatEquivelants[noteOnBeat]].wasHit=true
+						notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit=true
 					}
 				}
 				catch(e)
@@ -76,11 +86,11 @@ repeat(16)
 				{
 					if(noteOnBeat==-1)
 					{
-						array_push(notes,create_note(beat,_note,noteDirection,false))
+						array_push(notesToDraw,create_note(beat,_note,noteDirection,false))
 					}
 					else
 					{
-						array_delete(notes,notesInBeatEquivelants[noteOnBeat],1)
+						array_delete(notesToDraw,notesInBeatEquivelants[noteOnBeat],1)
 					}
 				}
 			}
@@ -93,3 +103,9 @@ repeat(16)
 	_y+=boxSize*2
 	beat+=zoom
 }
+
+draw_text(room_width/2,64,"use UP/DOWN to change the current chart type")
+
+difficultyAlpha-=0.01
+
+draw_text_color(room_width/2,room_height/2,"Current difficulty: "+get_chart_style(currentDifficulty),c_white,c_white,c_white,c_white,difficultyAlpha)

@@ -167,12 +167,40 @@ function reset_buttons()
 	var _yStart=_y
 	for(var i=0;i<array_length(global.levels);i++)
 	{
-		array_push(button,{
+		var _file=load_file(global.levels[i].path)
+		var hasNormal=false
+		var hasEasy=false
+		var hasHard=false
+		if(_file!=false)
+		{
+			if(variable_struct_exists(_file,"notesHard")&&array_length(_file.notesHard)>0)
+			{
+				hasHard=true
+			}
+			if(variable_struct_exists(_file,"notes")&&array_length(_file.notes)>0)
+			{
+				hasNormal=true
+			}
+			if(variable_struct_exists(_file,"notesEasy")&&array_length(_file.notesEasy)>0)
+			{
+				hasEasy=true
+			}
+		}
+		var _struct={
 			name: global.levels[i].name,
 			path: global.levels[i].path,
 			id:i,
+			availableDifficulties:[hasNormal,hasHard,hasEasy],
 			color: array_index_looped(menuColors,i),
 			func: function(){
+				if(obj_level_select.selectedLevel==id)
+				{
+					audio_stop_sound(global.song)
+					global.song=-4
+					currentShroomPose=-1
+					obj_level_select.selectedLevel=-4
+					return false
+				}
 				var _file=load_file(path)
 				if(_file==false)
 				{
@@ -186,11 +214,21 @@ function reset_buttons()
 						var beatLength=60/_file.bpm
 						var _noteBeats=[]
 						
-						for(var i=0;i<array_length(_file.notes)-1;i++)
+						var notesToGet=_file.notes
+						if(global.currentDifficulty==1)
 						{
-							array_push(_noteBeats,abs(_file.notes[i].beat-_file.notes[i+1].beat))
-							_file.notes[i].timeMS=_file.notes[i].beat*beatLength*1000
-							_leafToTreeRatio[_file.notes[i].type]++
+							notesToGet=_file.notesHard
+						}
+						if(global.currentDifficulty==2)
+						{
+							notesToGet=_file.notesEasy
+						}
+						
+						for(var i=0;i<array_length(notesToGet)-1;i++)
+						{
+							array_push(_noteBeats,abs(notesToGet[i].beat-notesToGet[i+1].beat))
+							notesToGet[i].timeMS=notesToGet[i].beat*beatLength*1000
+							_leafToTreeRatio[notesToGet[i].type]++
 						}
 						
 						global.song=audio_create_stream(filename_dir(path)+"\\"+_file.songName)
@@ -203,13 +241,13 @@ function reset_buttons()
 						}
 						obj_level_select.noteDensity=((_average/array_length(_noteBeats))/_file.bpm)*100
 						
-						var _songLength=array_last(_file.notes).beat-array_first(_file.notes).beat
+						var _songLength=array_last(notesToGet).beat-array_first(notesToGet).beat
 						
 						_songLength*=60/_file.bpm
 						
 						obj_level_select.songMilliseconds=0
 						
-						obj_level_select.previewNotes=_file.notes
+						obj_level_select.previewNotes=notesToGet
 						
 						obj_level_select.songLength=_songLength
 						global.songLength=_songLength
@@ -263,7 +301,8 @@ function reset_buttons()
 			size:{x:128,y:48},
 			position:{x: _x,y: _y},
 			sizeMod:0
-		})
+		}
+		array_push(button,_struct)
 		_x+=160+64
 		var _moreStatsPos=room_width - 512 + 64 - point_between_points(0,0,256+128,0,obj_level_select.moreStats).x -128
 		if(_x>=_moreStatsPos)

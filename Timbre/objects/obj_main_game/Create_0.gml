@@ -117,9 +117,19 @@ notes=[]
 
 if(global.levelData!=-4)
 {
-	for(var i=0;i<array_length(global.levelData.notes);i++)
+	var notesToGet=global.levelData.notes
+
+	if(global.currentDifficulty==1)
 	{
-		notes[i]=global.levelData.notes[i]
+		notesToGet=global.levelData.notesHard
+	}
+	if(global.currentDifficulty==2)
+	{
+		notesToGet=global.levelData.notesEasy
+	}
+	for(var i=0;i<array_length(notesToGet);i++)
+	{
+		notes[i]=notesToGet[i]
 	}
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset

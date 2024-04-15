@@ -4,7 +4,15 @@ name=""
 
 songName="level.ogg"
 
+currentDifficulty=global.currentDifficulty
+
 notes=[]
+
+notesToDraw=[]
+
+notesHard=[]
+
+notesEasy=[]
 
 difficulty=0
 
@@ -34,6 +42,8 @@ zoom=1
 
 startingBeat=0
 
+difficultyAlpha=0
+
 if(global.song!=-4)
 {
 	songLoaded=global.song
@@ -42,6 +52,14 @@ if(global.levelData!=-4)
 {
 	songName=global.levelData.songName
 	notes=global.levelData.notes
+	if(variable_struct_exists(global.levelData,"notesHard"))
+	{
+		notesHard=global.levelData.notesHard
+	}
+	if(variable_struct_exists(global.levelData,"notesEasy"))
+	{
+		notesEasy=global.levelData.notesEasy
+	}
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset
 	name=global.dataLocation
@@ -63,7 +81,19 @@ if(global.levelData!=-4)
 
 function save_level(_levelName,_songName){
 	notes=sort_array(notes)
-	var data={songName:_songName,bpm: obj_editor.bpm, notes: obj_editor.notes,offset: obj_editor.offset,difficulty: obj_editor.difficulty,artist: obj_editor.artist}
+	var data={songName:_songName,bpm: obj_editor.bpm,offset: obj_editor.offset,difficulty: obj_editor.difficulty,artist: obj_editor.artist}
+	if(array_length(notes)>0)
+	{
+		data.notes=notes
+	}
+	if(array_length(notesHard)>0)
+	{
+		data.notesHard=notesHard
+	}
+	if(array_length(notesEasy)>0)
+	{
+		data.notesEasy=notesEasy
+	}
 	save_file(data,game_save_id+_levelName+"/data.json")
 	return data
 }
@@ -101,6 +131,14 @@ function load_level(_levelData){
 		catch(e)
 		{
 			
+		}
+		if(variable_struct_exists(struct,"notesHard"))
+		{
+			notesHard=struct.notesHard
+		}
+		if(variable_struct_exists(struct,"notesEasy"))
+		{
+			notesEasy=struct.notesEasy
 		}
 		name=directoryName
 		global.dataLocation=name
@@ -284,6 +322,7 @@ button[8]={
 				name=get_string("name",name)
 			}
 			global.levelData=save_level(name,songName)
+			global.currentDifficulty=currentDifficulty
 			global.song=songLoaded
 			global.reloadFile=name
 			global.dataLocation=name

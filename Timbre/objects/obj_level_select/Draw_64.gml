@@ -94,6 +94,93 @@ if(selectedLevel!=-4)
 	}
 	_x=_startX
 	_y=_startY+32
+	
+	var _size=32
+	
+	_x-=64
+	
+	_y+=128
+	
+	var index=0
+	
+	if(!button[selectedLevel].availableDifficulties[2])
+	{
+		index=2
+		if(global.currentDifficulty==2)
+		{
+			global.currentDifficulty=0
+		}
+	}
+	else
+	{
+		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_size,_y-_size,_x+_size,_y+_size))
+		{
+			index=1
+			if(mouse_check_button_pressed(mb_left))
+			{
+				global.currentDifficulty=2
+			}
+		}
+	}
+	
+	draw_sprite(spr_difficulty_button_easy,index,_x,_y)
+	
+	_y+=64
+	
+	index=0
+	
+	if(!button[selectedLevel].availableDifficulties[0])
+	{
+		index=2
+		if(global.currentDifficulty==0)
+		{
+			global.currentDifficulty=1
+		}
+	}
+	else
+	{
+		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_size,_y-_size,_x+_size,_y+_size))
+		{
+			index=1
+			if(mouse_check_button_pressed(mb_left))
+			{
+				global.currentDifficulty=0
+			}
+		}
+	}
+	
+	draw_sprite(spr_difficulty_button_normal,index,_x,_y)
+	
+	_y+=64
+	
+	index=0
+	
+	if(!button[selectedLevel].availableDifficulties[1])
+	{
+		index=2
+		if(global.currentDifficulty==1)
+		{
+			global.currentDifficulty=2
+		}
+	}
+	else
+	{
+		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_size,_y-_size,_x+_size,_y+_size))
+		{
+			index=1
+			if(mouse_check_button_pressed(mb_left))
+			{
+				global.currentDifficulty=1
+			}
+		}
+	}
+	
+	draw_sprite(spr_difficulty_button_hard,index,_x,_y)
+	
+	_x=_startX
+	
+	_y=_startY+32
+	
 	if(moreStats)
 	{
 		_x=_startX+512

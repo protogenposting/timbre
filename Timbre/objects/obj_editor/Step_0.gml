@@ -63,4 +63,23 @@ if(mouse_wheel_up())
 	}
 }
 
+if(keyboard_check_pressed(vk_up))
+{
+	difficultyAlpha=1
+	currentDifficulty--
+	if(currentDifficulty<0)
+	{
+		currentDifficulty=2
+	}
+}
+if(keyboard_check_pressed(vk_down))
+{
+	difficultyAlpha=1
+	currentDifficulty++
+	if(currentDifficulty>2)
+	{
+		currentDifficulty=0
+	}
+}
+
 zoom=zooms[currentZoom]
