@@ -95,7 +95,7 @@ function reset_buttons()
 							name: filename_dir(_file),
 							path: _file,
 							highScore:0,
-							rank:""
+							rank:["","",""]
 						}
 						var _nameLast=string_last_pos("\\",_struct.name)
 						_struct.name=string_copy(_struct.name,_nameLast+1,999)

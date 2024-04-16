@@ -320,11 +320,19 @@ if(selectedLevel!=-4)
 	_y+=128
 	draw_text(_x+256-32,_y+32,"High Score:")
 	_y+=32
-	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].highScore)
+	if(!is_array(global.levels[selectedLevel].highScore))
+	{
+		global.levels[selectedLevel].highScore=[global.levels[selectedLevel].highScore,0,0]
+	}
+	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].highScore[global.currentDifficulty])
 	_y+=128
 	draw_text(_x+256-32,_y+32,"Rank:")
 	_y+=32
-	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].rank)
+	if(!is_array(global.levels[selectedLevel].rank))
+	{
+		global.levels[selectedLevel].rank=[global.levels[selectedLevel].rank,"",""]
+	}
+	draw_text(_x+256-32,_y+32,global.levels[selectedLevel].rank[global.currentDifficulty])
 	_y+=128
 	
 	var _size=1

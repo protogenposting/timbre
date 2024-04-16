@@ -123,11 +123,11 @@ if(finished)
 					var tempRank=get_rank_id_string(global.levels[global.selectedLevel].rank)
 					if(get_rank_id(accuracy)<tempRank&&global.songSpeed>=1)
 					{
-						global.levels[global.selectedLevel].rank=get_rank(accuracy)
+						global.levels[global.selectedLevel].rank[global.currentDifficulty]=get_rank(accuracy)
 					}
 					if(totalScore>global.levels[global.selectedLevel].highScore)
 					{
-						global.levels[global.selectedLevel].highScore=totalScore
+						global.levels[global.selectedLevel].highScore[global.currentDifficulty]=totalScore
 					}
 				}
 				catch(e)
