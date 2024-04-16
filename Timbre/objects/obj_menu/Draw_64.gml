@@ -9,6 +9,12 @@ font_enable_effects(fn_font, true, {
     outlineColour: c_black
 });
 
+font_enable_effects(fn_font_big, true, {
+    outlineEnable: true,
+    outlineDistance: 2,
+    outlineColour: c_black
+});
+
 if(room==rm_menu)
 {
 	draw_sprite_ext(spr_logo,0,1366/2,128,0.25,0.25,logoRotation,c_white,1)

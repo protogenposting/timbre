@@ -72,7 +72,7 @@ for(var i=0;i<array_length(button);i++)
 if(selectedLevel!=-4)
 {
 	draw_set_font(fn_font_big)
-	draw_set_color(c_black)
+	draw_set_color(c_white)
 	
 	var _startX=room_width - 512 + 64 - point_between_points(0,0,256+128,0,percentageBetweenPoints).x
 	
@@ -105,7 +105,8 @@ if(selectedLevel!=-4)
 	
 	if(global.currentDifficulty==2)
 	{
-		index=3
+		index=1
+		draw_text(_x-128,_y,"Chart Style:")
 	}
 	
 	if(!button[selectedLevel+3].availableDifficulties[2])
@@ -139,7 +140,8 @@ if(selectedLevel!=-4)
 	
 	if(global.currentDifficulty==0)
 	{
-		index=3
+		index=1
+		draw_text(_x-128,_y,"Chart Style:")
 	}
 	
 	if(!button[selectedLevel+3].availableDifficulties[0])
@@ -173,7 +175,8 @@ if(selectedLevel!=-4)
 	
 	if(global.currentDifficulty==1)
 	{
-		index=3
+		index=1
+		draw_text(_x-128,_y,"Chart Style:")
 	}
 	
 	if(!button[selectedLevel+3].availableDifficulties[1])
