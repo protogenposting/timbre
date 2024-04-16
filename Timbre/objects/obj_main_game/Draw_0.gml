@@ -57,11 +57,11 @@ for(var i=0;i<array_length(points)-1;i++)
 		combo++
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
-		if(timing<-timings[0].distance)
+		if(timing<-timings[1].distance)
 		{
 			early++
 		}
-		else if(timing>timings[0].distance)
+		else if(timing>timings[1].distance)
 		{
 			late++
 		}
@@ -72,7 +72,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		
 		hitTime=1.33
 		hitMessage=get_timing(timing)
-		if(get_timing_id(timing)==0)
+		if(get_timing_id(timing)<=1)
 		{
 			var _p=part_system_create(p_arrow_perfect)
 			array_push(particles,{time:160,id:_p})
@@ -200,11 +200,11 @@ for(var o=0; o<array_length(notes);o++)
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
 		combo++
-		if(timing<-timings[0].distance)
+		if(timing<-timings[1].distance)
 		{
 			early++
 		}
-		else if(timing>timings[0].distance)
+		else if(timing>timings[1].distance)
 		{
 			late++
 		}
