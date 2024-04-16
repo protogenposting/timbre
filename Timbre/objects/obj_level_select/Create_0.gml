@@ -29,6 +29,8 @@ merps=[
 
 bpm=0
 
+grass=spr_grass
+
 audio=-4
 
 flowerIndex=0
@@ -236,6 +238,13 @@ function reset_buttons()
 						
 						global.song=audio_create_stream(filename_dir(path)+"\\"+_file.songName)
 						global.levelData=_file
+						
+						obj_level_select.grass=spr_grass
+						
+						if(file_exists(filename_dir(path)+"\\"+"grass.png"))
+						{
+							obj_level_select.grass=sprite_add(filename_dir(path)+"\\"+"grass.png",2,false,false,32,32)
+						}
 						
 						var _average=0
 						for(var i=0;i<array_length(_noteBeats);i++)

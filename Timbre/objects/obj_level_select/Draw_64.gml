@@ -87,7 +87,7 @@ if(selectedLevel!=-4)
 		_y=_startY
 		repeat(abs(_y-room_height)/64 +1)
 		{
-			draw_sprite(spr_grass,flowerIndex,_x,_y)
+			draw_sprite(grass,flowerIndex,_x,_y)
 			_y+=64
 		}
 		_x+=64
