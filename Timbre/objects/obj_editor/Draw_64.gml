@@ -108,4 +108,4 @@ draw_text(room_width/2,64,"use UP/DOWN to change the current chart type")
 
 difficultyAlpha-=0.01
 
-draw_text_color(room_width/2,room_height/2,"Current difficulty: "+get_chart_style(currentDifficulty),c_white,c_white,c_white,c_white,difficultyAlpha)
+draw_text_color(room_width/2,32,"Current Chart Style: "+get_chart_style(currentDifficulty),c_white,c_white,c_white,c_white,1)

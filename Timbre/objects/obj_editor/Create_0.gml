@@ -4,7 +4,7 @@ name=""
 
 songName="level.ogg"
 
-currentDifficulty=global.currentDifficulty
+currentDifficulty=0
 
 notes=[]
 
