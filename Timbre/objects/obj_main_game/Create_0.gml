@@ -340,7 +340,7 @@ function get_timing_id(time)
 			return i
 		}
 	}
-	return "???"
+	return 99999
 }
 
 attackKey=[]
