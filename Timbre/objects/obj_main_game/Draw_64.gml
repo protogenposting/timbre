@@ -120,12 +120,12 @@ if(finished)
 			{
 				room_goto(rm_level_select)
 				try{
-					var tempRank=get_rank_id_string(global.levels[global.selectedLevel].rank)
+					var tempRank=get_rank_id_string(global.levels[global.selectedLevel].rank[global.currentDifficulty])
 					if(get_rank_id(accuracy)<tempRank&&global.songSpeed>=1)
 					{
 						global.levels[global.selectedLevel].rank[global.currentDifficulty]=get_rank(accuracy)
 					}
-					if(totalScore>global.levels[global.selectedLevel].highScore)
+					if(totalScore>global.levels[global.selectedLevel].highScore[global.currentDifficulty])
 					{
 						global.levels[global.selectedLevel].highScore[global.currentDifficulty]=totalScore
 					}
