@@ -4,1017 +4,3185 @@
     {
       "x":1195.0,
       "y":320.0,
+      "timeMS":750.0,
       "beat":1.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":750.0,
       "direction":1.0
     },
     {
       "x":2219.0,
       "y":448.0,
+      "timeMS":2250.0,
       "beat":3.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":2250.0,
       "direction":3.0
     },
     {
       "x":3243.0,
       "y":320.0,
+      "timeMS":3750.0,
       "beat":5.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":3750.0,
       "direction":1.0
     },
     {
       "x":4267.0,
       "y":448.0,
+      "timeMS":5250.0,
       "beat":7.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":5250.0,
       "direction":3.0
     },
     {
       "x":5291.0,
       "y":320.0,
+      "timeMS":6750.0,
       "beat":9.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":6750.0,
       "direction":1.0
     },
     {
       "x":6315.0,
       "y":448.0,
+      "timeMS":8250.0,
       "beat":11.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":8250.0,
       "direction":3.0
     },
     {
       "x":7339.0,
       "y":320.0,
+      "timeMS":9750.0,
       "beat":13.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":9750.0,
       "direction":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":15.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":17.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":19.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":21.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":23.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":25.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":27.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":29.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":31.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":33.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":35.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":37.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":39.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":41.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":43.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":45.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":47.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":5547.0,
       "y":-2752.0,
+      "timeMS":35625.0,
       "beat":47.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":35625.0,
       "direction":1.0
     },
     {
       "x":5803.0,
       "y":-2752.0,
+      "timeMS":36000.0,
       "beat":48.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":36000.0,
       "direction":1.0
     },
     {
       "x":6571.0,
       "y":-2624.0,
+      "timeMS":37125.0,
       "beat":49.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":37125.0,
       "direction":3.0
     },
     {
       "x":7083.0,
       "y":-2752.0,
+      "timeMS":37875.0,
       "beat":50.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":37875.0,
       "direction":1.0
     },
     {
       "x":7339.0,
       "y":-2624.0,
+      "timeMS":38250.0,
       "beat":51.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":38250.0,
       "direction":3.0
     },
     {
       "x":7595.0,
       "y":-2752.0,
+      "timeMS":38625.0,
       "beat":51.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":38625.0,
       "direction":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":55.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":9451.0,
       "y":-2944.0,
+      "timeMS":41625.0,
       "beat":55.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":41625.0,
       "direction":0.0
     },
     {
       "x":9323.0,
       "y":-3200.0,
+      "timeMS":42000.0,
       "beat":56.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":42000.0,
       "direction":2.0
     },
     {
       "x":9323.0,
       "y":-3968.0,
+      "timeMS":43125.0,
       "beat":57.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":43125.0,
       "direction":2.0
     },
     {
       "x":9451.0,
       "y":-4480.0,
+      "timeMS":43875.0,
       "beat":58.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":43875.0,
       "direction":0.0
     },
     {
       "x":9322.9998992889596,
       "y":-4992.0,
+      "timeMS":44625.0,
       "beat":59.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":44625.0,
       "direction":2.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":63.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":9130.9998209581536,
       "y":-6848.0,
+      "timeMS":47625.0,
       "beat":63.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":47625.0,
       "direction":1.0
     },
     {
       "x":8874.9998209581536,
       "y":-6719.9998331692186,
+      "timeMS":48000.0,
       "beat":64.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":48000.0,
       "direction":3.0
     },
     {
       "x":8362.9998209581536,
       "y":-6847.9996663384372,
+      "timeMS":48750.0,
       "beat":65.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":48750.0,
       "direction":1.0
     },
     {
       "x":8106.9998209581536,
       "y":-6719.9995829230465,
+      "timeMS":49125.0,
       "beat":65.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":49125.0,
       "direction":3.0
     },
     {
       "x":7594.9998209581536,
       "y":-6847.9994160922943,
+      "timeMS":49875.0,
       "beat":66.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":49875.0,
       "direction":1.0
     },
     {
       "x":7338.9998209581536,
       "y":-6719.9993326768745,
+      "timeMS":50250.0,
       "beat":67.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":50250.0,
       "direction":3.0
     },
     {
       "x":7082.9998209581536,
       "y":-6847.9992492614547,
+      "timeMS":50625.0,
       "beat":67.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":50625.0,
       "direction":1.0
     },
     {
       "x":6570.9998209581536,
       "y":-6847.9990824307315,
+      "timeMS":51375.0,
       "beat":68.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":51375.0,
       "direction":1.0
     },
     {
       "x":6314.9998209581536,
       "y":-6719.9989990153117,
+      "timeMS":51750.0,
       "beat":69.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":51750.0,
       "direction":3.0
     },
     {
       "x":6058.9998209581536,
       "y":-6847.9989155998919,
+      "timeMS":52125.0,
       "beat":69.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":52125.0,
       "direction":1.0
     },
     {
       "x":5802.9998209581536,
       "y":-6719.9988321845885,
+      "timeMS":52500.0,
       "beat":70.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":52500.0,
       "direction":3.0
     },
     {
       "x":5546.9998209581536,
       "y":-6847.9987487691687,
+      "timeMS":52875.0,
       "beat":70.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":52875.0,
       "direction":1.0
     },
     {
       "x":5290.9998209581536,
       "y":-6719.9986653537489,
+      "timeMS":53250.0,
       "beat":71.0,
       "type":0.0,
       "wasHit":false,
-      "timeMS":53250.0,
       "direction":3.0
     },
     {
       "x":5034.9998209581536,
       "y":-6847.9985819383292,
+      "timeMS":53625.0,
       "beat":71.5,
       "type":0.0,
       "wasHit":false,
-      "timeMS":53625.0,
       "direction":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":79.0,
-      "type":1.0,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":81.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":82.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":83.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":84.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":85.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":86.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":87.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":1194.9998209581536,
       "y":-8383.9992838326143,
-      "beat":88.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":66000.0,
+      "beat":88.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":89.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":90.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":91.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":92.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":93.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":94.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":1194.9998209581536,
       "y":-8895.9992838326143,
-      "beat":95.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":71250.0,
+      "beat":95.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":96.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":97.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":98.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":99.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":100.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":101.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":102.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":682.99982095815358,
       "y":-9407.9992838326143,
-      "beat":103.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":77250.0,
+      "beat":103.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":104.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":105.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":106.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":107.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":108.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":109.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":110.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":-277.00017904184642,
       "y":-9343.9993448677706,
-      "beat":111.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":83250.0,
+      "beat":111.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-405.00017904184642,
       "y":-9087.9993448677706,
-      "beat":111.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":83625.0,
+      "beat":111.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-277.00017904184642,
       "y":-8831.9994059029268,
-      "beat":112.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":84000.0,
+      "beat":112.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-277.00017904184642,
       "y":-8063.9995279732393,
-      "beat":113.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":85125.0,
+      "beat":113.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-277.00017904184642,
       "y":-7551.9995279732393,
-      "beat":114.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":85875.0,
+      "beat":114.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-405.00017904184642,
       "y":-7295.9995279732393,
-      "beat":115.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":86250.0,
+      "beat":115.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-277.00017904184642,
       "y":-7039.9995279732393,
-      "beat":115.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":86625.0,
+      "beat":115.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":119.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":-597.00016378305736,
       "y":-5311.9992838326143,
-      "beat":119.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":89625.0,
+      "beat":119.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":1.0
     },
     {
       "x":-853.0001485242683,
       "y":-5183.9991170018475,
-      "beat":120.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":90000.0,
+      "beat":120.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":3.0
     },
     {
       "x":-1621.0000569715339,
       "y":-5311.99886675569,
-      "beat":121.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":91125.0,
+      "beat":121.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":1.0
     },
     {
       "x":-2133.0000569715339,
       "y":-5311.9986999249086,
-      "beat":122.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":91875.0,
+      "beat":122.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":1.0
     },
     {
       "x":-2644.9999349012214,
       "y":-5183.9985330941854,
-      "beat":123.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":92625.0,
+      "beat":123.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":3.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":127.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
       "x":-4373.0001790418464,
       "y":-5503.9989257489215,
-      "beat":127.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":95625.0,
+      "beat":127.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-4501.0001790418464,
       "y":-5759.9989257489215,
-      "beat":128.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":96000.0,
+      "beat":128.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-4373.0001790418464,
       "y":-6271.9989257489215,
-      "beat":129.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":96750.0,
+      "beat":129.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-4501.0001790418464,
       "y":-6527.9989257489215,
-      "beat":129.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":97125.0,
+      "beat":129.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-4373.0001790418464,
       "y":-7039.9989257489215,
-      "beat":130.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":97875.0,
+      "beat":130.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-4501.0001790418464,
       "y":-7295.9989257489215,
-      "beat":131.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":98250.0,
+      "beat":131.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-4373.0002797528869,
       "y":-7551.9989257489215,
-      "beat":131.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":98625.0,
+      "beat":131.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-4373.0003021331213,
       "y":-8063.9989257489215,
-      "beat":132.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":99375.0,
+      "beat":132.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-4501.000313323224,
       "y":-8319.9989257489215,
-      "beat":133.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":99750.0,
+      "beat":133.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-4373.0003245133412,
       "y":-8575.9989257489215,
-      "beat":133.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":100125.0,
+      "beat":133.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-4501.0003357034584,
       "y":-8831.9989257489215,
-      "beat":134.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":100500.0,
+      "beat":134.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-4373.0003468935756,
       "y":-9087.9989257489215,
-      "beat":134.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":100875.0,
+      "beat":134.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
       "x":-4501.0003580836928,
       "y":-9343.9989257489215,
-      "beat":135.0,
-      "type":0,
-      "wasHit":false,
       "timeMS":101250.0,
+      "beat":135.0,
+      "type":0.0,
+      "wasHit":false,
       "direction":2.0
     },
     {
       "x":-4373.0003692738101,
       "y":-9599.9989257489215,
-      "beat":135.5,
-      "type":0,
-      "wasHit":false,
       "timeMS":101625.0,
+      "beat":135.5,
+      "type":0.0,
+      "wasHit":false,
       "direction":0.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":144.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":145.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":146.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":147.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":147.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":151.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":152.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":153.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":154.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":155.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":159.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":159.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":160.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":161.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":161.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":162.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":163.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":163.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":164.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":165.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":3.0,
       "beat":165.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":166.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":166.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":167.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":167.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":0.0,
       "beat":175.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":1.0,
       "beat":175.5,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     },
     {
+      "wasHit":false,
       "direction":2.0,
       "beat":176.0,
-      "type":1,
-      "wasHit":false
+      "type":1.0
     }
   ],
   "offset":0.0,
+  "notesHard":[
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":0.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":0.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":1.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":1.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":2.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":2.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":3.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":3.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":4.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":4.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":5.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":5.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":6.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":6.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":7.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":7.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":8.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":8.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":9.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":9.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":10.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":10.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":11.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":11.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":12.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":12.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":13.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":13.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":14.0,
+      "type":1.0
+    },
+    {
+      "x":2603.0,
+      "y":-3264.0,
+      "color":32768.0,
+      "timeMS":11062.5,
+      "beat":14.75,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0
+    },
+    {
+      "temporaryType":3,
+      "x":2795.0,
+      "startX":2795.0,
+      "color":16776960.0,
+      "y":-3200.0,
+      "startY":-3200.0,
+      "beat":15.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0,
+      "timeMS":11250.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":15.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":16.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":16.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":17.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":17.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":18.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":18.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":19.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":19.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":20.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":20.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":21.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":21.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":22.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":22.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":23.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":23.5,
+      "type":1.0
+    },
+    {
+      "temporaryType":3,
+      "x":2987.0,
+      "startX":2987.0,
+      "color":16776960.0,
+      "y":-3648.0,
+      "startY":-3648.0,
+      "beat":20.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0,
+      "timeMS":15375.0
+    },
+    {
+      "temporaryType":3,
+      "x":2731.0,
+      "startX":2731.0,
+      "color":16776960.0,
+      "y":-3392.0,
+      "startY":-3392.0,
+      "beat":21.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0,
+      "timeMS":16125.0
+    },
+    {
+      "temporaryType":3,
+      "x":2475.0,
+      "startX":2475.0,
+      "color":16776960.0,
+      "y":-3136.0,
+      "startY":-3136.0,
+      "beat":22.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0,
+      "timeMS":16875.0
+    },
+    {
+      "temporaryType":3,
+      "x":2219.0,
+      "startX":2219.0,
+      "color":16776960.0,
+      "y":-2880.0,
+      "startY":-2880.0,
+      "beat":23.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0,
+      "timeMS":17625.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":24.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":24.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":25.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":25.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":26.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":26.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":27.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":27.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":28.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":28.5,
+      "type":1.0
+    },
+    {
+      "temporaryType":3,
+      "x":2475.0,
+      "startX":2475.0,
+      "color":16776960.0,
+      "y":-3776.0,
+      "startY":-3776.0,
+      "beat":28.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":21375.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":29.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":29.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":30.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":30.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":31.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":31.5,
+      "type":1.0
+    },
+    {
+      "temporaryType":3,
+      "x":2731.0,
+      "startX":2731.0,
+      "color":16776960.0,
+      "y":-4032.0,
+      "startY":-4032.0,
+      "beat":29.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":22125.0
+    },
+    {
+      "temporaryType":3,
+      "x":2987.0,
+      "startX":2987.0,
+      "color":16776960.0,
+      "y":-4288.0,
+      "startY":-4288.0,
+      "beat":30.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":22875.0
+    },
+    {
+      "temporaryType":3,
+      "x":3243.0,
+      "startX":3243.0,
+      "color":16776960.0,
+      "y":-4544.0,
+      "startY":-4544.0,
+      "beat":31.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":23625.0
+    },
+    {
+      "temporaryType":3,
+      "x":2987.0,
+      "startX":2987.0,
+      "color":16776960.0,
+      "y":-4416.0,
+      "startY":-4416.0,
+      "beat":30.75,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":23062.5
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":32.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":32.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":33.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":33.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":34.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":34.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":35.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":35.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":36.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":36.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":37.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":37.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":38.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":38.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":39.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":39.5,
+      "type":1.0
+    },
+    {
+      "temporaryType":3,
+      "x":2475.0,
+      "startX":2475.0,
+      "color":16776960.0,
+      "y":-4672.0,
+      "startY":-4672.0,
+      "beat":36.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0,
+      "timeMS":27375.0
+    },
+    {
+      "temporaryType":3,
+      "x":2219.0,
+      "startX":2219.0,
+      "color":16776960.0,
+      "y":-4544.0,
+      "startY":-4544.0,
+      "beat":37.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":28125.0
+    },
+    {
+      "temporaryType":3,
+      "x":1963.0,
+      "startX":1963.0,
+      "color":16776960.0,
+      "y":-4800.0,
+      "startY":-4800.0,
+      "beat":38.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":28875.0
+    },
+    {
+      "temporaryType":3,
+      "x":1707.0,
+      "startX":1707.0,
+      "color":16776960.0,
+      "y":-5056.0,
+      "startY":-5056.0,
+      "beat":39.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0,
+      "timeMS":29625.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":40.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":40.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":41.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":41.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":42.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":42.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":43.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":43.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":44.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":44.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":45.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":45.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":46.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":46.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":47.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":47.5,
+      "type":1.0
+    },
+    {
+      "x":2795.0,
+      "y":-7296.0,
+      "color":32768.0,
+      "timeMS":36000.0,
+      "beat":48.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":2667.0,
+      "y":-7296.0,
+      "color":65280.0,
+      "timeMS":36000.0,
+      "beat":48.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":48.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":49.5,
+      "type":1.0
+    },
+    {
+      "x":2795.0,
+      "y":-6528.0,
+      "color":32768.0,
+      "timeMS":37125.0,
+      "beat":49.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":2667.0,
+      "y":-6528.0,
+      "color":65280.0,
+      "timeMS":37125.0,
+      "beat":49.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":50.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":51.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":51.0,
+      "type":1.0
+    },
+    {
+      "x":2795.0,
+      "y":-6016.0,
+      "color":32768.0,
+      "timeMS":37875.0,
+      "beat":50.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":2667.0,
+      "y":-6016.0,
+      "color":65280.0,
+      "timeMS":37875.0,
+      "beat":50.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "x":2667.0,
+      "y":-5760.0,
+      "color":32768.0,
+      "timeMS":38250.0,
+      "beat":51.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "x":2795.0,
+      "y":-5760.0,
+      "color":65280.0,
+      "timeMS":38250.0,
+      "beat":51.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":2795.0,
+      "y":-6016.0,
+      "color":32768.0,
+      "timeMS":38625.0,
+      "beat":51.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":2667.0,
+      "y":-6016.0,
+      "color":65280.0,
+      "timeMS":38625.0,
+      "beat":51.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":55.5,
+      "type":1.0
+    },
+    {
+      "x":2731.0,
+      "y":-4032.0,
+      "color":32768.0,
+      "timeMS":41625.0,
+      "beat":55.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0
+    },
+    {
+      "x":2731.0,
+      "y":-3904.0,
+      "color":65280.0,
+      "timeMS":41625.0,
+      "beat":55.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":56.0,
+      "type":1.0
+    },
+    {
+      "x":2987.0,
+      "y":-4032.0,
+      "color":32768.0,
+      "timeMS":42000.0,
+      "beat":56.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0
+    },
+    {
+      "x":2987.0,
+      "y":-3904.0,
+      "color":65280.0,
+      "timeMS":42000.0,
+      "beat":56.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":57.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":59.5,
+      "type":1.0
+    },
+    {
+      "x":3755.0,
+      "y":-4032.0,
+      "color":32768.0,
+      "timeMS":43125.0,
+      "beat":57.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0
+    },
+    {
+      "x":3755.0,
+      "y":-3904.0,
+      "color":65280.0,
+      "timeMS":43125.0,
+      "beat":57.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0
+    },
+    {
+      "x":4267.0,
+      "y":-3904.0,
+      "color":32768.0,
+      "timeMS":43875.0,
+      "beat":58.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0
+    },
+    {
+      "x":4267.0,
+      "y":-4032.0,
+      "color":65280.0,
+      "timeMS":43875.0,
+      "beat":58.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":58.5,
+      "type":1.0
+    },
+    {
+      "x":3755.0,
+      "y":-4032.0,
+      "color":32768.0,
+      "timeMS":44625.0,
+      "beat":59.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":1.0
+    },
+    {
+      "x":3755.0,
+      "y":-3904.0,
+      "color":65280.0,
+      "timeMS":44625.0,
+      "beat":59.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":3.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":60.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":60.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":61.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":61.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":62.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":62.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":63.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":63.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":64.0,
+      "type":1.0
+    },
+    {
+      "x":3563.0,
+      "y":-4992.0,
+      "color":65280.0,
+      "timeMS":48000.0,
+      "beat":64.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":3435.0,
+      "y":-4992.0,
+      "color":32768.0,
+      "timeMS":48000.0,
+      "beat":64.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":65.5,
+      "type":1.0
+    },
+    {
+      "x":3563.0,
+      "y":-5760.0,
+      "color":65280.0,
+      "timeMS":49125.0,
+      "beat":65.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":3435.0,
+      "y":-5760.0,
+      "color":32768.0,
+      "timeMS":49125.0,
+      "beat":65.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":66.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":67.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":67.5,
+      "type":1.0
+    },
+    {
+      "x":3563.0,
+      "y":-6272.0,
+      "color":65280.0,
+      "timeMS":49875.0,
+      "beat":66.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":3435.0,
+      "y":-6272.0,
+      "color":32768.0,
+      "timeMS":49875.0,
+      "beat":66.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "x":3435.0,
+      "y":-6528.0,
+      "color":65280.0,
+      "timeMS":50250.0,
+      "beat":67.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "x":3563.0,
+      "y":-6528.0,
+      "color":32768.0,
+      "timeMS":50250.0,
+      "beat":67.0,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":3563.0,
+      "y":-6272.0,
+      "color":65280.0,
+      "timeMS":50625.0,
+      "beat":67.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":0.0
+    },
+    {
+      "x":3435.0,
+      "y":-6272.0,
+      "color":32768.0,
+      "timeMS":50625.0,
+      "beat":67.5,
+      "type":0.0,
+      "wasHit":false,
+      "direction":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":68.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":69.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":69.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":70.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":70.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":71.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":71.5,
+      "type":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":78.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":80.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":80.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":81.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":81.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":82.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":82.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":83.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":83.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":84.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":84.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":85.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":85.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":85.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":86.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":86.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":87.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":87.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":88.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":89.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":89.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":90.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":88.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":90.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":91.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":91.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":92.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":92.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":92.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":92.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":93.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":93.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":93.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":93.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":94.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":94.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":94.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":95.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":95.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":95.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":95.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":94.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":96.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":96.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":97.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":97.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":98.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":98.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":99.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":99.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":100.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":100.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":101.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":101.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":102.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":102.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":102.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":103.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":103.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":103.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":103.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":104.0,
+      "type":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":104.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":105.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":105.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":105.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":106.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":107.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":107.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":107.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":107.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":108.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":108.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":108.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":109.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":109.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":109.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":111.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":111.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":112.0,
+      "type":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":113.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":114.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":115.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":115.5,
+      "type":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":118.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":119.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":119.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":120.0,
+      "type":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":121.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":122.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":123.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":124.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":124.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":124.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":125.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":125.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":125.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":126.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":126.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":126.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":127.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":127.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":127.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":127.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":128.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":129.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":129.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":129.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":130.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":131.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":131.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":132.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":133.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":133.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":134.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":134.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":135.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":135.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":143.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":143.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":144.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":145.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":146.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":147.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":147.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":151.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":151.75,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":152.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":153.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":154.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":155.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":156.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":156.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":157.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":157.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":158.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":158.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":159.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":159.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":160.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":161.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":161.25,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":161.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":162.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":163.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":163.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":164.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":165.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":165.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":3.0,
+      "beat":166.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":2.0,
+      "beat":166.5,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":167.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":167.5,
+      "type":2.0
+    },
+    {
+      "wasHit":false,
+      "direction":0.0,
+      "beat":175.0,
+      "type":1.0
+    },
+    {
+      "wasHit":false,
+      "direction":1.0,
+      "beat":176.0,
+      "type":1.0
+    }
+  ],
   "artist":"Celeste Strawberry Jam",
-  "bpm":80.0,
-  "difficulty":0.0
+  "difficulty":0.0,
+  "bpm":80.0
 } 
