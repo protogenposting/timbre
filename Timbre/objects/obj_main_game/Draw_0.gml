@@ -29,7 +29,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	//draw_line(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
 	for(var z=0;z<array_length(positionsUsed);z++)
 	{
-		if(abs(positionsUsed[z][0]-points[i].x)<=32&&abs(positionsUsed[z][1]-points[i].y)<=32)
+		if(abs(positionsUsed[z][0]-points[i].x)<=32&&abs(positionsUsed[z][1]-points[i].y)<=32&&points[i].timeMS!=positionsUsed[z][2])
 		{
 			shouldContinue=true
 		}
@@ -44,7 +44,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	if(!points[i].wasHit)
 	{
-		array_push(positionsUsed,[points[i].x,points[i].y])
+		array_push(positionsUsed,[points[i].x,points[i].y,points[i].timeMS])
 	}
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
