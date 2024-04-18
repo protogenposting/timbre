@@ -93,25 +93,27 @@ if(finished)
 		var _range=abs(_min)+abs(_max)
 		
 		_x=_x-_sizeX
-		var show=1
-		var maxShow=1
 		var graphSize=2
+		var _late=0
+		var _perfect=0
+		var _early=0
 		for(var i=0;i<array_length(_population)-1;i++)
 		{
 			var inc=(_sizeX*2)/array_length(_population)
 			draw_line(_x,_y-_sizeY-_population[i]*graphSize,_x+inc,_y-_sizeY-_population[i+1]*graphSize)
-			if(show>=maxShow)
-			{
-				draw_text_transformed(_x,_y-32-_sizeY-_population[i]*graphSize,string(_types[i])+"MS",0.3,0.3,0)
-				draw_text_transformed(_x,_y-32-16-_sizeY-_population[i]*graphSize,string(_population[i]),0.3,0.3,0)
-				draw_text_transformed(_x,_y-32-32-_sizeY-_population[i]*graphSize,get_timing(_types[i]),0.3,0.3,0)
-			}
-			show++
-			if(show>maxShow)
-			{
-				show=0
-			}
 			_x+=inc
+			if(get_timing_id(_types[i])<=1)
+			{
+				_perfect++
+			}
+			else if(_types[i]<0)
+			{
+				_early++
+			}
+			else
+			{
+				_late++
+			}
 		}
 		
 		if(finishTimerLast<=4)
