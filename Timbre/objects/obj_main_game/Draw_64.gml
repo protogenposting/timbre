@@ -78,7 +78,42 @@ if(finished)
 	}
 	if(finishTimer>4)
 	{
-		draw_text(1366/2,96+64,"early: "+string(early)+"    late: "+string(late)+"    perfect+: "+string(perfect))
+		var _x=1366/2
+		var _y=room_height/3
+		var _sizeX=256
+		var _sizeY=64
+		var _arrayResults=get_accuracy_population()
+		draw_rectangle_color(_x,_y-_sizeY,_x+_sizeX,_y+_sizeY,c_lime,c_red,c_red,c_lime,false)
+		draw_rectangle_color(_x-_sizeX,_y-_sizeY,_x,_y+_sizeY,c_red,c_lime,c_lime,c_red,false)
+		
+		var _population=_arrayResults[0]
+		var _min=_arrayResults[1]
+		var _max=_arrayResults[2]
+		var _types=_arrayResults[3]
+		var _range=abs(_min)+abs(_max)
+		
+		_x=_x-_sizeX
+		var show=1
+		var maxShow=1
+		var graphSize=2
+		for(var i=0;i<array_length(_population)-1;i++)
+		{
+			var inc=(_sizeX*2)/array_length(_population)
+			draw_line(_x,_y-_sizeY-_population[i]*graphSize,_x+inc,_y-_sizeY-_population[i+1]*graphSize)
+			if(show>=maxShow)
+			{
+				draw_text_transformed(_x,_y-32-_sizeY-_population[i]*graphSize,string(_types[i])+"MS",0.3,0.3,0)
+				draw_text_transformed(_x,_y-32-16-_sizeY-_population[i]*graphSize,string(_population[i]),0.3,0.3,0)
+				draw_text_transformed(_x,_y-32-32-_sizeY-_population[i]*graphSize,get_timing(_types[i]),0.3,0.3,0)
+			}
+			show++
+			if(show>maxShow)
+			{
+				show=0
+			}
+			_x+=inc
+		}
+		
 		if(finishTimerLast<=4)
 		{
 			audio_play_sound(finishHitSound,1000,false)
@@ -143,7 +178,7 @@ else
 	draw_set_font(fn_font)
 	draw_text(1366/2,32,"score: "+string(totalScore)+"    misses: "+string(misses)+"    combo: "+string(combo)+"    accuracy: "+string(get_accuracy()))
 	
-	draw_text(1366/2,96+64,"early: "+string(early)+"    late: "+string(late)+"    perfect+: "+string(perfect))
+	draw_text(1366/2,96+64,"Early: "+string(early)+"    Late: "+string(late)+"    Perfect+: "+string(perfect))
 	
 	comboMissTimer--
 	

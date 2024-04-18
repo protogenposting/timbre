@@ -57,6 +57,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		combo++
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
+		array_push(trueAccuracyList,timing)
 		if(timing<-timings[1].distance)
 		{
 			early++
@@ -75,9 +76,10 @@ for(var i=0;i<array_length(points)-1;i++)
 		if(get_timing_id(timing)<=1)
 		{
 			var _p=part_system_create(p_arrow_perfect)
-			array_push(particles,{time:160,id:_p})
+			array_push(particles,{time:160,id:_p,updateTimer:0})
 			part_system_position(_p,points[i].x,points[i].y)
 			part_system_angle(_p,points[i].direction*90)
+			part_system_automatic_update(_p,false)
 		}
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
@@ -199,6 +201,7 @@ for(var o=0; o<array_length(notes);o++)
 		notes[o].wasHit=true
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
+		array_push(trueAccuracyList,timing)
 		combo++
 		if(timing<-timings[1].distance)
 		{
@@ -219,17 +222,19 @@ for(var o=0; o<array_length(notes);o++)
 		if(_spr==sprites.log)
 		{
 			var _p=part_system_create(p_log_break)
-			array_push(particles,{time:160,id:_p})
+			array_push(particles,{time:160,id:_p,updateTimer:0})
 			part_system_position(_p,notes[o].x,notes[o].y)
 			part_system_angle(_p,notes[o].direction*90)
+			part_system_automatic_update(_p,false)
 			
 		}
 		if(_spr==sprites.wall)
 		{
 			var _p=part_system_create(p_wall_break)
-			array_push(particles,{time:160,id:_p})
+			array_push(particles,{time:160,id:_p,updateTimer:0})
 			part_system_position(_p,notes[o].x,notes[o].y)
 			part_system_angle(_p,notes[o].direction*90)
+			part_system_automatic_update(_p,false)
 		}
 	}
 	if(songMilliseconds-notes[o].timeMS>=msWindow&&!notes[o].wasHit)

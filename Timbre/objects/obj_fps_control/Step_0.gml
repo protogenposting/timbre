@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if(room==rm_gameplay)
 {
-	game_set_speed(120,gamespeed_fps)
+	game_set_speed(1,gamespeed_microseconds)
 }
 else
 {

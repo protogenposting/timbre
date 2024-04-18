@@ -80,7 +80,7 @@ if(global.levelData!=-4)
 }
 
 function save_level(_levelName,_songName){
-	notes=sort_array(notes)
+	notes=sort_note_array(notes)
 	var data={songName:_songName,bpm: obj_editor.bpm,offset: obj_editor.offset,difficulty: obj_editor.difficulty,artist: obj_editor.artist}
 	if(array_length(notes)>0)
 	{

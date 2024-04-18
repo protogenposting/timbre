@@ -131,7 +131,7 @@ if(global.levelData!=-4)
 	{
 		notes[i]=notesToGet[i]
 	}
-	sort_array(notes)
+	sort_note_array(notes)
 	
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset
@@ -290,8 +290,8 @@ function create_points(){
 		}
 	}
 	pointArray[0].wasHit=true
-	pointArray=sort_array(pointArray)
-	notes=sort_array(notes)
+	pointArray=sort_note_array(pointArray)
+	notes=sort_note_array(notes)
 	return pointArray
 }
 
@@ -388,7 +388,8 @@ timings=[{distance:msWindow/30,name:"AMAZING!!!"},
 {distance:msWindow/3,name:"Ok"},
 {distance:msWindow,name:"Dull..."}]
 
-ranks=[{percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},
+ranks=[{percent:115,name:"Literally How",messages:["FRAME PERFECT??????????"]},
+{percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},
 {percent:95,name:"S",messages:["OMG UR SO GOOD!","S is for... SANS UNDERTALE?!?!?!?!"]},
 {percent:90,name:"A+",messages:["Great job... PLUS!","A+ is for... Almost an S! Plus!!!"]},
 {percent:85,name:"A",messages:["Great job!","A is for... AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"]},
@@ -400,6 +401,33 @@ ranks=[{percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY
 {percent:30,name:"D",messages:["Needs some work...","D is for... Detention! >:("]},
 {percent:0,name:"F",messages:["Did you even try?","F is for... FIVE NIGHT FREDDY?!?!?!?"]},
 {percent:-1,name:"F-",messages:["How did u get an F- lmao"]}]
+
+trueAccuracyList=[]
+
+function get_accuracy_population(){
+	var listMinimum=0
+	var listMaximum=0
+	var accuracyListData=[]
+	var populations=[]
+	for(var i=0;i<array_length(trueAccuracyList);i++)
+	{
+		var _acc=snap(5,trueAccuracyList[i])
+		listMaximum=max(listMaximum,_acc)
+		listMinimum=min(listMinimum,_acc)
+		if(!array_contains(populations,_acc))
+		{
+			array_push(populations,_acc)
+		}
+		array_push(accuracyListData,_acc)
+	}
+	sort_array(populations,function(a,b){return a>b})
+	var endResult=array_create(array_length(populations))
+	for(var i=0;i<array_length(accuracyListData);i++)
+	{
+		endResult[array_get_index(populations,accuracyListData[i])]++
+	}
+	return [endResult,listMinimum,listMaximum,populations]
+}
 
 function get_rank(accuracyPercentage){
 	for(var i=0;i<array_length(ranks);i++)
@@ -503,9 +531,16 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 botplayLeniency=5
 
 function update_particles(){
+	particleUpdateTime=fps/120
 	for(var i=0;i<array_length(particles);i++)
 	{
 		particles[i].time--
+		particles[i].updateTimer--
+		if(particles[i].updateTimer<=0)
+		{
+			part_system_update(particles[i].id)
+			particles[i].updateTimer=particleUpdateTime
+		}
 		if(particles[i].time<=0)
 		{
 			part_system_destroy(particles[i].id)
