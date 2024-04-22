@@ -16,7 +16,7 @@ function sort_songlist(array){
 				swaps++
 			}
 		}
-		show_debug_message(swaps)
+		//show_debug_message(swaps)
 	}
 	return newTurns
 }
