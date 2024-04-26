@@ -537,12 +537,12 @@ function update_particles(){
 	particleUpdateTime=fps/120
 	for(var i=0;i<array_length(particles);i++)
 	{
-		particles[i].time--
 		particles[i].updateTimer--
 		if(particles[i].updateTimer<=0)
 		{
 			part_system_update(particles[i].id)
 			particles[i].updateTimer=particleUpdateTime
+			particles[i].time--
 		}
 		if(particles[i].time<=0)
 		{
