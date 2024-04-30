@@ -6,6 +6,8 @@ event_inherited();
 
 notesToDraw=notes
 
+
+
 if(currentDifficulty==1)
 {
 	notesToDraw=notesHard

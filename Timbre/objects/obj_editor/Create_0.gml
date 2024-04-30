@@ -16,6 +16,8 @@ notesEasy=[]
 
 lyrics=[]
 
+shakes=[]
+
 difficulty=0
 
 global.editing=true
@@ -85,11 +87,23 @@ if(global.levelData!=-4)
 	{
 		lyrics=global.levelData.lyrics
 	}
+	if(variable_struct_exists(global.levelData,"shakes"))
+	{
+		shakes=global.levelData.shakes
+	}
 }
 
 function save_level(_levelName,_songName){
 	notes=sort_note_array(notes)
-	var data={songName:_songName,bpm: obj_editor.bpm,offset: obj_editor.offset,difficulty: obj_editor.difficulty,artist: obj_editor.artist,lyrics: obj_editor.lyrics}
+	var data={
+		songName:_songName,
+		bpm: obj_editor.bpm,
+		offset: obj_editor.offset,
+		difficulty: obj_editor.difficulty,
+		artist: obj_editor.artist,
+		lyrics: obj_editor.lyrics,
+		shakes: obj_editor.shakes
+	}
 	if(array_length(notes)>0)
 	{
 		data.notes=notes
@@ -151,6 +165,10 @@ function load_level(_levelData){
 		if(variable_struct_exists(struct,"lyrics"))
 		{
 			lyrics=struct.lyrics
+		}
+		if(variable_struct_exists(struct,"shakes"))
+		{
+			shakes=struct.shakes
 		}
 		name=directoryName
 		global.dataLocation=name

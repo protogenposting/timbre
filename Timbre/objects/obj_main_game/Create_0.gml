@@ -11,6 +11,10 @@ perfect=0
 
 late=0
 
+shakeTimer=0
+
+shakes=[]
+
 if(global.song!=-4)
 {
 	songID=global.song
@@ -135,7 +139,15 @@ if(global.levelData!=-4)
 	}
 	sort_note_array(notes)
 	
-	lyrics=global.levelData.lyrics
+	if(variable_struct_exists(global.levelData,"lyrics"))
+	{
+		lyrics=global.levelData.lyrics
+	}
+	
+	if(variable_struct_exists(global.levelData,"shakes"))
+	{
+		shakes=global.levelData.shakes
+	}
 	
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset

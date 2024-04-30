@@ -280,7 +280,7 @@ if(array_length(lyrics)>0)
 	if(_nextLyric!=-4)
 	{
 		draw_set_font(fn_font_big)
-		draw_text(1366/2,768-64,lyrics[_nextLyric].text)
+		draw_text(1366/2,768/2 -128,lyrics[_nextLyric].text)
 		draw_set_font(fn_font)
 	}
 }
