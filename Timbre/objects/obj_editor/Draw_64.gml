@@ -43,65 +43,115 @@ repeat(16)
 	{
 		draw_set_color(c_green)
 	}
-	var notesInBeat=[]
-	var notesInBeatEquivelants=[]
-	for(var i=0;i<array_length(notesToDraw);i++)
-	{
-		if(notesToDraw[i].beat>=beat&&notesToDraw[i].beat<beat+1)
-		{
-			array_push(notesInBeat,notesToDraw[i])
-			array_push(notesInBeatEquivelants,i)
-		}
-	}
 	_x=512+256
-	draw_text(_x-64,_y,string(beat))
-	//turns
-	var _note=0
-	repeat(array_length(noteSounds))
+	if(currentMenu==0)
 	{
-		var noteDirection=0
-		repeat(4)
+		draw_text(_x-64,_y,string(beat))
+		var notesInBeat=[]
+		var notesInBeatEquivelants=[]
+		for(var i=0;i<array_length(notesToDraw);i++)
 		{
-			var noteOnBeat=note_on_beat(notesInBeat,beat,_note,noteDirection)
-			if(noteOnBeat!=-1)
+			if(notesToDraw[i].beat>=beat&&notesToDraw[i].beat<beat+1)
+			{
+				array_push(notesInBeat,notesToDraw[i])
+				array_push(notesInBeatEquivelants,i)
+			}
+		}
+		//turns
+		var _note=0
+		repeat(array_length(noteSounds))
+		{
+			var noteDirection=0
+			repeat(4)
+			{
+				var noteOnBeat=note_on_beat(notesInBeat,beat,_note,noteDirection)
+				if(noteOnBeat!=-1)
+				{
+					draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
+					try{
+						if(songMilliseconds/1000>=beat*beatLength&&!notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
+						{
+							audio_play_sound(noteSounds[_note],1000,false)
+							notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit=true
+						}
+					}
+					catch(e)
+					{
+				
+					}
+				}
+				draw_sprite_ext(noteSprites[_note],0,_x,_y,0.3,0.3,noteDirection*90,c_white,1)
+				draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
+				if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
+				{
+					if(mouse_check_button_pressed(mb_left))
+					{
+						if(noteOnBeat==-1)
+						{
+							array_push(notesToDraw,create_note(beat,_note,noteDirection,false))
+						}
+						else
+						{
+							array_delete(notesToDraw,notesInBeatEquivelants[noteOnBeat],1)
+						}
+					}
+				}
+				_x+=boxSize*2
+				noteDirection++
+			}
+			_x+=boxSize
+			_note++
+		}
+		_y+=boxSize*2
+		beat+=zoom
+	}
+	else if(currentMenu==1)
+	{		
+		_x+=256
+		draw_text(_x-64,_y,string(beat))
+		draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
+		
+		var _onBeat=-4
+		
+		for(var i=0;i<array_length(lyrics);i++)
+		{
+			if(beat==lyrics[i].beat)
 			{
 				draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
-				try{
-					if(songMilliseconds/1000>=beat*beatLength&&!notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
-					{
-						audio_play_sound(noteSounds[_note],1000,false)
-						notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit=true
-					}
-				}
-				catch(e)
-				{
-				
-				}
+				_onBeat=i
+				break;
 			}
-			draw_sprite_ext(noteSprites[_note],0,_x,_y,0.3,0.3,noteDirection*90,c_white,1)
-			draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
-			if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
-			{
-				if(mouse_check_button_pressed(mb_left))
-				{
-					if(noteOnBeat==-1)
-					{
-						array_push(notesToDraw,create_note(beat,_note,noteDirection,false))
-					}
-					else
-					{
-						array_delete(notesToDraw,notesInBeatEquivelants[noteOnBeat],1)
-					}
-				}
-			}
-			_x+=boxSize*2
-			noteDirection++
 		}
-		_x+=boxSize
-		_note++
+		if(_onBeat>=0)
+		{
+			draw_text(_x+boxSize+64,_y,lyrics[_onBeat].text)
+		}
+		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
+		{
+			if(mouse_check_button_pressed(mb_left))
+			{
+				if(_onBeat>=0)
+				{
+					array_delete(lyrics,_onBeat,1)
+					break;
+				}
+				else
+				{
+					array_push(lyrics,{beat: beat,text: get_string("","put text here")})
+				}
+			}
+			if(mouse_check_button_pressed(mb_right))
+			{
+				if(_onBeat>=0)
+				{
+					lyrics[_onBeat].text=get_string("",lyrics[_onBeat].text)
+				}
+			}
+		}
+		
+		_y+=boxSize*2
+		beat+=zoom
 	}
-	_y+=boxSize*2
-	beat+=zoom
 }
 
 draw_text(room_width/2,64,"use UP/DOWN to change the current chart type")

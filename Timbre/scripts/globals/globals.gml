@@ -71,6 +71,7 @@ if(_file==false)
 		{name:"Cbat",artist:"dont abbreviate solar express",path: working_directory+"Cbat\\data.json",difficulty:3,highScore:0,rank:["","",""]},
 		{name:"Pigstep",artist:"Lena Raine",path: working_directory+"Pigstep\\data.json",difficulty:3,highScore:0,rank:["","",""]},
 		{name:"Triggered",artist:"ScratchGuy (Featuring Phil Tiger)",path: working_directory+"Triggered\\data.json",difficulty:4,highScore:0,rank:["","",""]},
+		{name:"Dreamland",artist:"Fox Stevenson",path: working_directory+"Dreamland\\data.json",difficulty:4,highScore:0,rank:["","",""]},
 	]
 	global.offset=0
 }

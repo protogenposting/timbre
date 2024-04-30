@@ -81,5 +81,13 @@ if(keyboard_check_pressed(vk_down))
 		currentDifficulty=0
 	}
 }
+if(keyboard_check_pressed(vk_right))
+{
+	currentMenu++
+}
+if(keyboard_check_pressed(vk_left))
+{
+	currentMenu--
+}
 
 zoom=zooms[currentZoom]

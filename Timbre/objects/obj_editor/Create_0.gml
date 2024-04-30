@@ -14,6 +14,8 @@ notesHard=[]
 
 notesEasy=[]
 
+lyrics=[]
+
 difficulty=0
 
 global.editing=true
@@ -43,6 +45,8 @@ zoom=1
 startingBeat=0
 
 difficultyAlpha=0
+
+currentMenu=0
 
 if(global.song!=-4)
 {
@@ -77,11 +81,15 @@ if(global.levelData!=-4)
 	{
 		difficulty=0
 	}
+	if(variable_struct_exists(global.levelData,"lyrics"))
+	{
+		lyrics=global.levelData.lyrics
+	}
 }
 
 function save_level(_levelName,_songName){
 	notes=sort_note_array(notes)
-	var data={songName:_songName,bpm: obj_editor.bpm,offset: obj_editor.offset,difficulty: obj_editor.difficulty,artist: obj_editor.artist}
+	var data={songName:_songName,bpm: obj_editor.bpm,offset: obj_editor.offset,difficulty: obj_editor.difficulty,artist: obj_editor.artist,lyrics: obj_editor.lyrics}
 	if(array_length(notes)>0)
 	{
 		data.notes=notes
@@ -139,6 +147,10 @@ function load_level(_levelData){
 		if(variable_struct_exists(struct,"notesEasy"))
 		{
 			notesEasy=struct.notesEasy
+		}
+		if(variable_struct_exists(struct,"lyrics"))
+		{
+			lyrics=struct.lyrics
 		}
 		name=directoryName
 		global.dataLocation=name

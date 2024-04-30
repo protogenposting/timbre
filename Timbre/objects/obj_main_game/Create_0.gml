@@ -20,6 +20,8 @@ else
 	songID=snd_song1
 }
 
+lyrics=[{text:"",beat:0}]
+
 totalScore=0
 
 combo=0
@@ -132,6 +134,8 @@ if(global.levelData!=-4)
 		notes[i]=notesToGet[i]
 	}
 	sort_note_array(notes)
+	
+	lyrics=global.levelData.lyrics
 	
 	bpm=global.levelData.bpm
 	offset=global.levelData.offset

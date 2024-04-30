@@ -264,3 +264,23 @@ if(global.classicView)
 		draw_sprite_ext(spr_reverse_arrow,0,_x,_y,1,1,points[i].direction*90,c_white,1)
 	}
 }
+
+if(array_length(lyrics)>0)
+{
+	var _nextLyric=-4
+
+	for(var i=0;i<array_length(lyrics);i++)
+	{
+		if(lyrics[i].beat<(songMilliseconds/1000)*(bpm/60))
+		{
+			_nextLyric=i
+		}
+	}
+
+	if(_nextLyric!=-4)
+	{
+		draw_set_font(fn_font_big)
+		draw_text(1366/2,768-64,lyrics[_nextLyric].text)
+		draw_set_font(fn_font)
+	}
+}
