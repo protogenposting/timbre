@@ -32,7 +32,7 @@ function sort_songlist_bpm(array){
 				swaps++
 			}
 		}
-		show_debug_message(swaps)
+		//show_debug_message(swaps)
 	}
 	return newTurns
 }

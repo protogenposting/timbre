@@ -168,7 +168,7 @@ function point_between_points(x1,y1,x2,y2,percentage)
 loopSize=64
 
 function create_points(){
-	var _bobAmount=array_length(turns)/10
+	var _bobAmount=array_length(turns)/2
 	var beatLength=60/bpm
 	var pointArray=[]
 	randomize()
@@ -272,13 +272,16 @@ function create_points(){
 				notes[o].wasHit=false
 			}
 		}
-		if(irandom(5)>=4&&array_length(bobs)<_bobAmount)
+		if(irandom(2)>=1&&array_length(bobs)<_bobAmount&&i<array_length(pointArray)-1)
 		{
 			var bob={
-				x:pointArray[i].x+choose(256,-256),
-				y:pointArray[i].y+choose(256,-256),
+				x:pointArray[i].x,
+				y:pointArray[i].y,
 				frame: irandom(1),
 			}
+			var _offset=point_between_points(pointArray[i].x,pointArray[i].y,pointArray[i+1].x,pointArray[i+1].y,random_range(0,1))
+			bob.x=_offset.x+random_range(-128,128)
+			bob.y=_offset.y+random_range(-128,128)
 			var overlap=false
 			for(var o=0;o<array_length(pointArray);o++)
 			{
@@ -538,12 +541,12 @@ function update_particles(){
 	particleUpdateTime=fps/120
 	for(var i=0;i<array_length(particles);i++)
 	{
-		particles[i].time--
 		particles[i].updateTimer--
 		if(particles[i].updateTimer<=0)
 		{
 			part_system_update(particles[i].id)
 			particles[i].updateTimer=particleUpdateTime
+			particles[i].time--
 		}
 		if(particles[i].time<=0)
 		{

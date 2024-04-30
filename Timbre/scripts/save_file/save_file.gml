@@ -8,5 +8,5 @@ function save_file(struct,fname){
 	buffer_save(_buffer,fname)
 	buffer_delete(_buffer)
 	
-	show_debug_message("game saved! "+_string)
+	//show_debug_message("game saved! "+_string)
 }

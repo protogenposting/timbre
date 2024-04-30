@@ -300,6 +300,23 @@ if(points[currentPoint].type==noteTypes.loop)
 	-lengthdir_x(loopSize*_beatDistance,currentDirection),
 	-lengthdir_y(loopSize*_beatDistance,currentDirection),
 	nextBeatPercentage)
+	/*if(!variable_struct_exists(points[currentPoint],"playedUp"))
+	{
+		_aud=audio_play_sound(snd_slide_up,1000,false)
+		var _pitch=1
+		audio_sound_pitch(_aud,_pitch)
+		show_debug_message(_pitch)
+		points[currentPoint].playedUp=true
+	}*/
+	if(nextBeatPercentage>=0.5&&!variable_struct_exists(points[currentPoint],"playedDown"))
+	{
+		var _aud=audio_play_sound(snd_slide_down,1000,false)
+		var _pitch=1
+		audio_sound_pitch(_aud,_pitch)
+		audio_sound_set_track_position(_aud,0.06)
+		show_debug_message(_pitch)
+		points[currentPoint].playedDown=true
+	}
 	_currentX+=_transitionAmount.x
 	_currentY+=_transitionAmount.y
 	playerPoint.x+=_transitionAmount.x
