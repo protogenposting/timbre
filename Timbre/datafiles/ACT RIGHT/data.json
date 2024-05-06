@@ -991,7 +991,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":2.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2837.0,
       "startY":-1792.0,
       "timeMS":44210.526315789473
@@ -1010,7 +1010,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":1.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2901.0,
       "startY":-1856.0,
       "timeMS":44368.421052631573
@@ -1029,7 +1029,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":2.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2965.0,
       "startY":-1920.0,
       "timeMS":44526.315789473687
@@ -1048,7 +1048,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":1.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-3029.0,
       "startY":-1984.0,
       "timeMS":44684.210526315786
@@ -1067,7 +1067,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":2.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-3093.0,
       "startY":-2048.0,
       "timeMS":44842.105263157893
@@ -1086,7 +1086,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":3.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-3157.0,
       "startY":-1984.0,
       "timeMS":45000.0
@@ -1105,7 +1105,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":2.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-3221.0,
       "startY":-1920.0,
       "timeMS":45157.8947368421
@@ -1124,7 +1124,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":1.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-3285.0,
       "startY":-1984.0,
       "timeMS":45315.789473684206
@@ -1281,7 +1281,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":1.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2901.0,
       "startY":-2880.0,
       "timeMS":49263.15789473684
@@ -1306,7 +1306,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":1.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2901.0,
       "startY":-2880.0,
       "timeMS":49421.052631578947
@@ -1319,7 +1319,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":3.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2901.0,
       "startY":-2880.0,
       "timeMS":49578.947368421046
@@ -1344,7 +1344,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":3.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2901.0,
       "startY":-2880.0,
       "timeMS":49736.84210526316
@@ -1357,7 +1357,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":1.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2901.0,
       "startY":-2880.0,
       "timeMS":49894.73684210526
@@ -1382,7 +1382,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":1.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2901.0,
       "startY":-2880.0,
       "timeMS":50052.631578947359
@@ -1395,7 +1395,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":2.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2965.0,
       "startY":-2944.0,
       "timeMS":50210.526315789473
@@ -1420,7 +1420,7 @@
       "color":16777215.0,
       "wasHit":false,
       "direction":2.0,
-      "temporaryType":3,
+      "temporaryType":3.0,
       "startX":-2965.0,
       "startY":-2944.0,
       "timeMS":50368.421052631573
