@@ -20,7 +20,19 @@ for(var i=0;i<array_length(points)-1;i++)
 	{
 		points[i].frame=0
 	}
-	if(points[i].wasHit||abs(songMilliseconds-points[i].timeMS)/1000>10)
+	if(abs(songMilliseconds-points[i].timeMS)/1000>10)
+	{
+		points[i].continuing=true
+		continue;
+	}
+	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
+	if(points[i].wasHit==2&&inCamera)
+	{
+		draw_sprite_ext(sprites.badArrow,points[i].frame,points[i].x,points[i].y,1,1,
+		points[i].direction*3,_color,1)
+	}
+	
+	if(points[i].wasHit)
 	{
 		points[i].continuing=true
 		continue;

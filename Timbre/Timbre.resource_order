@@ -66,8 +66,8 @@
     {"name":"snd_slap","order":7,"path":"sounds/snd_slap/snd_slap.yy",},
     {"name":"snd_slap2","order":8,"path":"sounds/snd_slap2/snd_slap2.yy",},
     {"name":"snd_slap3","order":9,"path":"sounds/snd_slap3/snd_slap3.yy",},
-    {"name":"snd_slide_up","order":17,"path":"sounds/snd_slide_up/snd_slide_up.yy",},
     {"name":"snd_slide_down","order":18,"path":"sounds/snd_slide_down/snd_slide_down.yy",},
+    {"name":"snd_slide_up","order":17,"path":"sounds/snd_slide_up/snd_slide_up.yy",},
     {"name":"snd_spinout","order":3,"path":"sounds/snd_spinout/snd_spinout.yy",},
     {"name":"snd_swipe","order":5,"path":"sounds/snd_swipe/snd_swipe.yy",},
     {"name":"snd_tab_move_back","order":14,"path":"sounds/snd_tab_move_back/snd_tab_move_back.yy",},
@@ -113,5 +113,6 @@
     {"name":"spr_tv_really_bad","order":3,"path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},
     {"name":"spr_tv_really_good","order":4,"path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},
     {"name":"spr_wall","order":25,"path":"sprites/spr_wall/spr_wall.yy",},
+    {"name":"spr_bad_arrow","order":26,"path":"sprites/spr_bad_arrow/spr_bad_arrow.yy",},
   ],
 }
