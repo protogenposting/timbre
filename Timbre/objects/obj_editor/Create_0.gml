@@ -75,7 +75,6 @@ function generate_preview(_notes){
 			//_y+=lengthdir_y(gridSize*_distanceToNext,_notes[i].direction*90)
 		}
 	}
-	array_push(backgroundPoints,{x: _x,y: _y, direction: _notes[i].direction*90,beat: _notes[i].beat,beatDistance: _distanceToNext,isSpider:false})
 }
 
 if(global.song!=-4)
