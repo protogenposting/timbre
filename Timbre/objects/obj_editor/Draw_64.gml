@@ -96,6 +96,7 @@ repeat(16)
 						{
 							array_delete(notesToDraw,notesInBeatEquivelants[noteOnBeat],1)
 						}
+						generate_preview(notesToDraw)
 					}
 				}
 				_x+=boxSize*2

@@ -334,20 +334,6 @@ percentageBetweenPoints=0
 
 tabMoveSpeed=6
 
-function point_between_points(x1,y1,x2,y2,percentage)
-{
-	percentage=clamp(percentage,0,1)
-	percentage=sin((percentage/2)*pi)
-	var currentDirection=point_direction(x1,y1,x2,y2)
-	var currentDistance=point_distance(x1,y1,x2,y2)*percentage
-	
-	var _x=lengthdir_x(currentDistance,currentDirection)
-	var _y=lengthdir_y(currentDistance,currentDirection)
-	
-	
-	return {x: x1+_x,y: y1+_y}
-}
-
 function start_level()
 {
 	if(obj_level_select.selectedLevel!=-4)

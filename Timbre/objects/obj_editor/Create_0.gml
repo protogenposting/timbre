@@ -50,6 +50,33 @@ difficultyAlpha=0
 
 currentMenu=0
 
+backgroundPoints=[]
+
+gridSize=512
+
+function generate_preview(_notes){
+	backgroundPoints=[]
+	_notes=sort_note_array(_notes)
+	var _x=0
+	var _y=0
+	for(var i=0;i<array_length(_notes)-1;i++){
+		if(_notes[i].type==noteTypes.turn)
+		{
+			var _distanceToNext=_notes[i+1].beat-_notes[i].beat
+			array_push(backgroundPoints,{x: _x,y: _y, direction: _notes[i].direction*90,beat: _notes[i].beat,beatDistance: _distanceToNext,isSpider:false})
+			_x+=lengthdir_x(gridSize*_distanceToNext,_notes[i].direction*90)
+			_y+=lengthdir_y(gridSize*_distanceToNext,_notes[i].direction*90)
+		}
+		if(_notes[i].type==noteTypes.loop)
+		{
+			var _distanceToNext=_notes[i+1].beat-_notes[i].beat
+			array_push(backgroundPoints,{x: _x,y: _y, direction: _notes[i].direction*90,beat: _notes[i].beat,beatDistance: _distanceToNext,isSpider:true})
+			//_x+=lengthdir_x(gridSize*_distanceToNext,_notes[i].direction*90)
+			//_y+=lengthdir_y(gridSize*_distanceToNext,_notes[i].direction*90)
+		}
+	}
+}
+
 if(global.song!=-4)
 {
 	songLoaded=global.song
@@ -173,6 +200,7 @@ function load_level(_levelData){
 		name=directoryName
 		global.dataLocation=name
 		button[4].name="name: "+directoryName
+		generate_preview(notes)
 	}	
 }
 
