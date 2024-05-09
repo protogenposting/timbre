@@ -80,8 +80,8 @@ axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 		var currentDirection=floor(loop_rotation(point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)+90)/90)
 		attackKey[array_index_looped_index(attackKey,noteDirections.right+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
 		attackKey[array_index_looped_index(attackKey,noteDirections.left+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
-		attackKey[array_index_looped_index(attackKey,noteDirections.up+currentDirection)]=false
-		attackKey[array_index_looped_index(attackKey,noteDirections.down+currentDirection)]=false
+		attackKey[array_index_looped_index(attackKey,noteDirections.down+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
+		attackKey[array_index_looped_index(attackKey,noteDirections.up+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
 		if(funnyMode)
 		{
 			attackKey[array_index_looped_index(attackKey,noteDirections.right+currentDirection)]=choose(keyboard_check_pressed(global.keyboardBinds.attacking.left),keyboard_check_pressed(global.keyboardBinds.attacking.right))

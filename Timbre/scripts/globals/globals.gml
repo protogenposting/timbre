@@ -38,7 +38,7 @@ global.saveName="save_data.TTT"
 
 global.editing=false
 
-global.improvedControls=true
+global.improvedControls=false
 
 global.classicView=false
 
