@@ -319,6 +319,13 @@ function create_points(){
 				{
 					lrDir=0
 				}
+				else if(dir==loop_rotation(_direction))
+				{
+					if(lrDir==0)
+					{
+						lrDir=2
+					}
+				}
 				var _directions=[0,1,2,3]
 				_directions[noteDirections.right]=array_index_looped_index(_directions,noteDirections.right+lrDir)
 				_directions[noteDirections.left]=array_index_looped_index(_directions,noteDirections.left+lrDir)
