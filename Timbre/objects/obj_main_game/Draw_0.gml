@@ -168,6 +168,7 @@ for(var i=array_length(points)-1;i>0;i--)
 var _nextNote=99999999999999
 var hitTree=-1
 
+//TREEES
 for(var o=0; o<array_length(notes);o++)
 {
 	var _spr=sprites.log
@@ -206,10 +207,10 @@ for(var o=0; o<array_length(notes);o++)
 	{
 		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
 	}
-	if(abs(timing)<=msWindow&&attackKey[notes[o].direction]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=botplayLeniency&&!notes[o].wasHit)
+	if(abs(timing)<=msWindow&&attackKey[notes[o].intendedDirection]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=botplayLeniency&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
-		attackKey[notes[o].direction]=false
+		attackKey[notes[o].intendedDirection]=false
 		notes[o].wasHit=true
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
@@ -229,7 +230,10 @@ for(var o=0; o<array_length(notes);o++)
 		}
 		hitTime=1.33
 		hitMessage=get_timing(timing)
-		hitTree=notes[o].direction
+		hitTree=notes[o].intendedDirection
+		
+		show_debug_message(points[currentPoint].direction+1)
+		show_debug_message([notes[o].direction,notes[o].intendedDirection])
 		
 		if(_spr==sprites.log)
 		{
@@ -363,29 +367,6 @@ playerPoint.x-1366/2+cameraOffset.x,
 playerPoint.y-768/2+cameraOffset.y)
 
 draw_sprite_ext(sprites.player,playerFrame,_currentX,_currentY,1,1,currentDirection,c_white,1)
-
-if(hitTree==loop_rotation((currentDirection+90))/90)
-{
-	axeRotations[0]=-90
-	audio_play_sound(snd_swipe,1000,false)
-}
-if(hitTree==loop_rotation((currentDirection-90))/90)
-{
-	axeRotations[1]=-90
-	audio_play_sound(snd_swipe,1000,false)
-}
-if(hitTree==loop_rotation((currentDirection+180))/90)
-{
-	axeRotations[0]=45
-	axeRotations[1]=45
-	audio_play_sound(snd_swipe,1000,false)
-}
-if(hitTree==loop_rotation((currentDirection))/90)
-{
-	axeRotations[0]=-90
-	axeRotations[1]=-90
-	audio_play_sound(snd_swipe,1000,false)
-}
 
 //show_debug_message(playerPoint.x-(camera_get_view_x(view_camera[0])+1366/2))
 

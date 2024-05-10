@@ -62,6 +62,60 @@ lastRStickRotation=0
 
 comboMissTimer=0
 
+function rotate_axes(){
+	if(!global.improvedControls)
+	{
+		if(attackKey[noteDirections.left])
+		{
+			axeRotations[0]=-90
+			audio_play_sound(snd_swipe,1000,false)
+		}
+		if(attackKey[noteDirections.right])
+		{
+			axeRotations[1]=-90
+			audio_play_sound(snd_swipe,1000,false)
+		}
+		if(attackKey[noteDirections.down])
+		{
+			axeRotations[0]=45
+			axeRotations[1]=45
+			audio_play_sound(snd_swipe,1000,false)
+		}
+		if(attackKey[noteDirections.up])
+		{
+			axeRotations[0]=-90
+			axeRotations[1]=-90
+			audio_play_sound(snd_swipe,1000,false)
+		}
+		
+	}
+	else
+	{
+		if(attackKey[loop_rotation((currentDirection+90))/90])
+		{
+			axeRotations[0]=-90
+			audio_play_sound(snd_swipe,1000,false)
+		}
+		if(attackKey[loop_rotation((currentDirection-90))/90])
+		{
+			axeRotations[1]=-90
+			audio_play_sound(snd_swipe,1000,false)
+		}
+		if(attackKey[loop_rotation((currentDirection+180))/90])
+		{
+			axeRotations[0]=45
+			axeRotations[1]=45
+			audio_play_sound(snd_swipe,1000,false)
+		}
+		if(attackKey[loop_rotation((currentDirection))/90])
+		{
+			axeRotations[0]=-90
+			axeRotations[1]=-90
+			audio_play_sound(snd_swipe,1000,false)
+		}
+	}
+}
+
 function miss(struct)
 {
 	audio_play_sound(snd_spinout,1000,false)
@@ -255,6 +309,32 @@ function create_points(){
 				}
 				var dir=notes[o].direction*90
 				
+				var directionID=pointArray[i].direction+1
+				while(directionID>3)
+				{
+					directionID-=4
+				}
+				var lrDir=directionID
+				if(lrDir==2)
+				{
+					lrDir=0
+				}
+				var _directions=[0,1,2,3]
+				_directions[noteDirections.right]=array_index_looped_index(_directions,noteDirections.right+lrDir)
+				_directions[noteDirections.left]=array_index_looped_index(_directions,noteDirections.left+lrDir)
+				_directions[noteDirections.up]=array_index_looped_index(_directions,noteDirections.up+lrDir)
+				_directions[noteDirections.down]=array_index_looped_index(_directions,noteDirections.down+lrDir)
+				
+				if(!global.improvedControls)
+				{
+					notes[o].intendedDirection=_directions[notes[o].direction]
+				}
+				else
+				{
+					notes[o].intendedDirection=notes[o].direction
+				}
+				
+				//show_message(notes[o].intendedDirection)
 				notes[o].x=dist.x+lengthdir_x(64,dir)
 				notes[o].y=dist.y+lengthdir_y(64,dir)
 				notes[o].color=c_white

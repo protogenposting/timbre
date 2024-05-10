@@ -74,68 +74,19 @@ axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 
 #region controls
 
-	if(!global.improvedControls)
-	{
-		var funnyMode=false
-		var currentDirection=floor(loop_rotation(point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)+90)/90)
-		var lrDir=currentDirection
-		if(lrDir==0)
-		{
-			lrDir=2
-		}
-		attackKey[array_index_looped_index(attackKey,noteDirections.right+lrDir)]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
-		attackKey[array_index_looped_index(attackKey,noteDirections.left+lrDir)]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
-		attackKey[array_index_looped_index(attackKey,noteDirections.down+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
-		attackKey[array_index_looped_index(attackKey,noteDirections.up+currentDirection)]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
-		if(funnyMode)
-		{
-			attackKey[array_index_looped_index(attackKey,noteDirections.right+currentDirection)]=choose(keyboard_check_pressed(global.keyboardBinds.attacking.left),keyboard_check_pressed(global.keyboardBinds.attacking.right))
-			attackKey[array_index_looped_index(attackKey,noteDirections.left+currentDirection)]=choose(keyboard_check_pressed(global.keyboardBinds.attacking.left),keyboard_check_pressed(global.keyboardBinds.attacking.right))
-			timings[0]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
-			timings[1]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
-			timings[2]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
-			timings[3]=choose({distance:msWindow/7,name:"Perfect!"},{distance:msWindow/5,name:"Good"},{distance:msWindow/3,name:"Ok"},{distance:msWindow,name:"Doodoo..."})
-		}
-		//show_debug_message(attackKey)
-		//show_debug_message(currentDirection)
-		
-	}
-	else
-	{
-		attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
-		attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
-		attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
-		attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
-	}
+	attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
+	attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
+	attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
+	attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
 	var currentDirection=points[currentPoint].direction*90
+	rotate_axes()
 	
 	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
 	turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
 	turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
 	turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
 	
-	if(attackKey[loop_rotation((currentDirection+90))/90])
-	{
-		axeRotations[0]=-90
-		audio_play_sound(snd_swipe,1000,false)
-	}
-	if(attackKey[loop_rotation((currentDirection-90))/90])
-	{
-		axeRotations[1]=-90
-		audio_play_sound(snd_swipe,1000,false)
-	}
-	if(attackKey[loop_rotation((currentDirection+180))/90])
-	{
-		axeRotations[0]=45
-		axeRotations[1]=45
-		audio_play_sound(snd_swipe,1000,false)
-	}
-	if(attackKey[loop_rotation((currentDirection))/90])
-	{
-		axeRotations[0]=-90
-		axeRotations[1]=-90
-		audio_play_sound(snd_swipe,1000,false)
-	}
+	
 	
 	turnKeyReleased[noteDirections.left]=keyboard_check_released(global.keyboardBinds.turning.left)
 	turnKeyReleased[noteDirections.right]=keyboard_check_released(global.keyboardBinds.turning.right)
