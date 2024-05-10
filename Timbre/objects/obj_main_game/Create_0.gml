@@ -249,6 +249,12 @@ function create_points(){
 	for(var i=0;i<array_length(turns);i++)
 	{
 		var gridSizeCurrent=gridSize*(turns[i].beat-lastBeatFrom)
+		if(i>0&&gridSizeCurrent==0)
+		{
+			currentDirection=(turns[i-1].direction*90+turns[i].direction*90)/2
+			show_debug_message("diagonal at "+string(i))
+			show_debug_message(currentDirection)
+		}
 		if(pointArray[i].type!=noteTypes.loop)
 		{
 			_x+=lengthdir_x(gridSizeCurrent,currentDirection)
@@ -263,11 +269,11 @@ function create_points(){
 		{
 			_color=$AAffAA
 		}
-		if(turns[i].direction==noteDirections.up)
+		else if(turns[i].direction==noteDirections.up)
 		{
 			_color=$ffAAAA
 		}
-		if(turns[i].direction==noteDirections.down)
+		else if(turns[i].direction==noteDirections.down)
 		{
 			_color=$AAAAff
 		}
@@ -275,7 +281,9 @@ function create_points(){
 		var _type=turns[i].type
 		var _pointBeat=turns[i].beat
 		var tempDirection=turns[i].direction
-		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,continuing:false,color: _color})
+		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, 
+			timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,
+			continuing:false,color: _color})
 		lastBeatFrom=turns[i].beat
 		currentDirection=turns[i].direction*90
 	}
