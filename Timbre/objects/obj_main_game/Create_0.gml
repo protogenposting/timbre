@@ -63,6 +63,7 @@ lastRStickRotation=0
 comboMissTimer=0
 
 function rotate_axes(){
+	var currentDirection=points[currentPoint].direction*90
 	if(!global.improvedControls)
 	{
 		if(attackKey[noteDirections.left])

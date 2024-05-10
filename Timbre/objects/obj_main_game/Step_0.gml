@@ -78,7 +78,7 @@ axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 	attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
 	attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
 	attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
-	var currentDirection=points[currentPoint].direction*90
+	
 	rotate_axes()
 	
 	turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
