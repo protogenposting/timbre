@@ -62,7 +62,7 @@ lastRStickRotation=0
 
 comboMissTimer=0
 
-function rotate_axes(){
+function rotate_axes(attacks){
 	var currentDirection=points[currentPoint].direction*90
 	if(!global.improvedControls)
 	{
@@ -71,23 +71,23 @@ function rotate_axes(){
 		{
 			horizontalDirection=-1
 		}
-		if(attackKey[noteDirections.left]&&horizontalDirection>0||attackKey[noteDirections.right]&&horizontalDirection<0)
+		if(attacks[noteDirections.left]&&horizontalDirection>0||attacks[noteDirections.right]&&horizontalDirection<0)
 		{
 			axeRotations[0]=-90
 			audio_play_sound(snd_swipe,1000,false)
 		}
-		if(attackKey[noteDirections.right]&&horizontalDirection>0||attackKey[noteDirections.left]&&horizontalDirection<0)
+		if(attacks[noteDirections.right]&&horizontalDirection>0||attacks[noteDirections.left]&&horizontalDirection<0)
 		{
 			axeRotations[1]=-90
 			audio_play_sound(snd_swipe,1000,false)
 		}
-		if(attackKey[noteDirections.down])
+		if(attacks[noteDirections.down])
 		{
 			axeRotations[0]=45
 			axeRotations[1]=45
 			audio_play_sound(snd_swipe,1000,false)
 		}
-		if(attackKey[noteDirections.up])
+		if(attacks[noteDirections.up])
 		{
 			axeRotations[0]=-90
 			axeRotations[1]=-90
@@ -97,23 +97,23 @@ function rotate_axes(){
 	}
 	else
 	{
-		if(attackKey[loop_rotation((currentDirection+90))/90])
+		if(attacks[loop_rotation((currentDirection+90))/90])
 		{
 			axeRotations[0]=-90
 			audio_play_sound(snd_swipe,1000,false)
 		}
-		if(attackKey[loop_rotation((currentDirection-90))/90])
+		if(attacks[loop_rotation((currentDirection-90))/90])
 		{
 			axeRotations[1]=-90
 			audio_play_sound(snd_swipe,1000,false)
 		}
-		if(attackKey[loop_rotation((currentDirection+180))/90])
+		if(attacks[loop_rotation((currentDirection+180))/90])
 		{
 			axeRotations[0]=45
 			axeRotations[1]=45
 			audio_play_sound(snd_swipe,1000,false)
 		}
-		if(attackKey[loop_rotation((currentDirection))/90])
+		if(attacks[loop_rotation((currentDirection))/90])
 		{
 			axeRotations[0]=-90
 			axeRotations[1]=-90
@@ -649,7 +649,7 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 	}
 }
 
-botplayLeniency=5
+botplayLeniency=7.5
 
 function update_particles(){
 	particleUpdateTime=fps/120

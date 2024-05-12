@@ -232,6 +232,12 @@ for(var o=0; o<array_length(notes);o++)
 		{
 			perfect++
 		}
+		if(global.botPlay)
+		{
+			var _tempArray=[0,0,0,0]
+			_tempArray[notes[o].intendedDirection]=true
+			rotate_axes(_tempArray)
+		}
 		hitTime=1.33
 		hitMessage=get_timing(timing)
 		hitTree=notes[o].intendedDirection
