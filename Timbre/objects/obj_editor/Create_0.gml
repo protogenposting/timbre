@@ -64,8 +64,14 @@ function generate_preview(_notes){
 		{
 			var _distanceToNext=_notes[i+1].beat-_notes[i].beat
 			array_push(backgroundPoints,{x: _x,y: _y, direction: _notes[i].direction*90,beat: _notes[i].beat,beatDistance: _distanceToNext,isSpider:false})
-			_x+=lengthdir_x(gridSize*_distanceToNext,_notes[i].direction*90)
-			_y+=lengthdir_y(gridSize*_distanceToNext,_notes[i].direction*90)
+			var _direction=_notes[i].direction*90
+			if(i>0&&(_notes[i-1].beat-_notes[i].beat)==0)
+			{
+				_direction=(_notes[i-1].direction+_notes[i].direction)/2
+				_direction*=90
+			}
+			_x+=lengthdir_x(gridSize*_distanceToNext,_direction)
+			_y+=lengthdir_y(gridSize*_distanceToNext,_direction)
 		}
 		if(_notes[i].type==noteTypes.loop)
 		{

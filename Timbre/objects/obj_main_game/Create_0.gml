@@ -254,9 +254,9 @@ function create_points(){
 	for(var i=0;i<array_length(turns);i++)
 	{
 		var gridSizeCurrent=gridSize*(turns[i].beat-lastBeatFrom)
-		if(i>0&&gridSizeCurrent==0)
+		if(i>1&&(turns[i-1].beat-turns[i-2].beat)==0)
 		{
-			currentDirection=(turns[i-1].direction*90+turns[i].direction*90)/2
+			currentDirection=(turns[i-2].direction*90+turns[i-1].direction*90)/2
 			show_debug_message("diagonal at "+string(i))
 			show_debug_message(currentDirection)
 		}

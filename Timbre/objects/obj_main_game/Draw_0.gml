@@ -12,6 +12,10 @@ for(var i=0;i<array_length(bobs);i++)
 for(var i=0;i<array_length(points)-1;i++)
 {
 	var _color=c_white
+	if(points[i].timeMS<=songMilliseconds)
+	{
+		currentPoint=i
+	}
 	if(i>0&&points[i-1].type==noteTypes.loop)
 	{
 		_color=c_red
@@ -274,7 +278,12 @@ for(var o=0; o<array_length(notes);o++)
 	}
 }
 
-var currentDirection=points[currentPoint].direction*90
+var currentDirection=point_direction(points[currentPoint].x,points[currentPoint].y,points[currentPoint+1].x,points[currentPoint+1].y)
+
+if(points[currentPoint].x==points[currentPoint+1].x&&points[currentPoint].y==points[currentPoint+1].y)
+{
+	currentDirection=points[currentPoint].direction*90
+}
 
 var timeSinceLastPoint = songMilliseconds-points[currentPoint].timeMS
 
@@ -285,13 +294,13 @@ var nextBeatPercentage=timeSinceLastPoint/timeBetweenPoints
 if(nextBeatPercentage>=1)
 {
 	nextBeatPercentage=0
-	currentPoint++
+	//currentPoint++
 }
 
 var addedPoint=false
 while(songMilliseconds>=points[currentPoint+1].timeMS)
 {
-	currentPoint+=1
+	//currentPoint+=1
 	nextBeatPercentage=1
 }
 if(nextBeatPercentage>1||nextBeatPercentage<=0)
