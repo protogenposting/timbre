@@ -66,12 +66,17 @@ function rotate_axes(){
 	var currentDirection=points[currentPoint].direction*90
 	if(!global.improvedControls)
 	{
-		if(attackKey[noteDirections.left])
+		var horizontalDirection=1
+		if(currentDirection==270)
+		{
+			horizontalDirection=-1
+		}
+		if(attackKey[noteDirections.left]&&horizontalDirection>0||attackKey[noteDirections.right]&&horizontalDirection<0)
 		{
 			axeRotations[0]=-90
 			audio_play_sound(snd_swipe,1000,false)
 		}
-		if(attackKey[noteDirections.right])
+		if(attackKey[noteDirections.right]&&horizontalDirection>0||attackKey[noteDirections.left]&&horizontalDirection<0)
 		{
 			axeRotations[1]=-90
 			audio_play_sound(snd_swipe,1000,false)
