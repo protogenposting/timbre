@@ -116,16 +116,27 @@ for(var i=array_length(points)-1;i>0;i--)
 	{
 		points[i].frame=0
 	}
-	if(points[i].continuing&&points[i].type!=noteTypes.loop)
+	if(points[i].continuing&&points[i].type!=noteTypes.loop||i<array_length(points)-1&&(points[i+1].beat-points[i].beat)==0)
 	{
 		continue;
 	}
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
+	try{
+		var _directionToNext=point_direction(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
+	}
+	catch(e)
+	{
+		var _directionToNext=points[i].direction*90
+	}
+	if(points[i].type==noteTypes.loop)
+	{
+		_directionToNext=points[i].direction*90
+	}
 	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120&&inCamera)
 	{
 		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,1,1,
-		points[i].direction*90,_color,1)
+		_directionToNext,_color,1)
 	}
 	if(points[i].type==noteTypes.loop)
 	{
@@ -165,7 +176,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		}
 		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
-		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),points[i].direction*90,_color,_alpha)
+		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),_directionToNext,_color,_alpha)
 	}
 }
 
@@ -304,12 +315,7 @@ if(nextBeatPercentage>=1)
 }
 
 var addedPoint=false
-while(songMilliseconds>=points[currentPoint+1].timeMS)
-{
-	//currentPoint+=1
-	nextBeatPercentage=1
-}
-if(nextBeatPercentage>1||nextBeatPercentage<=0)
+if(nextBeatPercentage<0)
 {
 	nextBeatPercentage=0
 }
