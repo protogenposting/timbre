@@ -218,6 +218,13 @@ function reset_buttons()
 						var _leafToTreeRatio=array_create(10)
 						var beatLength=60/_file.bpm
 						var _noteBeats=[]
+						try{
+							global.levels[id].difficulty=_file.difficulty
+						}
+						catch(e)
+						{
+							
+						}
 						
 						var notesToGet=_file.notes
 						if(global.currentDifficulty==1)
