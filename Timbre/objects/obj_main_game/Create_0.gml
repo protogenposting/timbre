@@ -254,14 +254,6 @@ function create_points(){
 	for(var i=0;i<array_length(turns);i++)
 	{
 		var gridSizeCurrent=gridSize*(turns[i].beat-lastBeatFrom)
-		if(i>1&&(turns[i-1].beat-turns[i-2].beat)==0)
-		{
-			currentDirection=(turns[i-2].direction*90+turns[i-1].direction*90)/2
-			show_debug_message("diagonal at "+string(i))
-			show_debug_message(currentDirection)
-			pointArray[i].color=c_purple
-			//pointArray[i-1].color=c_purple
-		}
 		if(pointArray[i].type!=noteTypes.loop)
 		{
 			_x+=lengthdir_x(gridSizeCurrent,currentDirection)
@@ -288,11 +280,22 @@ function create_points(){
 		var _type=turns[i].type
 		var _pointBeat=turns[i].beat
 		var tempDirection=turns[i].direction
+		if(i>1&&(turns[i].beat-turns[i-1].beat)==0)
+		{
+			currentDirection=(turns[i].direction*90+turns[i-1].direction*90)/2
+			show_debug_message("diagonal at "+string(i))
+			show_debug_message(currentDirection)
+			_color=c_purple
+			//pointArray[i-1].color=c_purple
+		}
+		else
+		{
+			currentDirection=turns[i].direction*90
+		}
 		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, 
 			timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,
 			continuing:false,color: _color})
 		lastBeatFrom=turns[i].beat
-		currentDirection=turns[i].direction*90
 	}
 	
 	var lastLength=songLength[1]-lastBeat
