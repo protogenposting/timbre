@@ -51,7 +51,7 @@ if(_file==false)
 		{name:"Fardstep",artist:"Protogen Posting",path: working_directory+"Fardstep 1\\data.json",difficulty:2,highScore:0,rank:["","",""]},
 		{name:"Value Exception",artist:"Protogen Posting and ScratchGuy",path: working_directory+"VE\\data.json",difficulty:5,highScore:0,rank:["","",""]},
 		{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:["","",""]},
-		{name:"Ice Kingdom",artist:"Protogen Posting",path: working_directory+"Aurora Borealis\\data.json",difficulty:2,highScore:0,rank:["","",""]},
+		{name:"Ice Kingdom",artist:"Protogen Posting",path: working_directory+"Aurora Borealis\\data.json",difficulty:3,highScore:0,rank:["","",""]},
 		{name:"Sand Kingdom",artist:"Protogen Posting",path: working_directory+"sand kingdom\\data.json",difficulty:1,highScore:0,rank:["","",""]},
 		{name:"Airship",artist:"Protogen Posting",path: working_directory+"airship\\data.json",difficulty:4,highScore:0,rank:["","",""]},
 		{name:"Danger (Cover)",artist:"Z11 Music (Cover by ScratchGuy23)",path: working_directory+"Danger\\data.json",difficulty:5,highScore:0,rank:["","",""]},
