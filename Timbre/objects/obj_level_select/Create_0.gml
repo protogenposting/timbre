@@ -167,6 +167,7 @@ function reset_buttons()
 	var _y=lastButton.position.y+96
 	var _yEnd=room_height/1.1
 	var _yStart=_y
+	global.levels=sort_songlist(global.levels)
 	for(var i=0;i<array_length(global.levels);i++)
 	{
 		var _file=load_file(global.levels[i].path)
@@ -358,3 +359,5 @@ function start_level()
 }
 	
 reset_buttons()
+
+alarm[0]=30
