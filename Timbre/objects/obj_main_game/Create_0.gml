@@ -587,30 +587,32 @@ function get_rank_id(accuracyPercentage){
 	return -4
 }
 
-turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
-turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
-turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
-turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
+function turn_off_keys(){
+	turnKey[noteDirections.left]=false
+	turnKey[noteDirections.right]=false
+	turnKey[noteDirections.up]=false
+	turnKey[noteDirections.down]=false
 
-turnKeyReleased[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
-turnKeyReleased[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
-turnKeyReleased[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
-turnKeyReleased[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
+	turnKeyReleased[noteDirections.left]=false
+	turnKeyReleased[noteDirections.right]=false
+	turnKeyReleased[noteDirections.up]=false
+	turnKeyReleased[noteDirections.down]=false
 
-attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
-attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
-attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
-attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
+	attackKey[noteDirections.left]=false
+	attackKey[noteDirections.right]=false
+	attackKey[noteDirections.up]=false
+	attackKey[noteDirections.down]=false
 
-attackKeyReleased[noteDirections.left]=keyboard_check_released(global.keyboardBinds.attacking.left)
-attackKeyReleased[noteDirections.right]=keyboard_check_released(global.keyboardBinds.attacking.right)
-attackKeyReleased[noteDirections.up]=keyboard_check_released(global.keyboardBinds.attacking.up)
-attackKeyReleased[noteDirections.down]=keyboard_check_released(global.keyboardBinds.attacking.down)
+	attackKeyReleased[noteDirections.left]=false
+	attackKeyReleased[noteDirections.right]=false
+	attackKeyReleased[noteDirections.up]=false
+	attackKeyReleased[noteDirections.down]=false
 
-turnKeyHold[noteDirections.left]=keyboard_check(global.keyboardBinds.turning.left)
-turnKeyHold[noteDirections.right]=keyboard_check(global.keyboardBinds.turning.right)
-turnKeyHold[noteDirections.up]=keyboard_check(global.keyboardBinds.turning.up)
-turnKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.turning.down)
+	turnKeyHold[noteDirections.left]=false
+	turnKeyHold[noteDirections.right]=false
+	turnKeyHold[noteDirections.up]=false
+	turnKeyHold[noteDirections.down]=false
+}
 
 particles=[]
 
