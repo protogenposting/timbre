@@ -48,7 +48,7 @@ if(_file==false)
 {
 	global.levels=[
 		{name:"Fardstep 2",artist:"Protogen Posting",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:["","",""]},
-		{name:"Fardstep",artist:"Protogen Posting",path: working_directory+"Fardstep 1\\data.json",difficulty:2,highScore:0,rank:["","",""]},
+		{name:"Fardstep",artist:"Protogen Posting",path: working_directory+"Fardstep 1\\data.json",difficulty:0,highScore:0,rank:["","",""]},
 		{name:"Value Exception",artist:"Protogen Posting and ScratchGuy",path: working_directory+"VE\\data.json",difficulty:5,highScore:0,rank:["","",""]},
 		{name:"Pineapple Pizza!",artist:"Protogen Posting",path: working_directory+"Pineapple Pizza\\data.json",difficulty:0,highScore:0,rank:["","",""]},
 		{name:"Ice Kingdom",artist:"Protogen Posting",path: working_directory+"Aurora Borealis\\data.json",difficulty:3,highScore:0,rank:["","",""]},
