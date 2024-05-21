@@ -613,6 +613,7 @@ function turn_off_keys(){
 	turnKeyHold[noteDirections.up]=false
 	turnKeyHold[noteDirections.down]=false
 }
+turn_off_keys()
 
 function get_inputs(){
 	if(global.usingController)
