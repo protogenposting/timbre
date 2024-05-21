@@ -614,6 +614,53 @@ function turn_off_keys(){
 	turnKeyHold[noteDirections.down]=false
 }
 
+function get_inputs(){
+	if(global.usingController)
+	{
+		attackKey[noteDirections.left]=get_axis_pressed(4,0,-1)
+		attackKey[noteDirections.right]=get_axis_pressed(4,0,1)
+		attackKey[noteDirections.up]=get_axis_pressed(4,1,-1)
+		attackKey[noteDirections.down]=get_axis_pressed(4,1,1)
+	
+		turnKey[noteDirections.left]=get_axis_pressed(5,0,-1)
+		turnKey[noteDirections.right]=get_axis_pressed(5,0,1)
+		turnKey[noteDirections.up]=get_axis_pressed(5,1,-1)
+		turnKey[noteDirections.down]=get_axis_pressed(5,1,1)
+	
+		turnKeyReleased[noteDirections.left]=get_axis_pressed(5,0,0)
+		turnKeyReleased[noteDirections.right]=get_axis_pressed(5,0,0)
+		turnKeyReleased[noteDirections.up]=get_axis_pressed(5,1,0)
+		turnKeyReleased[noteDirections.down]=get_axis_pressed(5,1,0)
+	
+		turnKeyHold[noteDirections.left]=gamepad_axis_value(5,0)<0
+		turnKeyHold[noteDirections.right]=gamepad_axis_value(5,0)>0
+		turnKeyHold[noteDirections.up]=gamepad_axis_value(5,1)<0
+		turnKeyHold[noteDirections.down]=gamepad_axis_value(5,1)>0
+	}
+	else
+	{
+		attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
+		attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
+		attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
+		attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
+	
+		turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
+		turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
+		turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
+		turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
+	
+		turnKeyReleased[noteDirections.left]=keyboard_check_released(global.keyboardBinds.turning.left)
+		turnKeyReleased[noteDirections.right]=keyboard_check_released(global.keyboardBinds.turning.right)
+		turnKeyReleased[noteDirections.up]=keyboard_check_released(global.keyboardBinds.turning.up)
+		turnKeyReleased[noteDirections.down]=keyboard_check_released(global.keyboardBinds.turning.down)
+	
+		turnKeyHold[noteDirections.left]=keyboard_check(global.keyboardBinds.turning.left)
+		turnKeyHold[noteDirections.right]=keyboard_check(global.keyboardBinds.turning.right)
+		turnKeyHold[noteDirections.up]=keyboard_check(global.keyboardBinds.turning.up)
+		turnKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.turning.down)
+	}
+}
+
 particles=[]
 
 sprites={

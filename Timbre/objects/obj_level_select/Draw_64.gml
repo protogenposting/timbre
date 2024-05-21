@@ -26,7 +26,7 @@ for(var i=0;i<array_length(button);i++)
 	{
 		size=1.3
 		buttonPosOffset=2
-		if(mouse_check_button_pressed(mb_left))
+		if(global.pressingMouseLeft)
 		{
 			button[i].func()
 		}
@@ -122,7 +122,7 @@ if(selectedLevel!=-4)
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_size,_y-_size,_x+_size,_y+_size))
 		{
 			index=1
-			if(mouse_check_button_pressed(mb_left))
+			if(global.pressingMouseLeft)
 			{
 				global.currentDifficulty=2
 				var selected=obj_level_select.selectedLevel+3
@@ -157,7 +157,7 @@ if(selectedLevel!=-4)
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_size,_y-_size,_x+_size,_y+_size))
 		{
 			index=1
-			if(mouse_check_button_pressed(mb_left))
+			if(global.pressingMouseLeft)
 			{
 				global.currentDifficulty=0
 				var selected=obj_level_select.selectedLevel+3
@@ -192,7 +192,7 @@ if(selectedLevel!=-4)
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_size,_y-_size,_x+_size,_y+_size))
 		{
 			index=1
-			if(mouse_check_button_pressed(mb_left))
+			if(global.pressingMouseLeft)
 			{
 				global.currentDifficulty=1
 				var selected=obj_level_select.selectedLevel+3
@@ -340,7 +340,7 @@ if(selectedLevel!=-4)
 	if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-128+256-32,_y-64,_x+128+256-32,_y+64))
 	{
 		_size=1.2
-		if(mouse_check_button_pressed(mb_left))
+		if(global.pressingMouseLeft)
 		{
 			start_level()
 		}

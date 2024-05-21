@@ -144,9 +144,9 @@ if(finished)
 		finishTimer=999
 		if(showingFinalMessage)
 		{
-			draw_text(1366/2,room_height/3 + 256 + 64,"Press any button to return to menu")
+			draw_text(1366/2,room_height/3 + 256 + 64,"Press button 1 to return to menu")
 		}
-		if(keyboard_check_pressed(vk_anykey))
+		if(keyboard_check_pressed(vk_anykey)||gamepad_button_check_pressed(5,0))
 		{
 			audio_stop_all()
 			if(global.editing)

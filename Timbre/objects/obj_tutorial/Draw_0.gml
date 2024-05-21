@@ -27,7 +27,7 @@ var _size=1
 if(point_in_rectangle(mouse_x,mouse_y,points[1].x+256-256,points[1].y-32-32,points[1].x+256+256,points[1].y-32+32))
 {
 	_size=1.1
-	if(mouse_check_button_pressed(mb_left))
+	if(global.pressingMouseLeft)
 	{
 		global.improvedControls=!global.improvedControls
 	}

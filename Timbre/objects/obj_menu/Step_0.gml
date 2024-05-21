@@ -2,9 +2,9 @@
 // You can write your code in this editor
 songMilliseconds=audio_sound_get_track_position(audio)*1000
 
-if(!instance_exists(obj_fps_control))
+if(!instance_exists(obj_global_code))
 {
-	instance_create_depth(0,0,depth,obj_fps_control)
+	instance_create_depth(0,0,depth,obj_global_code)
 }
 
 var barPercentageLast = barPercentage

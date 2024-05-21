@@ -86,7 +86,7 @@ repeat(16)
 				draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,true)
 				if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
 				{
-					if(mouse_check_button_pressed(mb_left))
+					if(global.pressingMouseLeft)
 					{
 						if(noteOnBeat==-1)
 						{
@@ -131,7 +131,7 @@ repeat(16)
 		}
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize))
 		{
-			if(mouse_check_button_pressed(mb_left))
+			if(global.pressingMouseLeft)
 			{
 				if(_onBeat>=0)
 				{

@@ -77,29 +77,9 @@ axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 	turn_off_keys()
 	if(!paused)
 	{
-		attackKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.attacking.left)
-		attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
-		attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
-		attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
-	
+		get_inputs()
+		
 		rotate_axes(attackKey)
-	
-		turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
-		turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)
-		turnKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.turning.up)
-		turnKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.turning.down)
-	
-	
-	
-		turnKeyReleased[noteDirections.left]=keyboard_check_released(global.keyboardBinds.turning.left)
-		turnKeyReleased[noteDirections.right]=keyboard_check_released(global.keyboardBinds.turning.right)
-		turnKeyReleased[noteDirections.up]=keyboard_check_released(global.keyboardBinds.turning.up)
-		turnKeyReleased[noteDirections.down]=keyboard_check_released(global.keyboardBinds.turning.down)
-	
-		turnKeyHold[noteDirections.left]=keyboard_check(global.keyboardBinds.turning.left)
-		turnKeyHold[noteDirections.right]=keyboard_check(global.keyboardBinds.turning.right)
-		turnKeyHold[noteDirections.up]=keyboard_check(global.keyboardBinds.turning.up)
-		turnKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.turning.down)
 	}
 
 #endregion

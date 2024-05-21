@@ -18,6 +18,8 @@ global.levelData=-4
 
 global.song=-4
 
+global.usingController=true
+
 global.currentDifficulty=0
 
 global.songSpeed=1
