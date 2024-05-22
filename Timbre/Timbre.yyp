@@ -97,7 +97,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.400.0.556",
+    "IDEVersion":"2024.2.0.132",
   },
   "name":"Timbre",
   "resources":[
@@ -325,6 +325,7 @@
     {"id":{"name":"spr_edit_button","path":"sprites/spr_edit_button/spr_edit_button.yy",},},
     {"id":{"name":"spr_epilepsy_button_off","path":"sprites/spr_epilepsy_button_off/spr_epilepsy_button_off.yy",},},
     {"id":{"name":"spr_epilepsy_button_on","path":"sprites/spr_epilepsy_button_on/spr_epilepsy_button_on.yy",},},
+    {"id":{"name":"spr_exit_button","path":"sprites/spr_exit_button/spr_exit_button.yy",},},
     {"id":{"name":"spr_expert","path":"sprites/spr_expert/spr_expert.yy",},},
     {"id":{"name":"spr_expertplus","path":"sprites/spr_expertplus/spr_expertplus.yy",},},
     {"id":{"name":"spr_grandmaster","path":"sprites/spr_grandmaster/spr_grandmaster.yy",},},
@@ -339,7 +340,6 @@
     {"id":{"name":"spr_loop","path":"sprites/spr_loop/spr_loop.yy",},},
     {"id":{"name":"spr_normal","path":"sprites/spr_normal/spr_normal.yy",},},
     {"id":{"name":"spr_play_button","path":"sprites/spr_play_button/spr_play_button.yy",},},
-    {"id":{"name":"spr_exit_button","path":"sprites/spr_exit_button/spr_exit_button.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_reverse_arrow","path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},},
     {"id":{"name":"spr_spider_hit","path":"sprites/spr_spider_hit/spr_spider_hit.yy",},},
@@ -358,6 +358,7 @@
     {"id":{"name":"spr_tv_really_bad","path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},},
     {"id":{"name":"spr_tv_really_good","path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+    {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

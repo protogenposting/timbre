@@ -15,6 +15,10 @@ enum noteDirections{
 	down,
 }
 
+cursor_sprite=spr_mouse
+
+window_set_fullscreen(true)
+
 logoRotation=0
 
 logoRotationMult=1

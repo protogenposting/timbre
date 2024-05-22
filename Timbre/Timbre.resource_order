@@ -239,6 +239,7 @@
     {"name":"spr_edit_button","order":10,"path":"sprites/spr_edit_button/spr_edit_button.yy",},
     {"name":"spr_epilepsy_button_off","order":22,"path":"sprites/spr_epilepsy_button_off/spr_epilepsy_button_off.yy",},
     {"name":"spr_epilepsy_button_on","order":21,"path":"sprites/spr_epilepsy_button_on/spr_epilepsy_button_on.yy",},
+    {"name":"spr_exit_button","order":27,"path":"sprites/spr_exit_button/spr_exit_button.yy",},
     {"name":"spr_expert","order":4,"path":"sprites/spr_expert/spr_expert.yy",},
     {"name":"spr_expertplus","order":5,"path":"sprites/spr_expertplus/spr_expertplus.yy",},
     {"name":"spr_grandmaster","order":6,"path":"sprites/spr_grandmaster/spr_grandmaster.yy",},
@@ -253,7 +254,6 @@
     {"name":"spr_loop","order":16,"path":"sprites/spr_loop/spr_loop.yy",},
     {"name":"spr_normal","order":1,"path":"sprites/spr_normal/spr_normal.yy",},
     {"name":"spr_play_button","order":7,"path":"sprites/spr_play_button/spr_play_button.yy",},
-    {"name":"spr_exit_button","order":27,"path":"sprites/spr_exit_button/spr_exit_button.yy",},
     {"name":"spr_reverse_arrow","order":2,"path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},
     {"name":"spr_spider_hit","order":19,"path":"sprites/spr_spider_hit/spr_spider_hit.yy",},
     {"name":"spr_spider_idle","order":18,"path":"sprites/spr_spider_idle/spr_spider_idle.yy",},
@@ -270,5 +270,6 @@
     {"name":"spr_tv_really_bad","order":3,"path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},
     {"name":"spr_tv_really_good","order":4,"path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},
     {"name":"spr_wall","order":25,"path":"sprites/spr_wall/spr_wall.yy",},
+    {"name":"spr_mouse","order":28,"path":"sprites/spr_mouse/spr_mouse.yy",},
   ],
 }
