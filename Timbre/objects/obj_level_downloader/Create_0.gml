@@ -13,11 +13,21 @@ button[0]={
 button[1]={
 	name: "Search",
 	func: function(){
-		obj_level_downloader.get=http_get("https://api.quavergame.com/v1/mapsets/maps/search?search=swan&mode=2&status=2")
+		var _str=get_string("search terms","")
+		with(obj_level_downloader)
+		{
+			page=0
+			request="https://api.quavergame.com/v1/mapsets/maps/search?search="+_str+"&mode=2&status=2&page="
+			get=http_get(request+string(page))
+		}
 	},
 	size:{x:128,y:64},
 	position:{x:128,y:64+128},
 	sizeMod:0
 }
 
-get=-4
+request="https://api.quavergame.com/v1/mapsets/maps/search?mode=2&status=2&page="
+
+page=0
+
+get=http_get(request+string(page))
