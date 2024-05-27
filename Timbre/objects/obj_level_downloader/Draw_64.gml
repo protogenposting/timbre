@@ -49,12 +49,16 @@ if(!loading)
 		draw_text(_halfPoint,64+32,"Song by "+levels[selectedLevel].artist)
 		draw_text(_halfPoint,128,"Charted by "+levels[selectedLevel].creator_username)
 		
-		draw_rectangle_color(_halfPoint-128,700-64,_halfPoint+128,700+64,
-		c_black,c_black,c_black,c_black,true)
-		draw_text(_halfPoint,700,"Download")
+		draw_rectangle_color(_x,128+32,room_width,room_height,
+		c_gray,c_gray,c_gray,c_gray,false)
+		
+		draw_text_ext(_halfPoint,128+32,levels[selectedLevel].description,32,room_width-_x)
+		
+		var _size=0
 		
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_halfPoint-128,700-64,_halfPoint+128,700+64))
 		{
+			_size=5
 			if(mouse_check_button_pressed(mb_left))
 			{
 				download=http_get_file("https://api.quavergame.com/d/web/map/"+string(levels[selectedLevel].id),tempSaveID)
@@ -62,6 +66,10 @@ if(!loading)
 				downloadingLevel=levels[selectedLevel].id
 			}
 		}
+		
+		draw_rectangle_color(_halfPoint-128-_size,700-64-_size,_halfPoint+128+_size,700+64+_size,
+		c_black,c_black,c_black,c_black,true)
+		draw_text(_halfPoint,700,"Download")
 	}
 }
 else

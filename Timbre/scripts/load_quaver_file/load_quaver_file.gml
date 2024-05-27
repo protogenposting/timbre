@@ -22,13 +22,19 @@ function load_quaver_file(_file){
 		}
 		else if(_char==_endOfLine)
 		{
-			if(string_count("TimingPoints",_name))
+			if(string_count("SoundEffects",_name))
 			{
+				_string=string_replace(_string,"\r","")
+				_string=string_replace(_string,"\n","")
+				variable_struct_set(_struct,"unhandledData",string_copy(_string,_character,99999999))
 				break;
 			}
 			show_debug_message("set "+_name+" to "+_value)
+			_value=string_replace(_value,"\r","")
 			variable_struct_set(_struct,_name,_value)
 			_gettingValue=false
+			_name=""
+			_value=""
 			_lastLineEnd=_character
 			continue;
 		}
@@ -44,5 +50,5 @@ function load_quaver_file(_file){
 			}
 		}
 	}
-	show_message(_struct)
+	return _struct;
 }
