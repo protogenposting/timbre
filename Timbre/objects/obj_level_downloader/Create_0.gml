@@ -10,3 +10,14 @@ button[0]={
 	position:{x:128,y:64},
 	sizeMod:0
 }
+button[1]={
+	name: "Search",
+	func: function(){
+		obj_level_downloader.get=http_get("https://api.quavergame.com/v1/mapsets/maps/search?search=swan&mode=2&status=2")
+	},
+	size:{x:128,y:64},
+	position:{x:128,y:64+128},
+	sizeMod:0
+}
+
+get=-4
