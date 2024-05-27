@@ -18,7 +18,7 @@ global.levelData=-4
 
 global.song=-4
 
-global.usingController=true
+global.usingController=false
 
 global.currentDifficulty=0
 

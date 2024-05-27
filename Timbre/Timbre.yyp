@@ -97,7 +97,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.400.0.556",
+    "IDEVersion":"2024.2.0.132",
   },
   "name":"Timbre",
   "resources":[
@@ -361,6 +361,7 @@
     {"id":{"name":"spr_tv_really_bad","path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},},
     {"id":{"name":"spr_tv_really_good","path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+    {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
