@@ -187,6 +187,7 @@
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
     {"id":{"name":"point_in_camera","path":"scripts/point_in_camera/point_in_camera.yy",},},
     {"id":{"name":"save_file","path":"scripts/save_file/save_file.yy",},},
+    {"id":{"name":"Script165","path":"scripts/Script165/Script165.yy",},},
     {"id":{"name":"smooth_movement_scripts","path":"scripts/smooth_movement_scripts/smooth_movement_scripts.yy",},},
     {"id":{"name":"snap","path":"scripts/snap/snap.yy",},},
     {"id":{"name":"sort_array","path":"scripts/sort_array/sort_array.yy",},},

@@ -59,6 +59,14 @@ scrollSpeed=3
 
 selectedLevel=-4
 
+download=-4
+
+downloading=false
+
+downloadingLevel=-4
+
+tempSaveID=game_save_id+"/tempLevel.quaver"
+
 /*
 
 TODO:

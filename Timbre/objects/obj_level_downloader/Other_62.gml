@@ -13,3 +13,11 @@ if (ds_map_find_value(async_load, "id") == get)
 		selectedLevel=-4
     }
 }
+if (ds_map_find_value(async_load, "id") == download)
+{
+    if (ds_map_find_value(async_load, "status") == 0)
+    {
+		downloading=false
+		var _file=load_quaver_file(tempSaveID)
+    }
+}
