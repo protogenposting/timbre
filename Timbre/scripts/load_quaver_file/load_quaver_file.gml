@@ -22,10 +22,12 @@ function load_quaver_file(_file){
 		}
 		else if(_char==_endOfLine)
 		{
+			if(string_count("TimingPoints",_name))
+			{
+				break;
+			}
 			show_debug_message("set "+_name+" to "+_value)
 			variable_struct_set(_struct,_name,_value)
-			_value=""
-			_name=""
 			_gettingValue=false
 			_lastLineEnd=_character
 			continue;
@@ -42,5 +44,5 @@ function load_quaver_file(_file){
 			}
 		}
 	}
-	return _struct
+	show_message(_struct)
 }

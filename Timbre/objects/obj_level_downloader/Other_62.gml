@@ -19,5 +19,6 @@ if (ds_map_find_value(async_load, "id") == download)
     {
 		downloading=false
 		var _file=load_quaver_file(tempSaveID)
+		save_file(_file,game_save_id+"convertedMap.json")
     }
 }
