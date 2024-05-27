@@ -8,3 +8,4 @@ if(mouse_wheel_down())
 {
 	scrollY-=scrollSpeed
 }
+loadTime++

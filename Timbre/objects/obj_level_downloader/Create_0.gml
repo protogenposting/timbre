@@ -18,7 +18,7 @@ button[1]={
 		{
 			page=0
 			request="https://api.quavergame.com/v1/mapsets/maps/search?search="+_str+"&mode="+string(mode)+"&status="+string(status)+"&page="
-			get=http_get(request+string(page))
+			get_request()
 		}
 	},
 	size:{x:128,y:64},
@@ -34,7 +34,17 @@ status=2
 
 request="https://api.quavergame.com/v1/mapsets/maps/search?mode="+string(mode)+"&status="+string(status)+"&page="
 
-get=http_get(request+string(page))
+function get_request(){
+	get=http_get(request+string(page))
+	loading=true
+	loadTime=0
+}
+
+get_request()
+
+loading=true
+
+loadTime=0
 
 levels=[]
 
