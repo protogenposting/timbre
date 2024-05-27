@@ -11,6 +11,11 @@ if(mouse_wheel_down())
 	scrollReduceTime=10
 }
 
+if(scrollY+scrollYSpeed<0)
+{
+	scrollYSpeed=0
+}
+
 scrollY+=scrollYSpeed
 
 scrollReduceTime--

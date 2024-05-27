@@ -28,6 +28,12 @@ if(!loading)
 		draw_text(_x,_y,levels[i].title)
 		_y+=_boxSizeY*2+5
 	}
+	
+	if(_y<room_height-256)
+	{
+		scrollYSpeed=0
+		scrollY++
+	}
 	if(array_length(levels)==0)
 	{
 		_x=room_width/2
