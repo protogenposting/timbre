@@ -9,8 +9,10 @@ if(!loading)
 	var _y=128+scrollY
 	var _boxSizeX=64
 	var _boxSizeY=32
+	var _maxBoxSize=0
 	for(var i=0;i<array_length(levels);i++)
 	{
+		_maxBoxSize=max(_maxBoxSize,_boxSizeX)
 		_boxSizeX=max(string_width(levels[i].title)/2 +5,64)
 		_boxSizeY=max(string_height(levels[i].title)/2 +5,32)
 		var _size=0
@@ -34,7 +36,12 @@ if(!loading)
 	}
 	if(selectedLevel>=0)
 	{
-		_x+=_boxSizeX
+		_x+=_maxBoxSize+5
+		var _halfPoint=_x+(room_width-_x)/2
+		draw_rectangle(_x,0,room_width,room_height,false)
+		draw_text(_halfPoint,64,levels[selectedLevel].title)
+		draw_text(_halfPoint,64+32,"Song by "+levels[selectedLevel].artist)
+		draw_text(_halfPoint,128,"Charted by "+levels[selectedLevel].creator_username)
 	}
 }
 else
