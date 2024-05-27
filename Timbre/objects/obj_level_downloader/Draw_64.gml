@@ -52,7 +52,16 @@ if(!loading)
 		draw_rectangle_color(_x,128+32,room_width,room_height,
 		c_gray,c_gray,c_gray,c_gray,false)
 		
-		draw_text_ext(_halfPoint,128+32,levels[selectedLevel].description,32,room_width-_x)
+		var _description=levels[selectedLevel].description
+		
+		if(_description!=undefined)
+		{
+			draw_text_ext(_halfPoint,128+32,_description,32,room_width-_x)
+		}
+		else
+		{
+			draw_text_ext(_halfPoint,128+32,"No description provided",32,room_width-_x)
+		}
 		
 		var _size=0
 		
