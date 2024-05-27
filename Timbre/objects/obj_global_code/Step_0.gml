@@ -20,7 +20,7 @@ else
 gamepad_set_axis_deadzone(5,0.5)
 gamepad_set_axis_deadzone(4,0.5)
 global.pressingMouseLeft=false
-if(room!=rm_gameplay)
+if(room!=rm_gameplay&&global.usingController)
 {
 	window_mouse_set(window_mouse_get_x()+gamepad_axis_value(5,0)*10,window_mouse_get_y()+gamepad_axis_value(5,1)*10)
 	if(gamepad_button_check_pressed(5,0)||mouse_check_button_pressed(mb_left))
