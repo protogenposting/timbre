@@ -39,3 +39,15 @@ get=http_get(request+string(page))
 levels=[]
 
 scrollY=0
+
+scrollSpeed=15
+
+/*
+
+TODO:
+
+add converter (converts beatmaps to timbre maps. doubles triples and quads will be turned into log hits)
+
+add downloading
+
+add mp3 to ogg converter (if needed)

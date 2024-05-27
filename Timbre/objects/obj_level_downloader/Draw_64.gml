@@ -4,7 +4,7 @@
 draw_buttons()
 
 var _x=room_width/2
-var _y=128
+var _y=128+scrollY
 var _boxSizeX=64
 var _boxSizeY=32
 for(var i=0;i<array_length(levels);i++)
