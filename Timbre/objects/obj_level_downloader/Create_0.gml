@@ -30,7 +30,7 @@ page=0
 
 mode=1
 
-status=2
+status=1
 
 request="https://api.quavergame.com/v1/mapsets/maps/search?mode="+string(mode)+"&status="+string(status)+"&page="
 
@@ -38,6 +38,7 @@ function get_request(){
 	get=http_get(request+string(page))
 	loading=true
 	loadTime=0
+	selectedLevel=-4
 }
 
 get_request()
@@ -51,6 +52,8 @@ levels=[]
 scrollY=0
 
 scrollSpeed=60
+
+selectedLevel=-4
 
 /*
 

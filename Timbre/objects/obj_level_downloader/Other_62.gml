@@ -10,5 +10,6 @@ if (ds_map_find_value(async_load, "id") == get)
 		show_debug_message(_decoded) 
 		levels=_decoded.mapsets
 		loading=false
+		selectedLevel=-4
     }
 }

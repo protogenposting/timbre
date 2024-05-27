@@ -13,9 +13,20 @@ if(!loading)
 	{
 		_boxSizeX=max(string_width(levels[i].title)/2 +5,64)
 		_boxSizeY=max(string_height(levels[i].title)/2 +5,32)
-		draw_rectangle(_x-_boxSizeX,_y-_boxSizeY,_x+_boxSizeX,_y+_boxSizeY,false)
+		var _size=0
+		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_boxSizeX,_y-_boxSizeY,_x+_boxSizeX,_y+_boxSizeY))
+		{
+			_size=3
+		}
+		draw_rectangle(_x-_boxSizeX-_size,_y-_boxSizeY-_size,_x+_boxSizeX+_size,_y+_boxSizeY+_size,false)
 		draw_text(_x,_y,levels[i].title)
 		_y+=_boxSizeY*2+5
+	}
+	if(array_length(levels)==0)
+	{
+		_x=room_width/2
+		_y=room_height/2
+		draw_text(_x,_y,"No results :(")
 	}
 }
 else
