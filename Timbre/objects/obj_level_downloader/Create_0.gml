@@ -40,7 +40,7 @@ levels=[]
 
 scrollY=0
 
-scrollSpeed=15
+scrollSpeed=60
 
 /*
 
