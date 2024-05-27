@@ -5,7 +5,7 @@ draw_buttons()
 
 if(!loading)
 {
-	var _x=room_width/2
+	var _x=room_width/2 - 256
 	var _y=128+scrollY
 	var _boxSizeX=64
 	var _boxSizeY=32
@@ -17,6 +17,10 @@ if(!loading)
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-_boxSizeX,_y-_boxSizeY,_x+_boxSizeX,_y+_boxSizeY))
 		{
 			_size=3
+			if(mouse_check_button_pressed(mb_left))
+			{
+				selectedLevel=i
+			}
 		}
 		draw_rectangle(_x-_boxSizeX-_size,_y-_boxSizeY-_size,_x+_boxSizeX+_size,_y+_boxSizeY+_size,false)
 		draw_text(_x,_y,levels[i].title)
@@ -27,6 +31,10 @@ if(!loading)
 		_x=room_width/2
 		_y=room_height/2
 		draw_text(_x,_y,"No results :(")
+	}
+	if(selectedLevel>=0)
+	{
+		_x+=_boxSizeX
 	}
 }
 else

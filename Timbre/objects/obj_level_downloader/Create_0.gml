@@ -51,7 +51,11 @@ levels=[]
 
 scrollY=0
 
-scrollSpeed=60
+scrollYSpeed=0
+
+scrollReduceTime=0
+
+scrollSpeed=3
 
 selectedLevel=-4
 
