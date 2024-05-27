@@ -97,7 +97,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.400.0.556",
   },
   "name":"Timbre",
   "resources":[
@@ -341,6 +341,7 @@
     {"id":{"name":"spr_log","path":"sprites/spr_log/spr_log.yy",},},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},},
     {"id":{"name":"spr_loop","path":"sprites/spr_loop/spr_loop.yy",},},
+    {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
     {"id":{"name":"spr_normal","path":"sprites/spr_normal/spr_normal.yy",},},
     {"id":{"name":"spr_play_button","path":"sprites/spr_play_button/spr_play_button.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
@@ -361,7 +362,6 @@
     {"id":{"name":"spr_tv_really_bad","path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},},
     {"id":{"name":"spr_tv_really_good","path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
-    {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

@@ -17,7 +17,7 @@ enum noteDirections{
 
 cursor_sprite=spr_mouse
 
-window_set_fullscreen(true)
+//window_set_fullscreen(true)
 
 logoRotation=0
 
