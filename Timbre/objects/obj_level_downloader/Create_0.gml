@@ -17,7 +17,7 @@ button[1]={
 		with(obj_level_downloader)
 		{
 			page=0
-			request="https://api.quavergame.com/v1/mapsets/maps/search?search="+_str+"&mode=2&status=2&page="
+			request="https://api.quavergame.com/v1/mapsets/maps/search?search="+_str+"&mode="+string(mode)+"&status="+string(status)+"&page="
 			get=http_get(request+string(page))
 		}
 	},
@@ -26,8 +26,16 @@ button[1]={
 	sizeMod:0
 }
 
-request="https://api.quavergame.com/v1/mapsets/maps/search?mode=2&status=2&page="
-
 page=0
 
+mode=1
+
+status=2
+
+request="https://api.quavergame.com/v1/mapsets/maps/search?mode="+string(mode)+"&status="+string(status)+"&page="
+
 get=http_get(request+string(page))
+
+levels=[]
+
+scrollY=0
