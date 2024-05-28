@@ -184,7 +184,7 @@ else
 	
 	comboMissTimer--
 	
-	if(combo>50)
+	if(combo>comboDanceAmount)
 	{
 		sprite_index=spr_tv_highcombo
 	}

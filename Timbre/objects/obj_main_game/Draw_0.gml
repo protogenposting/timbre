@@ -383,9 +383,12 @@ else
 	cameraOffset.y-=(cameraOffset.y-lengthdir_y(128,currentDirection))/(10*(fps/60))
 }
 
+var cameraWidth=camera_get_view_width(view_camera[0])
+var cameraHeight=camera_get_view_height(view_camera[0])
+
 camera_set_view_pos(view_camera[0],
-playerPoint.x-1366/2+cameraOffset.x,
-playerPoint.y-768/2+cameraOffset.y)
+playerPoint.x-cameraWidth/2+cameraOffset.x,
+playerPoint.y-cameraHeight/2+cameraOffset.y)
 
 draw_sprite_ext(sprites.player,playerFrame,_currentX,_currentY,1,1,currentDirection,c_white,1)
 

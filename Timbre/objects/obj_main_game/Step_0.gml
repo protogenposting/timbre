@@ -1,5 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+if(comboPrevious<comboDanceAmount&&combo>=comboDanceAmount)
+{
+	comboParticles=part_system_create(p_sparks)
+	audio_play_sound(snd_woo,1000,false)
+}
+
+if(comboParticles!=-4)
+{
+	part_system_position(comboParticles,camera_get_view_x(view_camera[0])+1366/2,camera_get_view_y(view_camera[0]))
+}
+
 audio_sound_pitch(audio,global.songSpeed)
 
 update_particles()
@@ -116,3 +128,5 @@ if(!paused)
 {
 	audio_resume_sound(audio)
 }
+
+comboPrevious=combo

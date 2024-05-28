@@ -62,6 +62,10 @@ lastRStickRotation=0
 
 comboMissTimer=0
 
+comboDanceAmount=50
+
+comboPrevious=0
+
 function rotate_axes(attacks){
 	var currentDirection=points[currentPoint].direction*90
 	if(!global.improvedControls)
@@ -122,8 +126,12 @@ function rotate_axes(attacks){
 	}
 }
 
+comboParticles=-4
+
 function miss(struct)
 {
+	part_system_destroy(comboParticles)
+	comboParticles=-4
 	audio_play_sound(snd_spinout,1000,false)
 	struct.wasHit=2
 	misses++
@@ -707,7 +715,7 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 botplayLeniency=7.5
 
 function update_particles(){
-	particleUpdateTime=fps/120
+	var particleUpdateTime=fps/120
 	for(var i=0;i<array_length(particles);i++)
 	{
 		particles[i].updateTimer--

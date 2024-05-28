@@ -9,7 +9,7 @@ button[0]={
 	position:{x:128,y:64},
 	sizeMod:0
 }
-button[1]={
+array_push(button,{
 	name: "FNF",
 	func: function(){
 		
@@ -18,8 +18,8 @@ button[1]={
 	position:{x:128,y:64+96},
 	sizeMod:0,
 	color:c_red
-}
-button[2]={
+})
+array_push(button,{
 	name: "OSU!Mania",
 	func: function(){
 		
@@ -28,7 +28,7 @@ button[2]={
 	position:{x:128,y:64+96+96},
 	sizeMod:0,
 	color:c_purple
-}
+})
 
 yOffset=0
 
