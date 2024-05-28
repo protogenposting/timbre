@@ -110,16 +110,15 @@ button[4]={
 	position:{x:room_width/2+140,y:room_height/2 + 128 + 128},
 	sizeMod:0
 }
-/*
 button[5]={
 	sprite: spr_quaver_button,
 	func: function(){
-		room_goto(rm_level_download)
+		//room_goto(rm_level_download)
 	},
 	size:{x:256,y:128},
 	position:{x:room_width/2+140,y:room_height/2 + 128},
 	sizeMod:0
-}*/
+}
 if(global.epilepsyMode)
 {
 	button[3].sprite=spr_epilepsy_button_on
