@@ -113,7 +113,7 @@ button[4]={
 button[5]={
 	sprite: spr_quaver_button,
 	func: function(){
-		//room_goto(rm_level_download)
+		room_goto(rm_conversion)
 	},
 	size:{x:256,y:128},
 	position:{x:room_width/2+140,y:room_height/2 + 128},

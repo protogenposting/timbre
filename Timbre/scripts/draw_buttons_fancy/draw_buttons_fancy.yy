@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"draw_buttons_fancy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_buttons_fancy",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
