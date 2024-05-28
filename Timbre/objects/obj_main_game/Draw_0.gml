@@ -129,10 +129,6 @@ for(var i=array_length(points)-1;i>0;i--)
 	{
 		var _directionToNext=points[i].direction*90
 	}
-	if(points[i].type==noteTypes.loop)
-	{
-		_directionToNext=points[i].direction*90
-	}
 	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120&&inCamera)
 	{
 		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,1,1,
