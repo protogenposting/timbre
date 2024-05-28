@@ -98,7 +98,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.400.0.556",
+    "IDEVersion":"2024.2.0.132",
   },
   "name":"Timbre",
   "resources":[
@@ -108,7 +108,6 @@
     {"id":{"name":"__VinylConfig","path":"notes/__VinylConfig/__VinylConfig.yy",},},
     {"id":{"name":"obj_editor","path":"objects/obj_editor/obj_editor.yy",},},
     {"id":{"name":"obj_global_code","path":"objects/obj_global_code/obj_global_code.yy",},},
-    {"id":{"name":"obj_level_downloader","path":"objects/obj_level_downloader/obj_level_downloader.yy",},},
     {"id":{"name":"obj_level_select","path":"objects/obj_level_select/obj_level_select.yy",},},
     {"id":{"name":"obj_main_game","path":"objects/obj_main_game/obj_main_game.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
@@ -120,7 +119,6 @@
     {"id":{"name":"p_wall_break","path":"particles/p_wall_break/p_wall_break.yy",},},
     {"id":{"name":"rm_editor","path":"rooms/rm_editor/rm_editor.yy",},},
     {"id":{"name":"rm_gameplay","path":"rooms/rm_gameplay/rm_gameplay.yy",},},
-    {"id":{"name":"rm_level_download","path":"rooms/rm_level_download/rm_level_download.yy",},},
     {"id":{"name":"rm_level_select","path":"rooms/rm_level_select/rm_level_select.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"rm_offset_test","path":"rooms/rm_offset_test/rm_offset_test.yy",},},
@@ -377,7 +375,6 @@
     {"roomId":{"name":"rm_level_select","path":"rooms/rm_level_select/rm_level_select.yy",},},
     {"roomId":{"name":"rm_tutorial","path":"rooms/rm_tutorial/rm_tutorial.yy",},},
     {"roomId":{"name":"rm_offset_test","path":"rooms/rm_offset_test/rm_offset_test.yy",},},
-    {"roomId":{"name":"rm_level_download","path":"rooms/rm_level_download/rm_level_download.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
