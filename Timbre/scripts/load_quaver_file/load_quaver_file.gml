@@ -26,6 +26,8 @@ function load_quaver_file(_file){
 			{
 				_string=string_replace(_string,"\r","")
 				_string=string_replace(_string,"\n","")
+				_string=string_replace(_string,"\\r","")
+				_string=string_replace(_string,"\\n","")
 				variable_struct_set(_struct,"unhandledData",string_copy(_string,_character,99999999))
 				break;
 			}

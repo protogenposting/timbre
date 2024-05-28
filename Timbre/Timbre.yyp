@@ -180,6 +180,7 @@
     {"id":{"name":"array_index_looped","path":"scripts/array_index_looped/array_index_looped.yy",},},
     {"id":{"name":"axis_stuff","path":"scripts/axis_stuff/axis_stuff.yy",},},
     {"id":{"name":"create_note","path":"scripts/create_note/create_note.yy",},},
+    {"id":{"name":"create_notelist","path":"scripts/create_notelist/create_notelist.yy",},},
     {"id":{"name":"draw_buttons","path":"scripts/draw_buttons/draw_buttons.yy",},},
     {"id":{"name":"get_chart_style","path":"scripts/get_chart_style/get_chart_style.yy",},},
     {"id":{"name":"get_key_name","path":"scripts/get_key_name/get_key_name.yy",},},

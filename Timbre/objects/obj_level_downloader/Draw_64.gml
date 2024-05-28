@@ -68,11 +68,10 @@ if(!loading)
 		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_halfPoint-128,700-64,_halfPoint+128,700+64))
 		{
 			_size=5
-			if(mouse_check_button_pressed(mb_left))
+			if(mouse_check_button_pressed(mb_left)&&!downloading)
 			{
-				download=http_get_file("https://api.quavergame.com/d/web/map/"+string(levels[selectedLevel].id),tempSaveID)
-				downloading=true
-				downloadingLevel=levels[selectedLevel].id
+				download_file("https://api.quavergame.com/d/web/map/"+string(levels[selectedLevel].id),
+				tempSaveID+"tempLevel.quaver",downloadTypes.level)
 			}
 		}
 		

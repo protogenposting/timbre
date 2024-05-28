@@ -41,6 +41,20 @@ function get_request(){
 	selectedLevel=-4
 }
 
+enum downloadTypes{
+	level,
+	song
+}
+
+currentDownloadType=downloadTypes.level
+
+function download_file(_file,_destination,_type){
+	download=http_get_file(_file,_destination)
+	downloading=true
+	downloadingLevel=levels[selectedLevel].id
+	currentDownloadType=_type
+}
+
 get_request()
 
 loading=true
@@ -65,7 +79,9 @@ downloading=false
 
 downloadingLevel=-4
 
-tempSaveID=game_save_id+"/tempLevel.quaver"
+currentLevelData=-4
+
+tempSaveID=game_save_id+"/"
 
 /*
 

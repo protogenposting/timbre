@@ -17,8 +17,18 @@ if (ds_map_find_value(async_load, "id") == download)
 {
     if (ds_map_find_value(async_load, "status") == 0)
     {
-		downloading=false
-		var _file=load_quaver_file(tempSaveID)
-		save_file(_file,game_save_id+"convertedMap.json")
+		//downloading=false
+		if(currentDownloadType==downloadTypes.level)
+		{
+			currentLevelData=load_quaver_file(tempSaveID)
+			save_file(currentLevelData,game_save_id+"convertedMap.json")
+			download_file("https://api.quavergame.com/d/web/map/"+string(levels[selectedLevel].id)+"/"+currentLevelData.AudioFile,
+			tempSaveID+"song.mp3",downloadTypes.song)
+		}
+		else
+		{
+			//download_file("https://api.quavergame.com/d/web/map/"+string(levels[selectedLevel].id),
+			//tempSaveID,downloadTypes.level)
+		}
     }
 }

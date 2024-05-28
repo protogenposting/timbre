@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"create_notelist",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_notelist",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
