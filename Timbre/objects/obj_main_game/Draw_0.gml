@@ -116,14 +116,14 @@ for(var i=array_length(points)-1;i>0;i--)
 	{
 		points[i].frame=0
 	}
-	if(points[i].continuing&&points[i].type!=noteTypes.loop||i<array_length(points)-1&&(points[i+1].beat-points[i].beat)==0)
+	if(points[i].continuing&&points[i].type!=noteTypes.loop)
 	{
 		continue;
 	}
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
 	try{
-		var _directionToNext=point_direction(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
+		var _directionToNext=points[i].direction*90
 	}
 	catch(e)
 	{
