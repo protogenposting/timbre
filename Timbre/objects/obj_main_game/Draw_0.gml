@@ -309,7 +309,7 @@ var nextBeatPercentage=timeSinceLastPoint/timeBetweenPoints
 if(nextBeatPercentage>=1)
 {
 	nextBeatPercentage=0
-	//currentPoint++
+	currentPoint++
 }
 
 var addedPoint=false
