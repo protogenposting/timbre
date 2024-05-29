@@ -36,6 +36,10 @@ image_index=round(barPercentage*24)
 playerFrame=round(barPercentage*4)
 axeFrames[0]=round(barPercentage*4)
 axeFrames[1]=round(barPercentage*4)
+for(var i=0;i<array_length(bobs);i++)
+{
+	bobs[i].frame=round(barPercentage*6)
+}
 for(var i=0;i<array_length(points);i++)
 {
 	points[i].frame=round(barPercentage*4)
@@ -44,10 +48,6 @@ layer_background_index(background,round(barPercentage))
 
 if(frac(barPercentage)<frac(barPercentageLast))
 {
-	for(var i=0;i<array_length(bobs);i++)
-	{
-		bobs[i].frame++
-	}
 	
 	if(get_accuracy()<=30)
 	{

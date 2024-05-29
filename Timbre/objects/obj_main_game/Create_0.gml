@@ -398,7 +398,7 @@ function create_points(){
 				notes[o].wasHit=false
 			}
 		}
-		if(irandom(2)>=1&&array_length(bobs)<_bobAmount&&i<array_length(pointArray)-1)
+		if(irandom(3)>=3&&array_length(bobs)<_bobAmount&&i<array_length(pointArray)-1)
 		{
 			var bob={
 				x:pointArray[i].x,

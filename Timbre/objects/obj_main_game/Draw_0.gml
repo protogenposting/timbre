@@ -12,10 +12,6 @@ for(var i=0;i<array_length(bobs);i++)
 for(var i=0;i<array_length(points)-1;i++)
 {
 	var _color=c_white
-	if(points[i].timeMS<=songMilliseconds)
-	{
-		currentPoint=i
-	}
 	if(i>0&&points[i-1].type==noteTypes.loop)
 	{
 		_color=c_red
@@ -104,9 +100,15 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 }
 
+var gotLastNote=false
 //draw notes
 for(var i=array_length(points)-1;i>0;i--)
 {
+	if(points[i].timeMS<=songMilliseconds&&!gotLastNote)
+	{
+		currentPoint=i
+		gotLastNote=true
+	}
 	var _color=points[i].color
 	if(i>0&&points[i].type==noteTypes.loop)
 	{

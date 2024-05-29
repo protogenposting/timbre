@@ -47,7 +47,7 @@ function fnf_convert(){
 			notes:[]
 		}
 		
-		var _lastNoteTime=0
+		var _usedTimes=ds_map_create()
 		for(var i=0;i<array_length(_struct.notes);i++)
 		{
 			for(var o=0;o<array_length(_struct.notes[i].sectionNotes);o++)
@@ -60,14 +60,15 @@ function fnf_convert(){
 				}
 				var _note=create_note(_currentNote[0]/_beatLength,noteTypes.turn,_currentNote[1],false)
 				_note.timeMS=_currentNote[0]
-				if(_currentNote[0]==_lastNoteTime)
+				if(!is_undefined(ds_map_find_value(_usedTimes,_note.timeMS)))
 				{
 					_note.type=noteTypes.log
 				}
-				_lastNoteTime=_currentNote[0]
+				ds_map_add(_usedTimes,_note.timeMS,true)
 				array_push(_savedStruct.notes,_note)
 			}
 		}
+		ds_map_destroy(_usedTimes)
 		sort_note_array(_savedStruct.notes)
 		save_file(_savedStruct,game_save_id+"/fnfsong/data.json")
 	}
