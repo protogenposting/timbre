@@ -98,7 +98,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.400.0.556",
   },
   "name":"Timbre",
   "resources":[
@@ -117,8 +117,8 @@
     {"id":{"name":"clouds","path":"particles/clouds/clouds.yy",},},
     {"id":{"name":"p_arrow_perfect","path":"particles/p_arrow_perfect/p_arrow_perfect.yy",},},
     {"id":{"name":"p_log_break","path":"particles/p_log_break/p_log_break.yy",},},
-    {"id":{"name":"p_wall_break","path":"particles/p_wall_break/p_wall_break.yy",},},
     {"id":{"name":"p_sparks","path":"particles/p_sparks/p_sparks.yy",},},
+    {"id":{"name":"p_wall_break","path":"particles/p_wall_break/p_wall_break.yy",},},
     {"id":{"name":"rm_conversion","path":"rooms/rm_conversion/rm_conversion.yy",},},
     {"id":{"name":"rm_editor","path":"rooms/rm_editor/rm_editor.yy",},},
     {"id":{"name":"rm_gameplay","path":"rooms/rm_gameplay/rm_gameplay.yy",},},
