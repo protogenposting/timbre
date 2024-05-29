@@ -8,9 +8,9 @@ songSpeedAlpha-=0.01
 
 var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
 
-if(_hAxis!=0&&global.songSpeed+_hAxis*0.25>0)
+if(_hAxis!=0&&global.moveSpeed+_hAxis*0.05>0)
 {
-	global.songSpeed+=(_hAxis)*0.25
+	global.moveSpeed+=(_hAxis)*0.05
 	songSpeedAlpha=1
 }
 
@@ -348,5 +348,5 @@ if(selectedLevel!=-4)
 }
 
 draw_set_font(fn_font_big)
-draw_text_transformed_color(1366/2,768/2,"Song Speed: "+string(global.songSpeed),3,3,0,c_white,c_white,c_white,c_white,songSpeedAlpha)
+draw_text_transformed_color(1366/2,768/2,"Song Speed: "+string(global.moveSpeed),3,3,0,c_white,c_white,c_white,c_white,songSpeedAlpha)
 draw_set_font(fn_font)

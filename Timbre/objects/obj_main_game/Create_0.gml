@@ -293,7 +293,7 @@ function create_points(){
 			currentDirection=(turns[i].direction*90+turns[i-1].direction*90)/2
 			show_debug_message("diagonal at "+string(i))
 			show_debug_message(currentDirection)
-			_color=c_purple
+			//_color=c_purple
 			//pointArray[i-1].color=c_purple
 		}
 		else

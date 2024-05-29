@@ -1,6 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
-save_file({levels:global.levels,controlType:global.improvedControls,epilepsy:global.epilepsyMode},global.saveName)
+save_file({
+	levels:global.levels,
+	controlType:global.improvedControls,
+	epilepsy:global.epilepsyMode,
+	moveSpeed: global.moveSpeed
+},global.saveName)
 
 /*if(sortMode==sortTypes.difficulty)
 {
