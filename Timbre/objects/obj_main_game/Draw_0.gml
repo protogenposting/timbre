@@ -189,21 +189,17 @@ for(var o=0; o<array_length(notes);o++)
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
 	var dir=notes[o].direction*90
 	var timing=songMilliseconds-notes[o].timeMS
-	try{
+	if(variable_struct_exists(notes[o],"temporaryType"))
+	{
 		if(notes[o].temporaryType==noteTypes.movingHit)
 		{
 			notes[o].x=notes[o].startX+lengthdir_x(gridSize*timing/1000,-dir)/4
 			notes[o].y=notes[o].startY+lengthdir_y(gridSize*timing/1000,-dir)/4
-			
 		}
 		if(notes[o].temporaryType==noteTypes.wall)
 		{
 			_spr=sprites.wall
 		}
-	}
-	catch(e)
-	{
-		//show_debug_message(e)
 	}
 	
 	if(notes[o].wasHit||sprites.log!=spr_log)
