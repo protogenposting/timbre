@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylEmitterFalloffSet",
   "isCompatibility":false,
   "isDnD":false,

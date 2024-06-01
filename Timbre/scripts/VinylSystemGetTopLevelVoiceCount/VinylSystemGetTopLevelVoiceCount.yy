@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSystemGetTopLevelVoiceCount",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylEmitterPolygon",
   "isCompatibility":false,
   "isDnD":false,

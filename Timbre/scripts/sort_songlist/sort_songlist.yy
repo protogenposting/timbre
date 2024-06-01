@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"sort_songlist",
   "isCompatibility":false,
   "isDnD":false,

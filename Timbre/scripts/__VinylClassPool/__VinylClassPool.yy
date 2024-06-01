@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylClassPool",
   "isCompatibility":false,
   "isDnD":false,

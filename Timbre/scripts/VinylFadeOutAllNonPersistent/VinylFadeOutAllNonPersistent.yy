@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylFadeOutAllNonPersistent",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylStackPush",
   "isCompatibility":false,
   "isDnD":false,

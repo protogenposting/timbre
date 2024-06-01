@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylEmitterDebugDraw",
   "isCompatibility":false,
   "isDnD":false,

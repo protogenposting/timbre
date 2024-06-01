@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylEmitterDestroy",
   "isCompatibility":false,
   "isDnD":false,

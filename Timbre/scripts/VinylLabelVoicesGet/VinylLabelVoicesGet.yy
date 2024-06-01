@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylLabelVoicesGet",
   "isCompatibility":false,
   "isDnD":false,

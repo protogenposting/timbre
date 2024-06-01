@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"axis_stuff",
   "isCompatibility":false,
   "isDnD":false,

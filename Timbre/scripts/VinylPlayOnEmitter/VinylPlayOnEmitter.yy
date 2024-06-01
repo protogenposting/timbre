@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylPlayOnEmitter",
   "isCompatibility":false,
   "isDnD":false,

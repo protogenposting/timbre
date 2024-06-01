@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"sort_songlist_bpm",
   "isCompatibility":false,
   "isDnD":false,

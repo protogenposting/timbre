@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylUpdateData",
   "isCompatibility":false,
   "isDnD":false,

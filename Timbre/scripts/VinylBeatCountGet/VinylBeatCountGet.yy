@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylBeatCountGet",
   "isCompatibility":false,
   "isDnD":false,

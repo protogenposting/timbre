@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylEmitterRectangle",
   "isCompatibility":false,
   "isDnD":false,

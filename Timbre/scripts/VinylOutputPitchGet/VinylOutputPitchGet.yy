@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylOutputPitchGet",
   "isCompatibility":false,
   "isDnD":false,

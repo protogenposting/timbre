@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylPanGet",
   "isCompatibility":false,
   "isDnD":false,

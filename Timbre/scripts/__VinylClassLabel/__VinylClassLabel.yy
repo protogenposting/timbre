@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylClassLabel",
   "isCompatibility":false,
   "isDnD":false,

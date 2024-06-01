@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylMultiGainSet",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSystemReadConfig",
   "isCompatibility":false,
   "isDnD":false,

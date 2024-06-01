@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"sort_note_array",
   "isCompatibility":false,
   "isDnD":false,

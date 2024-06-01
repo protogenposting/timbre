@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylMultiBlendGet",
   "isCompatibility":false,
   "isDnD":false,

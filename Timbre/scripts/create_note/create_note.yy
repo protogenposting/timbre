@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"create_note",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylStackMaxVoiceGet",
   "isCompatibility":false,
   "isDnD":false,

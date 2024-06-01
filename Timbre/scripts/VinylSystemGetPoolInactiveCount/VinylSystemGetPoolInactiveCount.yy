@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylSystemGetPoolInactiveCount",
   "isCompatibility":false,
   "isDnD":false,

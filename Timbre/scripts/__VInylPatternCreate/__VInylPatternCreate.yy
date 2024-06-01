@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VInylPatternCreate",
   "isCompatibility":false,
   "isDnD":false,

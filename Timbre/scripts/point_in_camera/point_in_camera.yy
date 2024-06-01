@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"point_in_camera",
   "isCompatibility":false,
   "isDnD":false,

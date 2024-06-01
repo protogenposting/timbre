@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylClassVoiceCommon",
   "isCompatibility":false,
   "isDnD":false,

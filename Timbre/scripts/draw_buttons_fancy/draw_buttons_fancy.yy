@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"draw_buttons_fancy",
   "isCompatibility":false,
   "isDnD":false,

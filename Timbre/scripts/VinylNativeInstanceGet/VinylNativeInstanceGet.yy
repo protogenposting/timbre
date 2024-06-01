@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylNativeInstanceGet",
   "isCompatibility":false,
   "isDnD":false,

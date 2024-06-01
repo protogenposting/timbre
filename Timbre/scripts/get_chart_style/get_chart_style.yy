@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"get_chart_style",
   "isCompatibility":false,
   "isDnD":false,

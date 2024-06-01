@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylBPMGet",
   "isCompatibility":false,
   "isDnD":false,

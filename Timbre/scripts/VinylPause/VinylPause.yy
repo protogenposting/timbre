@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylPause",
   "isCompatibility":false,
   "isDnD":false,

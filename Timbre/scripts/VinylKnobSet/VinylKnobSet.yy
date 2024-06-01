@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylKnobSet",
   "isCompatibility":false,
   "isDnD":false,

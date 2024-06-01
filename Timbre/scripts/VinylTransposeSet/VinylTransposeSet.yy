@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"VinylTransposeSet",
   "isCompatibility":false,
   "isDnD":false,

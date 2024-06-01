@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__VinylConfigDebug",
   "isCompatibility":false,
   "isDnD":false,
