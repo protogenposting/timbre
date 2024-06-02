@@ -515,11 +515,11 @@ function get_accuracy(){
 
 showingFinalMessage=false
 
-timings=[{distance:msWindow/30,name:"AMAZING!!!"},
-{distance:msWindow/7,name:"Perfect!"},
-{distance:msWindow/5,name:"Good"},
-{distance:msWindow/3,name:"Ok"},
-{distance:msWindow,name:"Dull..."}]
+timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1},
+{distance:msWindow/7,name:"Perfect!",result:0.9},
+{distance:msWindow/5,name:"Good",result:0.8},
+{distance:msWindow/3,name:"Ok",result:0.75},
+{distance:msWindow,name:"Dull...",result:0.5}]
 
 ranks=[{percent:115,name:"Literally How",messages:["FRAME PERFECT??????????"]},
 {percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},

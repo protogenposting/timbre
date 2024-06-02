@@ -67,8 +67,9 @@ for(var i=0;i<array_length(points)-1;i++)
 		audio_play_sound(snd_turn,1000,false)
 		points[i].wasHit=true
 		combo++
+		var timingID=get_timing_id(timing)
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
-		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
+		array_push(accuracyList,timings[timingID].result)
 		array_push(trueAccuracyList,timing)
 		if(timing<-timings[1].distance)
 		{
@@ -85,7 +86,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		
 		hitTime=1.33
 		hitMessage=get_timing(timing)
-		if(get_timing_id(timing)<=1)
+		if(timingID<=1)
 		{
 			var _p=part_system_create(p_arrow_perfect)
 			array_push(particles,{time:160,id:_p,updateTimer:0})
@@ -221,8 +222,9 @@ for(var o=0; o<array_length(notes);o++)
 		audio_play_sound(snd_hit_tree,1000,false)
 		attackKey[notes[o].intendedDirection]=false
 		notes[o].wasHit=true
+		var timingID=get_timing_id(timing)
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
-		array_push(accuracyList,(msWindow-abs(timing))/msWindow)
+		array_push(accuracyList,timings[timingID].result)
 		array_push(trueAccuracyList,timing)
 		combo++
 		if(timing<-timings[1].distance)
