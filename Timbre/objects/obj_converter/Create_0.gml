@@ -22,17 +22,20 @@ array_push(button,{
 	sizeMod:0,
 	color:c_red
 })
-/*
+
 array_push(button,{
 	name: "OSU!Mania",
 	func: function(){
-		
+		with(obj_converter)
+		{
+			osu_convert()
+		}
 	},
 	size:{x:128,y:64},
 	position:{x:128,y:64+96+96},
 	sizeMod:0,
 	color:c_purple
-})*/
+})
 
 function fnf_convert(){
 	var _file=get_open_filename(".json","data.json")
@@ -71,7 +74,17 @@ function fnf_convert(){
 		}
 		ds_map_destroy(_usedTimes)
 		sort_note_array(_savedStruct.notes)
+		var _saveLocation=get_save_filename(".json","data.json")
 		save_file(_savedStruct,game_save_id+"/fnfsong/data.json")
+	}
+}
+
+function osu_convert(){
+	var _file=get_open_filename(".json","data.json")
+	//_file=game_save_id+"osu.osz"
+	if(_file!="")
+	{
+		
 	}
 }
 
