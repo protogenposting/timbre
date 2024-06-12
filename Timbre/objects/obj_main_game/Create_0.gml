@@ -515,7 +515,7 @@ function get_accuracy(){
 
 showingFinalMessage=false
 
-timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1.1},
+timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1},
 {distance:msWindow/7,name:"Perfect!",result:1},
 {distance:msWindow/5,name:"Good",result:0.8},
 {distance:msWindow/3,name:"Ok",result:0.75},
