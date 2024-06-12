@@ -36,7 +36,7 @@ global.dataLocation=""
 
 global.botPlay=false
 
-global.saveName="save_data.TTT"
+global.saveName=game_save_id+"save_data.TTT"
 
 global.editing=false
 

@@ -6,6 +6,7 @@ save_file({
 	epilepsy:global.epilepsyMode,
 	moveSpeed: global.moveSpeed
 },global.saveName)
+show_debug_message("saved data :3")
 
 /*if(sortMode==sortTypes.difficulty)
 {
