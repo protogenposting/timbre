@@ -323,6 +323,10 @@ function reset_buttons()
 				obj_level_select.selectedLevel=id
 			},
 			rightClickFunc: function(){
+				if(!show_question("delete "+name+"?"))
+				{
+					break;
+				}
 				array_delete(global.levels,id,1)
 				with(obj_level_select)
 				{
