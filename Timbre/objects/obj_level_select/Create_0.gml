@@ -84,7 +84,7 @@ function reset_buttons()
 	{
 		name: "Add Song",
 		func: function(){
-			var _file=get_open_filename(".json","data.json")
+			var _file=GetOpenFileName(".json","data.json","", @'Open')
 			if(_file!="")
 			{
 				var _str=load_file(_file)
