@@ -15,10 +15,6 @@ enum noteDirections{
 	down,
 }
 
-var _file=GetOpenFileName(".json", @'Select a file', "", @'Open');
-
-show_message(_file)
-
 cursor_sprite=spr_mouse
 
 //window_set_fullscreen(true)
