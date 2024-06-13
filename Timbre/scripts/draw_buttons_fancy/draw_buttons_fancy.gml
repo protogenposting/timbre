@@ -17,6 +17,13 @@ function draw_buttons_fancy(){
 			{
 				button[i].func()
 			}
+			if(mouse_check_button_pressed(mb_right))
+			{
+				if(variable_struct_exists(button[i],"rightClickFunc"))
+				{
+					button[i].rightClickFunc()
+				}
+			}
 		}
 		try{
 			var _n=button[i].name

@@ -98,6 +98,10 @@ function reset_buttons()
 							rank:["","",""]
 						}
 						var _nameLast=string_last_pos("\\",_struct.name)
+						if(string_count("\\",_struct.name)<=0)
+						{
+							_nameLast=string_last_pos("/",_struct.name)
+						}
 						_struct.name=string_copy(_struct.name,_nameLast+1,999)
 						if(variable_struct_exists(_str,"difficulty"))
 						{
@@ -317,6 +321,13 @@ function reset_buttons()
 					}
 				}
 				obj_level_select.selectedLevel=id
+			},
+			rightClickFunc: function(){
+				array_delete(global.levels,id,1)
+				with(obj_level_select)
+				{
+					reset_buttons()
+				}
 			},
 			size:{x:128,y:48},
 			position:{x: _x,y: _y},
