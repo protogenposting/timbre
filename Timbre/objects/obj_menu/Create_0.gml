@@ -15,6 +15,8 @@ enum noteDirections{
 	down,
 }
 
+get_open_filename("text","uwu")
+
 cursor_sprite=spr_mouse
 
 //window_set_fullscreen(true)
