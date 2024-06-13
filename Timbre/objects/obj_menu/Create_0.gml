@@ -19,6 +19,8 @@ cursor_sprite=spr_mouse
 
 //window_set_fullscreen(true)
 
+get_open_filename("text","uwu")
+
 logoRotation=0
 
 logoRotationMult=1
