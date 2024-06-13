@@ -266,7 +266,7 @@ button[2]={
 	func: function(){
 		with(obj_editor)
 		{
-			var _levelDir=get_open_filename_ext("","data.json","/","LOAD A LEVEL")
+			var _levelDir=GetOpenFileName("","data.json","",@'Open')
 			if(_levelDir!="")
 			{
 				load_level(_levelDir)
@@ -286,7 +286,7 @@ button[3]={
 		{
 			if(name!="")
 			{
-				var _levelDir=get_open_filename("","data.json")
+				var _levelDir=GetOpenFileName("","data.json","",@'Open')
 				if(_levelDir!="")
 				{
 					file_copy(_levelDir,game_save_id+name+"/"+filename_name(_levelDir))

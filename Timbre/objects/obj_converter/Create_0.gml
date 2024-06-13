@@ -38,7 +38,7 @@ array_push(button,{
 })
 
 function fnf_convert(){
-	var _file=get_open_filename(".json","data.json")
+	var _file=GetOpenFileName("","data.json","",@'Open')
 	if(_file!="")
 	{
 		var _struct=load_file(_file).song
@@ -74,13 +74,13 @@ function fnf_convert(){
 		}
 		ds_map_destroy(_usedTimes)
 		sort_note_array(_savedStruct.notes)
-		var _saveLocation=get_save_filename(".json","data.json")
+		var _saveLocation=GetSaveFileName("","data.json","",@'Open')
 		save_file(_savedStruct,game_save_id+"/fnfsong/data.json")
 	}
 }
 
 function osu_convert(){
-	var _file=get_open_filename(".json","data.json")
+	var _file=GetOpenFileName("","data.json","",@'Open')
 	//_file=game_save_id+"osu.osz"
 	if(_file!="")
 	{

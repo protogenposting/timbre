@@ -26,7 +26,6 @@
     {"name":"fn_font_big","order":1,"path":"fonts/fn_font_big/fn_font_big.yy",},
     {"name":"obj_converter","order":7,"path":"objects/obj_converter/obj_converter.yy",},
     {"name":"obj_editor","order":2,"path":"objects/obj_editor/obj_editor.yy",},
-    {"name":"obj_example","order":8,"path":"objects/obj_example/obj_example.yy",},
     {"name":"obj_global_code","order":6,"path":"objects/obj_global_code/obj_global_code.yy",},
     {"name":"obj_level_select","order":3,"path":"objects/obj_level_select/obj_level_select.yy",},
     {"name":"obj_menu","order":1,"path":"objects/obj_menu/obj_menu.yy",},

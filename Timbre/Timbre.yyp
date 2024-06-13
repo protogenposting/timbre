@@ -404,7 +404,6 @@
     {"id":{"name":"fn_font","path":"fonts/fn_font/fn_font.yy",},},
     {"id":{"name":"obj_converter","path":"objects/obj_converter/obj_converter.yy",},},
     {"id":{"name":"obj_editor","path":"objects/obj_editor/obj_editor.yy",},},
-    {"id":{"name":"obj_example","path":"objects/obj_example/obj_example.yy",},},
     {"id":{"name":"obj_global_code","path":"objects/obj_global_code/obj_global_code.yy",},},
     {"id":{"name":"obj_level_select","path":"objects/obj_level_select/obj_level_select.yy",},},
     {"id":{"name":"obj_main_game","path":"objects/obj_main_game/obj_main_game.yy",},},
