@@ -18,6 +18,8 @@ update_particles()
 
 songMilliseconds=audio_sound_get_track_position(audio)*1000
 
+show_debug_message(songMilliseconds)
+
 playFinishSound=false
 
 var barPercentageLast = barPercentage
