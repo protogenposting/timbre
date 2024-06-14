@@ -14,6 +14,10 @@ global.keyboardBinds={
 		down: ord("K"),
 	},
 }
+global.saveLocation=game_save_id
+
+global.wasSaved=false
+
 global.levelData=-4
 
 global.song=-4

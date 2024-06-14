@@ -91,3 +91,8 @@ if(keyboard_check_pressed(vk_left))
 }
 
 zoom=zooms[currentZoom]
+
+if(!global.wasSaved)
+{
+	global.saveLocation=game_save_id+name+"/"
+}

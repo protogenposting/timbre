@@ -149,7 +149,7 @@ function save_level(_levelName,_songName){
 	{
 		data.notesEasy=notesEasy
 	}
-	save_file(data,game_save_id+_levelName+"/data.json")
+	save_file(data,global.saveLocation+"/data.json")
 	return data
 }
 function load_song(_fileName){
@@ -163,6 +163,7 @@ function load_song(_fileName){
 		show_message(e)
 	}
 }
+
 function load_level(_levelData){
 	var directory=filename_path(_levelData)
 	
@@ -174,6 +175,10 @@ function load_level(_levelData){
 	var struct=load_file(_levelData)
 	if(struct!=false)
 	{
+		global.saveLocation=filename_dir(_levelData)
+	
+		global.wasSaved=true
+		
 		load_song(directory+struct.songName)
 		songName=struct.songName
 		notes=struct.notes
@@ -289,9 +294,9 @@ button[3]={
 				var _levelDir=GetOpenFileName("","data.json","",@'Open')
 				if(_levelDir!="")
 				{
-					file_copy(_levelDir,game_save_id+name+"/"+filename_name(_levelDir))
+					file_copy(_levelDir,global.saveLocation+filename_name(_levelDir))
 					songName=filename_name(_levelDir)
-					load_song(game_save_id+name+"/"+filename_name(_levelDir))
+					load_song(global.saveLocation+filename_name(_levelDir))
 				}
 			}
 			else
