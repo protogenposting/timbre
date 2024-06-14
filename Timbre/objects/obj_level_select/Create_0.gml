@@ -214,7 +214,7 @@ function reset_buttons()
 				var _file=load_file(path)
 				if(_file==false)
 				{
-					show_message_async("failed loading, data file is broken or missing")
+					show_message("failed loading, data file is broken or missing")
 					if(show_question("relocate data file?"))
 					{
 						var _newFile=GetOpenFileName(".json","data.json","", @'Open')

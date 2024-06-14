@@ -48,6 +48,8 @@ var _file=load_file(global.saveName)
 
 if(_file==false)
 {
+	show_message(game_save_id)
+	directory_copy(working_directory+"fardstep",game_save_id+"fardstep")
 	global.levels=[
 		{name:"Fardstep 2",artist:"Protogen Posting",path: working_directory+"fardstep\\data.json",difficulty:2,highScore:0,rank:["","",""]},
 		{name:"Fardstep",artist:"Protogen Posting",path: working_directory+"Fardstep 1\\data.json",difficulty:0,highScore:0,rank:["","",""]},
