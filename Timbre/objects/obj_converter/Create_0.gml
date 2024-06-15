@@ -24,6 +24,20 @@ array_push(button,{
 })
 
 array_push(button,{
+	name: "FNF (new)",
+	func: function(){
+		with(obj_converter)
+		{
+			fnf_convert_new()
+		}
+	},
+	size:{x:128,y:64+96+96},
+	position:{x:128,y:64+96},
+	sizeMod:0,
+	color:c_red
+})
+
+array_push(button,{
 	name: "OSU!Mania",
 	func: function(){
 		with(obj_converter)
@@ -32,7 +46,7 @@ array_push(button,{
 		}
 	},
 	size:{x:128,y:64},
-	position:{x:128,y:64+96+96},
+	position:{x:128,y:64+96+96+96+96},
 	sizeMod:0,
 	color:c_purple
 })
@@ -75,7 +89,46 @@ function fnf_convert(){
 		ds_map_destroy(_usedTimes)
 		sort_note_array(_savedStruct.notes)
 		var _saveLocation=GetSaveFileName("","data.json","",@'Open')
-		save_file(_savedStruct,game_save_id+"/fnfsong/data.json")
+		save_file(_savedStruct,_saveLocation)
+	}
+}
+
+function fnf_convert_new(){
+	var _file=GetOpenFileName("","data.json","",@'Open')
+	if(_file!="")
+	{
+		var _struct=load_file(_file).song
+		var _savedStruct={
+			songName:"Inst.ogg",
+			bpm:_struct.bpm,
+			offset:0,
+			difficulty:0,
+			artist:"unknown",
+			notes:[]
+		}
+		
+		var _usedTimes=ds_map_create()
+		for(var i=0;i<array_length(_struct.notes.easy);i++)
+		{
+			var _beatLength=120*1000
+			var _currentNote=_struct.notes.easy[i]
+			while(_currentNote.d>3)
+			{
+				_currentNote.d-=4
+			}
+			var _note=create_note(_currentNote.t/_beatLength,noteTypes.turn,_currentNote.d,false)
+			_note.timeMS=_currentNote.t
+			if(!is_undefined(ds_map_find_value(_usedTimes,_note.timeMS)))
+			{
+				_note.type=noteTypes.log
+			}
+			ds_map_add(_usedTimes,_note.timeMS,true)
+			array_push(_savedStruct.notes,_note)
+		}
+		ds_map_destroy(_usedTimes)
+		sort_note_array(_savedStruct.notes)
+		var _saveLocation=GetSaveFileName("","data.json","",@'Open')
+		save_file(_savedStruct,_saveLocation)
 	}
 }
 
