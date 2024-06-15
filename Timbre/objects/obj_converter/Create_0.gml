@@ -58,7 +58,7 @@ function fnf_convert(){
 		var _struct=load_file(_file).song
 		var _savedStruct={
 			songName:"Inst.ogg",
-			bpm:_struct.bpm,
+			bpm: _struct.bpm,
 			offset:0,
 			difficulty:0,
 			artist:"unknown",
@@ -110,7 +110,7 @@ function fnf_convert_new(){
 		var _usedTimes=ds_map_create()
 		for(var i=0;i<array_length(_struct.notes.easy);i++)
 		{
-			var _beatLength=120*1000
+			var _beatLength=(60/_savedStruct.bpm)*1000
 			var _currentNote=_struct.notes.easy[i]
 			while(_currentNote.d>3)
 			{

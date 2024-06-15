@@ -519,7 +519,8 @@ timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1},
 {distance:msWindow/7,name:"Perfect!",result:1},
 {distance:msWindow/5,name:"Good",result:0.8},
 {distance:msWindow/3,name:"Ok",result:0.75},
-{distance:msWindow,name:"Dull...",result:0.5}]
+{distance:msWindow,name:"Dull...",result:0.5},
+{distance:msWindow*20000,name:"WORST",result:0.5}]
 
 ranks=[{percent:115,name:"Literally How",messages:["FRAME PERFECT??????????"]},
 {percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},
