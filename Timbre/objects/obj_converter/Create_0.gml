@@ -97,10 +97,10 @@ function fnf_convert_new(){
 	var _file=GetOpenFileName("","data.json","",@'Open')
 	if(_file!="")
 	{
-		var _struct=load_file(_file).song
+		var _struct=load_file(_file)
 		var _savedStruct={
 			songName:"Inst.ogg",
-			bpm:_struct.bpm,
+			bpm: 120,
 			offset:0,
 			difficulty:0,
 			artist:"unknown",
