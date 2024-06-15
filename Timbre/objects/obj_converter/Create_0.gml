@@ -31,8 +31,8 @@ array_push(button,{
 			fnf_convert_new()
 		}
 	},
-	size:{x:128,y:64+96+96},
-	position:{x:128,y:64+96},
+	size:{x:128,y:64},
+	position:{x:128,y:64+96+96},
 	sizeMod:0,
 	color:c_red
 })
@@ -46,7 +46,7 @@ array_push(button,{
 		}
 	},
 	size:{x:128,y:64},
-	position:{x:128,y:64+96+96+96+96},
+	position:{x:128,y:64+96+96+96},
 	sizeMod:0,
 	color:c_purple
 })
