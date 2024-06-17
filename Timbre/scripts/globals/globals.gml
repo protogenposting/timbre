@@ -34,7 +34,7 @@ global.epilepsyMode=true
 
 global.moveSpeed=1
 
-global.selectedLevel=-4
+global.selectedLevel=0
 
 global.dataLocation=""
 

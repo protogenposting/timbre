@@ -45,7 +45,7 @@ global.song=-4
 
 global.editing=false
 
-global.selectedLevel=-4
+global.selectedLevel=0
 
 noteDensity=0
 
@@ -61,11 +61,23 @@ sortMode=0
 
 songMilliseconds=0
 
-wheelProgress=0
+wheelProgress=global.selectedLevel
 
 previousWheelDirection=0
 
 wheelRotationProgress=0
+
+readyUp=false
+
+readyProgress=0
+
+difflicultySelection=ds_map_create()
+
+ds_map_add(difflicultySelection,0,{notes: "notesEasy",icon:spr_difficulty_button_easy,name:"Simple",equivelant:2})
+
+ds_map_add(difflicultySelection,1,{notes: "notes",icon:spr_difficulty_button_normal,name:"Normal",equivelant:0})
+
+ds_map_add(difflicultySelection,2,{notes: "notesHard",icon:spr_difficulty_button_hard,name:"Ultra",equivelant:1})
 
 enum sortTypes{
 	difficulty,
@@ -83,6 +95,7 @@ function initialize_level(levelID){
 	var hasHard=false
 	if(_file!=false)
 	{
+		global.levels[levelID].difficulty=_file.difficulty
 		if(variable_struct_exists(_file,"notesHard"))
 		{
 			hasHard=true
@@ -534,17 +547,14 @@ tabMoveSpeed=6
 
 function start_level()
 {
-	if(obj_level_select.selectedLevel!=-4)
+	try{
+		audio_stop_all()
+		global.selectedLevel=wheelProgress
+		room_goto(rm_gameplay)
+	}
+	catch(e)
 	{
-		try{
-			audio_stop_all()
-			global.selectedLevel=obj_level_select.selectedLevel
-			room_goto(rm_gameplay)
-		}
-		catch(e)
-		{
-			obj_level_select.selectedLevel=-4
-		}
+		
 	}
 }
 	

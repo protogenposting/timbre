@@ -20,7 +20,7 @@ global.song=-4
 
 global.editing=false
 
-global.selectedLevel=-4
+global.selectedLevel=0
 
 playerProgress=0
 
