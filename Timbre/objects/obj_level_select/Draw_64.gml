@@ -16,6 +16,27 @@ if(_hAxis!=0&&global.moveSpeed+_hAxis*0.05>0)
 
 draw_buttons_fancy()
 
+//draw the WHEEL OF LEVELS
+
+var _levels=global.levels
+
+var i=wheelProgress-1
+
+if(i<0)
+{
+	i=array_length(_levels)-1
+}
+
+repeat(3)
+{
+	
+	i++
+	if(i>=array_length(_levels))
+	{
+		i=0
+	}
+}
+
 if(selectedLevel!=-4)
 {
 	draw_set_font(fn_font_big)

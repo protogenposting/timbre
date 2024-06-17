@@ -110,6 +110,7 @@
     {"name":"spr_logo","order":24,"path":"sprites/spr_logo/spr_logo.yy",},
     {"name":"spr_loop","order":16,"path":"sprites/spr_loop/spr_loop.yy",},
     {"name":"spr_mouse","order":28,"path":"sprites/spr_mouse/spr_mouse.yy",},
+    {"name":"spr_no_cover","order":32,"path":"sprites/spr_no_cover/spr_no_cover.yy",},
     {"name":"spr_normal","order":1,"path":"sprites/spr_normal/spr_normal.yy",},
     {"name":"spr_play_button","order":4,"path":"sprites/spr_play_button/spr_play_button.yy",},
     {"name":"spr_quaver_button","order":5,"path":"sprites/spr_quaver_button/spr_quaver_button.yy",},

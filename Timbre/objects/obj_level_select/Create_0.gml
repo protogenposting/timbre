@@ -61,6 +61,8 @@ sortMode=0
 
 songMilliseconds=0
 
+wheelProgress=0
+
 enum sortTypes{
 	difficulty,
 	bpm
@@ -172,7 +174,7 @@ function reset_buttons()
 	var _yEnd=room_height/1.1
 	var _yStart=_y
 	global.levels=sort_songlist(global.levels)
-	for(var i=0;i<array_length(global.levels);i++)
+	/*for(var i=0;i<array_length(global.levels);i++)
 	{
 		var _file=load_file(global.levels[i].path)
 		var hasNormal=true
@@ -355,7 +357,7 @@ function reset_buttons()
 			_y+=64
 			_x=128
 		}
-	}
+	}*/
 
 	alarm[0]=1
 
