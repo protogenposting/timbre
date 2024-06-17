@@ -24,7 +24,7 @@ var _levels=global.levels
 
 if(_hAxis!=0)
 {
-	previousWheelDirection=sign(_hAxis)
+	previousWheelDirection=_hAxis
 	wheelProgress+=_hAxis
 	if(wheelProgress<0)
 	{
@@ -35,6 +35,8 @@ if(_hAxis!=0)
 		wheelProgress=0
 	}
 	wheelRotationProgress=0
+	
+	initialize_level(wheelProgress)
 }
 
 wheelRotationProgress+=0.1
@@ -53,28 +55,55 @@ var _x=camera_get_view_width(view_camera[0])/2 - _coverDistance * floor(_display
 
 if(i<0)
 {
-	i=array_length(_levels)-floor(_displayedLevels/2)
+	i=array_length(_levels)+i
 }
-
+draw_set_font(fn_font_big)
+draw_set_color(c_white)
 repeat(_displayedLevels)
 {
-	var _size=_sizeMod-abs(sign(i-wheelProgress))/5
-	var rotation=0
+	var _size=_sizeMod-abs(sign(i-wheelProgress))/2
+	var _rotation=0
+	var _isSelected=i==wheelProgress
 	var _y=camera_get_view_height(view_camera[0])/2
-	if(i==wheelProgress)
+	
+	if(_isSelected)
 	{
 		_y+=sin(current_time/1000)*16
-		rotation=sin(current_time/5000)*5
+		_rotation=sin(current_time/5000)*5
 	}
-	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,_size,_size,rotation,c_white,1)
+	
+	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,_size,_size,_rotation,c_white,1)
+	
+	var _oldY=_y
+	
+	_y=camera_get_view_height(view_camera[0])/2
+	
+	if(_isSelected)
+	{
+		draw_text(_x,_y-200,_levels[i].name)
+
+		try{
+			draw_text_ext(_x,_y-200+64,"By " + _levels[i].artist,24,500)
+		}
+		catch(e)
+		{
+			_levels[i].artist="???"
+		}
+		var _xOffset=lengthdir_x(128-32,_rotation-45)
+		var _yOffset=lengthdir_y(128-32,_rotation-45)
+		draw_sprite_ext(difficulties[_levels[i].difficulty].sprite,image_index,
+		_x+_xOffset,_oldY+_yOffset,1,1,_rotation,c_white,1)
+	}
+	
 	_x+=_coverDistance
 	i++
+	
 	if(i>=array_length(_levels))
 	{
 		i=0
 	}
 }
-
+draw_set_font(fn_font)
 if(selectedLevel!=-4)
 {
 	draw_set_font(fn_font_big)

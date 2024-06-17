@@ -16,4 +16,4 @@ if(sortMode==sortTypes.bpm)
 	global.levels=sort_songlist_bpm(global.levels)
 }*/
 
-alarm[0]=30
+alarm[0]=256

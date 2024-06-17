@@ -75,6 +75,157 @@ enum sortTypes{
 sortNames[sortTypes.difficulty]="Difficulty"
 sortNames[sortTypes.bpm]="Bpm"
 
+function initialize_level(levelID){
+	var _path=global.levels[levelID].path
+	var _file=load_file(_path)
+	var hasNormal=true
+	var hasEasy=false
+	var hasHard=false
+	if(_file!=false)
+	{
+		if(variable_struct_exists(_file,"notesHard"))
+		{
+			hasHard=true
+		}
+		if(!variable_struct_exists(_file,"notes"))
+		{
+			hasNormal=false
+		}
+		if(variable_struct_exists(_file,"notesEasy"))
+		{
+			hasEasy=true
+		}
+	}
+	global.levels[levelID].availableDifficulties=[hasEasy,hasNormal,hasHard]
+	if(obj_level_select.selectedLevel==levelID)
+	{
+		audio_stop_sound(global.song)
+		global.song=-4
+		currentShroomPose=-1
+		obj_level_select.selectedLevel=-4
+		return false
+	}
+	
+	if(_file==false)
+	{
+		show_message("failed loading, data file is broken or missing")
+		if(show_question("relocate data file?"))
+		{
+			var _newFile=GetOpenFileName(".json","data.json","", @'Open')
+			if(_newFile!="")
+			{
+				global.levels[levelID].path=_newFile
+			}
+		}
+	}
+	else
+	{
+		try{
+			audio_destroy_stream(global.song)
+			var _leafToTreeRatio=array_create(10)
+			var beatLength=60/_file.bpm
+			var _noteBeats=[]
+			try{
+				global.levels[levelID].difficulty=_file.difficulty
+			}
+			catch(e)
+			{
+							
+			}
+						
+			var notesToGet=_file.notes
+			if(global.currentDifficulty==1)
+			{
+				notesToGet=_file.notesHard
+			}
+			if(global.currentDifficulty==2)
+			{
+				notesToGet=_file.notesEasy
+			}
+						
+			for(var i=0;i<array_length(notesToGet)-1;i++)
+			{
+				array_push(_noteBeats,abs(notesToGet[i].beat-notesToGet[i+1].beat))
+				notesToGet[i].timeMS=notesToGet[i].beat*beatLength*1000
+				_leafToTreeRatio[notesToGet[i].type]++
+			}
+						
+			global.song=audio_create_stream(filename_dir(_path)+"\\"+_file.songName)
+			global.levelData=_file
+						
+			obj_level_select.grass=spr_grass
+						
+			if(file_exists(filename_dir(_path)+"\\"+"grass.png"))
+			{
+				obj_level_select.grass=sprite_add(filename_dir(_path)+"\\"+"grass.png",2,false,false,32,32)
+			}
+						
+			var _average=0
+			for(var i=0;i<array_length(_noteBeats);i++)
+			{
+				_average+=_noteBeats[i]
+			}
+			obj_level_select.noteDensity=((_average/array_length(_noteBeats))/_file.bpm)*100
+						
+			var _songLength=array_last(notesToGet).beat-array_first(notesToGet).beat
+						
+			_songLength*=60/_file.bpm
+						
+			obj_level_select.songMilliseconds=0
+						
+			obj_level_select.previewNotes=notesToGet
+						
+			obj_level_select.songLength=_songLength
+			global.songLength=_songLength
+			obj_level_select.leafToTree=string(_leafToTreeRatio[0])+" : "+string(_leafToTreeRatio[1])
+			var _chance=50
+			if(_leafToTreeRatio[1]>200)
+			{
+				_chance-=5
+			}
+			if(_leafToTreeRatio[0]<100)
+			{
+				_chance+=15
+			}
+			if(_leafToTreeRatio[1]<100)
+			{
+				_chance+=15
+			}
+			if(_file.bpm<=120)
+			{
+				_chance+=15
+			}
+			if(_file.bpm>140)
+			{
+				_chance-=15
+			}
+			if(_songLength>100)
+			{
+				_chance-=10
+			}
+			if(global.levels[levelID].difficulty==3)
+			{
+				_chance-=60
+			}
+			if(global.levels[levelID].difficulty>=4)
+			{
+				_chance-=15
+			}
+			if(obj_level_select.noteDensity<=0.83)
+			{
+				_chance-=5
+			}
+			obj_level_select.daniChance=_chance
+		}
+		catch(e)
+		{
+			show_message(e)
+		}
+	}
+}
+
+initialize_level(wheelProgress)
+
 function reset_buttons()
 {
 	button=[
