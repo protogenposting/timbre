@@ -55,10 +55,6 @@ if(frac(barPercentage)<frac(barPercentageLast))
 	{
 		layer_background_sprite(background,spr_grass_bad)
 	}
-	else if(fullCombo&&songMilliseconds/1000>=global.songLength/2)
-	{
-		layer_background_sprite(background,spr_grass_fc)
-	}
 	else
 	{
 		layer_background_sprite(background,spr_grass)

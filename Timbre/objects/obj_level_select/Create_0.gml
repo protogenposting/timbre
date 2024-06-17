@@ -232,6 +232,7 @@ function reset_buttons()
 		position:{x:128+140,y:64},
 		sizeMod:0
 	},
+	/*
 	{
 		name: "More Stats",
 		func: function(){
@@ -245,7 +246,8 @@ function reset_buttons()
 		size:{x:128,y:64},
 		position:{x:128+140+140,y:64},
 		sizeMod:0
-	},
+	},*/
+	
 	/*{
 		name: "Sort Mode: "+obj_level_select.sortNames[obj_level_select.sortMode],
 		func: function(){
