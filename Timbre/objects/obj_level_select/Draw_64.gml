@@ -156,8 +156,8 @@ repeat(_displayedLevels)
 		{
 			_levels[i].artist="???"
 		}
-		var _xOffset=lengthdir_x(128-32,_rotation-45)
-		var _yOffset=lengthdir_y(128-32,_rotation-45)
+		var _xOffset=lengthdir_x(128+32,_rotation-45)
+		var _yOffset=lengthdir_y(128+32,_rotation-45)
 		draw_sprite_ext(difficulties[_levels[i].difficulty].sprite,image_index,
 		_x+_xOffset,_oldY+_yOffset,1,1,_rotation,c_white,1)
 		if(global.pressingMouseLeft)

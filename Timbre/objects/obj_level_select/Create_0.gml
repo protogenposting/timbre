@@ -154,62 +154,7 @@ function initialize_level(levelID){
 				obj_level_select.grass=sprite_add(filename_dir(_path)+"\\"+"grass.png",2,false,false,32,32)
 			}
 						
-			var _average=0
-			for(var i=0;i<array_length(_noteBeats);i++)
-			{
-				_average+=_noteBeats[i]
-			}
-			obj_level_select.noteDensity=((_average/array_length(_noteBeats))/_file.bpm)*100
-						
-			var _songLength=array_last(notesToGet).beat-array_first(notesToGet).beat
-						
-			_songLength*=60/_file.bpm
-						
 			obj_level_select.songMilliseconds=0
-						
-			obj_level_select.previewNotes=notesToGet
-						
-			obj_level_select.songLength=_songLength
-			global.songLength=_songLength
-			obj_level_select.leafToTree=string(_leafToTreeRatio[0])+" : "+string(_leafToTreeRatio[1])
-			var _chance=50
-			if(_leafToTreeRatio[1]>200)
-			{
-				_chance-=5
-			}
-			if(_leafToTreeRatio[0]<100)
-			{
-				_chance+=15
-			}
-			if(_leafToTreeRatio[1]<100)
-			{
-				_chance+=15
-			}
-			if(_file.bpm<=120)
-			{
-				_chance+=15
-			}
-			if(_file.bpm>140)
-			{
-				_chance-=15
-			}
-			if(_songLength>100)
-			{
-				_chance-=10
-			}
-			if(global.levels[levelID].difficulty==3)
-			{
-				_chance-=60
-			}
-			if(global.levels[levelID].difficulty>=4)
-			{
-				_chance-=15
-			}
-			if(obj_level_select.noteDensity<=0.83)
-			{
-				_chance-=5
-			}
-			obj_level_select.daniChance=_chance
 		}
 		catch(e)
 		{
