@@ -522,20 +522,6 @@ timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1},
 {distance:msWindow,name:"Dull...",result:0.5},
 {distance:msWindow*20000,name:"WORST",result:0.5}]
 
-ranks=[{percent:115,name:"Literally How",messages:["FRAME PERFECT??????????"]},
-{percent:100,name:"P",messages:["PHENOMINAL!","P is for... PLEASE HAVE MY BABIES"]},
-{percent:95,name:"S",messages:["OMG UR SO GOOD!","S is for... SANS UNDERTALE?!?!?!?!"]},
-{percent:90,name:"A+",messages:["Great job... PLUS!","A+ is for... Almost an S! Plus!!!"]},
-{percent:85,name:"A",messages:["Great job!","A is for... AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"]},
-{percent:80,name:"B+",messages:["Cooler than a regular B!","B+ is for... Boi just get an A already! Plus!!!"]},
-{percent:75,name:"B",messages:["Cool!","B is for... BOOTYHOLE"]},
-{percent:65,name:"C+",messages:["Good job i guess...... PLUS!!!","C+ is for... Can't you just get a B? Plus!!!"]},
-{percent:50,name:"C",messages:["Good job i guess","C is for... Corn!"]},
-{percent:40,name:"D+",messages:["Needs some work... PLUS!!!","D+ is for... DANI?!?!?!??! PLUS?!?!?!?!?"]},
-{percent:30,name:"D",messages:["Needs some work...","D is for... Detention! >:("]},
-{percent:0,name:"F",messages:["Did you even try?","F is for... FIVE NIGHT FREDDY?!?!?!?"]},
-{percent:-1,name:"F-",messages:["How did u get an F- lmao"]}]
-
 trueAccuracyList=[]
 
 function get_accuracy_population(){
@@ -563,38 +549,7 @@ function get_accuracy_population(){
 	return [endResult,listMinimum,listMaximum,populations]
 }
 
-function get_rank(accuracyPercentage){
-	for(var i=0;i<array_length(ranks);i++)
-	{
-		if(accuracyPercentage>=ranks[i].percent)
-		{
-			return ranks[i].name
-		}
-	}
-	return "???"
-}
 
-function get_rank_id_string(accuracyPercentage){
-	for(var i=0;i<array_length(ranks);i++)
-	{
-		if(accuracyPercentage==ranks[i].name)
-		{
-			return i
-		}
-	}
-	return 8
-}
-
-function get_rank_id(accuracyPercentage){
-	for(var i=0;i<array_length(ranks);i++)
-	{
-		if(accuracyPercentage>=ranks[i].percent)
-		{
-			return i
-		}
-	}
-	return -4
-}
 
 function turn_off_keys(){
 	turnKey[noteDirections.left]=false

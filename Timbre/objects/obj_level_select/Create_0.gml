@@ -465,7 +465,7 @@ function reset_buttons()
 		}
 	}*/
 
-	alarm[0]=1
+	alarm[0]=5
 
 }
 
@@ -488,4 +488,4 @@ function start_level()
 	
 reset_buttons()
 
-alarm[0]=30
+alarm[0]=2
