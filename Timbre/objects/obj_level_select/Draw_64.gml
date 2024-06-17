@@ -16,6 +16,11 @@ if(_hAxis!=0&&global.moveSpeed+_hAxis*0.05>0)
 
 draw_buttons_fancy()
 
+if(alarm[1]>0)
+{
+	exit;
+}
+
 //draw the WHEEL OF LEVELS
 
 var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
