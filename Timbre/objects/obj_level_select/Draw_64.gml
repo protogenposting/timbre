@@ -6,30 +6,68 @@ draw_set_valign(fa_middle)
 
 songSpeedAlpha-=0.01
 
-var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
-
+/*
+ YO MOVE MOVESPEED CHANGING TO A SLIDER	
 if(_hAxis!=0&&global.moveSpeed+_hAxis*0.05>0)
 {
 	global.moveSpeed+=(_hAxis)*0.05
 	songSpeedAlpha=1
-}
+}*/
 
 draw_buttons_fancy()
 
 //draw the WHEEL OF LEVELS
 
+var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
+
 var _levels=global.levels
 
-var i=wheelProgress-1
+if(_hAxis!=0)
+{
+	previousWheelDirection=sign(_hAxis)
+	wheelProgress+=_hAxis
+	if(wheelProgress<0)
+	{
+		wheelProgress=array_length(_levels)-1
+	}
+	if(wheelProgress>array_length(_levels)-1)
+	{
+		wheelProgress=0
+	}
+	wheelRotationProgress=0
+}
+
+wheelRotationProgress+=0.1
+
+var _displayedLevels=5
+
+var i=wheelProgress-floor(_displayedLevels/2)
+
+var _coverDistance=400
+
+var _sizeMod=1
+
+var _progress=move_smooth_between_points(previousWheelDirection,0,0,0,wheelRotationProgress).x
+
+var _x=camera_get_view_width(view_camera[0])/2 - _coverDistance * floor(_displayedLevels/2)
 
 if(i<0)
 {
-	i=array_length(_levels)-1
+	i=array_length(_levels)-floor(_displayedLevels/2)
 }
 
-repeat(3)
+repeat(_displayedLevels)
 {
-	
+	var _size=_sizeMod-abs(sign(i-wheelProgress))/5
+	var rotation=0
+	var _y=camera_get_view_height(view_camera[0])/2
+	if(i==wheelProgress)
+	{
+		_y+=sin(current_time/1000)*16
+		rotation=sin(current_time/5000)*5
+	}
+	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,_size,_size,rotation,c_white,1)
+	_x+=_coverDistance
 	i++
 	if(i>=array_length(_levels))
 	{

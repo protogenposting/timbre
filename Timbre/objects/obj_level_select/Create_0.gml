@@ -63,6 +63,10 @@ songMilliseconds=0
 
 wheelProgress=0
 
+previousWheelDirection=0
+
+wheelRotationProgress=0
+
 enum sortTypes{
 	difficulty,
 	bpm
@@ -168,12 +172,22 @@ function reset_buttons()
 		sizeMod:0
 	},*/]
 
-	var _x=128
-	var lastButton=array_last(button)
-	var _y=lastButton.position.y+96
-	var _yEnd=room_height/1.1
-	var _yStart=_y
 	global.levels=sort_songlist(global.levels)
+	for(var i=0;i<array_length(global.levels);i++)
+	{
+		var _directory=filename_dir(global.levels[i].path)
+		
+		var _cover=_directory+"/cover.png"
+		
+		if(file_exists(_cover))
+		{
+			global.levels[i].cover=sprite_add(_cover,1,false,false,128,128)
+		}
+		else
+		{
+			global.levels[i].cover=spr_no_cover
+		}
+	}
 	/*for(var i=0;i<array_length(global.levels);i++)
 	{
 		var _file=load_file(global.levels[i].path)
