@@ -45,8 +45,6 @@ global.song=-4
 
 global.editing=false
 
-global.selectedLevel=0
-
 noteDensity=0
 
 moreStats=false
