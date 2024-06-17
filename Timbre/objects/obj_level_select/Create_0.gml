@@ -144,23 +144,6 @@ function initialize_level(levelID){
 							
 			}
 						
-			var notesToGet=_file.notes
-			if(global.currentDifficulty==1)
-			{
-				notesToGet=_file.notesHard
-			}
-			if(global.currentDifficulty==2)
-			{
-				notesToGet=_file.notesEasy
-			}
-						
-			for(var i=0;i<array_length(notesToGet)-1;i++)
-			{
-				array_push(_noteBeats,abs(notesToGet[i].beat-notesToGet[i+1].beat))
-				notesToGet[i].timeMS=notesToGet[i].beat*beatLength*1000
-				_leafToTreeRatio[notesToGet[i].type]++
-			}
-						
 			global.song=audio_create_stream(filename_dir(_path)+"\\"+_file.songName)
 			global.levelData=_file
 						
