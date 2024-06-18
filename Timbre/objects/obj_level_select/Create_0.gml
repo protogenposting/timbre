@@ -138,6 +138,7 @@ function initialize_level(levelID){
 			var _noteBeats=[]
 			try{
 				global.levels[levelID].difficulty=_file.difficulty
+				global.levels[levelID].artist=_file.artist
 			}
 			catch(e)
 			{
@@ -155,6 +156,8 @@ function initialize_level(levelID){
 			}
 						
 			obj_level_select.songMilliseconds=0
+			
+			
 		}
 		catch(e)
 		{
