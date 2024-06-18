@@ -375,10 +375,18 @@ function create_points(){
 				if(dir==loop_rotation(_direction+90))
 				{
 					notes[o].color=c_green
+					if(_dir/90==noteDirections.down)
+					{
+						notes[o].color=c_lime
+					}
 				}
 				if(dir==loop_rotation(_direction-90))
 				{
 					notes[o].color=c_lime
+					if(_dir/90==noteDirections.down)
+					{
+						notes[o].color=c_green
+					}
 				}
 				if(dir==loop_rotation(_direction+180))
 				{
