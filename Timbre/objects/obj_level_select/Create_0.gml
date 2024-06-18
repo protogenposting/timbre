@@ -166,7 +166,10 @@ function initialize_level(levelID){
 	}
 }
 
-initialize_level(wheelProgress)
+if(array_length(global.levels)>0)
+{
+	initialize_level(wheelProgress)
+}
 
 function reset_buttons()
 {
@@ -266,8 +269,10 @@ function reset_buttons()
 		position:{x:128+140+140+140,y:64},
 		sizeMod:0
 	},*/]
-
-	global.levels=sort_songlist(global.levels)
+	if(array_length(global.levels)>0)
+	{
+		global.levels=sort_songlist(global.levels)
+	}
 	for(var i=0;i<array_length(global.levels);i++)
 	{
 		var _directory=filename_dir(global.levels[i].path)
