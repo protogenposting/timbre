@@ -116,17 +116,20 @@ repeat(_displayedLevels)
 				
 				var _id=get_rank_id_string(_levels[i].rank[_difficulty.equivelant])
 				
-				draw_sprite(global.ranks[_id].icon,0,_xMod,_yMod+64)
+				if(_id!=array_length(global.ranks)-1)
+				{
+					draw_sprite(global.ranks[_id].icon,0,_xMod,_yMod+64)
 				
-				if(string_count("+",global.ranks[id].name))
-				{
-					draw_sprite_ext(spr_rank_plus,image_index,
-					_xMod+64,_yMod+64,1,1,_rotation,c_white,1)
-				}
-				if(string_count("-",global.ranks[id].name))
-				{
-					draw_sprite_ext(spr_rank_minus,image_index,
-					_xMod+64,_yMod+64,1,1,_rotation,c_white,1)
+					if(string_count("+",global.ranks[_id].name))
+					{
+						draw_sprite_ext(spr_rank_plus,image_index,
+						_xMod+64,_yMod+64,1,1,_rotation,c_white,1)
+					}
+					if(string_count("-",global.ranks[_id].name))
+					{
+						draw_sprite_ext(spr_rank_minus,image_index,
+						_xMod+64,_yMod+64,1,1,_rotation,c_white,1)
+					}
 				}
 				
 				if(_selected)
@@ -184,18 +187,21 @@ repeat(_displayedLevels)
 		_yOffset=lengthdir_y(128,_rotation-45+180)
 		
 		var rankID=get_rank_id_string(_levels[i].rank[0])
-		draw_sprite_ext(global.ranks[rankID].icon,image_index,
-		_x+_xOffset,_oldY+_yOffset,1,1,_rotation,c_white,1)
+		if(rankID!=array_length(global.ranks)-1)
+		{
+			draw_sprite_ext(global.ranks[rankID].icon,image_index,
+			_x+_xOffset,_oldY+_yOffset,1,1,_rotation,c_white,1)
 		
-		if(string_count("+",global.ranks[rankID].name))
-		{
-			draw_sprite_ext(spr_rank_plus,image_index,
-			_x+_xOffset+64,_oldY+_yOffset,1,1,_rotation,c_white,1)
-		}
-		if(string_count("-",global.ranks[rankID].name))
-		{
-			draw_sprite_ext(spr_rank_minus,image_index,
-			_x+_xOffset+64,_oldY+_yOffset,1,1,_rotation,c_white,1)
+			if(string_count("+",global.ranks[rankID].name))
+			{
+				draw_sprite_ext(spr_rank_plus,image_index,
+				_x+_xOffset+64,_oldY+_yOffset,1,1,_rotation,c_white,1)
+			}
+			if(string_count("-",global.ranks[rankID].name))
+			{
+				draw_sprite_ext(spr_rank_minus,image_index,
+				_x+_xOffset+64,_oldY+_yOffset,1,1,_rotation,c_white,1)
+			}
 		}
 		
 		if(global.pressingMouseLeft)
