@@ -114,9 +114,24 @@ repeat(_displayedLevels)
 				
 				draw_sprite(_difficulty.icon,_selected,_xMod,_yMod)
 				
+				var _id=get_rank_id_string(_levels[i].rank[_difficulty.equivelant])
+				
+				draw_sprite(global.ranks[_id].icon,0,_xMod,_yMod+64)
+				
+				if(string_count("+",global.ranks[id].name))
+				{
+					draw_sprite_ext(spr_rank_plus,image_index,
+					_xMod+64,_yMod+64,1,1,_rotation,c_white,1)
+				}
+				if(string_count("-",global.ranks[id].name))
+				{
+					draw_sprite_ext(spr_rank_minus,image_index,
+					_xMod+64,_yMod+64,1,1,_rotation,c_white,1)
+				}
+				
 				if(_selected)
 				{
-					draw_text(_x,_yMod+64,_difficulty.name)
+					draw_text(_x,_yMod+128,_difficulty.name)
 					if(global.pressingMouseLeft)
 					{
 						global.currentDifficulty=_difficulty.equivelant
@@ -161,10 +176,28 @@ repeat(_displayedLevels)
 		{
 			_levels[i].artist="???"
 		}
-		var _xOffset=lengthdir_x(128+32,_rotation-45)
-		var _yOffset=lengthdir_y(128+32,_rotation-45)
+		var _xOffset=lengthdir_x(128,_rotation-45)
+		var _yOffset=lengthdir_y(128,_rotation-45)
 		draw_sprite_ext(difficulties[_levels[i].difficulty].sprite,image_index,
 		_x+_xOffset,_oldY+_yOffset,1,1,_rotation,c_white,1)
+		_xOffset=lengthdir_x(128,_rotation-45+180)
+		_yOffset=lengthdir_y(128,_rotation-45+180)
+		
+		var rankID=get_rank_id_string(_levels[i].rank[0])
+		draw_sprite_ext(global.ranks[rankID].icon,image_index,
+		_x+_xOffset,_oldY+_yOffset,1,1,_rotation,c_white,1)
+		
+		if(string_count("+",global.ranks[rankID].name))
+		{
+			draw_sprite_ext(spr_rank_plus,image_index,
+			_x+_xOffset+64,_oldY+_yOffset,1,1,_rotation,c_white,1)
+		}
+		if(string_count("-",global.ranks[rankID].name))
+		{
+			draw_sprite_ext(spr_rank_minus,image_index,
+			_x+_xOffset+64,_oldY+_yOffset,1,1,_rotation,c_white,1)
+		}
+		
 		if(global.pressingMouseLeft)
 		{
 			readyUp=!readyUp

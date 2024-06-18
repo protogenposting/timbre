@@ -135,9 +135,9 @@ if(finished)
 				audio_play_sound(snd_slap3,1000,false)
 			}
 			var rank=get_rank_id(accuracy)
-			if(variable_struct_exists(ranks[rank],"messages"))
+			if(variable_struct_exists(global.ranks[rank],"messages"))
 			{
-				hitMessage=ranks[rank].messages[irandom(array_length(ranks[rank].messages)-1)]
+				hitMessage=global.ranks[rank].messages[irandom(array_length(global.ranks[rank].messages)-1)]
 				hitTime=3
 			}
 		}
