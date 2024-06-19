@@ -5,6 +5,7 @@ function save_game(){
 		levels:global.levels,
 		controlType:global.improvedControls,
 		epilepsy:global.epilepsyMode,
-		moveSpeed: global.moveSpeed
+		moveSpeed: global.moveSpeed,
+		audioOffset:global.audioOffset
 	},global.saveName)
 }

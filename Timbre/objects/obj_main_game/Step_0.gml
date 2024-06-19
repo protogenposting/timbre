@@ -16,7 +16,7 @@ audio_sound_pitch(audio,global.songSpeed)
 
 update_particles()
 
-songMilliseconds=audio_sound_get_track_position(audio)*1000
+songMilliseconds=audio_sound_get_track_position(audio)*1000 + global.audioOffset
 
 show_debug_message(songMilliseconds)
 

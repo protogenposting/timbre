@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":4.752472,
+  "duration":4.0,
   "name":"snd_tutorial_sound",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_tutorial_sound.ogg",
+  "soundFile":"snd_tutorial_sound.wav",
   "type":0,
   "volume":1.0,
 }

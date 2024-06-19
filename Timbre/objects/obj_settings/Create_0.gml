@@ -4,13 +4,11 @@ gooberLocation.y=room_height
 
 audio_stop_all()
 
-audio_play_sound(snd_tutorial_sound,1000,true)
+audio=audio_play_sound(snd_tutorial_sound,1000,true)
 
 selectedLevel=-4
 
 bpm=0
-
-audio=-4
 
 currentBeat=0
 
@@ -21,6 +19,8 @@ global.song=-4
 global.editing=false
 
 playerProgress=0
+
+passedHalf=false
 
 points=[
 	{x:512+256,y:512},
@@ -67,4 +67,4 @@ array_push(settings,new setting(settingTypes.toggle,"improvedControls",
 "Log Relative Directions",
 "Turning this off makes it so logs are hit the same direction they are pointed in instead of relative to the player's direction"))
 
-array_push(settings,new setting(settingTypes.slider,"epilepsyMode","Epilepsy Mode"))
+array_push(settings,new setting(settingTypes.slider,"audioOffset","Audio Offset"))

@@ -48,6 +48,8 @@ global.improvedControls=false
 
 global.classicView=false
 
+global.audioOffset=0
+
 var _file=load_file(global.saveName)
 
 if(_file==false)
@@ -62,6 +64,7 @@ else
 		global.improvedControls=_file.controlType
 		global.epilepsyMode=_file.epilepsy
 		global.moveSpeed=_file.moveSpeed
+		global.audioOffset=_file.audioOffset
 	}
 	catch(e)
 	{

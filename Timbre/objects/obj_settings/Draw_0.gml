@@ -13,3 +13,8 @@ currentDirection=(playerProgress>0.5)*270
 draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,1,currentDirection+90,c_white,1)
 draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,-1,currentDirection-90,c_white,1)
 draw_sprite_ext(spr_player,image_index,_currentX,_currentY,1,1,currentDirection,c_white,1)
+
+for(var i=0;i<array_length(settings);i++)
+{
+	
+}
