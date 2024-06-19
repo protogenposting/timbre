@@ -189,42 +189,27 @@ function reset_buttons()
 			var _file=GetOpenFileName(".json","data.json","", @'Open')
 			if(_file!="")
 			{
+				add_song(_file)
+			}
+		},
+		size:{x:128,y:64},
+		position:{x:128+140,y:64},
+		sizeMod:0
+	},
+	{
+		name: "Add Pack",
+		func: function(){
+			var _file=GetOpenFileName(".json","pack.json","", @'Open')
+			if(_file!="")
+			{
 				var _str=load_file(_file)
-				if(_file!=false)
+				if(_str!=false)
 				{
 					try{
-						var _struct={
-							name: filename_dir(_file),
-							path: _file,
-							highScore:0,
-							rank:["","",""]
-						}
-						var _nameLast=string_last_pos("\\",_struct.name)
-						if(string_count("\\",_struct.name)<=0)
+						for(var i=0;i<array_length(_str.levels);i++)
 						{
-							_nameLast=string_last_pos("/",_struct.name)
-						}
-						_struct.name=string_copy(_struct.name,_nameLast+1,999)
-						if(variable_struct_exists(_str,"difficulty"))
-						{
-							_struct.difficulty=_str.difficulty
-						}
-						else
-						{
-							_struct.difficulty=3
-						}
-						if(variable_struct_exists(_str,"artist"))
-						{
-							_struct.artist=_str.artist
-						}
-						else
-						{
-							_struct.artist="???"
-						}
-						array_push(global.levels,_struct)
-						with(obj_level_select)
-						{
-							alarm[1]=2
+							var _packDirectory=filename_dir(_file)
+							add_song(_packDirectory+"/"+_str.levels[i]+"/data.json")
 						}
 					}
 					catch(e)
@@ -239,7 +224,7 @@ function reset_buttons()
 			}
 		},
 		size:{x:128,y:64},
-		position:{x:128+140,y:64},
+		position:{x:128+140+140,y:64},
 		sizeMod:0
 	},
 	/*
