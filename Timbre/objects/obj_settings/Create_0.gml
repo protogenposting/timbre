@@ -1,0 +1,43 @@
+event_inherited()
+
+gooberLocation.y=room_height
+
+audio_stop_all()
+
+audio_play_sound(snd_tutorial_sound,1000,true)
+
+selectedLevel=-4
+
+bpm=0
+
+audio=-4
+
+currentBeat=0
+
+audio_destroy_stream(global.song)
+
+global.song=-4
+
+global.editing=false
+
+playerProgress=0
+
+points=[
+	{x:256,y:256},
+	{x:256+256,y:256},
+	{x:256,y:512},
+	{x:256+256,y:512},
+	{x:256+256,y:512+256}
+]
+
+button=[
+	{
+		name: "Back",
+		func: function(){
+			room_goto(rm_menu)
+		},
+		size:{x:128,y:64},
+		position:{x:128,y:64},
+		sizeMod:0
+	},
+]
