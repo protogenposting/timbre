@@ -229,8 +229,12 @@ function reset_buttons()
 					}
 					catch(e)
 					{
-					
+						show_message("the file(s) are corrupted or not valid jsons")
 					}
+				}
+				else
+				{
+					show_message("the file(s) you entered either don't exist or are corrupted")
 				}
 			}
 		},
