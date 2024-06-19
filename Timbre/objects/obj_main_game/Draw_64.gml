@@ -4,7 +4,7 @@
 if(global.showKeys)
 {
 	
-	var _x=room_width-256
+	var _x=room_width-256-128
 	var _y=room_height-128
 	var _alpha=0.75
 	var _pressed=turnKeyHold[noteDirections.up]

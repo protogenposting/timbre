@@ -183,7 +183,7 @@ var _nextNote=99999999999999
 var hitTree=-1
 
 //TREEES
-for(var o=0; o<array_length(notes);o++)
+for(var o=array_length(notes)-1; o>=0;o--)
 {
 	var _spr=sprites.log
 	
