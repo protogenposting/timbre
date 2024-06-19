@@ -97,7 +97,6 @@ axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 if(!finished&&!audio_is_playing(songID)&&(array_contains(attackKey,1)||array_contains(turnKey,1)))
 {
 	audio=audio_play_sound(songID,1000,false)
-	audio_sound_set_track_position(audio,offset/1000)
 }
 
 if(currentPoint>=array_length(points)-2&&(array_equals(notes,[])||currentBeat>array_last(notes).beat+3)&&!finished)

@@ -185,8 +185,6 @@ function get_turns(){
 	return array
 }
 
-offset=0
-
 notes=[]
 
 if(global.levelData!=-4)
@@ -218,7 +216,6 @@ if(global.levelData!=-4)
 	}
 	
 	bpm=global.levelData.bpm
-	offset=global.levelData.offset
 }
 
 if(bpm>180)

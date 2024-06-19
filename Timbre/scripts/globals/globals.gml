@@ -54,20 +54,17 @@ if(_file==false)
 {
 	global.levels=[
 	]
-	global.offset=0
 }
 else
 {
 	global.levels=_file.levels
 	try{
 		global.improvedControls=_file.controlType
-		global.offset=_file.offset
 		global.epilepsyMode=_file.epilepsy
 		global.moveSpeed=_file.moveSpeed
 	}
 	catch(e)
 	{
-		global.offset=0
 	}
 }
 
