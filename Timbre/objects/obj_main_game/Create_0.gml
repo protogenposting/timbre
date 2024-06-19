@@ -613,6 +613,11 @@ function get_inputs(){
 		attackKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.attacking.right)
 		attackKey[noteDirections.up]=keyboard_check_pressed(global.keyboardBinds.attacking.up)
 		attackKey[noteDirections.down]=keyboard_check_pressed(global.keyboardBinds.attacking.down)
+		
+		attackKeyHold[noteDirections.left]=keyboard_check(global.keyboardBinds.attacking.left)
+		attackKeyHold[noteDirections.right]=keyboard_check(global.keyboardBinds.attacking.right)
+		attackKeyHold[noteDirections.up]=keyboard_check(global.keyboardBinds.attacking.up)
+		attackKeyHold[noteDirections.down]=keyboard_check(global.keyboardBinds.attacking.down)
 	
 		turnKey[noteDirections.left]=keyboard_check_pressed(global.keyboardBinds.turning.left)
 		turnKey[noteDirections.right]=keyboard_check_pressed(global.keyboardBinds.turning.right)

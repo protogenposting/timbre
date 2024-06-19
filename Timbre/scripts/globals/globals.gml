@@ -18,6 +18,8 @@ global.sfxVolume=1
 
 global.musicVolume=1
 
+global.showKeys=false
+
 global.saveLocation=game_save_id
 
 global.wasSaved=false
@@ -69,6 +71,7 @@ else
 		global.epilepsyMode=_file.epilepsy
 		global.moveSpeed=_file.moveSpeed
 		global.audioOffset=_file.audioOffset
+		global.showKeys=_file.showKeys
 	}
 	catch(e)
 	{

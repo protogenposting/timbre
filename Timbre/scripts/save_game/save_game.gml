@@ -17,6 +17,7 @@ function save_game(){
 		controlType:global.improvedControls,
 		epilepsy:global.epilepsyMode,
 		moveSpeed: global.moveSpeed,
-		audioOffset:global.audioOffset
+		audioOffset:global.audioOffset,
+		showKeys: global.showKeys
 	},global.saveName)
 }

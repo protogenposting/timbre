@@ -67,6 +67,8 @@ array_push(settings,new setting(settingTypes.slider,"musicVolume","Music"))
 
 array_push(settings,new setting(settingTypes.toggle,"epilepsyMode","Epilepsy Mode"))
 
+array_push(settings,new setting(settingTypes.toggle,"showKeys","Show Inputs"))
+
 array_push(settings,new setting(settingTypes.toggle,"improvedControls",
 "Log Relative Directions",
 "Turning this on makes it so logs are hit the same direction they are pointed in instead of relative to the player's direction"))

@@ -1,6 +1,47 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(global.showKeys)
+{
+	
+	var _x=room_width-256
+	var _y=room_height-128
+	var _alpha=0.75
+	var _pressed=turnKeyHold[noteDirections.up]
+	draw_sprite_ext(spr_reverse_arrow,!_pressed*2,
+	_x,_y-64,1,1,90,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+	
+	_pressed=turnKeyHold[noteDirections.left]
+	draw_sprite_ext(spr_reverse_arrow,!_pressed*2,
+	_x-64,_y,1,1,180,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+	
+	_pressed=turnKeyHold[noteDirections.right]
+	draw_sprite_ext(spr_reverse_arrow,!_pressed*2,
+	_x+64,_y,1,1,0,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+	
+	_pressed=turnKeyHold[noteDirections.down]
+	draw_sprite_ext(spr_reverse_arrow,!_pressed*2,
+	_x,_y+64,1,1,270,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+	
+	_x+=256
+	
+	_pressed=attackKeyHold[noteDirections.up]
+	draw_sprite_ext(spr_log,!_pressed*2,
+	_x,_y-64,1,1,90,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+	
+	_pressed=attackKeyHold[noteDirections.left]
+	draw_sprite_ext(spr_log,!_pressed*2,
+	_x-64,_y,1,1,180,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+	
+	_pressed=attackKeyHold[noteDirections.right]
+	draw_sprite_ext(spr_log,!_pressed*2,
+	_x+64,_y,1,1,0,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+	
+	_pressed=attackKeyHold[noteDirections.down]
+	draw_sprite_ext(spr_log,!_pressed*2,
+	_x,_y+64,1,1,270,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
+}
+
 if(global.classicView)
 {
 	draw_rectangle_color(0,0,camera_get_view_width(view_camera[0]),camera_get_view_height(view_camera[0]),
@@ -213,7 +254,10 @@ else
 		sprite_index=spr_tv_idle
 	}
 	
-	draw_sprite(sprite_index,image_index,room_width-128,room_height-128)
+	if(!global.showKeys)
+	{
+		draw_sprite(sprite_index,image_index,room_width-128,room_height-128)
+	}
 }
 
 if(global.classicView)
