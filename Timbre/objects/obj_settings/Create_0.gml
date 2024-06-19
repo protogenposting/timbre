@@ -61,12 +61,14 @@ function setting(_type,_name,_displayName,_toolTip="") constructor{
 
 settings=[]
 
+array_push(settings,new setting(settingTypes.slider,"sfxVolume","SFX"))
+
+array_push(settings,new setting(settingTypes.slider,"musicVolume","Music"))
+
 array_push(settings,new setting(settingTypes.toggle,"epilepsyMode","Epilepsy Mode"))
 
 array_push(settings,new setting(settingTypes.toggle,"improvedControls",
 "Log Relative Directions",
-"Turning this off makes it so logs are hit the same direction they are pointed in instead of relative to the player's direction"))
-
-array_push(settings,new setting(settingTypes.slider,"audioOffset","Audio Offset"))
+"Turning this on makes it so logs are hit the same direction they are pointed in instead of relative to the player's direction"))
 
 array_push(settings,new setting(settingTypes.slider,"audioOffset","Audio Offset"))
