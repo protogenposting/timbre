@@ -14,7 +14,27 @@ draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,1,currentDirection+90
 draw_sprite_ext(spr_axes,image_index,_currentX,_currentY,1,-1,currentDirection-90,c_white,1)
 draw_sprite_ext(spr_player,image_index,_currentX,_currentY,1,1,currentDirection,c_white,1)
 
+var _x=128
+var _y=128
 for(var i=0;i<array_length(settings);i++)
 {
+	var _buttonSizeX=128*settings[i].size
+	var _buttonSizeY=64*settings[i].size
+	var _selected=point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),
+	_x-_buttonSizeX/2,_y-_buttonSizeY/2,_x+_buttonSizeX/2,_y+_buttonSizeY/2)
 	
+	if(_selected)
+	{
+		settings[i].size-=(settings[i].size-1.2)/5
+		if(settings[i].type==settingTypes.toggle)
+		{
+			
+		}
+	}
+	
+	draw_rectangle(_x-_buttonSizeX/2,_y-_buttonSizeY/2,_x+_buttonSizeX/2,_y+_buttonSizeY/2,
+	false)
+	draw_text(_x,_y,settings[i].displayName)
+	settings[i].update_size()
+	_y+=_buttonSizeY+5
 }

@@ -14,6 +14,10 @@ global.keyboardBinds={
 		down: ord("K"),
 	},
 }
+global.sfxVolume=1
+
+global.musicVolume=1
+
 global.saveLocation=game_save_id
 
 global.wasSaved=false

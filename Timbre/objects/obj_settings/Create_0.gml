@@ -55,7 +55,7 @@ function setting(_type,_name,_displayName,_toolTip="") constructor{
 	minimumValue=-100
 	maximumValue=100
 	function update_size(){
-		size-=(size-1)/10
+		size-=(size-1)/20
 	}
 }
 
@@ -66,5 +66,7 @@ array_push(settings,new setting(settingTypes.toggle,"epilepsyMode","Epilepsy Mod
 array_push(settings,new setting(settingTypes.toggle,"improvedControls",
 "Log Relative Directions",
 "Turning this off makes it so logs are hit the same direction they are pointed in instead of relative to the player's direction"))
+
+array_push(settings,new setting(settingTypes.slider,"audioOffset","Audio Offset"))
 
 array_push(settings,new setting(settingTypes.slider,"audioOffset","Audio Offset"))

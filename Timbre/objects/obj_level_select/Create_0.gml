@@ -288,6 +288,10 @@ function reset_buttons()
 			global.levels[i].cover=spr_no_cover
 		}
 	}
+	if(array_length(global.levels)>0)
+	{
+		initialize_level(wheelProgress)
+	}
 	/*for(var i=0;i<array_length(global.levels);i++)
 	{
 		var _file=load_file(global.levels[i].path)
