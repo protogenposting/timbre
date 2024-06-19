@@ -236,6 +236,7 @@
     {"$GMIncludedFile":"","%Name":"spiderStart.png","CopyToMask":-1,"filePath":"datafiles/Triggered","name":"spiderStart.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"cover.png","CopyToMask":-1,"filePath":"datafiles/Tutorial","name":"cover.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Tutorial","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"Tutorial.ogg","CopyToMask":-1,"filePath":"datafiles/Tutorial","name":"Tutorial.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"cover.png","CopyToMask":-1,"filePath":"datafiles/VE","name":"cover.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/VE","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Value_Exception.ogg","CopyToMask":-1,"filePath":"datafiles/VE","name":"Value_Exception.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
