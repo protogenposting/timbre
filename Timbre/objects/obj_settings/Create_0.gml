@@ -39,3 +39,32 @@ button=[
 		sizeMod:0
 	},
 ]
+
+enum settingTypes{
+	toggle,
+	slider,
+	realValue
+}
+
+function setting(_type,_name,_displayName,_toolTip="") constructor{
+	type=_type
+	name=_name
+	displayName=_displayName
+	toolTip=_toolTip
+	size=1
+	minimumValue=-100
+	maximumValue=100
+	function update_size(){
+		size-=(size-1)/10
+	}
+}
+
+settings=[]
+
+array_push(settings,new setting(settingTypes.toggle,"epilepsyMode","Epilepsy Mode"))
+
+array_push(settings,new setting(settingTypes.toggle,"improvedControls",
+"Log Relative Directions",
+"Turning this off makes it so logs are hit the same direction they are pointed in instead of relative to the player's direction"))
+
+array_push(settings,new setting(settingTypes.slider,"epilepsyMode","Epilepsy Mode"))
