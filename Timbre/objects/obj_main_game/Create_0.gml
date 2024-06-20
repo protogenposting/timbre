@@ -288,6 +288,10 @@ function create_points(){
 		if(i>1&&(turns[i].beat-turns[i-1].beat)==0)
 		{
 			currentDirection=(turns[i].direction*90+turns[i-1].direction*90)/2
+			if(abs(turns[i].direction*90-turns[i-1].direction*90)>180)
+			{
+				currentDirection+=180
+			}
 			show_debug_message("diagonal at "+string(i))
 			show_debug_message(currentDirection)
 			//_color=c_purple

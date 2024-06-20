@@ -383,6 +383,7 @@
     {"id":{"name":"spr_tv_really_bad","path":"sprites/spr_tv_really_bad/spr_tv_really_bad.yy",},},
     {"id":{"name":"spr_tv_really_good","path":"sprites/spr_tv_really_good/spr_tv_really_good.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+    {"id":{"name":"spr_why","path":"sprites/spr_why/spr_why.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

@@ -68,6 +68,10 @@ function generate_preview(_notes){
 			if(i>0&&(_notes[i-1].beat-_notes[i].beat)==0)
 			{
 				_direction=(_notes[i-1].direction+_notes[i].direction)/2
+				if(abs(_notes[i].direction*90-_notes[i-1].direction*90)>180)
+				{
+					_direction+=180
+				}
 				_direction*=90
 			}
 			_x+=lengthdir_x(gridSize*_distanceToNext,_direction)
