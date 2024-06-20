@@ -59,6 +59,11 @@ sortMode=0
 
 songMilliseconds=0
 
+if(global.selectedLevel<0)
+{
+	wheelProgress=0
+}
+
 wheelProgress=global.selectedLevel
 
 previousWheelDirection=0
