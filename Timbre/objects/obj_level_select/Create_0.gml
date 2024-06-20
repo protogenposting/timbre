@@ -91,6 +91,10 @@ sortNames[sortTypes.difficulty]="Difficulty"
 sortNames[sortTypes.bpm]="Bpm"
 
 function initialize_level(levelID){
+	if(levelID<0)
+	{
+		levelID=0
+	}
 	var _path=global.levels[levelID].path
 	var _file=load_file(_path)
 	var hasNormal=true
