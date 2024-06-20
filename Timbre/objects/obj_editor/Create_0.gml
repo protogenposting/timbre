@@ -70,7 +70,7 @@ function generate_preview(_notes){
 				_direction=(_notes[i-1].direction+_notes[i].direction)/2
 				if(abs(_notes[i].direction*90-_notes[i-1].direction*90)>180)
 				{
-					_direction+=180
+					_direction+=2
 				}
 				_direction*=90
 			}
