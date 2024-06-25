@@ -49,6 +49,8 @@
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/chicken crispie","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"danger.ogg","CopyToMask":-1,"filePath":"datafiles/Danger","name":"danger.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Danger","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"skin.json","CopyToMask":-1,"filePath":"datafiles/Default Skin","name":"skin.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"spr_tv_bad.gif","CopyToMask":-1,"filePath":"datafiles/Default Skin","name":"spr_tv_bad.gif","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"cover.png","CopyToMask":-1,"filePath":"datafiles/Fardstep 1","name":"cover.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Fardstep 1","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"protogen-posting-fardstep.ogg","CopyToMask":-1,"filePath":"datafiles/Fardstep 1","name":"protogen-posting-fardstep.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -245,7 +247,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.600.0.579",
+    "IDEVersion":"2024.600.0.583",
   },
   "name":"Timbre",
   "resources":[
@@ -285,6 +287,7 @@
     {"id":{"name":"draw_buttons","path":"scripts/draw_buttons/draw_buttons.yy",},},
     {"id":{"name":"get_chart_style","path":"scripts/get_chart_style/get_chart_style.yy",},},
     {"id":{"name":"get_key_name","path":"scripts/get_key_name/get_key_name.yy",},},
+    {"id":{"name":"gif_sprite","path":"scripts/gif_sprite/gif_sprite.yy",},},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},},
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
     {"id":{"name":"load_quaver_file","path":"scripts/load_quaver_file/load_quaver_file.yy",},},
