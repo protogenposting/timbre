@@ -18,6 +18,7 @@ function save_game(){
 		epilepsy:global.epilepsyMode,
 		moveSpeed: global.moveSpeed,
 		audioOffset:global.audioOffset,
-		showKeys: global.showKeys
+		showKeys: global.showKeys,
+		keybinds: global.keyboardBinds
 	},global.saveName)
 }

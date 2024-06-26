@@ -2,12 +2,14 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 global.keyboardBinds={
 	turning:{
+		sprite: spr_reverse_arrow,
 		left: ord("A"),
 		right: ord("D"),
 		up: ord("W"),
 		down: ord("S"),
 	},
 	attacking:{
+		sprite: spr_log,
 		left: ord("J"),
 		right: ord("L"),
 		up: ord("I"),
@@ -72,6 +74,7 @@ else
 		global.moveSpeed=_file.moveSpeed
 		global.audioOffset=_file.audioOffset
 		global.showKeys=_file.showKeys
+		global.keyboardBinds=_file.keybinds
 	}
 	catch(e)
 	{

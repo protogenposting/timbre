@@ -38,12 +38,21 @@ button=[
 		position:{x:128,y:64},
 		sizeMod:0
 	},
+	{
+		name: "Keybinds",
+		func: function(){
+			room_goto(rm_keybinds)
+		},
+		size:{x:128,y:64},
+		position:{x:128,y:64+70},
+		sizeMod:0
+	},
 ]
 
 enum settingTypes{
 	toggle,
 	slider,
-	realValue
+	realValue,
 }
 
 function setting(_type,_name,_displayName,_toolTip="") constructor{
