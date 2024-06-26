@@ -671,14 +671,20 @@ var _spritesToGet=struct_get_names(sprites)
 
 for(var i=0;i<array_length(_spritesToGet);i++)
 {
-	var _file=_dir+_spritesToGet[i]+".png"
+	var _file=_dir+_spritesToGet[i]+".gif"
 	if(file_exists(_file))
 	{
 		var _oldSprite=variable_struct_get(sprites,_spritesToGet[i])
-		variable_struct_set(sprites,_spritesToGet[i],sprite_add(_file,sprite_get_number(_oldSprite),
-		false,false,
-		sprite_get_xoffset(_oldSprite),
-		sprite_get_yoffset(_oldSprite)))
+		var _frameDelays=[]
+		var _frameSprites=[]
+		var _sprite = sprite_add_gif(_file,sprite_get_xoffset(_oldSprite),sprite_get_yoffset(_oldSprite),_frameDelays)
+
+		for(var o=1;o<array_length(_frameSprites);o++)
+		{
+			sprite_merge(_sprite,_frameSprites[o])
+		}
+		
+		variable_struct_set(sprites,_spritesToGet[i],_sprite)
 	}
 }
 
