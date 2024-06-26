@@ -46,7 +46,7 @@ for(var i=0;i<array_length(points);i++)
 {
 	points[i].frame=round(barPercentage*4)
 }
-layer_background_index(background,round(barPercentage))
+layer_background_index(background,barPercentage*sprite_get_number(sprites.grass))
 
 if(frac(barPercentage)<frac(barPercentageLast))
 {
