@@ -58,5 +58,6 @@ if(treeLine.x>512)
 
 if(gooberLocation.y>room_height-256)
 {
-	gooberLocation.y-=(gooberLocation.y-(room_height-256))/60
+	gooberLocation.x-=(gooberLocation.x-(room_width-128))/60
+	gooberLocation.y-=(gooberLocation.y-(room_height-128))/60
 }
