@@ -115,6 +115,18 @@ global.difficultyMods=[
 				draw_rectangle(1366/2,0,1366,768/2,false)
 			}
 		}
+	),
+	new DifficultyMod(
+		"Hard Shrooms",
+		"Lowered Leniency",
+		spr_mod_fungal,
+		function(){
+			with(obj_main_game)
+			{
+				msWindow=90
+				reset_timings()
+			}
+		}
 	)
 ]
 

@@ -461,16 +461,7 @@ catch(e)
 	show_message(e)
 }
 
-msWindow=250
-
-if(bpm>120)
-{
-	msWindow/=(bpm/120)
-	if(msWindow<50)
-	{
-		msWindow=50
-	}
-}
+msWindow=210
 
 var msWindowTemp=msWindow
 
@@ -537,12 +528,17 @@ function get_accuracy(){
 
 showingFinalMessage=false
 
-timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1},
-{distance:msWindow/7,name:"Perfect!",result:1},
-{distance:msWindow/5,name:"Good",result:0.8},
-{distance:msWindow/3,name:"Ok",result:0.75},
-{distance:msWindow,name:"Dull...",result:0.5},
-{distance:msWindow*20000,name:"WORST",result:0.5}]
+function reset_timings()
+{
+	timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1},
+	{distance:msWindow/7,name:"Perfect!",result:1},
+	{distance:msWindow/5,name:"Good",result:0.8},
+	{distance:msWindow/3,name:"Ok",result:0.75},
+	{distance:msWindow,name:"Dull...",result:0.5},
+	{distance:msWindow*20000,name:"WORST",result:0.5}]
+}
+
+reset_timings()
 
 trueAccuracyList=[]
 
