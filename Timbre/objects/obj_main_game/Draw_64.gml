@@ -98,7 +98,7 @@ if(global.gamemode==1)
 		_x+=_noteDistance
 	}
 	
-	for(var i=0;i<array_length(points);i++)
+	for(var i=0;i<array_length(points)-1;i++)
 	{
 		var _timing=points[i].timeMS-songMilliseconds
 		var _scrollPosition=_y-(_timing)*global.moveSpeed
