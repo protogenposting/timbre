@@ -3,7 +3,13 @@
 
 paused=false
 
-axeRotations=[0,0]
+axeRotations=[0,0,0,0]
+
+if(global.gamemode==1)
+{
+	axeSpinSpeeds=[0,0,0,0]
+	
+}
 
 early=0
 

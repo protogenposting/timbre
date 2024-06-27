@@ -37,6 +37,13 @@ if(currentStruct!=-4)
 	270,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
 	draw_text(_x,_y+64,get_key_name(currentStruct.down))
 	
+	if(keyboard_check_pressed(vk_escape))
+	{
+		currentStruct=-4
+		currentDirection=0
+		exit;
+	}
+	
 	if(keyboard_check_pressed(vk_anykey))
 	{
 		variable_struct_set(currentStruct,directionOrder[currentDirection],keyboard_key)
@@ -46,12 +53,6 @@ if(currentStruct!=-4)
 			currentStruct=-4
 			currentDirection=0
 		}
-	}
-	
-	if(keyboard_check_pressed(vk_escape))
-	{
-		currentStruct=-4
-		currentDirection=0
 	}
 }
 else

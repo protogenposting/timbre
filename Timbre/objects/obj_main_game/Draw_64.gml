@@ -47,6 +47,33 @@ if(global.gamemode==1)
 	draw_rectangle_color(0,0,camera_get_view_width(view_camera[0]),camera_get_view_height(view_camera[0]),
 	c_black,c_black,c_black,c_black,
 	false)
+	
+	var _x=room_width/2 - 1.5*64
+	var _y=128
+	for(var i=0;i<3;i++)
+	{
+		if(attackKey[i])
+		{
+			axeRotations[i]=0
+			axeSpinSpeeds[i]=15
+		}
+		axeRotations[i]+=axeSpinSpeeds[i]
+		
+		axeSpinSpeeds[i]-=sign(axeSpinSpeeds[i])
+		
+		draw_sprite_ext(spr_axes,0,_x,_y-64,1,1,axeRotations[i],c_white,1)
+		
+		_x+=64
+	}
+	
+	var _scrollSpeed=global.moveSpeed
+	
+	for(var i=0;i<array_length(notes);i++)
+	{
+		var _timing=notes[i].timeMS-songMilliseconds
+		draw_sprite_ext(spr_log,0,_x-32-64*notes[i].intendedDirection,_y+(_timing)*global.moveSpeed,1,1,notes[i].intendedDirection*90,notes[i].color,1)
+	}
+
 }
 draw_set_halign(fa_center)
 draw_set_font(fn_font_big)

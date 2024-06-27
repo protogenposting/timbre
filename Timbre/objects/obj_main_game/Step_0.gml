@@ -79,8 +79,11 @@ if(sprites.grass!=spr_grass)
 
 currentFracBeat=currentBeat+barPercentage
 
-axeRotations[0]-=axeRotations[0]/(10*(fps/60))
-axeRotations[1]-=axeRotations[1]/(10*(fps/60))
+if(global.gamemode==0)
+{
+	axeRotations[0]-=axeRotations[0]/(10*(fps/60))
+	axeRotations[1]-=axeRotations[1]/(10*(fps/60))
+}
 
 #region controls
 
@@ -89,7 +92,10 @@ axeRotations[1]-=axeRotations[1]/(10*(fps/60))
 	{
 		get_inputs()
 		
-		rotate_axes(attackKey)
+		if(global.gamemode==0)
+		{
+			rotate_axes(attackKey)
+		}
 	}
 
 #endregion

@@ -105,6 +105,10 @@ var gotLastNote=false
 //draw notes
 for(var i=array_length(points)-1;i>0;i--)
 {
+	if(global.gamemode==1)
+	{
+		break;
+	}
 	if(points[i].timeMS<=songMilliseconds&&!gotLastNote)
 	{
 		currentPoint=i
@@ -180,7 +184,7 @@ for(var i=array_length(points)-1;i>0;i--)
 }
 
 var _nextNote=99999999999999
-var hitTree=-1
+var hitTrees=[]
 
 //TREEES
 for(var o=0; o<array_length(notes);o++)
@@ -215,12 +219,37 @@ for(var o=0; o<array_length(notes);o++)
 	
 	if(inCamera)
 	{
-		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
+		if(global.gamemode==1)
+		{
+			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
+			if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
+			{
+				var _alpha=0.06
+				if(_nextNote==o)
+				{
+					_alpha=0.6
+				}
+				if(!global.orderedAlpha)
+				{
+					_alpha=0.5
+				}
+				draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,
+				(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
+				(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,_alpha)
+			}
+		}
+	}
+	if(array_contains(hitTrees,notes[o].intendedDirection))
+	{
+		continue;
 	}
 	if(abs(timing)<=msWindow&&attackKey[notes[o].intendedDirection]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=botplayLeniency&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
-		attackKey[notes[o].intendedDirection]=false
+		if(global.gamemode==1)
+		{
+			attackKey[notes[o].intendedDirection]=false
+		}
 		notes[o].wasHit=true
 		var timingID=get_timing_id(timing)
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
@@ -247,7 +276,7 @@ for(var o=0; o<array_length(notes);o++)
 		}
 		hitTime=1.33
 		hitMessage=get_timing(timing)
-		hitTree=notes[o].intendedDirection
+		array_push(hitTrees,notes[o].intendedDirection)
 		
 		show_debug_message(points[currentPoint].direction+1)
 		show_debug_message([notes[o].direction,notes[o].intendedDirection])
@@ -274,20 +303,9 @@ for(var o=0; o<array_length(notes);o++)
 	{
 		miss(notes[o])
 	}
-	if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
+	if(global.gamemode==1)
 	{
-		var _alpha=0.06
-		if(_nextNote==o)
-		{
-			_alpha=0.6
-		}
-		if(!global.orderedAlpha)
-		{
-			_alpha=0.5
-		}
-		draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,
-		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
-		(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,_alpha)
+		continue;
 	}
 }
 
