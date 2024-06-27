@@ -15,19 +15,19 @@ if(currentStruct!=-4)
 	var _alpha=1
 	var _pressed=currentDirection==1
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,
-	_x-128,_y,1+_pressed,1+_pressed,
+	_x-64,_y,1+_pressed,1+_pressed,
 	90,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
 	draw_text(_x-64,_y,get_key_name(currentStruct.up))
 	
 	_pressed=currentDirection==2
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,
-	_x-64,_y,1+_pressed,1+_pressed,
+	_x+64,_y,1+_pressed,1+_pressed,
 	180,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
 	draw_text(_x+64,_y,get_key_name(currentStruct.left))
 	
 	_pressed=currentDirection==0
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,
-	_x+64,_y,1+_pressed,1+_pressed,
+	_x-128,_y,1+_pressed,1+_pressed,
 	0,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
 	draw_text(_x-128,_y,get_key_name(currentStruct.right))
 	
