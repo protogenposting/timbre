@@ -16,6 +16,27 @@ playerProgress=0
 
 passedHalf=false
 
+function find_keybind(_key){
+	var _sections=struct_get_names(global.keyboardBinds)
+	for(var i=0;i<array_length(_sections);i++)
+	{
+		var _struct=variable_struct_get(global.keyboardBinds,_sections[i])
+		var _directions=struct_get_names(_struct)
+		for(var o=0;o<array_length(_directions);o++)
+		{
+			var _value=variable_struct_get(_struct,_directions[o])
+			if(!_directions[o]!="sprite")
+			{
+				if(_value==_key)
+				{
+					return true
+				}
+			}
+		}
+	}
+	return false
+}
+
 button=[
 	{
 		name: "Back",

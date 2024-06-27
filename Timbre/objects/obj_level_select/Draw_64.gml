@@ -156,8 +156,13 @@ repeat(_displayedLevels)
 				_xMod+=_difficultyDistance
 				o++
 			}
+			_yMod=room_height+256-256*_readyProgress
+			draw_text(_x,_yMod-64,"Change gamemode with arrow keys")
 			
-			
+		}
+		else
+		{
+			draw_text(_x,_y+256,"Press Space or Enter to select")
 		}
 		if(mouse_check_button_pressed(mb_right))
 		{
@@ -228,7 +233,7 @@ repeat(_displayedLevels)
 			}
 		}
 		
-		if(global.pressingMouseLeft||keyboard_check_pressed(vk_space)||keyboard_check_pressed(vk_enter))
+		if(keyboard_check_pressed(vk_space)||keyboard_check_pressed(vk_enter))
 		{
 			readyUp=!readyUp
 			audio_play_sound(snd_beat,1000,false)

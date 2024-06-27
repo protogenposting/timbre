@@ -46,6 +46,10 @@ if(currentStruct!=-4)
 	
 	if(keyboard_check_pressed(vk_anykey))
 	{
+		if(find_keybind(keyboard_key))
+		{
+			exit;
+		}
 		variable_struct_set(currentStruct,directionOrder[currentDirection],keyboard_key)
 		currentDirection++
 		if(currentDirection>=array_length(directionOrder))
