@@ -100,13 +100,21 @@ if(global.gamemode==1)
 	
 	for(var i=0;i<array_length(points)-1;i++)
 	{
+		var _sprite=sprites.arrow
 		var _timing=points[i].timeMS-songMilliseconds
 		var _scrollPosition=_y-(_timing)*global.moveSpeed
+		var _xPos=_x-_noteDistance*(3-points[i].direction)-96,_scrollPosition
+		if(points[i].type==noteTypes.loop)
+		{
+			_sprite=sprites.spiderStart
+			var _beatDistance=abs(points[i].beat-points[i+1].beat)
+			draw_sprite_ext(sprites.web,0,_xPos,_scrollPosition,_beatDistance,1,270,c_white,1)
+		}
 		if(_scrollPosition<_camHeight/2||points[i].wasHit)
 		{
 			continue;
 		}
-		draw_sprite_ext(sprites.arrow,0,_x-_noteDistance*(3-points[i].direction)-96,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
+		draw_sprite_ext(_sprite,0,_xPos,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
 	}
 	
 	for(var i=0;i<array_length(particles);i++)
