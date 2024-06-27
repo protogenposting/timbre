@@ -395,6 +395,12 @@ function create_points(){
 					notes[o].temporaryType=noteTypes.movingHit
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
+					if(global.gamemode==1)
+					{
+						_direction=loop_rotation(_direction)
+						o--
+						continue;
+					}
 				}
 				if(dir==loop_rotation(_direction))
 				{

@@ -19,7 +19,9 @@ cursor_sprite=spr_mouse
 
 //window_set_fullscreen(true)
 
+logoPositionY=-256
 
+logoDropTime=5000
 
 logoRotation=0
 

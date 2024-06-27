@@ -112,7 +112,7 @@
     {"name":"spr_hard","order":2,"path":"sprites/spr_hard/spr_hard.yy",},
     {"name":"spr_insane","order":3,"path":"sprites/spr_insane/spr_insane.yy",},
     {"name":"spr_log","order":15,"path":"sprites/spr_log/spr_log.yy",},
-    {"name":"spr_logo","order":24,"path":"sprites/spr_logo/spr_logo.yy",},
+    {"name":"spr_logo","order":35,"path":"sprites/spr_logo/spr_logo.yy",},
     {"name":"spr_loop","order":16,"path":"sprites/spr_loop/spr_loop.yy",},
     {"name":"spr_mouse","order":28,"path":"sprites/spr_mouse/spr_mouse.yy",},
     {"name":"spr_no_cover","order":32,"path":"sprites/spr_no_cover/spr_no_cover.yy",},

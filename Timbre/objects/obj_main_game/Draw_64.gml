@@ -42,18 +42,18 @@ if(global.showKeys)
 	_x,_y+64,1,1,270,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
 }
 
-if(global.classicView)
+if(global.gamemode==1)
 {
 	draw_rectangle_color(0,0,camera_get_view_width(view_camera[0]),camera_get_view_height(view_camera[0]),
 	c_black,c_black,c_black,c_black,
 	false)
 }
+draw_set_halign(fa_center)
+draw_set_font(fn_font_big)
 if(paused)
 {
 	draw_text(1366/2,room_height/2,"press space to return to menu")
 }
-draw_set_halign(fa_center)
-draw_set_font(fn_font_big)
 draw_text_transformed(1366/2,96,hitMessage,hitTime,hitTime,0)
 hitTime-=(hitTime-1)/(10*(fps/60))
 
@@ -257,55 +257,6 @@ else
 	if(!global.showKeys)
 	{
 		draw_sprite(sprite_index,image_index,room_width-128,room_height-128)
-	}
-}
-
-if(global.classicView)
-{
-	var rotationOrder=[]
-	
-	rotationOrder[noteDirections.left]=0
-	rotationOrder[noteDirections.right]=3
-	rotationOrder[noteDirections.up]=1
-	rotationOrder[noteDirections.down]=2
-	
-	var maxX=0
-	var _hitPoint=room_height-128
-	var _speed=200000/bpm
-	var _startPoint=room_width-256-128
-	var _rotation=0
-	var _x=_startPoint
-	var _noteDistance=74
-	repeat(4)
-	{
-		draw_sprite_ext(spr_log,0,_startPoint+rotationOrder[_rotation]*_noteDistance,_hitPoint,1,1,_rotation*90,c_white,0.3)
-		_x+=_noteDistance
-		_rotation++
-	}
-	for(var i=0;i<array_length(notes);i++)
-	{
-		var _distance=(notes[i].timeMS-songMilliseconds)/_speed
-		_x=_startPoint+rotationOrder[notes[i].direction]*_noteDistance
-		maxX=max(_x,maxX)
-		var _y=_hitPoint*(1-_distance)
-		draw_sprite_ext(spr_log,0,_x,_y,1,1,notes[i].direction*90,c_white,1)
-	}
-	_rotation=0
-	_startPoint-=_noteDistance*8
-	_x=_startPoint
-	repeat(4)
-	{
-		draw_sprite_ext(spr_reverse_arrow,0,_startPoint+rotationOrder[_rotation]*_noteDistance,_hitPoint,1,1,_rotation*90,c_white,0.3)
-		_x+=_noteDistance
-		_rotation++
-	}
-	for(var i=0;i<array_length(points);i++)
-	{
-		var _distance=(points[i].timeMS-songMilliseconds)/_speed
-		_x=_startPoint+rotationOrder[points[i].direction]*_noteDistance
-		maxX=max(_x,maxX)
-		var _y=_hitPoint*(1-_distance)
-		draw_sprite_ext(spr_reverse_arrow,0,_x,_y,1,1,points[i].direction*90,c_white,1)
 	}
 }
 

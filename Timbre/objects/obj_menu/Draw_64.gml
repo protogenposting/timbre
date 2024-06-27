@@ -17,7 +17,12 @@ font_enable_effects(fn_font_big, true, {
 
 if(room==rm_menu)
 {
-	draw_sprite_ext(spr_logo,0,1366/2,128,0.25,0.25,logoRotation,c_white,1)
+	var _x=room_width/2 - (sprite_get_number(spr_logo)/2)*64
+	for(var i=0;i<sprite_get_number(spr_logo);i++)
+	{
+		draw_sprite(spr_logo,i,_x,logoPositionY+sin((current_time/1000)+(i/4))*64)
+		_x+=64
+	}
 }
 
 
