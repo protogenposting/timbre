@@ -54,7 +54,7 @@ global.editing=false
 
 global.improvedControls=false
 
-global.gamemode=1
+global.gamemode=0
 
 global.audioOffset=0
 
