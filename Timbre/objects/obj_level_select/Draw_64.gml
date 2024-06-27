@@ -27,7 +27,7 @@ var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
 
 var _levels=global.levels
 
-if(_hAxis!=0)
+if(_hAxis!=0&&!readyUp)
 {
 	previousWheelDirection=_hAxis
 	wheelProgress+=_hAxis
@@ -44,6 +44,10 @@ if(_hAxis!=0)
 	initialize_level(wheelProgress)
 	
 	readyUp=false
+}
+if(_hAxis!=0&&readyUp)
+{
+	
 }
 
 wheelRotationProgress+=0.1
@@ -143,7 +147,7 @@ repeat(_displayedLevels)
 				if(_selected)
 				{
 					draw_text(_x,_yMod+128,_difficulty.name)
-					if(global.pressingMouseLeft)
+					if(global.pressingMouseLeft||keyboard_check_pressed(vk_space)||keyboard_check_pressed(vk_enter))
 					{
 						global.currentDifficulty=_difficulty.equivelant
 						start_level()
@@ -171,6 +175,8 @@ repeat(_displayedLevels)
 	}
 	
 	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,_size,_size,_rotation,c_white,1)
+	
+	draw_sprite_ext(spr_cover_border,0,_x+ _progress * _coverDistance,_y,_size,_size,_rotation,c_white,1)
 	
 	var _oldY=_y
 	
@@ -220,7 +226,7 @@ repeat(_displayedLevels)
 			}
 		}
 		
-		if(global.pressingMouseLeft)
+		if(global.pressingMouseLeft||keyboard_check_pressed(vk_space)||keyboard_check_pressed(vk_enter))
 		{
 			readyUp=!readyUp
 			audio_play_sound(snd_beat,1000,false)

@@ -81,6 +81,31 @@ else
 	}
 }
 
+function GameMode(_name,_sprite) constructor{
+	name=_name
+	sprite=_sprite
+}
+
+function DifficultyMod(_name,_description,_sprite,_effect) constructor{
+	name=_name
+	sprite=_sprite
+	effect=_effect
+	description=_description
+	enabled=false
+}
+
+global.gamemodes=[
+	new GameMode("Timbre",spr_mode_normal),
+	new GameMode("TimbreMania",spr_mode_normal)
+]
+
+global.difficultyMods=[
+	new DifficultyMod(
+		"Fungal Infection",
+		"Blocks most of the screen",
+		
+	)
+]
 
 global.levels=sort_songlist(global.levels)
 
