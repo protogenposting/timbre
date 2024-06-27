@@ -176,7 +176,7 @@ repeat(_displayedLevels)
 			//mod stuff
 			var _modGridWidth=2
 			_xMod=96
-			_yMod=room_height+256-(256+128)*_readyProgress
+			_yMod=room_height+256-(512)*_readyProgress
 			
 			for(var z=0;z<array_length(global.difficultyMods);z++)
 			{
@@ -200,7 +200,7 @@ repeat(_displayedLevels)
 				}
 				
 				_xMod+=128
-				if(frac(z/_modGridWidth)==0)
+				if(z!=0&&frac(z/_modGridWidth)==0)
 				{
 					_xMod=96
 					_yMod+=128
