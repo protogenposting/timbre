@@ -5,18 +5,6 @@ draw_set_halign(fa_center)
 var _x=room_width/2
 var _y=256
 
-var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
-
-global.gamemode+=_hAxis
-if(global.gamemode>=array_length(global.gamemodes))
-{
-	global.gamemode=0
-}
-if(global.gamemode<0)
-{
-	global.gamemode=array_length(global.gamemodes)-1
-}
-
 draw_text(_x,_y-128,"Use Left/Right arrow keys to change the gamemode")
 
 draw_sprite(spr_mode_background,0,_x,_y)
@@ -82,5 +70,16 @@ if(currentStruct!=-4)
 }
 else
 {
+	var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
+
+	global.gamemode+=_hAxis
+	if(global.gamemode>=array_length(global.gamemodes))
+	{
+		global.gamemode=0
+	}
+	if(global.gamemode<0)
+	{
+		global.gamemode=array_length(global.gamemodes)-1
+	}
 	draw_buttons()
 }
