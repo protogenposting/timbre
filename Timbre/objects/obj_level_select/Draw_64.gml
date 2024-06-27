@@ -156,6 +156,8 @@ repeat(_displayedLevels)
 				_xMod+=_difficultyDistance
 				o++
 			}
+			
+			
 		}
 		if(mouse_check_button_pressed(mb_right))
 		{

@@ -219,7 +219,7 @@ for(var o=0; o<array_length(notes);o++)
 	
 	if(inCamera)
 	{
-		if(global.gamemode==1)
+		if(global.gamemode!=1)
 		{
 			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
 			if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)

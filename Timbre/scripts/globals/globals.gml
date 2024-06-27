@@ -103,7 +103,10 @@ global.difficultyMods=[
 	new DifficultyMod(
 		"Fungal Infection",
 		"Blocks most of the screen",
-		
+		spr_fungal_infection,
+		function(){
+			draw_sprite(spr_fungal_infection,0,0,0)
+		}
 	)
 ]
 
