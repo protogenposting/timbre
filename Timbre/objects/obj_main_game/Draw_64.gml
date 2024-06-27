@@ -57,7 +57,7 @@ if(global.gamemode==1)
 	
 	var _noteDistance=96
 	
-	var _x=room_width/2 - 1.5*_noteDistance
+	var _x=_camWidth/2 - 1.5*_noteDistance
 	var _y=128
 	for(var i=2;i>=0;i--)
 	{
@@ -88,8 +88,8 @@ if(global.gamemode==1)
 		draw_sprite_ext(sprites.log,0,_x-32-_noteDistance*notes[i].intendedDirection,_scrollPosition,1,1,notes[i].intendedDirection*90,notes[i].color,1)
 	}
 	
-	_x=room_width/2 - 2*_noteDistance
-	_y=room_height-128
+	_x=_camWidth/2 - 2*_noteDistance +64
+	_y=room_height-96
 	
 	for(var i=0;i<4;i++)
 	{		
@@ -106,10 +106,10 @@ if(global.gamemode==1)
 		{
 			continue;
 		}
-		draw_sprite_ext(sprites.arrow,0,_x-32-64*points[i].direction,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
+		draw_sprite_ext(sprites.arrow,0,_x-_noteDistance*(3-points[i].direction),_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
 	}
 	
-	draw_sprite_ext(sprites.grass,layer_background_get_index(background),_camWidth/2,_camHeight/2,_camWidth/sprite_get_width(sprites.grass),64/sprite_get_height(sprites.grass),0,c_white,1)
+	draw_sprite_ext(sprites.grass,layer_background_get_index(background),_camWidth/2,_camHeight/2,_camWidth/sprite_get_width(sprites.grass),96/sprite_get_height(sprites.grass),0,c_white,1)
 }
 draw_set_halign(fa_center)
 draw_set_font(fn_font_big)
