@@ -194,13 +194,17 @@ repeat(_displayedLevels)
 				draw_sprite_ext(spr_mode_background,_selected,_xMod,_yMod,1,1,0,_color,1)
 				draw_sprite(global.difficultyMods[z].sprite,0,_xMod,_yMod)
 				
-				if(_selected&&global.pressingMouseLeft)
+				if(_selected)
 				{
-					global.difficultyMods[z].enabled=!global.difficultyMods[z].enabled
+					draw_text(96+128,room_height-256,global.difficultyMods[z].description)
+					if(global.pressingMouseLeft)
+					{
+						global.difficultyMods[z].enabled=!global.difficultyMods[z].enabled
+					}
 				}
 				
 				_xMod+=128
-				if(z!=0&&frac(z/_modGridWidth)==0)
+				if(z!=0&&frac(z+1/_modGridWidth)==0)
 				{
 					_xMod=96
 					_yMod+=128

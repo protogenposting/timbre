@@ -102,7 +102,7 @@ global.gamemodes=[
 global.difficultyMods=[
 	new DifficultyMod(
 		"Fungal Infection",
-		"Blocks most of the screen",
+		"No seeing for you!",
 		spr_mod_fungal,
 		function(){
 			if(global.gamemode==0)
@@ -118,7 +118,7 @@ global.difficultyMods=[
 	),
 	new DifficultyMod(
 		"Hard Drugs",
-		"Lowered Leniency",
+		"Everything is harder!",
 		spr_mod_hard,
 		function(){
 			with(obj_main_game)
