@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
 if(comboPrevious<comboDanceAmount&&combo>=comboDanceAmount)
 {
 	comboParticles=part_system_create(p_sparks)

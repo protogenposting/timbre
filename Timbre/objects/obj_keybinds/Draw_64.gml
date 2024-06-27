@@ -2,6 +2,27 @@
 // You can write your code in this editor
 draw_set_halign(fa_center)
 
+var _x=room_width/2
+var _y=256
+
+var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
+
+global.gamemode+=_hAxis
+if(global.gamemode>=array_length(global.gamemodes))
+{
+	global.gamemode=0
+}
+if(global.gamemode<0)
+{
+	global.gamemode=array_length(global.gamemodes)-1
+}
+
+draw_text(_x,_y-128,"Use Left/Right arrow keys to change the gamemode")
+
+draw_sprite(spr_mode_background,0,_x,_y)
+			
+draw_sprite(global.gamemodes[global.gamemode].sprite,0,_x,_y)
+
 if(currentStruct!=-4)
 {
 	draw_set_alpha(0.33)
@@ -10,8 +31,8 @@ if(currentStruct!=-4)
 	
 	draw_text(room_width/2,128,"press escape to exit")
 	
-	var _x=room_width/2
-	var _y=room_height/2
+	_x=room_width/2
+	_y=room_height/2
 	var _alpha=1
 	var _pressed=currentDirection==1
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,

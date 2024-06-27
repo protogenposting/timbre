@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+global.keyboardBinds=global.modeBinds[global.gamemode]
+
 if(room==rm_gameplay)
 {
 	var _uncappedFPS=false

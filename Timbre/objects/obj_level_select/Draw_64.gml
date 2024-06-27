@@ -196,7 +196,7 @@ repeat(_displayedLevels)
 				
 				if(_selected)
 				{
-					draw_text(96+128,room_height-256,global.difficultyMods[z].description)
+					draw_text(96+128,room_height-256-128,global.difficultyMods[z].description)
 					if(global.pressingMouseLeft)
 					{
 						global.difficultyMods[z].enabled=!global.difficultyMods[z].enabled
