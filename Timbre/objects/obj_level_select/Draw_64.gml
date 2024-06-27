@@ -173,6 +173,10 @@ repeat(_displayedLevels)
 			
 			draw_text(_x+256,_yMod-64,"Change gamemode with arrow keys")
 			
+			draw_sprite(spr_mode_background,0,_x-256,_yMod-64)
+			
+			draw_sprite(spr_mods,0,_x-256,_yMod-64)
+			
 		}
 		else
 		{
