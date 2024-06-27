@@ -88,12 +88,12 @@ if(global.gamemode==1)
 		draw_sprite_ext(sprites.log,0,_x-32-_noteDistance*notes[i].intendedDirection,_scrollPosition,1,1,notes[i].intendedDirection*90,notes[i].color,1)
 	}
 	
-	_x=_camWidth/2 - 2*_noteDistance +64
+	_x=_camWidth/2 - 2*_noteDistance + 64
 	_y=room_height-96
 	
 	for(var i=0;i<4;i++)
 	{		
-		draw_sprite_ext(sprites.player,turnKey[i]*2,_x,_y,1,1,i*90,c_white,1)
+		draw_sprite_ext(sprites.player,turnKeyHold[i]*2,_x,_y,1+turnKeyHold[i]*0.3,1+turnKeyHold[i]*0.3,i*90,c_white,1)
 		
 		_x+=_noteDistance
 	}
@@ -106,7 +106,7 @@ if(global.gamemode==1)
 		{
 			continue;
 		}
-		draw_sprite_ext(sprites.arrow,0,_x-_noteDistance*(3-points[i].direction),_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
+		draw_sprite_ext(sprites.arrow,0,_x-_noteDistance*(3-points[i].direction)-96,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
 	}
 	
 	draw_sprite_ext(sprites.grass,layer_background_get_index(background),_camWidth/2,_camHeight/2,_camWidth/sprite_get_width(sprites.grass),96/sprite_get_height(sprites.grass),0,c_white,1)
