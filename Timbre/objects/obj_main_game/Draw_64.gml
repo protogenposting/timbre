@@ -47,9 +47,9 @@ if(global.gamemode==1)
 	var _camHeight=camera_get_view_height(view_camera[0])
 	var _camWidth=camera_get_view_width(view_camera[0])
 	
-	for(var _x=0;_x<_camWidth;_x+=64)
+	for(var _x=0;_x<_camWidth;_x+=sprite_get_width(sprites.grass))
 	{
-		for(var _y=0;_y<_camWidth;_y+=64)
+		for(var _y=0;_y<_camWidth;_y+=sprite_get_height(sprites.grass))
 		{
 			draw_sprite(sprites.grass,layer_background_get_index(background),_x,_y)
 		}

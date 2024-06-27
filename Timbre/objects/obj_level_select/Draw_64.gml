@@ -45,9 +45,17 @@ if(_hAxis!=0&&!readyUp)
 	
 	readyUp=false
 }
-if(_hAxis!=0&&readyUp)
+else if(_hAxis!=0&&readyUp)
 {
-	
+	global.gamemode+=_hAxis
+	if(global.gamemode>=array_length(global.gamemodes))
+	{
+		global.gamemode=0
+	}
+	if(global.gamemode<0)
+	{
+		global.gamemode=array_length(global.gamemodes)-1
+	}
 }
 
 wheelRotationProgress+=0.1
@@ -73,11 +81,11 @@ if(i<0)
 
 if(readyProgress<1&&readyUp)
 {
-	readyProgress+=0.06
+	readyProgress+=0.04
 }
 if(readyProgress>0&&!readyUp)
 {
-	readyProgress-=0.1
+	readyProgress-=0.04
 }
 
 draw_set_font(fn_font_big)
@@ -156,8 +164,14 @@ repeat(_displayedLevels)
 				_xMod+=_difficultyDistance
 				o++
 			}
+			
 			_yMod=room_height+256-256*_readyProgress
-			draw_text(_x,_yMod-64,"Change gamemode with arrow keys")
+			
+			draw_sprite(spr_mode_background,0,_x+256,_yMod-128-32)
+			
+			draw_sprite(global.gamemodes[global.gamemode].sprite,0,_x+256,_yMod-128-32)
+			
+			draw_text(_x+256,_yMod-64,"Change gamemode with arrow keys")
 			
 		}
 		else
