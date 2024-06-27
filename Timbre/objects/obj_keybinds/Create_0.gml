@@ -25,7 +25,7 @@ function find_keybind(_key){
 		for(var o=0;o<array_length(_directions);o++)
 		{
 			var _value=variable_struct_get(_struct,_directions[o])
-			if(!_directions[o]!="sprite")
+			if(_directions[o]!="sprite")
 			{
 				if(_value==_key)
 				{
