@@ -57,7 +57,7 @@ if(global.gamemode==1)
 	
 	var _noteDistance=96
 	
-	var _x=_camWidth/2 - 1.5*_noteDistance
+	var _x=_camWidth/2 - 1.5*_noteDistance - 300
 	var _y=128
 	for(var i=2;i>=0;i--)
 	{
@@ -81,14 +81,14 @@ if(global.gamemode==1)
 	{
 		var _timing=notes[i].timeMS-songMilliseconds
 		var _scrollPosition=_y+(_timing)*global.moveSpeed
-		if(_scrollPosition>_camHeight/2)
+		if(_scrollPosition>_camHeight)
 		{
 			continue;
 		}
 		draw_sprite_ext(sprites.log,0,_x-32-_noteDistance*notes[i].intendedDirection,_scrollPosition,1,1,notes[i].intendedDirection*90,notes[i].color,1)
 	}
 	
-	_x=_camWidth/2 - 2*_noteDistance + 64
+	_x=_camWidth/2 - 2*_noteDistance + 64 + 300
 	_y=room_height-96
 	
 	for(var i=0;i<4;i++)
@@ -107,19 +107,14 @@ if(global.gamemode==1)
 		if(points[i].type==noteTypes.loop)
 		{
 			_sprite=sprites.spiderStart
-			var _beatDistance=abs(points[i].beat-points[i+1].beat)
-			draw_sprite_ext(sprites.web,0,_xPos,_scrollPosition,_beatDistance,1,270,c_white,1)
+			var _beatDistance=abs(points[i].beat-points[i+1].beat)*_scrollSpeed
+			draw_sprite_ext(sprites.web,0,_xPos,_scrollPosition,_beatDistance*5,1,270,c_white,1)
 		}
-		if(_scrollPosition<_camHeight/2||points[i].wasHit)
+		if(points[i].wasHit)
 		{
 			continue;
 		}
 		draw_sprite_ext(_sprite,0,_xPos,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
-	}
-	
-	for(var i=0;i<array_length(particles);i++)
-	{
-		part_system_drawit(particles[i])
 	}
 	
 	draw_sprite_ext(sprites.grass,layer_background_get_index(background),0,_camHeight/2,_camWidth/sprite_get_width(sprites.grass),96/sprite_get_height(sprites.grass),0,c_ltgray,1)
