@@ -17,15 +17,15 @@ if(currentStruct!=-4)
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,
 	_x,_y-64,1+_pressed,1+_pressed,
 	90,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
-	draw_text(_x,_y-64,get_key_name(currentStruct.up))
+	draw_text(_x-128,_y,get_key_name(currentStruct.up))
 	
-	_pressed=currentDirection==0
+	_pressed=currentDirection==2
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,
 	_x-64,_y,1+_pressed,1+_pressed,
 	180,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
 	draw_text(_x-64,_y,get_key_name(currentStruct.left))
 	
-	_pressed=currentDirection==2
+	_pressed=currentDirection==0
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,
 	_x+64,_y,1+_pressed,1+_pressed,
 	0,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
@@ -35,7 +35,7 @@ if(currentStruct!=-4)
 	draw_sprite_ext(currentStruct.sprite,!_pressed*2,
 	_x,_y+64,1+_pressed,1+_pressed,
 	270,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
-	draw_text(_x,_y+64,get_key_name(currentStruct.down))
+	draw_text(_x+128,_y,get_key_name(currentStruct.down))
 	
 	if(keyboard_check_pressed(vk_escape))
 	{

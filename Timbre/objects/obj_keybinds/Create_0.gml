@@ -48,6 +48,6 @@ button=[
 
 currentStruct=-4
 
-directionOrder=["left","up","right","down"]
+directionOrder=["right","up","left","down"]
 
 currentDirection=0

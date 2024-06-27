@@ -669,6 +669,11 @@ sprites={
 	badArrow: spr_bad_arrow
 }
 
+if(global.epilepsyMode)
+{
+	sprites.grass=spr_grass_epilepsy
+}
+
 var _dir=""
 if(global.selectedLevel!=-4)
 {

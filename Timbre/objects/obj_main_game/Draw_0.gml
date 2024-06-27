@@ -246,7 +246,7 @@ for(var o=0; o<array_length(notes);o++)
 	if(abs(timing)<=msWindow&&attackKey[notes[o].intendedDirection]&&!notes[o].wasHit||global.botPlay&&abs(timing)<=botplayLeniency&&!notes[o].wasHit)
 	{
 		audio_play_sound(snd_hit_tree,1000,false)
-		if(global.gamemode==1)
+		if(global.gamemode==0)
 		{
 			attackKey[notes[o].intendedDirection]=false
 		}

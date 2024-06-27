@@ -44,26 +44,35 @@ if(global.showKeys)
 
 if(global.gamemode==1)
 {
-	draw_rectangle_color(0,0,camera_get_view_width(view_camera[0]),camera_get_view_height(view_camera[0]),
-	c_black,c_black,c_black,c_black,
-	false)
+	var _camHeight=camera_get_view_height(view_camera[0])
+	var _camWidth=camera_get_view_width(view_camera[0])
 	
-	var _x=room_width/2 - 1.5*64
+	for(var _x=0;_x<_camWidth;_x+=64)
+	{
+		for(var _y=0;_y<_camWidth;_y+=64)
+		{
+			draw_sprite(sprites.grass,layer_background_get_index(background),_x,_y)
+		}
+	}
+	
+	var _noteDistance=96
+	
+	var _x=room_width/2 - 1.5*_noteDistance
 	var _y=128
-	for(var i=0;i<3;i++)
+	for(var i=2;i>=0;i--)
 	{
 		if(attackKey[i])
 		{
 			axeRotations[i]=0
-			axeSpinSpeeds[i]=15
+			axeSpinSpeeds[i]=26
 		}
 		axeRotations[i]+=axeSpinSpeeds[i]
 		
 		axeSpinSpeeds[i]-=sign(axeSpinSpeeds[i])
 		
-		draw_sprite_ext(spr_axes,0,_x,_y-64,1,1,axeRotations[i],c_white,1)
+		draw_sprite_ext(spr_axes,0,_x,_y,1,1,axeRotations[i],c_white,1)
 		
-		_x+=64
+		_x+=_noteDistance
 	}
 	
 	var _scrollSpeed=global.moveSpeed
@@ -71,9 +80,36 @@ if(global.gamemode==1)
 	for(var i=0;i<array_length(notes);i++)
 	{
 		var _timing=notes[i].timeMS-songMilliseconds
-		draw_sprite_ext(spr_log,0,_x-32-64*notes[i].intendedDirection,_y+(_timing)*global.moveSpeed,1,1,notes[i].intendedDirection*90,notes[i].color,1)
+		var _scrollPosition=_y+(_timing)*global.moveSpeed
+		if(_scrollPosition>_camHeight/2)
+		{
+			continue;
+		}
+		draw_sprite_ext(spr_log,0,_x-32-_noteDistance*notes[i].intendedDirection,_scrollPosition,1,1,notes[i].intendedDirection*90,notes[i].color,1)
 	}
-
+	
+	_x=room_width/2 - 2*_noteDistance
+	_y=room_height-128
+	
+	for(var i=0;i<4;i++)
+	{		
+		draw_sprite_ext(spr_player,turnKey[i]*2,_x,_y,1,1,i*90,c_white,1)
+		
+		_x+=_noteDistance
+	}
+	
+	for(var i=0;i<array_length(points);i++)
+	{
+		var _timing=points[i].timeMS-songMilliseconds
+		var _scrollPosition=_y-(_timing)*global.moveSpeed
+		if(_scrollPosition>_camHeight/2)
+		{
+			continue;
+		}
+		draw_sprite_ext(spr_log,0,_x-32-64*points[i].direction,_scrollPosition,1,1,points[i].direction,notes[i].color,1)
+	}
+	
+	draw_sprite_ext(sprites.grass,layer_background_get_index(background),_camWidth/2,_camHeight/2,_camWidth/sprite_get_width(sprites.grass),64/sprite_get_height(sprites.grass),0,c_white,1)
 }
 draw_set_halign(fa_center)
 draw_set_font(fn_font_big)
