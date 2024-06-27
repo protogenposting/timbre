@@ -326,11 +326,10 @@ else
 	
 	if(!global.showKeys)
 	{
-		if(global.gamemode==1)
+		if(global.gamemode!=1)
 		{
-			
+			draw_sprite(sprite_index,image_index,room_width-128,room_height-128)
 		}
-		draw_sprite(sprite_index,image_index,room_width-128,room_height-128)
 	}
 }
 
