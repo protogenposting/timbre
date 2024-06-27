@@ -103,9 +103,17 @@ global.difficultyMods=[
 	new DifficultyMod(
 		"Fungal Infection",
 		"Blocks most of the screen",
-		spr_fungal_infection,
+		spr_mod_fungal,
 		function(){
-			draw_sprite(spr_fungal_infection,0,0,0)
+			if(global.gamemode==0)
+			{
+				draw_sprite(spr_fungal_infection,0,0,0)
+			}
+			if(global.gamemode==1)
+			{
+				draw_rectangle(0,768/2,1366/2,768,false)
+				draw_rectangle(1366/2,0,1366,768/2,false)
+			}
 		}
 	)
 ]

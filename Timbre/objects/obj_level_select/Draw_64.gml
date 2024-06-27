@@ -173,9 +173,39 @@ repeat(_displayedLevels)
 			
 			draw_text(_x+256,_yMod-64,"Change gamemode with arrow keys")
 			
-			draw_sprite(spr_mode_background,0,_x-256,_yMod-64)
+			//mod stuff
+			var _modGridWidth=2
+			_xMod=96
+			_yMod=room_height+256-(256+128)*_readyProgress
 			
-			draw_sprite(spr_mods,0,_x-256,_yMod-64)
+			for(var z=0;z<array_length(global.difficultyMods);z++)
+			{
+				var _selected=point_in_rectangle(device_mouse_x_to_gui(0),
+				device_mouse_y_to_gui(0),
+				_xMod-64,_yMod-64,_xMod+64,_yMod+64)
+				
+				var _color=c_red
+				
+				if(global.difficultyMods[z].enabled)
+				{
+					_color=c_aqua
+				}
+				
+				draw_sprite_ext(spr_mode_background,_selected,_xMod,_yMod,1,1,0,_color,1)
+				draw_sprite(global.difficultyMods[z].sprite,0,_xMod,_yMod)
+				
+				if(_selected&&global.pressingMouseLeft)
+				{
+					global.difficultyMods[z].enabled=!global.difficultyMods[z].enabled
+				}
+				
+				_xMod+=128
+				if(frac(z/_modGridWidth)==0)
+				{
+					_xMod=96
+					_yMod+=128
+				}
+			}
 			
 		}
 		else
