@@ -109,7 +109,7 @@ if(global.gamemode==1)
 		draw_sprite_ext(sprites.arrow,0,_x-_noteDistance*(3-points[i].direction)-96,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
 	}
 	
-	draw_sprite_ext(sprites.grass,layer_background_get_index(background),_camWidth/2,_camHeight/2,_camWidth/sprite_get_width(sprites.grass),96/sprite_get_height(sprites.grass),0,c_white,1)
+	draw_sprite_ext(sprites.grass,layer_background_get_index(background),0,_camHeight/2,_camWidth/sprite_get_width(sprites.grass),96/sprite_get_height(sprites.grass),0,c_ltgray,1)
 }
 draw_set_halign(fa_center)
 draw_set_font(fn_font_big)
