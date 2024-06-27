@@ -107,8 +107,9 @@ if(global.gamemode==1)
 		if(points[i].type==noteTypes.loop)
 		{
 			_sprite=sprites.spiderStart
-			var _beatDistance=abs(points[i].beat-points[i+1].beat)*_scrollSpeed
-			draw_sprite_ext(sprites.web,0,_xPos,_scrollPosition,_beatDistance*5,1,270,c_white,1)
+			var _beatDistance=(abs(points[i].timeMS-points[i+1].timeMS)/1000)*_scrollSpeed
+			draw_sprite_ext(sprites.web,0,_xPos,_scrollPosition,
+			_beatDistance*16,1,270,c_white,1)
 		}
 		if(points[i].wasHit)
 		{

@@ -403,8 +403,9 @@ function create_points(){
 					notes[o].startY=notes[o].y
 					if(global.gamemode==1)
 					{
-						_direction=loop_rotation(_direction)
+						notes[o].direction=loop_rotation(_direction)/90
 						o--
+						
 						continue;
 					}
 				}
