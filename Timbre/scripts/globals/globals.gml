@@ -117,9 +117,9 @@ global.difficultyMods=[
 		}
 	),
 	new DifficultyMod(
-		"Hard Shrooms",
+		"Hard Drugs",
 		"Lowered Leniency",
-		spr_mod_fungal,
+		spr_mod_hard,
 		function(){
 			with(obj_main_game)
 			{

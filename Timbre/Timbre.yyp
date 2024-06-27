@@ -351,6 +351,7 @@
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},},
     {"id":{"name":"spr_loop","path":"sprites/spr_loop/spr_loop.yy",},},
     {"id":{"name":"spr_mod_fungal","path":"sprites/spr_mod_fungal/spr_mod_fungal.yy",},},
+    {"id":{"name":"spr_mod_hard","path":"sprites/spr_mod_hard/spr_mod_hard.yy",},},
     {"id":{"name":"spr_mode_background","path":"sprites/spr_mode_background/spr_mode_background.yy",},},
     {"id":{"name":"spr_mode_mania","path":"sprites/spr_mode_mania/spr_mode_mania.yy",},},
     {"id":{"name":"spr_mode_normal","path":"sprites/spr_mode_normal/spr_mode_normal.yy",},},

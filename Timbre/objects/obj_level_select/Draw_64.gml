@@ -155,7 +155,7 @@ repeat(_displayedLevels)
 				if(_selected)
 				{
 					draw_text(_x,_yMod+128,_difficulty.name)
-					if(global.pressingMouseLeft||keyboard_check_pressed(vk_space)||keyboard_check_pressed(vk_enter))
+					if(global.pressingMouseLeft)
 					{
 						global.currentDifficulty=_difficulty.equivelant
 						start_level()
