@@ -44,7 +44,7 @@ global.modeBinds=[
 	}
 ]
 
-global.keyboardBinds=global.modebinds[0]
+global.keyboardBinds=global.modeBinds[0]
 
 global.sfxVolume=1
 
