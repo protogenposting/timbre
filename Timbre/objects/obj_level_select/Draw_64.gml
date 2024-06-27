@@ -114,7 +114,15 @@ repeat(_displayedLevels)
 				
 				draw_sprite(_difficulty.icon,_selected,_xMod,_yMod)
 				
-				var _id=get_rank_id_string(_levels[i].rank[_difficulty.equivelant])
+				try{
+					var _id=_levels[i].rank[global.gamemode][_difficulty.equivelant]
+				}
+				catch(e)
+				{
+					_levels[i].rank=array_create(10,["","",""])
+				}
+				
+				var _id=get_rank_id_string(_levels[i].rank[global.gamemode][_difficulty.equivelant])
 				
 				if(_id!=array_length(global.ranks)-1)
 				{
@@ -186,7 +194,15 @@ repeat(_displayedLevels)
 		_xOffset=lengthdir_x(128,_rotation-45+180)
 		_yOffset=lengthdir_y(128,_rotation-45+180)
 		
-		var rankID=get_rank_id_string(_levels[i].rank[0])
+		try{
+			var _id=_levels[i].rank[global.gamemode][0]
+		}
+		catch(e)
+		{
+			_levels[i].rank=array_create(10,["","",""])
+		}
+		
+		var rankID=get_rank_id_string(_levels[i].rank[global.gamemode][0])
 		if(rankID!=array_length(global.ranks)-1)
 		{
 			draw_sprite_ext(global.ranks[rankID].icon,image_index,

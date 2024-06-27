@@ -16,7 +16,7 @@ function add_song(_file){
 				name: filename_dir(_file),
 				path: _file,
 				highScore:0,
-				rank:["","",""]
+				rank: array_create(10,["","",""])
 			}
 			var _nameLast=string_last_pos("\\",_struct.name)
 			if(string_count("\\",_struct.name)<=0)

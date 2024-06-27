@@ -90,6 +90,7 @@ function get_key_name(key){
         case 123: return "F12"; break;
         case 144: return "Num Lock"; break;
         case 145: return "Scrl Lock"; break;
+		case 160: return "Left Shift"; break;
         case 162: return "Control"; break;
         case 163: return "Control"; break;
         case 164: return "Alt"; break;
