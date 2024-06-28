@@ -115,7 +115,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		gotLastNote=true
 	}
 	var _color=points[i].color
-	if(points[i+1].release)
+	if(i<array_length(points)-1&&points[i+1].release)
 	{
 		_color=c_red
 	}
