@@ -3,7 +3,7 @@
 enum noteTypes{
 	log,
 	turn,
-	loop,
+	spider,
 	wall,
 	movingHit
 }

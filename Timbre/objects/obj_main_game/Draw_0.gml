@@ -12,7 +12,7 @@ for(var i=0;i<array_length(bobs);i++)
 for(var i=0;i<array_length(points)-1;i++)
 {
 	var _color=c_white
-	if(i>0&&points[i-1].type==noteTypes.loop)
+	if(i>0&&points[i-1].type==noteTypes.spider)
 	{
 		_color=c_red
 	}
@@ -60,7 +60,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
-	var hitKey=i>0&&points[i-1].type!=noteTypes.loop&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.loop&&turnKeyReleased[points[i].direction]
+	var hitKey=i>0&&points[i-1].type!=noteTypes.spider&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.spider&&turnKeyReleased[points[i].direction]
 	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=botplayLeniency&&!points[i].wasHit)
 	{
 		turnKey[points[i].direction]=false
@@ -115,7 +115,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		gotLastNote=true
 	}
 	var _color=points[i].color
-	if(i>0&&points[i].type==noteTypes.loop)
+	if(i>0&&points[i].type==noteTypes.spider)
 	{
 		_color=c_red
 	}
@@ -123,7 +123,7 @@ for(var i=array_length(points)-1;i>0;i--)
 	{
 		points[i].frame=0
 	}
-	if(points[i].continuing&&points[i].type!=noteTypes.loop)
+	if(points[i].continuing&&points[i].type!=noteTypes.spider)
 	{
 		continue;
 	}
@@ -141,7 +141,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,1,1,
 		_directionToNext,_color,1)
 	}
-	if(points[i].type==noteTypes.loop)
+	if(points[i].type==noteTypes.spider)
 	{
 		var _beatDistance=abs(points[i].beat-points[i+1].beat)
 		if(!points[i+1].wasHit)
@@ -345,7 +345,7 @@ var _currentY=previousPlayerPos.y
 
 var _transitionAmount={x:0,y:0}
 
-if(points[currentPoint].type==noteTypes.loop)
+if(points[currentPoint].type==noteTypes.spider)
 {
 	_transitionAmount=in_out_between_points(0,0,
 	-lengthdir_x(loopSize*_beatDistance,currentDirection),

@@ -181,7 +181,7 @@ function get_turns(){
 	var array=[]
 	for(var i=0;i<array_length(notes);i++)
 	{
-		if(notes[i].type==noteTypes.turn||notes[i].type==noteTypes.loop)
+		if(notes[i].type==noteTypes.turn||notes[i].type==noteTypes.spider)
 		{
 			array_push(array,notes[i])
 			array_delete(notes,i,1)
@@ -262,10 +262,12 @@ function create_points(){
 	var lastBeat=0
 	var lastBeatFrom=0
 	
+	var _spidersQueued=[]
+	
 	for(var i=0;i<array_length(turns);i++)
 	{
 		var gridSizeCurrent=gridSize*(turns[i].beat-lastBeatFrom)
-		if(pointArray[i].type!=noteTypes.loop)
+		if(pointArray[i].type!=noteTypes.spider)
 		{
 			_x+=lengthdir_x(gridSizeCurrent,currentDirection)
 			_y+=lengthdir_y(gridSizeCurrent,currentDirection)
@@ -286,6 +288,10 @@ function create_points(){
 		else if(turns[i].direction==noteDirections.down)
 		{
 			_color=$AAAAff
+		}
+		if(turns[i].type==noteTypes.spider)
+		{
+			
 		}
 		lastBeat=max(turns[i].beat,lastBeat)
 		var _type=turns[i].type
@@ -331,7 +337,7 @@ function create_points(){
 				var _beatDist=abs(pointArray[i+1].beat-pointArray[i].beat)
 				var _dir=pointArray[i].direction*90
 				var dist=point_between_points(pointArray[i].x,pointArray[i].y,pointArray[i+1].x,pointArray[i+1].y,percentage)
-				if(pointArray[i].type==noteTypes.loop)
+				if(pointArray[i].type==noteTypes.spider)
 				{
 					var _dist2=in_out_between_points(0,0,
 					-lengthdir_x(loopSize*2*_beatDist,_dir),

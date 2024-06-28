@@ -77,7 +77,7 @@ function generate_preview(_notes){
 			_x+=lengthdir_x(gridSize*_distanceToNext,_direction)
 			_y+=lengthdir_y(gridSize*_distanceToNext,_direction)
 		}
-		if(_notes[i].type==noteTypes.loop)
+		if(_notes[i].type==noteTypes.spider)
 		{
 			var _distanceToNext=_notes[i+1].beat-_notes[i].beat
 			array_push(backgroundPoints,{x: _x,y: _y, direction: _notes[i].direction*90,beat: _notes[i].beat,beatDistance: _distanceToNext,isSpider:true})
@@ -475,7 +475,7 @@ button[8]={
 }*/
 noteSounds[noteTypes.log]=snd_hit_tree
 noteSounds[noteTypes.turn]=snd_turn
-noteSounds[noteTypes.loop]=snd_beat
+noteSounds[noteTypes.spider]=snd_beat
 noteSprites[noteTypes.log]=spr_log
 noteSprites[noteTypes.turn]=spr_reverse_arrow
-noteSprites[noteTypes.loop]=spr_spider_idle
+noteSprites[noteTypes.spider]=spr_spider_idle

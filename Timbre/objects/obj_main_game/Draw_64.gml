@@ -104,7 +104,7 @@ if(global.gamemode==1)
 		var _timing=points[i].timeMS-songMilliseconds
 		var _scrollPosition=_y-(_timing)*global.moveSpeed
 		var _xPos=_x-_noteDistance*(3-points[i].direction)-96,_scrollPosition
-		if(points[i].type==noteTypes.loop)
+		if(points[i].type==noteTypes.spider)
 		{
 			_sprite=sprites.spiderStart
 			var _beatDistance=(abs(points[i].timeMS-points[i+1].timeMS)/1000)*_scrollSpeed
