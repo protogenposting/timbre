@@ -258,7 +258,10 @@ function create_points(){
 	var currentDirection=0
 	var _x=room_width/2
 	var _y=room_height/2
-	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, wasHit:true ,direction: currentDirection,continuing:false,color:c_white})
+	array_push(pointArray,
+	{x:_x,y:_y,type:noteTypes.turn,beat: 0, timeMS: 0, 
+		wasHit:true ,direction: currentDirection,
+		continuing:false,color:c_white,release:false})
 	var lastBeat=0
 	var lastBeatFrom=0
 	
@@ -272,6 +275,7 @@ function create_points(){
 			_x+=lengthdir_x(gridSizeCurrent,currentDirection)
 			_y+=lengthdir_y(gridSizeCurrent,currentDirection)
 		}
+		
 		var _color=c_white
 		if(turns[i].direction==noteDirections.left)
 		{
@@ -288,10 +292,6 @@ function create_points(){
 		else if(turns[i].direction==noteDirections.down)
 		{
 			_color=$AAAAff
-		}
-		if(turns[i].type==noteTypes.spider)
-		{
-			
 		}
 		lastBeat=max(turns[i].beat,lastBeat)
 		var _type=turns[i].type
@@ -315,20 +315,48 @@ function create_points(){
 		}
 		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, 
 			timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,
-			continuing:false,color: _color})
+			continuing:false,color: _color,release:false})
+		
+		for(var o=0;o<array_length(_spidersQueued);o++)
+		{
+			if(pointArray[i].direction==pointArray[_spidersQueued[o]].direction)
+			{
+				pointArray[_spidersQueued[o]].endNote=i
+				pointArray[i].release=true
+				array_delete(_spidersQueued,o,1)
+				break;
+			}
+		}
+		
 		lastBeatFrom=turns[i].beat
+		if(pointArray[i].type==noteTypes.spider)
+		{
+			array_push(_spidersQueued,i)
+		}
 	}
 	
 	var lastLength=songLength[1]-lastBeat
 	_x+=lengthdir_x(gridSize*lastLength,currentDirection)
 	_y+=lengthdir_y(gridSize*lastLength,currentDirection)
 	var _pointBeat=songLength[1]
-	array_push(pointArray,{x:_x,y:_y,type:noteTypes.turn,beat: _pointBeat, timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: currentDirection,continuing:false,color:c_white})
+	array_push(pointArray,{x:_x,y:_y,
+		type:noteTypes.turn,beat: _pointBeat, 
+		timeMS: _pointBeat*beatLength*1000, 
+		wasHit:false,direction: currentDirection,
+		continuing:false,color:c_white,release:false})
 	
 	for(var i=0;i<array_length(pointArray);i++)
 	{
 		pointArray[i].wasHit=false
 		var _direction=pointArray[i].direction*90
+		if(pointArray[i].type==noteTypes.spider)
+		{
+			if(!variable_struct_exists(pointArray[i],"endNote"))
+			{
+				array_delete(pointArray,i,1)
+				continue;
+			}
+		}
 		for(var o=0; o<array_length(notes);o++)
 		{
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)
@@ -660,7 +688,9 @@ particles=[]
 sprites={
 	player: spr_player,
 	arrow: spr_reverse_arrow,
+	arrowOutline: spr_reverse_arrow_outline,
 	log: spr_log,
+	logOutline: spr_log_outline,
 	wall: spr_wall,
 	web: spr_loop,
 	spiderStart: spr_spider_idle,

@@ -107,7 +107,7 @@ if(global.gamemode==1)
 		if(points[i].type==noteTypes.spider)
 		{
 			_sprite=sprites.spiderStart
-			var _beatDistance=(abs(points[i].timeMS-points[i+1].timeMS)/1000)*_scrollSpeed
+			var _beatDistance=(abs(points[i].timeMS-points[points[i].endNote].timeMS)/1000)*_scrollSpeed
 			draw_sprite_ext(sprites.web,0,_xPos,_scrollPosition,
 			_beatDistance*16,1,270,c_white,1)
 		}

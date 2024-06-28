@@ -12,7 +12,7 @@ for(var i=0;i<array_length(bobs);i++)
 for(var i=0;i<array_length(points)-1;i++)
 {
 	var _color=c_white
-	if(i>0&&points[i-1].type==noteTypes.spider)
+	if(points[i].release)
 	{
 		_color=c_red
 	}
@@ -60,7 +60,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	}
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
-	var hitKey=i>0&&points[i-1].type!=noteTypes.spider&&turnKey[points[i].direction]||i>0&&points[i-1].type==noteTypes.spider&&turnKeyReleased[points[i].direction]
+	var hitKey=!points[i].release&&turnKey[points[i].direction]||points[i].release&&turnKeyReleased[points[i].direction]
 	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=botplayLeniency&&!points[i].wasHit)
 	{
 		turnKey[points[i].direction]=false
@@ -115,7 +115,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		gotLastNote=true
 	}
 	var _color=points[i].color
-	if(i>0&&points[i].type==noteTypes.spider)
+	if(points[i+1].release)
 	{
 		_color=c_red
 	}
@@ -143,7 +143,7 @@ for(var i=array_length(points)-1;i>0;i--)
 	}
 	if(points[i].type==noteTypes.spider)
 	{
-		var _beatDistance=abs(points[i].beat-points[i+1].beat)
+		var _beatDistance=abs(points[i].beat-points[points[i].endNote].beat)
 		if(!points[i+1].wasHit)
 		{
 			draw_sprite_ext(sprites.web,0,points[i].x,points[i].y,(loopSize/32)*_beatDistance,1,
@@ -177,7 +177,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		{
 			_alpha=0.5
 		}
-		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,
+		draw_sprite_ext(sprites.arrowOutline,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),_directionToNext,_color,_alpha)
 	}
@@ -233,7 +233,7 @@ for(var o=0; o<array_length(notes);o++)
 				{
 					_alpha=0.5
 				}
-				draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,
+				draw_sprite_ext(sprites.logOutline,notes[o].wasHit,notes[o].x,notes[o].y,
 				(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
 				(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,_alpha)
 			}
@@ -347,10 +347,16 @@ var _transitionAmount={x:0,y:0}
 
 if(points[currentPoint].type==noteTypes.spider)
 {
+	var timeSinceLastPoint = songMilliseconds-points[currentPoint].timeMS
+
+	var timeBetweenPoints=points[points[currentPoint].endNote].timeMS-points[currentPoint].timeMS
+
+	var releaseBeatPercentage=timeSinceLastPoint/timeBetweenPoints
+	
 	_transitionAmount=in_out_between_points(0,0,
 	-lengthdir_x(loopSize*_beatDistance,currentDirection),
 	-lengthdir_y(loopSize*_beatDistance,currentDirection),
-	nextBeatPercentage)
+	releaseBeatPercentage)
 	/*if(!variable_struct_exists(points[currentPoint],"playedUp"))
 	{
 		_aud=audio_play_sound(snd_slide_up,1000,false)
@@ -359,7 +365,7 @@ if(points[currentPoint].type==noteTypes.spider)
 		show_debug_message(_pitch)
 		points[currentPoint].playedUp=true
 	}*/
-	if(nextBeatPercentage>=0.5&&!variable_struct_exists(points[currentPoint],"playedDown"))
+	if(releaseBeatPercentage>=0.5&&!variable_struct_exists(points[currentPoint],"playedDown"))
 	{
 		var _aud=audio_play_sound(snd_slide_down,1000,false)
 		var _pitch=1
