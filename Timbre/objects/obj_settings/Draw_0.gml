@@ -17,7 +17,7 @@ draw_sprite_ext(spr_player,image_index,_currentX,_currentY,1,1,currentDirection,
 draw_set_halign(fa_center)
 
 var _x=128+64
-var _y=128+64+64
+var _y=128+64+64+64
 for(var i=0;i<array_length(settings);i++)
 {
 	var _text=""
