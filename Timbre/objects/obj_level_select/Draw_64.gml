@@ -29,7 +29,7 @@ if(alarm[1]>0||array_length(global.levels)<=0)
 
 var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
 
-var _levels=global.playlists[global.currentPlaylist].levels
+var _levels=get_playlist_levels(global.currentPlaylist)
 
 if(_hAxis!=0&&!readyUp)
 {
