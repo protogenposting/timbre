@@ -359,6 +359,7 @@ function create_points(){
 		}
 		for(var o=0; o<array_length(notes);o++)
 		{
+			var _lastBeat=-20000
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)
 			{
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
@@ -439,7 +440,6 @@ function create_points(){
 					{
 						notes[o].direction=loop_rotation(_direction)/90
 						o--
-						
 						continue;
 					}
 				}
@@ -452,6 +452,7 @@ function create_points(){
 				}
 				notes[o].timeMS=notes[o].beat*beatLength*1000
 				notes[o].wasHit=false
+				_lastBeat=notes[o].beat
 			}
 		}
 		if(irandom(3)>=3&&array_length(bobs)<_bobAmount&&i<array_length(pointArray)-1)
