@@ -28,6 +28,10 @@ for(var i=0;i<array_length(settings);i++)
 	
 	draw_rectangle(_x-_buttonSizeX/2,_y-_buttonSizeY/2,_x+_buttonSizeX/2,_y+_buttonSizeY/2,
 	false)
+	if(settings[i].type==settingTypes.slider)
+	{
+		//MAKE SLIDERS WORK YOU WHORE
+	}
 	
 	if(_selected)
 	{
