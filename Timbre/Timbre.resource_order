@@ -141,6 +141,7 @@
     {"name":"spr_reverse_arrow_outline","order":40,"path":"sprites/spr_reverse_arrow_outline/spr_reverse_arrow_outline.yy",},
     {"name":"spr_reverse_arrow","order":2,"path":"sprites/spr_reverse_arrow/spr_reverse_arrow.yy",},
     {"name":"spr_settings_button","order":2,"path":"sprites/spr_settings_button/spr_settings_button.yy",},
+    {"name":"spr_skins_button","order":8,"path":"sprites/spr_skins_button/spr_skins_button.yy",},
     {"name":"spr_spider_hit","order":19,"path":"sprites/spr_spider_hit/spr_spider_hit.yy",},
     {"name":"spr_spider_idle","order":18,"path":"sprites/spr_spider_idle/spr_spider_idle.yy",},
     {"name":"spr_spider","order":17,"path":"sprites/spr_spider/spr_spider.yy",},
