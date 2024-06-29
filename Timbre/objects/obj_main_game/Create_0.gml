@@ -363,20 +363,6 @@ function create_points(){
 			var _directionsOnThisBeat=[]
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)
 			{
-				if(_lastBeat!=notes[o].beat)
-				{
-					_directionsOnThisBeat=[pointArray[i].direction]
-				}
-				else
-				{
-					if(array_contains(_directionsOnThisBeat,pointArray[i].direction))
-					{
-						array_delete(notes,o,1)
-						o--
-						continue;
-					}
-					array_push(_directionsOnThisBeat,pointArray[i].direction)
-				}
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
 				var _beatDist=abs(pointArray[i+1].beat-pointArray[i].beat)
 				var _dir=pointArray[i].direction*90
@@ -454,6 +440,18 @@ function create_points(){
 					if(global.gamemode==1)
 					{
 						notes[o].direction=loop_rotation(_direction)/90
+						for(var e=0; e<array_length(notes);e++)
+						{
+							if(e==o)
+							{
+								continue;
+							}
+							if(notes[e].direction==notes[o].direction&&notes[e].beat==notes[o].beat)
+							{
+								array_delete(notes,o,1)
+								break;
+							}
+						}
 						o--
 						continue;
 					}
