@@ -90,6 +90,13 @@ global.audioOffset=0
 
 var _file=load_file(global.saveName)
 
+function playlist(_name,_levels) constructor{
+	name=_name
+	levels=_levels
+}
+
+global.currentPlaylist=0
+
 if(_file==false)
 {
 	global.levels=[
@@ -105,11 +112,25 @@ else
 		global.audioOffset=_file.audioOffset
 		global.showKeys=_file.showKeys
 		global.modeBinds=_file.modeBinds
+		global.playlists=_file.playlists
 	}
 	catch(e)
 	{
+		global.playlists=[
+			new playlist("All Levels",[])
+		]
 	}
 }
+function reset_default_playlist()
+{
+	global.playlists[0].levels=[]
+
+	for(var i=0;i<array_length(global.levels);i++)
+	{
+		array_push(global.playlists[0].levels,i)
+	}
+}
+reset_default_playlist()
 
 function GameMode(_name,_sprite) constructor{
 	name=_name
