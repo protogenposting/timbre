@@ -360,8 +360,23 @@ function create_points(){
 		for(var o=0; o<array_length(notes);o++)
 		{
 			var _lastBeat=-20000
+			var _directionsOnThisBeat=[]
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)
 			{
+				if(_lastBeat!=notes[o].beat)
+				{
+					_directionsOnThisBeat=[pointArray[i].direction]
+				}
+				else
+				{
+					if(array_contains(_directionsOnThisBeat,pointArray[i].direction))
+					{
+						array_delete(notes,o,1)
+						o--
+						continue;
+					}
+					array_push(_directionsOnThisBeat,pointArray[i].direction)
+				}
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
 				var _beatDist=abs(pointArray[i+1].beat-pointArray[i].beat)
 				var _dir=pointArray[i].direction*90
