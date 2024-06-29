@@ -97,6 +97,10 @@ function playlist(_name,_levels) constructor{
 
 global.currentPlaylist=0
 
+global.playlists=[
+	new playlist("All Levels",[])
+]
+
 if(_file==false)
 {
 	global.levels=[
@@ -116,9 +120,7 @@ else
 	}
 	catch(e)
 	{
-		global.playlists=[
-			new playlist("All Levels",[])
-		]
+		
 	}
 }
 function reset_default_playlist()
@@ -129,6 +131,7 @@ function reset_default_playlist()
 	{
 		array_push(global.playlists[0].levels,i)
 	}
+	show_debug_message(global.playlists[0])
 }
 reset_default_playlist()
 
