@@ -68,6 +68,16 @@ function setting(_type,_name,_displayName,_toolTip="") constructor{
 	}
 }
 
+function setting_set_value(_setting,_variable,_value){
+	for(var i=0;i<array_length(settings);i++)
+	{
+		if(settings.name==_setting)
+		{
+			variable_struct_set(_setting,_variable,_value)
+		}
+	}
+}
+
 settings=[]
 
 array_push(settings,new setting(settingTypes.slider,"sfxVolume","SFX"))
