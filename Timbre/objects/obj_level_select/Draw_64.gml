@@ -135,7 +135,7 @@ repeat(_displayedLevels)
 				}
 				catch(e)
 				{
-					_levels[i].rank=array_create(10,["","",""])
+					_levels[i].rank=array_create(10,array_create(3,""))
 				}
 				
 				var _id=get_rank_id_string(_levels[i].rank[global.gamemode][_difficulty.equivelant])
@@ -268,7 +268,7 @@ repeat(_displayedLevels)
 		}
 		catch(e)
 		{
-			_levels[i].rank=array_create(10,["","",""])
+			_levels[i].rank=array_create(10,array_create(3,""))
 		}
 		
 		var rankID=get_rank_id_string(_levels[i].rank[global.gamemode][0])
