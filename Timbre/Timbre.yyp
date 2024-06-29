@@ -242,6 +242,7 @@
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Vol 2/World Wide Web","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"grass.gif","CopyToMask":-1,"filePath":"datafiles/Vol 2/World Wide Web","name":"grass.gif","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"world wide web.ogg","CopyToMask":-1,"filePath":"datafiles/Vol 2/World Wide Web","name":"world wide web.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"cover.png","CopyToMask":-1,"filePath":"datafiles/Vol 2/Zanger","name":"cover.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Vol 2/Zanger","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
