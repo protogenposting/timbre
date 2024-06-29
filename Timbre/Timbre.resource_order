@@ -45,6 +45,7 @@
     {"name":"rm_settings","order":6,"path":"rooms/rm_settings/rm_settings.yy",},
     {"name":"rm_tutorial","order":5,"path":"rooms/rm_tutorial/rm_tutorial.yy",},
     {"name":"add_song","order":23,"path":"scripts/add_song/add_song.yy",},
+    {"name":"array_create_2D","order":25,"path":"scripts/array_create_2D/array_create_2D.yy",},
     {"name":"array_index_looped_index","order":9,"path":"scripts/array_index_looped_index/array_index_looped_index.yy",},
     {"name":"array_index_looped","order":7,"path":"scripts/array_index_looped/array_index_looped.yy",},
     {"name":"axis_stuff","order":15,"path":"scripts/axis_stuff/axis_stuff.yy",},

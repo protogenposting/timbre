@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"array_create_2D",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"array_create_2D",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

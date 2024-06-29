@@ -32,7 +32,7 @@ global.modeBinds=[
 			186,
 			ord("A"),
 			ord("S"),
-			65
+			192
 		),
 		attacking: new bind(
 			spr_log,
