@@ -161,12 +161,6 @@ function DifficultyMod(_name,_description,_sprite,_effect) constructor{
 global.gamemodes=[
 	new GameMode("Timbre",spr_mode_normal),
 	new GameMode("TimbreMania",spr_mode_mania),
-	new GameMode("TimbreRush",spr_mode_mania,function(){
-		if(gamepad_is_connected(0))
-		{
-			return true
-		}
-	})
 ]
 
 global.difficultyMods=[
