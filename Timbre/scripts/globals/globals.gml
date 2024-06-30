@@ -144,9 +144,10 @@ function reset_default_playlist()
 }
 reset_default_playlist()
 
-function GameMode(_name,_sprite) constructor{
+function GameMode(_name,_sprite,_requirments=function(){return true}) constructor{
 	name=_name
 	sprite=_sprite
+	requirments=_requirments
 }
 
 function DifficultyMod(_name,_description,_sprite,_effect) constructor{
@@ -159,7 +160,13 @@ function DifficultyMod(_name,_description,_sprite,_effect) constructor{
 
 global.gamemodes=[
 	new GameMode("Timbre",spr_mode_normal),
-	new GameMode("TimbreMania",spr_mode_mania)
+	new GameMode("TimbreMania",spr_mode_mania),
+	new GameMode("TimbreRush",spr_mode_mania,function(){
+		if(gamepad_is_connected(0))
+		{
+			return true
+		}
+	})
 ]
 
 global.difficultyMods=[
