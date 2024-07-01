@@ -98,5 +98,3 @@ array_push(settings,new setting(settingTypes.toggle,"epilepsyMode","Epilepsy Mod
 array_push(settings,new setting(settingTypes.toggle,"showKeys","Show Inputs"))
 
 array_push(settings,new setting(settingTypes.slider,"audioOffset","Audio Offset"))
-
-array_push(settings,new setting(settingTypes.slider,"moveSpeed","Scroll Speed"))

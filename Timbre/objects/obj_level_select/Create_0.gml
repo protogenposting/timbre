@@ -1,5 +1,9 @@
 event_inherited()
 
+minimumScrollSpeed=0.5
+
+maximumScrollSpeed=6
+
 gooberLocation.y=room_height
 
 audio_stop_all()

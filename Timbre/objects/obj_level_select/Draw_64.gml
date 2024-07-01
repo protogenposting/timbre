@@ -175,7 +175,35 @@ repeat(_displayedLevels)
 			
 			draw_sprite(global.gamemodes[global.gamemode].sprite,0,_x+256,_yMod-128-32)
 			
+			#region scroll speed slider
+			
 			draw_text(_x+256,_yMod-64,"Change gamemode with arrow keys")
+			
+			_yMod=room_height+256-(512*_readyProgress)
+			
+			var _sliderWidth=96
+			
+			draw_rectangle(_x-_sliderWidth,_yMod-32,_x+_sliderWidth,_yMod+32,false)
+			
+			if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),_x-160,_yMod-32,_x+160,_yMod+32))
+			{
+				if(mouse_check_button(mb_left))
+				{
+					global.moveSpeed=((device_mouse_x_to_gui(0)-_x)/_sliderWidth)*maximumScrollSpeed
+				}
+			}
+			
+			global.moveSpeed=clamp(global.moveSpeed,minimumScrollSpeed,maximumScrollSpeed)
+			
+			draw_set_color(c_black)
+			
+			draw_rectangle(_x-_sliderWidth,_yMod-32,_x-_sliderWidth+_sliderWidth*(global.moveSpeed/maximumScrollSpeed),_yMod+32,false)
+			
+			draw_set_color(c_white)
+			
+			draw_text(_x,_yMod,"Scroll Speed: "+string(global.moveSpeed))
+			
+			#endregion
 			
 			//mod stuff
 			var _modGridWidth=2
