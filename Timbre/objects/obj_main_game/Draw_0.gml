@@ -166,7 +166,7 @@ for(var i=array_length(points)-1;i>0;i--)
 			points[i].direction*90,c_white,1)
 		}
 	}
-	if(points[i].timeMS-songMilliseconds<msWindow*4&&!points[i].wasHit&&inCamera)
+	if(points[i].timeMS-songMilliseconds<msWindow*2&&!points[i].wasHit&&inCamera)
 	{
 		var _alpha=0.03
 		if(currentPoint+1==i)
@@ -222,7 +222,7 @@ for(var o=0; o<array_length(notes);o++)
 		if(global.gamemode!=1)
 		{
 			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
-			if(notes[o].timeMS-songMilliseconds<msWindow*4&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
+			if(notes[o].timeMS-songMilliseconds<msWindow*2&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
 			{
 				var _alpha=0.06
 				if(_nextNote==o)
