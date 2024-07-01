@@ -189,7 +189,9 @@ repeat(_displayedLevels)
 			{
 				if(mouse_check_button(mb_left))
 				{
-					global.moveSpeed=((device_mouse_x_to_gui(0)-_x)/_sliderWidth)*maximumScrollSpeed
+					global.moveSpeed=(((device_mouse_x_to_gui(0)-(_x-_sliderWidth))/_sliderWidth)*maximumScrollSpeed)*16
+					global.moveSpeed=snap(1,global.moveSpeed)
+					global.moveSpeed/=16
 				}
 			}
 			
@@ -197,7 +199,7 @@ repeat(_displayedLevels)
 			
 			draw_set_color(c_black)
 			
-			draw_rectangle(_x-_sliderWidth,_yMod-32,_x-_sliderWidth+_sliderWidth*(global.moveSpeed/maximumScrollSpeed),_yMod+32,false)
+			draw_rectangle(_x-_sliderWidth,_yMod-32,_x-_sliderWidth+_sliderWidth*(global.moveSpeed/maximumScrollSpeed*2),_yMod+32,false)
 			
 			draw_set_color(c_white)
 			
