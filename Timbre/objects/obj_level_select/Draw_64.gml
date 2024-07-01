@@ -189,8 +189,8 @@ repeat(_displayedLevels)
 			{
 				if(mouse_check_button(mb_left))
 				{
-					global.moveSpeed=(((device_mouse_x_to_gui(0)-(_x-_sliderWidth))/_sliderWidth)*maximumScrollSpeed)*16
-					global.moveSpeed=snap(1,global.moveSpeed)
+					global.moveSpeed=(((device_mouse_x_to_gui(0)-(_x-_sliderWidth))/_sliderWidth)*maximumScrollSpeed)*8
+					global.moveSpeed=snap(4,global.moveSpeed)
 					global.moveSpeed/=16
 				}
 			}
