@@ -177,7 +177,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		{
 			_alpha=0.5
 		}
-		draw_sprite_ext(sprites.arrowOutline,points[i].frame,points[i].x,points[i].y,
+		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),_directionToNext,_color,_alpha)
 	}
@@ -233,7 +233,7 @@ for(var o=0; o<array_length(notes);o++)
 				{
 					_alpha=0.5
 				}
-				draw_sprite_ext(sprites.logOutline,notes[o].wasHit,notes[o].x,notes[o].y,
+				draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,
 				(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),
 				(((abs(songMilliseconds-notes[o].timeMS)/msWindow))+1),dir,notes[o].color,_alpha)
 			}
