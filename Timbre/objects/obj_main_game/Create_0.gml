@@ -362,6 +362,14 @@ function create_points(){
 		}
 		for(var o=0; o<array_length(notes);o++)
 		{
+			if(!variable_struct_exists(notes[o],"x"))
+			{
+				notes[o].x=0
+			}
+			if(!variable_struct_exists(notes[o],"y"))
+			{
+				notes[o].y=0
+			}
 			var _lastBeat=-20000
 			var _directionsOnThisBeat=[]
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)

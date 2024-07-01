@@ -192,6 +192,7 @@ for(var o=0; o<array_length(notes);o++)
 	var _spr=sprites.log
 	
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
+	show_debug_message("current log: " + string(o)+"/"+string(array_length(notes)))
 	var dir=notes[o].direction*90
 	var timing=songMilliseconds-notes[o].timeMS
 	if(variable_struct_exists(notes[o],"temporaryType"))
