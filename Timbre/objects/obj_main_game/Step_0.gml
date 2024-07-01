@@ -29,6 +29,10 @@ playFinishSound=false
 var barPercentageLast = barPercentage
 var beatLength=60/bpm
 var needle = songMilliseconds/1000
+if(global.deltaTime)
+{
+	needle/=10
+}
 var left = currentBeat * beatLength;
 var right = left + beatLength;
 barPercentage = remap(needle, left, right, 0, 1);
@@ -114,7 +118,7 @@ if(!finished&&!audio_is_playing(songID)&&(array_contains(attackKey,1)||array_con
 	audio=audio_play_sound(songID,1000,false)
 }
 
-if(currentPoint>=array_length(points)-2&&(array_equals(notes,[])||currentBeat>array_last(notes).beat+3)&&!finished)
+if(currentPoint>=array_length(points)-2&&(array_equals(notes,[])||songMilliseconds>array_last(notes).timeMS+3)&&!finished)
 {
 	finished=true
 	audio_play_sound(finishHitSound,1000,false)
@@ -122,7 +126,7 @@ if(currentPoint>=array_length(points)-2&&(array_equals(notes,[])||currentBeat>ar
 
 if(paused)
 {
-	startTime-=delta_time
+	startTime+=delta_time/1000
 	audio_pause_sound(audio)
 	if(keyboard_check_pressed(vk_space))
 	{
