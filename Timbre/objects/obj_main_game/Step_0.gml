@@ -31,7 +31,7 @@ var beatLength=60/bpm
 var needle = songMilliseconds/1000
 if(global.deltaTime)
 {
-	needle/=10
+	needle/=5
 }
 var left = currentBeat * beatLength;
 var right = left + beatLength;
