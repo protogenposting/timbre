@@ -11,6 +11,8 @@ if(global.gamemode==1)
 	
 }
 
+startTime=current_time
+
 early=0
 
 perfect=0

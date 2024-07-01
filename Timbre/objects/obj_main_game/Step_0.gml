@@ -17,6 +17,11 @@ update_particles()
 
 songMilliseconds=audio_sound_get_track_position(audio)*1000 + global.audioOffset
 
+if(global.deltaTime)
+{
+	songMilliseconds=abs(current_time-startTime)
+}
+
 show_debug_message(songMilliseconds)
 
 playFinishSound=false
@@ -99,6 +104,11 @@ if(global.gamemode==0)
 
 #endregion
 
+if(!audio_is_playing(songID))
+{
+	startTime=current_time
+}
+
 if(!finished&&!audio_is_playing(songID)&&(array_contains(attackKey,1)||array_contains(turnKey,1)))
 {
 	audio=audio_play_sound(songID,1000,false)
@@ -112,6 +122,7 @@ if(currentPoint>=array_length(points)-2&&(array_equals(notes,[])||currentBeat>ar
 
 if(paused)
 {
+	startTime-=delta_time
 	audio_pause_sound(audio)
 	if(keyboard_check_pressed(vk_space))
 	{

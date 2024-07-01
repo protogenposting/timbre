@@ -44,6 +44,8 @@ global.modeBinds=[
 	}
 ]
 
+global.deltaTime=true
+
 global.keyboardBinds=global.modeBinds[0]
 
 global.sfxVolume=1
