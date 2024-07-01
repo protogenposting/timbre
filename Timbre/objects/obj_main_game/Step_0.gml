@@ -29,10 +29,6 @@ playFinishSound=false
 var barPercentageLast = barPercentage
 var beatLength=60/bpm
 var needle = songMilliseconds/1000
-if(global.deltaTime)
-{
-	needle/=5
-}
 var left = currentBeat * beatLength;
 var right = left + beatLength;
 barPercentage = remap(needle, left, right, 0, 1);
@@ -43,16 +39,16 @@ image_index=round(barPercentage*24)
 
 //show_debug_message(image_index)
 
-playerFrame=round(barPercentage*4)
-axeFrames[0]=round(barPercentage*4)
-axeFrames[1]=round(barPercentage*4)
+playerFrame=round(currentFracBeat*4)
+axeFrames[0]=round(currentFracBeat*4)
+axeFrames[1]=round(currentFracBeat*4)
 for(var i=0;i<array_length(bobs);i++)
 {
-	bobs[i].frame=round(barPercentage*6)
+	bobs[i].frame=round(currentFracBeat*6)
 }
 for(var i=0;i<array_length(points);i++)
 {
-	points[i].frame=round(barPercentage*4)
+	points[i].frame=round(currentFracBeat*4)
 }
 layer_background_index(background,barPercentage*sprite_get_number(sprites.grass))
 
