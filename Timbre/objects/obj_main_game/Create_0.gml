@@ -340,14 +340,14 @@ function create_points(){
 	var lastLength=songLength[1]-lastBeat
 	_x+=lengthdir_x(gridSize*lastLength,currentDirection)
 	_y+=lengthdir_y(gridSize*lastLength,currentDirection)
-	var _pointBeat=songLength[1]
+	var _pointBeat=songLength[1]+10
 	array_push(pointArray,{x:_x,y:_y,
 		type:noteTypes.turn,beat: _pointBeat, 
 		timeMS: _pointBeat*beatLength*1000, 
 		wasHit:false,direction: currentDirection,
 		continuing:false,color:c_white,release:false})
 	
-	for(var i=0;i<array_length(pointArray);i++)
+	for(var i=0;i<array_length(pointArray)-1;i++)
 	{
 		pointArray[i].wasHit=false
 		var _direction=pointArray[i].direction*90
@@ -356,6 +356,7 @@ function create_points(){
 			if(!variable_struct_exists(pointArray[i],"endNote"))
 			{
 				array_delete(pointArray,i,1)
+				i--
 				continue;
 			}
 		}
@@ -503,13 +504,7 @@ function create_points(){
 currentPoint=0
 iteration=0
 
-try{
-	points=create_points()
-}
-catch(e)
-{
-	show_message(e)
-}
+points=create_points()
 
 msWindow=210
 
