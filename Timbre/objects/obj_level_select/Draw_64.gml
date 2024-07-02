@@ -267,9 +267,11 @@ repeat(_displayedLevels)
 		_rotation=sin(current_time/5000)*5
 	}
 	
-	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,_size,_size,_rotation,c_white,1)
+	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,
+	_size,_size,_rotation,c_white,1)
 	
-	draw_sprite_ext(spr_cover_border,0,_x+ _progress * _coverDistance,_y,_size,_size,_rotation,c_white,1)
+	draw_sprite_ext(spr_cover_border,0,_x+ _progress * _coverDistance,_y,
+	_size,_size,_rotation,c_white,1)
 	
 	var _oldY=_y
 	
@@ -278,7 +280,8 @@ repeat(_displayedLevels)
 	var _xOffset=lengthdir_x(128,_rotation-45)
 	var _yOffset=lengthdir_y(128,_rotation-45)
 	
-	draw_text_transformed(_x+_xOffset,_oldY+_yOffset,string(_levels[i].difficulty),1,1,_rotation)
+	draw_text_transformed(_x + (_progress * _coverDistance) + _xOffset,_oldY+_yOffset,
+	string(_levels[i].difficulty),1,1,_rotation)
 	
 	if(_isSelected)
 	{
