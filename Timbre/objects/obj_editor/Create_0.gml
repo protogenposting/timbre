@@ -413,17 +413,17 @@ button[9]={
 		with(obj_editor)
 		{
 			try{
-				difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
+				difficulty=get_integer("New Difficulty",difficulty)
 				while(true)
 				{
 					try{
-						show_message("changed to "+difficulties[difficulty].name)
+						show_message("changed to "+string(difficulty))
 						return 0
 					}
 					catch(e)
 					{
-						show_message("out of range")
-						difficulty=get_integer("difficulty (0-"+string(array_length(difficulties)-1)+")",difficulty)
+						show_message("invalid")
+						difficulty=get_integer("New Difficulty",difficulty)
 					}
 				}
 			}

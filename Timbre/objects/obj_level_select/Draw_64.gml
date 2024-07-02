@@ -275,6 +275,11 @@ repeat(_displayedLevels)
 	
 	_y=camera_get_view_height(view_camera[0])/2 - _readyProgress*256
 	
+	var _xOffset=lengthdir_x(128,_rotation-45)
+	var _yOffset=lengthdir_y(128,_rotation-45)
+	
+	draw_text_transformed(_x+_xOffset,_oldY+_yOffset,string(_levels[i].difficulty),1,1,_rotation)
+	
 	if(_isSelected)
 	{
 		draw_text(_x,_y-200,_levels[i].name)
@@ -286,10 +291,6 @@ repeat(_displayedLevels)
 		{
 			_levels[i].artist="???"
 		}
-		var _xOffset=lengthdir_x(128,_rotation-45)
-		var _yOffset=lengthdir_y(128,_rotation-45)
-		draw_sprite_ext(difficulties[_levels[i].difficulty].sprite,image_index,
-		_x+_xOffset,_oldY+_yOffset,1,1,_rotation,c_white,1)
 		_xOffset=lengthdir_x(128,_rotation-45+180)
 		_yOffset=lengthdir_y(128,_rotation-45+180)
 		

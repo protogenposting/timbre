@@ -129,7 +129,14 @@ function get_playlist_levels(_playlistID){
 	var _returnValue=[]
 	for(var i=0;i<array_length(global.playlists[_playlistID].levels);i++)
 	{
-		array_push(_returnValue,global.levels[global.playlists[_playlistID].levels[i]])
+		try{
+			array_push(_returnValue,global.levels[global.playlists[_playlistID].levels[i]])
+		}
+		catch(e)
+		{
+			array_delete(global.playlists[_playlistID].levels,i,1)
+			return get_playlist_levels(_playlistID)
+		}
 	}
 	return _returnValue
 }
