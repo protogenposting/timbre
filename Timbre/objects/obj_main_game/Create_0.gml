@@ -340,14 +340,14 @@ function create_points(){
 	var lastLength=songLength[1]-lastBeat
 	_x+=lengthdir_x(gridSize*lastLength,currentDirection)
 	_y+=lengthdir_y(gridSize*lastLength,currentDirection)
-	var _pointBeat=songLength[1]+10
+	var _pointBeat=songLength[1]+100
 	array_push(pointArray,{x:_x,y:_y,
 		type:noteTypes.turn,beat: _pointBeat, 
 		timeMS: _pointBeat*beatLength*1000, 
 		wasHit:false,direction: currentDirection,
 		continuing:false,color:c_white,release:false})
 	
-	for(var i=0;i<array_length(pointArray)-1;i++)
+	for(var i=0;i<array_length(pointArray);i++)
 	{
 		pointArray[i].wasHit=false
 		var _direction=pointArray[i].direction*90
@@ -362,16 +362,12 @@ function create_points(){
 		}
 		for(var o=0; o<array_length(notes);o++)
 		{
-			if(!variable_struct_exists(notes[o],"x"))
-			{
-				notes[o].x=0
-			}
-			if(!variable_struct_exists(notes[o],"y"))
-			{
-				notes[o].y=0
-			}
 			var _lastBeat=-20000
 			var _directionsOnThisBeat=[]
+			if(i+1>=array_length(pointArray))
+			{
+				break;
+			}
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)
 			{
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
