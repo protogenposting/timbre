@@ -277,8 +277,8 @@ repeat(_displayedLevels)
 	
 	_y=camera_get_view_height(view_camera[0])/2 - _readyProgress*256
 	
-	var _xOffset=lengthdir_x(128,_rotation-45)
-	var _yOffset=lengthdir_y(128,_rotation-45)
+	var _xOffset=lengthdir_x(128*_size,_rotation-45)
+	var _yOffset=lengthdir_y(128*_size,_rotation-45)
 	
 	draw_text_transformed(_x + (_progress * _coverDistance) + _xOffset,_oldY+_yOffset,
 	string(_levels[i].difficulty),1,1,_rotation)
