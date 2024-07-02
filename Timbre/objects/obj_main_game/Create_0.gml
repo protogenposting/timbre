@@ -364,10 +364,6 @@ function create_points(){
 		{
 			var _lastBeat=-20000
 			var _directionsOnThisBeat=[]
-			if(i+1>=array_length(pointArray))
-			{
-				break;
-			}
 			if(notes[o].beat>=pointArray[i].beat&&notes[o].beat<pointArray[i+1].beat)
 			{
 				var percentage=(notes[o].beat-pointArray[i].beat)/(pointArray[i+1].beat-pointArray[i].beat)
