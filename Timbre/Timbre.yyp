@@ -403,6 +403,7 @@
     {"id":{"name":"spr_spider_hit","path":"sprites/spr_spider_hit/spr_spider_hit.yy",},},
     {"id":{"name":"spr_spider_idle","path":"sprites/spr_spider_idle/spr_spider_idle.yy",},},
     {"id":{"name":"spr_spider","path":"sprites/spr_spider/spr_spider.yy",},},
+    {"id":{"name":"spr_star","path":"sprites/spr_star/spr_star.yy",},},
     {"id":{"name":"spr_start_button","path":"sprites/spr_start_button/spr_start_button.yy",},},
     {"id":{"name":"spr_sun","path":"sprites/spr_sun/spr_sun.yy",},},
     {"id":{"name":"spr_treeline","path":"sprites/spr_treeline/spr_treeline.yy",},},

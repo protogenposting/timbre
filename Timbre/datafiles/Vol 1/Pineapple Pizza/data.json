@@ -1,7 +1,7 @@
 {
   "artist":"Protogen Posting",
   "bpm":108.0,
-  "offset":0.0,
+  "offset":0,
   "notesHard":[
     {
       "direction":0.0,
@@ -2064,7 +2064,7 @@
   "songName":"pineapple pizza!.ogg",
   "lyrics":[
   ],
-  "difficulty":0.0,
+  "difficulty":0.5,
   "shakes":[
   ],
   "notes":[

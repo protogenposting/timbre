@@ -130,7 +130,13 @@ function get_playlist_levels(_playlistID){
 	for(var i=0;i<array_length(global.playlists[_playlistID].levels);i++)
 	{
 		try{
-			array_push(_returnValue,global.levels[global.playlists[_playlistID].levels[i]])
+			for(var o=0;o<array_length(global.levels);o++)
+			{
+				if(global.levels[o].path==global.playlists[_playlistID].levels[i])
+				{
+					array_push(_returnValue,global.levels[o])
+				}
+			}
 		}
 		catch(e)
 		{
@@ -143,11 +149,12 @@ function get_playlist_levels(_playlistID){
 
 function reset_default_playlist()
 {
+	global.levels=sort_songlist(global.levels)
 	global.playlists[0].levels=[]
 
 	for(var i=0;i<array_length(global.levels);i++)
 	{
-		array_push(global.playlists[0].levels,i)
+		array_push(global.playlists[0].levels,global.levels[i].path)
 	}
 	show_debug_message(global.playlists[0])
 }

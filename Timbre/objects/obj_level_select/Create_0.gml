@@ -95,18 +95,19 @@ sortNames[sortTypes.difficulty]="Difficulty"
 sortNames[sortTypes.bpm]="Bpm"
 
 function initialize_level(levelID){
+	var _levels=get_playlist_levels(global.currentPlaylist)
 	if(levelID<0)
 	{
 		levelID=0
 	}
-	var _path=global.levels[levelID].path
+	var _path=_levels[levelID].path
 	var _file=load_file(_path)
 	var hasNormal=true
 	var hasEasy=false
 	var hasHard=false
 	if(_file!=false)
 	{
-		global.levels[levelID].difficulty=_file.difficulty
+		_levels[levelID].difficulty=_file.difficulty
 		if(variable_struct_exists(_file,"notesHard"))
 		{
 			hasHard=true
@@ -120,7 +121,7 @@ function initialize_level(levelID){
 			hasEasy=true
 		}
 	}
-	global.levels[levelID].availableDifficulties=[hasEasy,hasNormal,hasHard]
+	_levels[levelID].availableDifficulties=[hasEasy,hasNormal,hasHard]
 	if(obj_level_select.selectedLevel==levelID)
 	{
 		audio_stop_sound(global.song)
@@ -138,7 +139,7 @@ function initialize_level(levelID){
 			var _newFile=GetOpenFileName(".json","data.json","", @'Open')
 			if(_newFile!="")
 			{
-				global.levels[levelID].path=_newFile
+				_levels[levelID].path=_newFile
 			}
 		}
 	}
@@ -150,8 +151,8 @@ function initialize_level(levelID){
 			var beatLength=60/_file.bpm
 			var _noteBeats=[]
 			try{
-				global.levels[levelID].difficulty=_file.difficulty
-				global.levels[levelID].artist=_file.artist
+				_levels[levelID].difficulty=_file.difficulty
+				_levels[levelID].artist=_file.artist
 			}
 			catch(e)
 			{

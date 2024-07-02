@@ -281,7 +281,10 @@ repeat(_displayedLevels)
 	var _yOffset=lengthdir_y(128*_size,_rotation-45)
 	
 	draw_text_transformed(_x + (_progress * _coverDistance) + _xOffset,_oldY+_yOffset,
-	string(_levels[i].difficulty),1,1,_rotation)
+	string(_levels[i].difficulty),_size,_size,_rotation)
+	
+	draw_sprite_ext(spr_star,0,_x + (_progress * _coverDistance) + _xOffset-64*_size,_oldY+_yOffset,
+	_size,_size,_rotation,c_yellow,1)
 	
 	if(_isSelected)
 	{

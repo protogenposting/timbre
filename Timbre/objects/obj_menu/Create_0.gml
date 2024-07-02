@@ -15,6 +15,8 @@ enum noteDirections{
 	down,
 }
 
+reset_default_playlist()
+
 cursor_sprite=spr_mouse
 
 //window_set_fullscreen(true)
