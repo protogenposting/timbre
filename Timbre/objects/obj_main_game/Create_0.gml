@@ -749,7 +749,7 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 	}
 }
 
-botplayLeniency=15
+botplayLeniency=5
 
 function update_particles(){
 	var particleUpdateTime=fps/120
