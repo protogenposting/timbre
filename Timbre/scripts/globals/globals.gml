@@ -127,14 +127,19 @@ else
 }
 function get_playlist_levels(_playlistID){
 	var _returnValue=[]
+	var _unfoundLevels=[]
+	array_copy(_unfoundLevels,0,global.levels,0,array_length(global.levels))
 	for(var i=0;i<array_length(global.playlists[_playlistID].levels);i++)
 	{
 		try{
-			for(var o=0;o<array_length(global.levels);o++)
+			for(var o=0;o<array_length(_unfoundLevels);o++)
 			{
-				if(global.levels[o].path==global.playlists[_playlistID].levels[i])
+				if(_unfoundLevels[o].path==global.playlists[_playlistID].levels[i])
 				{
-					array_push(_returnValue,global.levels[o])
+					array_push(_returnValue,_unfoundLevels[o])
+					array_delete(_unfoundLevels,o,1)
+					o--
+					show_debug_message(_unfoundLevels)
 				}
 			}
 		}
