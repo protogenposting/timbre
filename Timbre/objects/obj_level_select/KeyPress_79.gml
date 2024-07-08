@@ -14,7 +14,7 @@ if(global.currentPlaylist!=0)
 }
 else
 {
-	//add teh current song
+	//add teh current song (MAKE THIS ACTUALLY WORK)
 	selectingPlaylist=true
 
 	selectedPlaylistFunc=function(_playlistID){
