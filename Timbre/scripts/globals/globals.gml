@@ -41,7 +41,23 @@ global.modeBinds=[
 			vk_space,
 			ord("K")
 		),
-	}
+	},
+	{
+		turning: new bind(
+			spr_reverse_arrow,
+			ord("A"),
+			ord("D"),
+			ord("W"),
+			ord("S")
+		),
+		attacking: new bind(
+			spr_log,
+			ord("J"),
+			ord("L"),
+			ord("I"),
+			ord("K")
+		),
+	},
 ]
 
 global.deltaTime=true
@@ -139,7 +155,6 @@ function get_playlist_levels(_playlistID){
 					array_push(_returnValue,_unfoundLevels[o])
 					array_delete(_unfoundLevels,o,1)
 					o--
-					show_debug_message(_unfoundLevels)
 				}
 			}
 		}

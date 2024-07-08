@@ -19,6 +19,7 @@ function save_game(){
 		moveSpeed: global.moveSpeed,
 		audioOffset:global.audioOffset,
 		showKeys: global.showKeys,
-		modeBinds: global.modeBinds
+		modeBinds: global.modeBinds,
+		playlists: global.playlists
 	},global.saveName)
 }

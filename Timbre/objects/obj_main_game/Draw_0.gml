@@ -1,5 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(global.gamemode==2)
+{
+	exit;
+}
+
 var positionsUsed=[]
 var beatLength=60/bpm
 

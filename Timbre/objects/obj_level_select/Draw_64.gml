@@ -4,19 +4,21 @@ draw_set_halign(fa_right)
 draw_set_valign(fa_top)
 
 draw_text(room_width,0,"Current Playlist: "+global.playlists[global.currentPlaylist].name)
+draw_text(room_width,32,"Press P to create a playlist")
+if(global.currentPlaylist!=0)
+{
+	draw_text(room_width,64,"Press O to delete the current playlist")
+}
+else
+{
+	draw_text(room_width,64,"Press O to add the current song to a playlist")
+}
+draw_text(room_width,96,"Press Up/Down Arrows to change playlists")
 
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
 songSpeedAlpha-=0.01
-
-/*
- YO MOVE MOVESPEED CHANGING TO A SLIDER	
-if(_hAxis!=0&&global.moveSpeed+_hAxis*0.05>0)
-{
-	global.moveSpeed+=(_hAxis)*0.05
-	songSpeedAlpha=1
-}*/
 
 draw_buttons_fancy()
 
@@ -25,11 +27,35 @@ if(alarm[1]>0||array_length(global.levels)<=0)
 	exit;
 }
 
+var _vAxis=keyboard_check_pressed(vk_down)-keyboard_check_pressed(vk_up)
+
+if(_vAxis!=0)
+{
+	global.currentPlaylist+=_vAxis
+	if(global.currentPlaylist<0)
+	{
+		global.currentPlaylist=array_length(global.playlists)-1
+	}
+	if(global.currentPlaylist>array_length(global.playlists)-1)
+	{
+		global.currentPlaylist=0
+	}
+}
+
 //draw the WHEEL OF LEVELS
 
 var _hAxis=keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left)
 
 var _levels=get_playlist_levels(global.currentPlaylist)
+
+if(wheelProgress<0)
+{
+	wheelProgress=array_length(_levels)-1
+}
+if(wheelProgress>array_length(_levels)-1)
+{
+	wheelProgress=0
+}
 
 if(_hAxis!=0&&!readyUp)
 {
