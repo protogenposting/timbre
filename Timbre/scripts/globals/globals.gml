@@ -184,7 +184,7 @@ for(var i=1;i<array_length(global.playlists);i++)
 {
 	if(array_length(global.playlists[i].levels)<=0)
 	{
-		array_delete(global.playlists[i].levels,i,1)
+		array_delete(global.playlists,i,1)
 		i--
 	}
 }
