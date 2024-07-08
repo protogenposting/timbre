@@ -18,6 +18,44 @@ draw_text(room_width,96,"Press Up/Down Arrows to change playlists")
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
+if(selectingPlaylist)
+{
+	draw_text(room_width/2,32,"press esc to exit!")
+	readyUp=false
+	
+	var _y=128
+	var _boxWidth=64
+	var _boxHeight=32
+	
+	for(var i=1;i<array_length(global.playlists);i++)
+	{
+		var _x=room_width/2
+		var _size=0
+		
+		if(point_in_rectangle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0),
+		_x-_boxWidth,_y-_boxHeight,_x+_boxWidth,_y+_boxHeight))
+		{
+			_size=5
+			if(global.pressingMouseLeft)
+			{
+				selectedPlaylistFunc(i)
+				selectingPlaylist=false
+				break;
+			}
+		}
+		
+		draw_rectangle(_x-_boxWidth-_size,_y-_boxHeight-_size,
+		_x+_boxWidth+_size,_y+_boxHeight+_size,false)
+		draw_text(_x,_y,global.playlists[i].name)
+		
+		_y+=96
+	}
+	
+	
+	
+	exit;
+}
+
 songSpeedAlpha-=0.01
 
 draw_buttons_fancy()
@@ -376,6 +414,3 @@ repeat(_displayedLevels)
 }
 draw_set_font(fn_font)
 
-draw_set_font(fn_font_big)
-draw_text_transformed_color(1366/2,768/2,"Song Speed: "+string(global.moveSpeed),3,3,0,c_white,c_white,c_white,c_white,songSpeedAlpha)
-draw_set_font(fn_font)
