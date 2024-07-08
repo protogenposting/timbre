@@ -18,6 +18,10 @@ yOffsetMaxSpeed=25
 
 songSpeedAlpha=1
 
+selectingPlaylist=false
+
+selectedPlaylistFunc=function(_playlistID){}
+
 merps=[
 	snd_merp1,
 	snd_merp2,
@@ -96,6 +100,10 @@ sortNames[sortTypes.bpm]="Bpm"
 
 function initialize_level(levelID){
 	var _levels=get_playlist_levels(global.currentPlaylist)
+	if(array_length(_levels)<=0)
+	{
+		return 0
+	}
 	if(levelID<0)
 	{
 		levelID=0

@@ -57,7 +57,7 @@ if(wheelProgress>array_length(_levels)-1)
 	wheelProgress=0
 }
 
-if(_hAxis!=0&&!readyUp)
+if(_hAxis!=0&&!readyUp||_vAxis!=0&&!readyUp)
 {
 	previousWheelDirection=_hAxis
 	wheelProgress+=_hAxis
@@ -71,7 +71,14 @@ if(_hAxis!=0&&!readyUp)
 	}
 	wheelRotationProgress=0
 	
-	initialize_level(wheelProgress)
+	try{
+		initialize_level(wheelProgress)
+	}
+	catch(e)
+	{
+		show_message(wheelProgress)
+		show_message(e)
+	}
 	
 	readyUp=false
 }
@@ -90,7 +97,7 @@ else if(_hAxis!=0&&readyUp)
 
 wheelRotationProgress+=0.1
 
-var _displayedLevels=min(5,array_length(global.levels))
+var _displayedLevels=min(5,array_length(_levels))
 
 var i=wheelProgress-floor(_displayedLevels/2)
 
