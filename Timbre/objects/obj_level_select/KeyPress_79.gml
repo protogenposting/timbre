@@ -3,14 +3,7 @@
 if(global.currentPlaylist!=0)
 {
 	//delete the playlist
-	if(show_question("delete "+global.playlists[global.currentPlaylist].name+"?"))
-	{
-		array_delete(global.playlists,global.currentPlaylist,1)
-		global.currentPlaylist=0
-		var _levels=get_playlist_levels(global.currentPlaylist)
-		wheelProgress=0
-		initialize_level(wheelProgress)
-	}
+	array_delete(global.playlists[global.currentPlaylist].levels,wheelProgress,1)
 }
 else
 {

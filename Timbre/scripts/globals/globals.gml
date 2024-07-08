@@ -180,6 +180,15 @@ function reset_default_playlist()
 }
 reset_default_playlist()
 
+for(var i=1;i<array_length(global.playlists);i++)
+{
+	if(array_length(global.playlists[i].levels)<=0)
+	{
+		array_delete(global.playlists[i].levels,i,1)
+		i--
+	}
+}
+
 function GameMode(_name,_sprite,_requirments=function(){return true}) constructor{
 	name=_name
 	sprite=_sprite
