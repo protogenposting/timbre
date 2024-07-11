@@ -7,7 +7,14 @@ draw_text(room_width,0,"Current Playlist: "+global.playlists[global.currentPlayl
 draw_text(room_width,32,"Press P to create a playlist")
 if(global.currentPlaylist!=0)
 {
-	draw_text(room_width,64,"Press O to remove the current song from the playlist")
+	if(array_length(global.playlists[global.currentPlaylist].levels)>0)
+	{
+		draw_text(room_width,64,"Press O to remove the current song from the playlist")
+	}
+	else
+	{
+		draw_text(room_width,64,"Press O to remove the current playlist")
+	}
 }
 else
 {

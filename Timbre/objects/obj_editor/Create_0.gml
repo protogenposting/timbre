@@ -94,7 +94,10 @@ if(global.song!=-4)
 if(global.levelData!=-4)
 {
 	songName=global.levelData.songName
-	notes=global.levelData.notes
+	if(variable_struct_exists(global.levelData,"notes"))
+	{
+		notes=global.levelData.notes
+	}
 	if(variable_struct_exists(global.levelData,"notesHard"))
 	{
 		notesHard=global.levelData.notesHard
@@ -185,7 +188,6 @@ function load_level(_levelData){
 		
 		load_song(directory+struct.songName)
 		songName=struct.songName
-		notes=struct.notes
 		bpm=struct.bpm
 		offset=struct.offset
 		try{
@@ -195,6 +197,10 @@ function load_level(_levelData){
 		catch(e)
 		{
 			
+		}
+		if(variable_struct_exists(struct,"notes"))
+		{
+			notes=struct.notes
 		}
 		if(variable_struct_exists(struct,"notesHard"))
 		{

@@ -151,8 +151,23 @@ for(var i=array_length(points)-1;i>0;i--)
 		var _beatDistance=abs(points[i].beat-points[points[i].endNote].beat)
 		if(!points[i+1].wasHit)
 		{
+			var _nextNormalNote=i
+			for(var i2=_nextNormalNote;i2<array_length(points);i2++)
+			{
+				if(!points[i2].release)
+				{
+					_nextNormalNote=i2
+					break;
+				}
+			}
+			var _dir=point_direction(points[i+1].x,points[i+1].y,points[_nextNormalNote].x,points[_nextNormalNote].y)
+			if(points[i+1].x==points[_nextNormalNote].x&&points[i+1].y==points[_nextNormalNote].y)
+			{
+				_dir=points[i].direction*90
+			}
 			draw_sprite_ext(sprites.web,0,points[i].x,points[i].y,(loopSize/32)*_beatDistance,1,
-			points[i].direction*90,c_white,1)
+			_dir,c_white,1)
+			
 		}
 		if(!points[i].wasHit)
 		{

@@ -2,8 +2,15 @@
 // You can write your code in this editor
 if(global.currentPlaylist!=0)
 {
-	//delete the playlist
-	array_delete(global.playlists[global.currentPlaylist].levels,wheelProgress,1)
+	if(array_length(global.playlists[global.currentPlaylist].levels)>0)
+	{
+		array_delete(global.playlists[global.currentPlaylist].levels,wheelProgress,1)
+	}
+	else
+	{
+		array_delete(global.playlists,global.currentPlaylist,1)
+		global.currentPlaylist=0
+	}
 }
 else
 {
