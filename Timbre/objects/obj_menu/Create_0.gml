@@ -29,6 +29,8 @@ logoRotation=0
 
 logoRotationMult=1
 
+doorTime=3000
+
 audio_stop_all()
 
 audio=audio_play_sound(snd_menu_music,1000,true)

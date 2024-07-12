@@ -22,6 +22,7 @@
   "height":400,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"f5707169-ced8-4bf5-a29a-d6aad926ca8c","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f5707169-ced8-4bf5-a29a-d6aad926ca8c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"757e7fd0-4be3-4f07-b5bd-959f77871d48","blendMode":0,"displayName":"default","isLocked":false,"name":"757e7fd0-4be3-4f07-b5bd-959f77871d48","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_dancc",

@@ -8,5 +8,11 @@ repeat(5)
 	_x+=512
 }
 
+var _doorHeight=move_smooth_between_points(0,0,1,0,current_time/doorTime).x
+
+draw_sprite_ext(spr_door,0,room_width/2,0,room_width/64,room_height/(_doorHeight*64),0,c_white,1)
+
 draw_sprite(spr_sun,0,room_width/2,-128)
 draw_sprite(spr_dancc,currentShroomPose,gooberLocation.x,gooberLocation.y)
+
+window_set_cursor(cr_none)
