@@ -26,8 +26,9 @@ function draw_buttons_fancy(){
 			}
 		}
 		try{
+			draw_set_alpha(0.3)
 			var _n=button[i].name
-			var _col=c_black
+			var _col=c_aqua
 			if(variable_struct_exists(button[i],"color"))
 			{
 				_col=button[i].color
@@ -49,6 +50,7 @@ function draw_buttons_fancy(){
 			{
 				stringSize=0.75
 			}
+			draw_set_alpha(1)
 			draw_text_ext_transformed(_posX,_posY,string_upper(button[i].name),16,sizeX*2,stringSize,stringSize,0)
 			if(variable_struct_exists(button[i],"id"))
 			{

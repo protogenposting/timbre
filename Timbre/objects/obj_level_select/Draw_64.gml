@@ -3,8 +3,16 @@
 draw_set_halign(fa_right)
 draw_set_valign(fa_top)
 
+draw_set_alpha(0.3)
+
+draw_rectangle_color(room_width-512,0,room_width,128,c_aqua,c_aqua,c_aqua,c_aqua,false)
+
+draw_set_alpha(1)
+
 draw_text(room_width,0,"Current Playlist: "+global.playlists[global.currentPlaylist].name)
+
 draw_text(room_width,32,"Press P to create a playlist")
+
 if(global.currentPlaylist!=0)
 {
 	if(array_length(global.playlists[global.currentPlaylist].levels)>0)
@@ -20,6 +28,7 @@ else
 {
 	draw_text(room_width,64,"Press O to add the current song to a playlist")
 }
+
 draw_text(room_width,96,"Press Up/Down Arrows to change playlists")
 
 draw_set_halign(fa_center)
