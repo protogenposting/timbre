@@ -29,7 +29,9 @@ logoRotation=0
 
 logoRotationMult=1
 
-doorTime=3000
+doorTime=20000
+
+global.playedDoorSlam=false
 
 audio_stop_all()
 
