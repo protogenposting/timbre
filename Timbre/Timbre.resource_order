@@ -106,6 +106,7 @@
     {"name":"spr_difficulty_button_hard","order":10,"path":"sprites/spr_difficulty_button_hard/spr_difficulty_button_hard.yy",},
     {"name":"spr_difficulty_button_normal","order":8,"path":"sprites/spr_difficulty_button_normal/spr_difficulty_button_normal.yy",},
     {"name":"spr_door","order":43,"path":"sprites/spr_door/spr_door.yy",},
+    {"name":"spr_edit_button","order":10,"path":"sprites/spr_edit_button/spr_edit_button.yy",},
     {"name":"spr_exit_button","order":9,"path":"sprites/spr_exit_button/spr_exit_button.yy",},
     {"name":"spr_expert","order":4,"path":"sprites/spr_expert/spr_expert.yy",},
     {"name":"spr_expertplus","order":5,"path":"sprites/spr_expertplus/spr_expertplus.yy",},
