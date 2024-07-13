@@ -717,7 +717,7 @@ sprites={
 var _dir=""
 if(global.selectedLevel!=-4)
 {
-	_dir=filename_dir(global.levels[global.selectedLevel].path)+"/"
+	_dir=filename_dir(global.levels[global.selectedLevel].path)
 }
 else
 {
@@ -733,14 +733,8 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 	{
 		var _oldSprite=variable_struct_get(sprites,_spritesToGet[i])
 		var _frameDelays=[]
-		var _frameSprites=[]
 		var _sprite = sprite_add_gif(_file,sprite_get_xoffset(_oldSprite),sprite_get_yoffset(_oldSprite),_frameDelays)
-
-		for(var o=1;o<array_length(_frameSprites);o++)
-		{
-			sprite_merge(_sprite,_frameSprites[o])
-		}
-		
+		show_message(_spritesToGet[i])
 		variable_struct_set(sprites,_spritesToGet[i],_sprite)
 	}
 }
