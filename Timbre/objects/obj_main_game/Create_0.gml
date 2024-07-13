@@ -708,15 +708,11 @@ sprites={
 	spiderEnd: spr_spider_hit,
 	spiderGrab: spr_spider,
 	axe: spr_axes,
+	grass: spr_grass_epilepsy,
 	bob: spr_bob,
-	grass: spr_grass,
 	badArrow: spr_bad_arrow
 }
 
-if(global.epilepsyMode)
-{
-	sprites.grass=spr_grass_epilepsy
-}
 
 var _dir=""
 if(global.selectedLevel!=-4)

@@ -54,15 +54,6 @@ layer_background_index(background,barPercentage*sprite_get_number(sprites.grass)
 
 if(frac(barPercentage)<frac(barPercentageLast))
 {
-	
-	if(get_accuracy()<=30)
-	{
-		layer_background_sprite(background,spr_grass_bad)
-	}
-	else
-	{
-		layer_background_sprite(background,spr_grass)
-	}
 	currentBeat++
 	if(finished)
 	{
@@ -71,15 +62,7 @@ if(frac(barPercentage)<frac(barPercentageLast))
 	}
 	//audio_play_sound(snd_beat,1000,false)
 }
-
-if(global.epilepsyMode)
-{
-	layer_background_sprite(background,spr_grass_epilepsy)
-}
-if(sprites.grass!=spr_grass)
-{
-	layer_background_sprite(background,sprites.grass)
-}
+layer_background_sprite(background,sprites.grass)
 
 currentFracBeat=currentBeat+barPercentage
 
