@@ -717,7 +717,7 @@ sprites={
 var _dir=""
 if(global.selectedLevel!=-4)
 {
-	_dir=filename_dir(global.levels[global.selectedLevel].path)+"\\"
+	_dir=filename_dir(global.levels[global.selectedLevel].path)+"/"
 }
 else
 {
@@ -731,7 +731,6 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 	var _file=_dir+_spritesToGet[i]+".gif"
 	if(file_exists(_file))
 	{
-		show_message(_spritesToGet[i])
 		var _oldSprite=variable_struct_get(sprites,_spritesToGet[i])
 		var _frameDelays=[]
 		var _sprite = sprite_add_gif(_file,sprite_get_xoffset(_oldSprite),sprite_get_yoffset(_oldSprite),_frameDelays)
