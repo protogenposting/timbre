@@ -60,7 +60,7 @@ songMilliseconds=0
 
 gridSize=512*global.moveSpeed
 
-background=layer_get_id("Background")
+background=layer_background_get_id(layer_get_id("Background"))
 
 songLength=[audio_sound_length(songID)*1000,audio_sound_length(songID)/(60/bpm)]
 
@@ -717,11 +717,11 @@ sprites={
 var _dir=""
 if(global.selectedLevel!=-4)
 {
-	_dir=filename_dir(global.levels[global.selectedLevel].path)
+	_dir=filename_dir(global.levels[global.selectedLevel].path)+"\\"
 }
 else
 {
-	_dir=global.dataLocation+"\\"
+	_dir=global.dataLocation+"/"
 }
 
 var _spritesToGet=struct_get_names(sprites)
@@ -731,10 +731,11 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 	var _file=_dir+_spritesToGet[i]+".gif"
 	if(file_exists(_file))
 	{
+		show_message(_spritesToGet[i])
 		var _oldSprite=variable_struct_get(sprites,_spritesToGet[i])
 		var _frameDelays=[]
 		var _sprite = sprite_add_gif(_file,sprite_get_xoffset(_oldSprite),sprite_get_yoffset(_oldSprite),_frameDelays)
-		show_message(_spritesToGet[i])
+		
 		variable_struct_set(sprites,_spritesToGet[i],_sprite)
 	}
 }

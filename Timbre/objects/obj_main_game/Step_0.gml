@@ -50,6 +50,7 @@ for(var i=0;i<array_length(points);i++)
 {
 	points[i].frame=round(currentFracBeat*4)
 }
+
 layer_background_index(background,barPercentage*sprite_get_number(sprites.grass))
 
 if(frac(barPercentage)<frac(barPercentageLast))
@@ -62,6 +63,7 @@ if(frac(barPercentage)<frac(barPercentageLast))
 	}
 	//audio_play_sound(snd_beat,1000,false)
 }
+
 layer_background_sprite(background,sprites.grass)
 
 currentFracBeat=currentBeat+barPercentage
