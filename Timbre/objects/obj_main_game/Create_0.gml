@@ -414,7 +414,6 @@ function create_points(){
 					notes[o].intendedDirection=notes[o].direction
 				}
 				
-				//show_message(notes[o].intendedDirection)
 				notes[o].x=dist.x+lengthdir_x(64,dir)
 				notes[o].y=dist.y+lengthdir_y(64,dir)
 				notes[o].color=c_white
@@ -436,10 +435,10 @@ function create_points(){
 				}
 				if(dir==loop_rotation(_direction+180))
 				{
-					notes[o].color=c_purple
-					notes[o].temporaryType=noteTypes.movingHit
+					notes[o].color=c_blue
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
+					notes[o].intendedDirection=noteDirections.down
 					if(global.gamemode==1)
 					{
 						notes[o].direction=loop_rotation(_direction)/90
@@ -466,6 +465,7 @@ function create_points(){
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
 				}
+				
 				notes[o].timeMS=notes[o].beat*beatLength*1000
 				notes[o].wasHit=false
 				_lastBeat=notes[o].beat
