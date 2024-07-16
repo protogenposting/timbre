@@ -127,7 +127,7 @@ if(global.gamemode==2)
 	var _noteDistance=_camWidth/6
 	var _logDistance=_camWidth/3
 	var _playerX=device_mouse_x_to_gui(0)
-	var _playerY=_camHeight-64
+	var _playerY=_camHeight-32
 	draw_sprite_ext(sprites.player,playerFrame,_playerX,_playerY,
 		2,2,90,c_white,1)
 		
@@ -156,11 +156,11 @@ if(global.gamemode==2)
 		_x-32,_scrollPosition-32,_x+32,_scrollPosition+32,
 		_playerX-64,_playerY-64,_playerX+64,_playerY+64)
 		
-		
+		var _timing=songMilliseconds-points[i].timeMS
 		
 		if(_touching)
-		{
-			var _timing=_playerX-_x
+		{			
+			totalScore+=(msWindow-abs(_timing))*global.songSpeed
 			
 			hitMessage=get_timing(_timing)
 			
@@ -180,9 +180,10 @@ if(global.gamemode==2)
 				part_system_angle(_p,points[i].direction*90)
 				part_system_automatic_update(_p,false)
 			}
+			combo++
 			points[i].wasHit=true
 		}
-		if(_scrollPosition>_camHeight)
+		if(_timing>msWindow)
 		{
 			miss(points[i])
 		}
@@ -210,18 +211,18 @@ if(global.gamemode==2)
 		
 		var _xPos=_x-_noteDistance*(3-notes[i].direction)-96
 		
-		draw_sprite_ext(sprites.log,playerFrame,_x,_scrollPosition,
+		draw_sprite_ext(sprites.log,0,_x,_scrollPosition,
 			1,1,90,notes[i].color,1)
 		
 		var _touching=rectangle_in_rectangle(
 		_x-32,_scrollPosition-32,_x+32,_scrollPosition+32,
 		_playerX-32,_playerY-32,_playerX+32,_playerY+32)
 		
-		
+		var _timing=songMilliseconds-notes[i].timeMS
 		
 		if(_touching)
 		{
-			var _timing=_playerX-_x
+			totalScore+=(msWindow-abs(_timing))*global.songSpeed
 			
 			hitMessage=get_timing(_timing)
 			
@@ -241,9 +242,10 @@ if(global.gamemode==2)
 				part_system_angle(_p,notes[i].direction*90)
 				part_system_automatic_update(_p,false)
 			}
+			combo++
 			notes[i].wasHit=true
 		}
-		if(_scrollPosition>_camHeight)
+		if(_timing>msWindow)
 		{
 			miss(notes[i])
 		}
