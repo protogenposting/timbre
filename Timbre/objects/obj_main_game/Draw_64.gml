@@ -177,7 +177,7 @@ if(global.gamemode==2)
 				var _p=part_system_create(p_arrow_perfect)
 				array_push(particles,{time:160,id:_p,updateTimer:0})
 				part_system_position(_p,_playerX,_playerY)
-				part_system_angle(_p,points[i].direction*90)
+				part_system_angle(_p,90)
 				part_system_automatic_update(_p,false)
 			}
 			combo++
@@ -239,7 +239,7 @@ if(global.gamemode==2)
 				var _p=part_system_create(p_arrow_perfect)
 				array_push(particles,{time:160,id:_p,updateTimer:0})
 				part_system_position(_p,_playerX,_playerY)
-				part_system_angle(_p,notes[i].direction*90)
+				part_system_angle(_p,90)
 				part_system_automatic_update(_p,false)
 			}
 			combo++
