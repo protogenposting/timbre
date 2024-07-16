@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_tutorial_button",
   "bboxMode":0,
-  "bbox_bottom":199,
+  "bbox_bottom":198,
   "bbox_left":0,
   "bbox_right":255,
   "bbox_top":90,
@@ -19,7 +19,8 @@
   "height":256,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3d2f2426-9f98-4b6c-84fd-c85c77e71529","blendMode":0,"displayName":"default","isLocked":false,"name":"3d2f2426-9f98-4b6c-84fd-c85c77e71529","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"2b529f2c-cb96-41bf-9b78-95b97dd6ebf7","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"2b529f2c-cb96-41bf-9b78-95b97dd6ebf7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"3d2f2426-9f98-4b6c-84fd-c85c77e71529","blendMode":0,"displayName":"default","isLocked":false,"name":"3d2f2426-9f98-4b6c-84fd-c85c77e71529","opacity":45.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_tutorial_button",
   "nineSlice":null,
