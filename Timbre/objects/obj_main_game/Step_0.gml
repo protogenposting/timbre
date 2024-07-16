@@ -94,7 +94,10 @@ if(!audio_is_playing(songID))
 	startTime=current_time
 }
 
-if(!finished&&!audio_is_playing(songID)&&(array_contains(attackKey,1)||array_contains(turnKey,1)))
+if(!finished&&!audio_is_playing(songID)&&
+(array_contains(attackKey,1)||
+array_contains(turnKey,1)||
+!global.gamemodes[global.gamemode].usesNormalControls&&global.pressingMouseLeft))
 {
 	audio=audio_play_sound(songID,1000,false)
 }

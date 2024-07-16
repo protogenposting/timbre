@@ -125,7 +125,7 @@ if(global.gamemode==2)
 	var _camHeight=camera_get_view_height(view_camera[0])
 	var _camWidth=camera_get_view_width(view_camera[0])
 	var _noteDistance=_camWidth/6
-	var _logDistance=_camWidth/3
+	var _logDistance=_camWidth/6
 	var _playerX=device_mouse_x_to_gui(0)
 	var _playerY=_camHeight-32
 	draw_sprite_ext(sprites.player,playerFrame,_playerX,_playerY,
@@ -135,10 +135,8 @@ if(global.gamemode==2)
 	
 	for(var i=array_length(points)-1;i>0;i--)
 	{
-		if(points[i].wasHit)
-		{
-			continue;
-		}
+		var _sprite=sprites.arrow
+		
 		var _maxHitDistance=msWindow/4
 		
 		var _x=(_camWidth/2 - 1.5 * _noteDistance) + _noteDistance * points[i].direction
@@ -147,9 +145,29 @@ if(global.gamemode==2)
 		
 		var _scrollPosition=_y-(_timing)
 		
-		var _xPos=_x-_noteDistance*(3-points[i].direction)-96
+		if(points[i].type==noteTypes.spider)
+		{
+			var _touching=_playerX>_x-72&&_playerX<_x+72
+			
+			if(!_touching&&points[i].wasHit&&!points[points[i].endNote].wasHit)
+			{
+				miss(points[points[i].endNote])
+			}
+			
+			_sprite=sprites.spiderStart
+			
+			var _beatDistance=(abs(points[i].timeMS-points[points[i].endNote].timeMS)/1000)
+			
+			draw_sprite_ext(sprites.web,0,_x,_scrollPosition,
+			_beatDistance*16,1,270,c_white,1)
+		}
 		
-		draw_sprite_ext(sprites.arrow,playerFrame,_x,_scrollPosition,
+		if(points[i].wasHit)
+		{
+			continue;
+		}
+		
+		draw_sprite_ext(_sprite,playerFrame,_x,_scrollPosition,
 			1,1,90,points[i].color,1)
 		
 		var _touching=rectangle_in_rectangle(
@@ -193,7 +211,7 @@ if(global.gamemode==2)
 	_noteDistanceFromCenter[noteDirections.up]=1
 	_noteDistanceFromCenter[noteDirections.right]=2
 	_noteDistanceFromCenter[noteDirections.down]=1
-	for(var i=array_length(notes)-1;i>0;i--)
+	for(var i=array_length(notes)-1;i>=0;i--)
 	{
 		if(notes[i].wasHit)
 		{
