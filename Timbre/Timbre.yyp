@@ -402,6 +402,7 @@
     {"id":{"name":"spr_mode_background","path":"sprites/spr_mode_background/spr_mode_background.yy",},},
     {"id":{"name":"spr_mode_mania","path":"sprites/spr_mode_mania/spr_mode_mania.yy",},},
     {"id":{"name":"spr_mode_normal","path":"sprites/spr_mode_normal/spr_mode_normal.yy",},},
+    {"id":{"name":"spr_mode_nvdr","path":"sprites/spr_mode_nvdr/spr_mode_nvdr.yy",},},
     {"id":{"name":"spr_mods","path":"sprites/spr_mods/spr_mods.yy",},},
     {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
     {"id":{"name":"spr_no_cover","path":"sprites/spr_no_cover/spr_no_cover.yy",},},

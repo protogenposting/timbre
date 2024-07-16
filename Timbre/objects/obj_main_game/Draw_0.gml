@@ -1,7 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(global.gamemode==2)
+if(!global.gamemodes[global.gamemode].usesNormalControls)
 {
+	var gotLastNote=false
+	for(var i=array_length(points)-1;i>0;i--)
+	{
+		if(points[i].timeMS<=songMilliseconds&&!gotLastNote)
+		{
+			currentPoint=i
+			gotLastNote=true
+			break;
+		}
+	}
 	exit;
 }
 
@@ -110,14 +120,14 @@ var gotLastNote=false
 //draw notes
 for(var i=array_length(points)-1;i>0;i--)
 {
-	if(global.gamemode==1)
-	{
-		break;
-	}
 	if(points[i].timeMS<=songMilliseconds&&!gotLastNote)
 	{
 		currentPoint=i
 		gotLastNote=true
+	}
+	if(global.gamemode==1)
+	{
+		break;
 	}
 	var _color=points[i].color
 	if(i<array_length(points)-1&&points[i+1].release)

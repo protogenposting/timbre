@@ -42,6 +42,7 @@ if(global.showKeys)
 	_x,_y+64,1,1,270,make_color_rgb(255*_pressed,255*_pressed,255*_pressed),_alpha)
 }
 
+//all the drawing for MANIA mode
 if(global.gamemode==1)
 {
 	var _camHeight=camera_get_view_height(view_camera[0])
@@ -117,6 +118,17 @@ if(global.gamemode==1)
 		}
 		draw_sprite_ext(_sprite,0,_xPos,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
 	}
+}
+
+//all the stuff for NVDR mode
+if(global.gamemode==2)
+{
+	var _camHeight=camera_get_view_height(view_camera[0])
+	var _camWidth=camera_get_view_width(view_camera[0])
+	var _playerX=device_mouse_x_to_gui(0)
+	draw_sprite_ext(sprites.player,playerFrame,_playerX,_camHeight-64,
+		2,2,90,c_white,1)
+	
 }
 
 for(var i=0;i<array_length(global.difficultyMods);i++)

@@ -191,10 +191,11 @@ for(var i=1;i<array_length(global.playlists);i++)
 	}
 }
 
-function GameMode(_name,_sprite,_requirments=function(){return true}) constructor{
+function GameMode(_name,_sprite,_usesNormalControls,_requirments=function(){return true}) constructor{
 	name=_name
 	sprite=_sprite
 	requirments=_requirments
+	usesNormalControls=_usesNormalControls
 }
 
 function DifficultyMod(_name,_description,_sprite,_effect) constructor{
@@ -206,8 +207,9 @@ function DifficultyMod(_name,_description,_sprite,_effect) constructor{
 }
 
 global.gamemodes=[
-	new GameMode("Timbre",spr_mode_normal),
-	new GameMode("TimbreMania",spr_mode_mania),
+	new GameMode("Timbre",spr_mode_normal,true),
+	new GameMode("TimbreMania",spr_mode_mania,true),
+	new GameMode("TimbreNVDR",spr_mode_nvdr,false),
 ]
 
 global.difficultyMods=[

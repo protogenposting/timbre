@@ -126,6 +126,7 @@
     {"name":"spr_mod_hard","order":5,"path":"sprites/spr_mod_hard/spr_mod_hard.yy",},
     {"name":"spr_mode_background","order":3,"path":"sprites/spr_mode_background/spr_mode_background.yy",},
     {"name":"spr_mode_mania","order":1,"path":"sprites/spr_mode_mania/spr_mode_mania.yy",},
+    {"name":"spr_mode_nvdr","order":6,"path":"sprites/spr_mode_nvdr/spr_mode_nvdr.yy",},
     {"name":"spr_mods","order":4,"path":"sprites/spr_mods/spr_mods.yy",},
     {"name":"spr_mouse","order":28,"path":"sprites/spr_mouse/spr_mouse.yy",},
     {"name":"spr_no_cover","order":32,"path":"sprites/spr_no_cover/spr_no_cover.yy",},

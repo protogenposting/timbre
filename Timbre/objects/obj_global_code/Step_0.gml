@@ -1,6 +1,26 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+while(global.gamemode>=array_length(global.modeBinds))
+{
+	array_push(global.modeBinds,{
+		turning: new bind(
+			spr_reverse_arrow,
+			ord("A"),
+			ord("D"),
+			ord("W"),
+			ord("S")
+		),
+		attacking: new bind(
+			spr_log,
+			ord("J"),
+			ord("L"),
+			ord("I"),
+			ord("K")
+		),
+	})
+}
+
 global.keyboardBinds=global.modeBinds[global.gamemode]
 
 if(room==rm_gameplay)
