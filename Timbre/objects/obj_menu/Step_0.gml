@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-logoPositionY=move_smooth_between_points(0,-256,0,64,current_time/logoDropTime).y
+logoPositionY=move_smooth_between_points(0,-256,0,96,current_time/logoDropTime).y
 
 songMilliseconds=audio_sound_get_track_position(audio)*1000
 

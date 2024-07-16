@@ -17,10 +17,10 @@ font_enable_effects(fn_font_big, true, {
 
 if(room==rm_menu)
 {
-	var _x=room_width/2 - (sprite_get_number(spr_logo)/2)*96
+	var _x=room_width/2 - ((sprite_get_number(spr_logo)-1)/2)*96
 	for(var i=0;i<sprite_get_number(spr_logo);i++)
 	{
-		draw_sprite(spr_logo,i,_x,logoPositionY+sin((current_time/1000)+(i/4))*32)
+		draw_sprite(spr_logo,i,_x,logoPositionY+sin((current_time/1000)+(i/4))*16)
 		_x+=96
 	}
 }
