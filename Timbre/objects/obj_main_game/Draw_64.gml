@@ -154,13 +154,24 @@ if(global.gamemode==2)
 		break;
 	}
 		
-	if(notes[_nextLog].timeMS<points[_nextNote].timeMS)
+	if(array_length(points)<=0)
 	{
 		_nextType=noteTypes.log
 	}
-	else
+	else if(array_length(notes)<=0)
 	{
 		_nextType=noteTypes.turn
+	}
+	else
+	{
+		if(notes[_nextLog].timeMS<points[_nextNote].timeMS)
+		{
+			_nextType=noteTypes.log
+		}
+		else
+		{
+			_nextType=noteTypes.turn
+		}
 	}
 	
 	#endregion
