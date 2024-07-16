@@ -3,7 +3,6 @@
 
 if(global.showKeys)
 {
-	
 	var _x=room_width-256-128
 	var _y=room_height-128
 	var _alpha=0.75
@@ -104,7 +103,7 @@ if(global.gamemode==1)
 		var _sprite=sprites.arrow
 		var _timing=points[i].timeMS-songMilliseconds
 		var _scrollPosition=_y-(_timing)*global.moveSpeed
-		var _xPos=_x-_noteDistance*(3-points[i].direction)-96,_scrollPosition
+		var _xPos=_x-_noteDistance*(3-points[i].direction)-96
 		if(points[i].type==noteTypes.spider)
 		{
 			_sprite=sprites.spiderStart
@@ -125,10 +124,130 @@ if(global.gamemode==2)
 {
 	var _camHeight=camera_get_view_height(view_camera[0])
 	var _camWidth=camera_get_view_width(view_camera[0])
+	var _noteDistance=_camWidth/6
+	var _logDistance=_camWidth/3
 	var _playerX=device_mouse_x_to_gui(0)
-	draw_sprite_ext(sprites.player,playerFrame,_playerX,_camHeight-64,
+	var _playerY=_camHeight-64
+	draw_sprite_ext(sprites.player,playerFrame,_playerX,_playerY,
 		2,2,90,c_white,1)
+		
+	var _y=_camHeight-128
 	
+	for(var i=array_length(points)-1;i>0;i--)
+	{
+		if(points[i].wasHit)
+		{
+			continue;
+		}
+		var _maxHitDistance=msWindow/4
+		
+		var _x=(_camWidth/2 - 1.5 * _noteDistance) + _noteDistance * points[i].direction
+		
+		var _timing=points[i].timeMS-songMilliseconds
+		
+		var _scrollPosition=_y-(_timing)
+		
+		var _xPos=_x-_noteDistance*(3-points[i].direction)-96
+		
+		draw_sprite_ext(sprites.arrow,playerFrame,_x,_scrollPosition,
+			1,1,90,points[i].color,1)
+		
+		var _touching=rectangle_in_rectangle(
+		_x-32,_scrollPosition-32,_x+32,_scrollPosition+32,
+		_playerX-64,_playerY-64,_playerX+64,_playerY+64)
+		
+		
+		
+		if(_touching)
+		{
+			var _timing=_playerX-_x
+			
+			hitMessage=get_timing(_timing)
+			
+			var _timingID=get_timing_id(_timing)
+			
+			array_push(accuracyList,timings[_timingID].result)
+			
+			array_push(trueAccuracyList,_timing)
+			
+			audio_play_sound(snd_turn,1000,false)
+			
+			if(_timingID<=1)
+			{
+				var _p=part_system_create(p_arrow_perfect)
+				array_push(particles,{time:160,id:_p,updateTimer:0})
+				part_system_position(_p,irandom(_camWidth),irandom(_camWidth))
+				part_system_angle(_p,points[i].direction*90)
+				part_system_automatic_update(_p,false)
+			}
+			points[i].wasHit=true
+		}
+		if(_scrollPosition>_camHeight)
+		{
+			miss(points[i])
+		}
+	}
+	var _noteDistanceFromCenter=[]
+	_noteDistanceFromCenter[noteDirections.left]=0
+	_noteDistanceFromCenter[noteDirections.up]=1
+	_noteDistanceFromCenter[noteDirections.right]=2
+	_noteDistanceFromCenter[noteDirections.down]=1
+	for(var i=array_length(notes)-1;i>0;i--)
+	{
+		if(notes[i].wasHit)
+		{
+			continue;
+		}
+		var _maxHitDistance=msWindow/4
+		
+		var _x=(_camWidth/2 - _logDistance) 
+		+ _logDistance 
+		* _noteDistanceFromCenter[notes[i].direction]
+		
+		var _timing=notes[i].timeMS-songMilliseconds
+		
+		var _scrollPosition=_y-(_timing)
+		
+		var _xPos=_x-_noteDistance*(3-notes[i].direction)-96
+		
+		draw_sprite_ext(sprites.log,playerFrame,_x,_scrollPosition,
+			1,1,90,notes[i].color,1)
+		
+		var _touching=rectangle_in_rectangle(
+		_x-32,_scrollPosition-32,_x+32,_scrollPosition+32,
+		_playerX-32,_playerY-32,_playerX+32,_playerY+32)
+		
+		
+		
+		if(_touching)
+		{
+			var _timing=_playerX-_x
+			
+			hitMessage=get_timing(_timing)
+			
+			var _timingID=get_timing_id(_timing)
+			
+			array_push(accuracyList,timings[_timingID].result)
+			
+			array_push(trueAccuracyList,_timing)
+			
+			audio_play_sound(snd_turn,1000,false)
+			
+			if(_timingID<=1)
+			{
+				var _p=part_system_create(p_arrow_perfect)
+				array_push(particles,{time:160,id:_p,updateTimer:0})
+				part_system_position(_p,irandom(_camWidth),irandom(_camWidth))
+				part_system_angle(_p,notes[i].direction*90)
+				part_system_automatic_update(_p,false)
+			}
+			notes[i].wasHit=true
+		}
+		if(_scrollPosition>_camHeight)
+		{
+			miss(notes[i])
+		}
+	}
 }
 
 for(var i=0;i<array_length(global.difficultyMods);i++)
