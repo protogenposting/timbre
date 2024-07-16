@@ -280,7 +280,7 @@ if(global.gamemode==2)
 		
 		var _touching=rectangle_in_rectangle(
 		_x-32,_scrollPosition-32,_x+32,_scrollPosition+32,
-		_playerX-32,_playerY-32,_playerX+32,_playerY+32)
+		_playerX-64,_playerY-64,_playerX+64,_playerY+64)
 		
 		var _timing=songMilliseconds-notes[i].timeMS
 		
