@@ -128,9 +128,43 @@ if(global.gamemode==2)
 	var _logDistance=_camWidth/6
 	var _playerX=device_mouse_x_to_gui(0)
 	var _playerY=_camHeight-32
-	draw_sprite_ext(sprites.player,playerFrame,_playerX,_playerY,
-		2,2,90,c_white,1)
+	
+	#region botplay stuff
+	var _nextType=noteTypes.turn
+	
+	var _nextNote=0
+	for(var i=0;i<array_length(points)-1;i++)
+	{
+		if(points[i].wasHit)
+		{
+			continue;
+		}
+		_nextNote=i
+		break;
+	}
 		
+	var _nextLog=0
+	for(var i=0;i<array_length(notes);i++)
+	{
+		if(notes[i].wasHit)
+		{
+			continue;
+		}
+		_nextLog=i
+		break;
+	}
+		
+	if(notes[_nextLog].timeMS<points[_nextNote].timeMS)
+	{
+		_nextType=noteTypes.log
+	}
+	else
+	{
+		_nextType=noteTypes.turn
+	}
+	
+	#endregion
+	
 	var _y=_camHeight-128
 	
 	for(var i=array_length(points)-1;i>0;i--)
@@ -145,13 +179,18 @@ if(global.gamemode==2)
 		
 		var _scrollPosition=_y-(_timing)
 		
+		if(global.botPlay&&_nextType==noteTypes.turn&&_nextNote==i)
+		{
+			_playerX=_x
+		}
+		
 		if(points[i].type==noteTypes.spider)
 		{
 			var _touching=_playerX>_x-72&&_playerX<_x+72
 			
 			if(!_touching&&points[i].wasHit&&!points[points[i].endNote].wasHit)
 			{
-				miss(points[points[i].endNote])
+				//miss(points[points[i].endNote])
 			}
 			
 			_sprite=sprites.spiderStart
@@ -217,11 +256,18 @@ if(global.gamemode==2)
 		{
 			continue;
 		}
+		
+		
 		var _maxHitDistance=msWindow/4
 		
 		var _x=(_camWidth/2 - _logDistance) 
 		+ _logDistance 
 		* _noteDistanceFromCenter[notes[i].direction]
+		
+		if(global.botPlay&&_nextType==noteTypes.log&&_nextLog==i)
+		{
+			_playerX=_x
+		}
 		
 		var _timing=notes[i].timeMS-songMilliseconds
 		
@@ -268,6 +314,8 @@ if(global.gamemode==2)
 			miss(notes[i])
 		}
 	}
+	draw_sprite_ext(sprites.player,playerFrame,_playerX,_playerY,
+		2,2,90,c_white,1)
 }
 
 for(var i=0;i<array_length(global.difficultyMods);i++)
