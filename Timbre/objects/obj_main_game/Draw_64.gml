@@ -325,11 +325,15 @@ if(global.gamemode==2)
 			miss(notes[i])
 		}
 	}
+	for(var i=0;i<array_length(afterImages);i++)
+	{
+		draw_sprite_ext(sprites.player,playerFrame,afterImages[i],_playerY,
+			2,2,90,c_white,0.5)
+	}
 	draw_sprite_ext(sprites.player,playerFrame,_playerX,_playerY,
 		2,2,90,c_white,1)
-	draw_sprite_ext(sprites.player,playerFrame,lastMouseX,_playerY,
-		2,2,90,c_white,0.5)
-	lastMouseX=_playerX
+	array_delete(afterImages,0,1)
+	array_push(afterImages,_playerX)
 }
 
 for(var i=0;i<array_length(global.difficultyMods);i++)

@@ -11,7 +11,7 @@ if(global.gamemode==1)
 	
 }
 
-lastMouseX=0
+afterImages=[0,0,0]
 
 startTime=current_time
 
