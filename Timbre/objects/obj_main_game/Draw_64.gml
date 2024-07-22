@@ -327,6 +327,9 @@ if(global.gamemode==2)
 	}
 	draw_sprite_ext(sprites.player,playerFrame,_playerX,_playerY,
 		2,2,90,c_white,1)
+	draw_sprite_ext(sprites.player,playerFrame,lastMouseX,_playerY,
+		2,2,90,c_white,0.5)
+	lastMouseX=_playerX
 }
 
 for(var i=0;i<array_length(global.difficultyMods);i++)

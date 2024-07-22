@@ -11,6 +11,8 @@ if(global.gamemode==1)
 	
 }
 
+lastMouseX=0
+
 startTime=current_time
 
 early=0
