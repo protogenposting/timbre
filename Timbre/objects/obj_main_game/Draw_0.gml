@@ -161,9 +161,9 @@ for(var i=array_length(points)-1;i>0;i--)
 	
 	var _noteSize=64
 	
-	if(point_in_camera(_currentPoint.x+_noteSize,_currentPoint.x-_noteSize,
+	if(point_in_camera(_currentPoint.x-_noteSize,_currentPoint.x+_noteSize,
 	_currentPoint.y-_noteSize,_currentPoint.y+_noteSize)||
-	point_in_camera(points[i].x+_noteSize,points[i].x-_noteSize,
+	point_in_camera(points[i].x-_noteSize,points[i].x+_noteSize,
 	points[i].y-_noteSize,points[i].y+_noteSize))
 	{
 		var _xScale=(point_distance(_currentPoint.x,_currentPoint.y,points[i].x,points[i].y)+32)/64
