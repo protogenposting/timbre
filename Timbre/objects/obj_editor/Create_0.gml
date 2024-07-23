@@ -496,7 +496,7 @@ noteSounds[noteTypes.log]=snd_hit_tree
 noteSounds[noteTypes.wall]=snd_hit_tree
 noteSounds[noteTypes.turn]=snd_turn
 noteSounds[noteTypes.spider]=snd_beat
-noteSounds[noteTypes.mine]=snd_mine
+noteSounds[noteTypes.mine]=snd_turn
 
 noteSprites=array_create(20,spr_log)
 noteSprites[noteTypes.log]=spr_log

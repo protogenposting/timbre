@@ -135,7 +135,7 @@ if(global.gamemode==2)
 	var _nextNote=0
 	for(var i=0;i<array_length(points)-1;i++)
 	{
-		if(points[i].wasHit)
+		if(points[i].wasHit||points[i].type==noteTypes.mine)
 		{
 			continue;
 		}
@@ -227,29 +227,36 @@ if(global.gamemode==2)
 		var _timing=songMilliseconds-points[i].timeMS
 		
 		if(_touching)
-		{			
-			totalScore+=(msWindow-abs(_timing))*global.songSpeed
-			
-			hitMessage=get_timing(_timing)
-			
-			var _timingID=get_timing_id(_timing)
-			
-			array_push(accuracyList,timings[_timingID].result)
-			
-			array_push(trueAccuracyList,_timing)
-			
-			audio_play_sound(snd_turn,1000,false)
-			
-			if(_timingID<=1)
+		{	
+			if(points[i].type==noteTypes.mine)
 			{
-				var _p=part_system_create(p_arrow_perfect)
-				array_push(particles,{time:160,id:_p,updateTimer:0})
-				part_system_position(_p,_playerX,_playerY)
-				part_system_angle(_p,90)
-				part_system_automatic_update(_p,false)
+				miss(points[i])
 			}
-			combo++
-			points[i].wasHit=true
+			else
+			{
+				totalScore+=(msWindow-abs(_timing))*global.songSpeed
+			
+				hitMessage=get_timing(_timing)
+			
+				var _timingID=get_timing_id(_timing)
+			
+				array_push(accuracyList,timings[_timingID].result)
+			
+				array_push(trueAccuracyList,_timing)
+			
+				audio_play_sound(snd_turn,1000,false)
+			
+				if(_timingID<=1)
+				{
+					var _p=part_system_create(p_arrow_perfect)
+					array_push(particles,{time:160,id:_p,updateTimer:0})
+					part_system_position(_p,_playerX,_playerY)
+					part_system_angle(_p,90)
+					part_system_automatic_update(_p,false)
+				}
+				combo++
+				points[i].wasHit=true
+			}
 		}
 		if(_timing>msWindow)
 		{
