@@ -140,13 +140,31 @@ var gotLastNote=false
 //draw notes
 for(var i=array_length(points)-1;i>0;i--)
 {
-	draw_line(points[i].x,points[i].y,points[i-1].x,points[i-1].y)
 	var _spr=sprites.arrow
 	if(points[i].timeMS<=songMilliseconds&&!gotLastNote)
 	{
 		currentPoint=i
 		gotLastNote=true
 	}
+	
+	var _currentPoint=points[i-1]
+	
+	if(currentPoint==i-1)
+	{
+		_currentPoint=previousPlayerPos
+	}
+	
+	var _xScale=(point_distance(_currentPoint.x,_currentPoint.y,points[i].x,points[i].y)+32)/64
+	var _x=_currentPoint.x-(_currentPoint.x-points[i].x)/2
+	var _yScale=1
+	var _y=_currentPoint.y-(_currentPoint.y-points[i].y)/2
+	
+	if(currentPoint<i)
+	{
+		draw_sprite_ext(spr_path,0,_x,_y,_xScale,_yScale,
+			point_direction(points[i-1].x,points[i-1].y,points[i].x,points[i].y),c_white,1)
+	}
+	
 	if(global.gamemode==1)
 	{
 		break;

@@ -412,6 +412,7 @@
     {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
     {"id":{"name":"spr_no_cover","path":"sprites/spr_no_cover/spr_no_cover.yy",},},
     {"id":{"name":"spr_normal","path":"sprites/spr_normal/spr_normal.yy",},},
+    {"id":{"name":"spr_path","path":"sprites/spr_path/spr_path.yy",},},
     {"id":{"name":"spr_play_button","path":"sprites/spr_play_button/spr_play_button.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_quaver_button","path":"sprites/spr_quaver_button/spr_quaver_button.yy",},},
