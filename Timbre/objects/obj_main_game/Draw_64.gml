@@ -104,6 +104,10 @@ if(global.gamemode==1)
 		var _timing=points[i].timeMS-songMilliseconds
 		var _scrollPosition=_y-(_timing)*global.moveSpeed
 		var _xPos=_x-_noteDistance*(3-points[i].direction)-96
+		if(points[i].type==noteTypes.mine)
+		{
+			_sprite=sprites.mine
+		}
 		if(points[i].type==noteTypes.spider)
 		{
 			_sprite=sprites.spiderStart
@@ -195,6 +199,11 @@ if(global.gamemode==2)
 			_playerX=_x
 		}
 		
+		if(points[i].type==noteTypes.mine)
+		{
+			_sprite=sprites.mine
+		}
+		
 		if(points[i].type==noteTypes.spider)
 		{
 			var _touching=_playerX>_x-72&&_playerX<_x+72
@@ -226,7 +235,7 @@ if(global.gamemode==2)
 		
 		var _timing=songMilliseconds-points[i].timeMS
 		
-		if(_touching)
+		if(_touching&&audio_is_playing(audio))
 		{	
 			if(points[i].type==noteTypes.mine)
 			{
@@ -258,7 +267,7 @@ if(global.gamemode==2)
 				points[i].wasHit=true
 			}
 		}
-		if(_timing>msWindow)
+		if(_timing>msWindow&&points[i].type!=noteTypes.mine&&audio_is_playing(audio))
 		{
 			miss(points[i])
 		}
@@ -302,7 +311,7 @@ if(global.gamemode==2)
 		
 		var _timing=songMilliseconds-notes[i].timeMS
 		
-		if(_touching)
+		if(_touching&&audio_is_playing(audio))
 		{
 			totalScore+=(msWindow-abs(_timing))*global.songSpeed
 			
@@ -327,7 +336,7 @@ if(global.gamemode==2)
 			combo++
 			notes[i].wasHit=true
 		}
-		if(_timing>msWindow)
+		if(_timing>msWindow&&audio_is_playing(audio))
 		{
 			miss(notes[i])
 		}

@@ -76,7 +76,12 @@ for(var i=0;i<array_length(points)-1;i++)
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
 	var hitKey=!points[i].release&&turnKey[points[i].direction]||points[i].release&&turnKeyReleased[points[i].direction]
-	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=botplayLeniency&&!points[i].wasHit&&points[i].type!=noteTypes.mine)
+	var _canHit=abs(timing)<=msWindow
+	if(points[i].type==noteTypes.mine)
+	{
+		_canHit=abs(timing)<=msWindow/4
+	}
+	if(_canHit&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=botplayLeniency&&!points[i].wasHit&&points[i].type!=noteTypes.mine)
 	{
 		if(points[i].type==noteTypes.mine)
 		{
@@ -135,6 +140,7 @@ var gotLastNote=false
 //draw notes
 for(var i=array_length(points)-1;i>0;i--)
 {
+	draw_line(points[i].x,points[i].y,points[i-1].x,points[i-1].y)
 	var _spr=sprites.arrow
 	if(points[i].timeMS<=songMilliseconds&&!gotLastNote)
 	{
