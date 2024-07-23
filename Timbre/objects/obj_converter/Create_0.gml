@@ -133,6 +133,8 @@ function fnf_convert_new(){
 }
 
 function stepmania_convert(){
+	url_open("https://github.com/UncertainProd/SMtoPsychFNF/tree/main")
+	/*
 	try{
 		var _file=GetOpenFileName("","data.sm","",@'Open')
 		if(_file!="")
@@ -198,7 +200,7 @@ function stepmania_convert(){
 	catch(e)
 	{
 		show_message(e)
-	}
+	}*/
 }
 
 yOffset=0
