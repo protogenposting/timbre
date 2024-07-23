@@ -60,7 +60,7 @@ repeat(16)
 			}
 		}
 		//turns
-		var _note=0
+		var _note=turnTypes[turnTypeSelected]
 		repeat(array_length(noteSounds))
 		{
 			var noteDirection=0

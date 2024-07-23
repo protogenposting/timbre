@@ -34,7 +34,11 @@ global.directory = game_save_id+"/"+obj_editor.name
 
 if(mouse_wheel_down())
 {
-	if(keyboard_check(vk_shift))
+	if(keyboard_check(vk_control))
+	{
+		turnTypeSelected--
+	}
+	else if(keyboard_check(vk_shift))
 	{
 		currentZoom--
 		if(currentZoom<0)
@@ -49,7 +53,11 @@ if(mouse_wheel_down())
 }
 if(mouse_wheel_up())
 {
-	if(keyboard_check(vk_shift))
+	if(keyboard_check(vk_control))
+	{
+		turnTypeSelected++
+	}
+	else if(keyboard_check(vk_shift))
 	{
 		currentZoom++
 		if(currentZoom>array_length(zooms)-1)

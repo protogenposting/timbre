@@ -5,6 +5,7 @@ enum noteTypes{
 	turn,
 	spider,
 	wall,
+	mine
 }
 
 enum noteDirections{

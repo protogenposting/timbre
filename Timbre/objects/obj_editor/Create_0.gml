@@ -1,10 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
+function noteType(_type,_sprite) constructor{
+	type = _type
+	sprite = _sprite
+}
+
 name=""
 
 songName="level.ogg"
 
 currentDifficulty=0
+
+turnTypes=[
+	noteTypes.turn,
+	noteTypes.mine
+]
+
+turnTypeSelected=0
 
 notes=[]
 
@@ -479,9 +491,16 @@ button[8]={
 	position:{x:456,y:200+128+128+128},
 	sizeMod:0
 }*/
+noteSounds=array_create(20,snd_hit_tree)
 noteSounds[noteTypes.log]=snd_hit_tree
+noteSounds[noteTypes.wall]=snd_hit_tree
 noteSounds[noteTypes.turn]=snd_turn
 noteSounds[noteTypes.spider]=snd_beat
+noteSounds[noteTypes.mine]=snd_mine
+
+noteSprites=array_create(20,spr_log)
 noteSprites[noteTypes.log]=spr_log
+noteSprites[noteTypes.wall]=spr_log
 noteSprites[noteTypes.turn]=spr_reverse_arrow
 noteSprites[noteTypes.spider]=spr_spider_idle
+noteSprites[noteTypes.mine]=spr_mine
