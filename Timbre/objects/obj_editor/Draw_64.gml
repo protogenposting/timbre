@@ -60,12 +60,16 @@ repeat(16)
 			}
 		}
 		//turns
-		var _note=turnTypes[turnTypeSelected]
-		repeat(array_length(noteSounds))
+		var _noteOrder=[noteTypes.log,turnTypes[turnTypeSelected],noteTypes.spider]
+		var _noteID=-1
+		repeat(3)
 		{
+			_noteID++
+			var _note=_noteOrder[_noteID]
 			var noteDirection=0
 			repeat(4)
 			{
+				
 				var noteOnBeat=note_on_beat(notesInBeat,beat,_note,noteDirection)
 				if(noteOnBeat!=-1)
 				{
@@ -103,7 +107,6 @@ repeat(16)
 				noteDirection++
 			}
 			_x+=boxSize
-			_note++
 		}
 		_y+=boxSize*2
 		beat+=zoom

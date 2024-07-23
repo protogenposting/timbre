@@ -37,6 +37,10 @@ if(mouse_wheel_down())
 	if(keyboard_check(vk_control))
 	{
 		turnTypeSelected--
+		if(turnTypeSelected<0)
+		{
+			turnTypeSelected=array_length(turnTypes)-1
+		}
 	}
 	else if(keyboard_check(vk_shift))
 	{
@@ -56,6 +60,10 @@ if(mouse_wheel_up())
 	if(keyboard_check(vk_control))
 	{
 		turnTypeSelected++
+		if(turnTypeSelected>array_length(turnTypes)-1)
+		{
+			turnTypeSelected=0
+		}
 	}
 	else if(keyboard_check(vk_shift))
 	{
