@@ -185,7 +185,7 @@ function get_turns(){
 	var array=[]
 	for(var i=0;i<array_length(notes);i++)
 	{
-		if(notes[i].type==noteTypes.turn||notes[i].type==noteTypes.spider)
+		if(notes[i].type==noteTypes.turn||notes[i].type==noteTypes.spider||notes[i].type==noteTypes.mine)
 		{
 			array_push(array,notes[i])
 			array_delete(notes,i,1)
@@ -301,21 +301,24 @@ function create_points(){
 		var _type=turns[i].type
 		var _pointBeat=turns[i].beat
 		var tempDirection=turns[i].direction
-		if(i>1&&(turns[i].beat-turns[i-1].beat)==0)
+		if(turns[i].type!=noteTypes.mine)
 		{
-			currentDirection=(turns[i].direction*90+turns[i-1].direction*90)/2
-			if(abs(turns[i].direction*90-turns[i-1].direction*90)>180)
+			if(i>1&&(turns[i].beat-turns[i-1].beat)==0&&turns[i-1].type!=noteTypes.mine)
 			{
-				currentDirection+=180
+				currentDirection=(turns[i].direction*90+turns[i-1].direction*90)/2
+				if(abs(turns[i].direction*90-turns[i-1].direction*90)>180)
+				{
+					currentDirection+=180
+				}
+				show_debug_message("diagonal at "+string(i))
+				show_debug_message(currentDirection)
+				//_color=c_purple
+				//pointArray[i-1].color=c_purple
 			}
-			show_debug_message("diagonal at "+string(i))
-			show_debug_message(currentDirection)
-			//_color=c_purple
-			//pointArray[i-1].color=c_purple
-		}
-		else
-		{
-			currentDirection=turns[i].direction*90
+			else
+			{
+				currentDirection=turns[i].direction*90
+			}
 		}
 		array_push(pointArray,{x:_x,y:_y,type: _type,beat: _pointBeat, 
 			timeMS: _pointBeat*beatLength*1000, wasHit:false,direction: tempDirection,
@@ -712,7 +715,8 @@ sprites={
 	axe: spr_axes,
 	grass: spr_grass_epilepsy,
 	bob: spr_bob,
-	badArrow: spr_bad_arrow
+	badArrow: spr_bad_arrow,
+	mine: spr_mine
 }
 
 

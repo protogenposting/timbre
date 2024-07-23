@@ -78,41 +78,56 @@ for(var i=0;i<array_length(points)-1;i++)
 	var hitKey=!points[i].release&&turnKey[points[i].direction]||points[i].release&&turnKeyReleased[points[i].direction]
 	if(abs(timing)<=msWindow&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=botplayLeniency&&!points[i].wasHit)
 	{
-		turnKey[points[i].direction]=false
-		audio_play_sound(snd_turn,1000,false)
-		points[i].wasHit=true
-		combo++
-		var timingID=get_timing_id(timing)
-		totalScore+=(msWindow-abs(timing))*global.songSpeed
-		array_push(accuracyList,timings[timingID].result)
-		array_push(trueAccuracyList,timing)
-		if(timing<-timings[1].distance)
+		if(points[i].type==noteTypes.mine)
 		{
-			early++
-		}
-		else if(timing>timings[1].distance)
-		{
-			late++
+			audio_play_sound(snd_mine,1000,false)
+			miss(points[i])
 		}
 		else
 		{
-			perfect++
-		}
+			turnKey[points[i].direction]=false
+			audio_play_sound(snd_turn,1000,false)
+			points[i].wasHit=true
+			combo++
+			var timingID=get_timing_id(timing)
+			totalScore+=(msWindow-abs(timing))*global.songSpeed
+			array_push(accuracyList,timings[timingID].result)
+			array_push(trueAccuracyList,timing)
+			if(timing<-timings[1].distance)
+			{
+				early++
+			}
+			else if(timing>timings[1].distance)
+			{
+				late++
+			}
+			else
+			{
+				perfect++
+			}
 		
-		hitTime=1.33
-		hitMessage=get_timing(timing)
-		if(timingID<=1)
-		{
-			var _p=part_system_create(p_arrow_perfect)
-			array_push(particles,{time:160,id:_p,updateTimer:0})
-			part_system_position(_p,points[i].x,points[i].y)
-			part_system_angle(_p,points[i].direction*90)
-			part_system_automatic_update(_p,false)
+			hitTime=1.33
+			hitMessage=get_timing(timing)
+			if(timingID<=1)
+			{
+				var _p=part_system_create(p_arrow_perfect)
+				array_push(particles,{time:160,id:_p,updateTimer:0})
+				part_system_position(_p,points[i].x,points[i].y)
+				part_system_angle(_p,points[i].direction*90)
+				part_system_automatic_update(_p,false)
+			}
 		}
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
 	{
-		miss(points[i])
+		if(points[i].type!=noteTypes.mine)
+		{
+			miss(points[i])
+		}
+		else
+		{
+			points[i].wasHit=true
+		}
 	}
 }
 
@@ -120,6 +135,7 @@ var gotLastNote=false
 //draw notes
 for(var i=array_length(points)-1;i>0;i--)
 {
+	var _spr=sprites.arrow
 	if(points[i].timeMS<=songMilliseconds&&!gotLastNote)
 	{
 		currentPoint=i
@@ -128,6 +144,10 @@ for(var i=array_length(points)-1;i>0;i--)
 	if(global.gamemode==1)
 	{
 		break;
+	}
+	if(points[i].type==noteTypes.mine)
+	{
+		_spr=sprites.mine
 	}
 	var _color=points[i].color
 	if(i<array_length(points)-1&&points[i+1].release)
@@ -153,7 +173,7 @@ for(var i=array_length(points)-1;i>0;i--)
 	}
 	if(!points[i].wasHit&&abs(timing)<=(msWindow*beatLength)*120&&inCamera)
 	{
-		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,1,1,
+		draw_sprite_ext(_spr,points[i].frame,points[i].x,points[i].y,1,1,
 		_directionToNext,_color,1)
 	}
 	if(points[i].type==noteTypes.spider)
@@ -207,7 +227,7 @@ for(var i=array_length(points)-1;i>0;i--)
 		{
 			_alpha=0.5
 		}
-		draw_sprite_ext(sprites.arrow,points[i].frame,points[i].x,points[i].y,
+		draw_sprite_ext(_spr,points[i].frame,points[i].x,points[i].y,
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),
 		(((abs(songMilliseconds-points[i].timeMS)/msWindow))+1),_directionToNext,_color,_alpha)
 	}
