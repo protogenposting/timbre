@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"load_quaver_file",
+  "%Name":"load_file_raw",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"load_quaver_file",
+  "name":"load_file_raw",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
