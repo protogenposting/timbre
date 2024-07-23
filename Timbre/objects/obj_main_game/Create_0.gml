@@ -718,7 +718,8 @@ sprites={
 	grass: spr_grass_epilepsy,
 	bob: spr_bob,
 	badArrow: spr_bad_arrow,
-	mine: spr_mine
+	mine: spr_mine,
+	path: spr_path
 }
 
 

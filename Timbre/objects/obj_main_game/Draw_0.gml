@@ -154,21 +154,30 @@ for(var i=array_length(points)-1;i>0;i--)
 		_currentPoint=previousPlayerPos
 	}
 	
-	var _xScale=(point_distance(_currentPoint.x,_currentPoint.y,points[i].x,points[i].y)+32)/64
-	var _x=_currentPoint.x-(_currentPoint.x-points[i].x)/2
-	var _yScale=1
-	var _y=_currentPoint.y-(_currentPoint.y-points[i].y)/2
-	
-	if(currentPoint<i)
-	{
-		draw_sprite_ext(spr_path,0,_x,_y,_xScale,_yScale,
-			point_direction(points[i-1].x,points[i-1].y,points[i].x,points[i].y),c_white,1)
-	}
-	
 	if(global.gamemode==1)
 	{
 		break;
 	}
+	
+	var _noteSize=64
+	
+	if(point_in_camera(_currentPoint.x+_noteSize,_currentPoint.x-_noteSize,
+	_currentPoint.y-_noteSize,_currentPoint.y+_noteSize)||
+	point_in_camera(points[i].x+_noteSize,points[i].x-_noteSize,
+	points[i].y-_noteSize,points[i].y+_noteSize))
+	{
+		var _xScale=(point_distance(_currentPoint.x,_currentPoint.y,points[i].x,points[i].y)+32)/64
+		var _x=_currentPoint.x-(_currentPoint.x-points[i].x)/2
+		var _yScale=1
+		var _y=_currentPoint.y-(_currentPoint.y-points[i].y)/2
+	
+		if(currentPoint<i)
+		{
+			draw_sprite_ext(sprites.path,0,_x,_y,_xScale,_yScale,
+				point_direction(points[i-1].x,points[i-1].y,points[i].x,points[i].y),c_white,1)
+		}
+	}
+	
 	if(points[i].type==noteTypes.mine)
 	{
 		_spr=sprites.mine
@@ -186,6 +195,7 @@ for(var i=array_length(points)-1;i>0;i--)
 	{
 		continue;
 	}
+	
 	var timing=songMilliseconds-points[i].timeMS
 	var inCamera=point_in_camera(points[i].x-32,points[i].x+32,points[i].y-32,points[i].y+32)
 	try{
