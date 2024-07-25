@@ -4,13 +4,6 @@
   "songName":"Bass Is Kickin.ogg",
   "notesEasy":[
     {
-      "beat":0.076800000000000063,
-      "type":1,
-      "direction":0.0,
-      "wasHit":false,
-      "timeMS":36.000000000000028
-    },
-    {
       "beat":0.57680000000000009,
       "type":1,
       "direction":1.0,
@@ -7334,13 +7327,6 @@
     }
   ],
   "notes":[
-    {
-      "beat":0.076800000000000063,
-      "type":1,
-      "direction":0.0,
-      "wasHit":false,
-      "timeMS":36.000000000000028
-    },
     {
       "beat":0.57680000000000009,
       "type":1,
@@ -16079,13 +16065,6 @@
     }
   ],
   "notesHard":[
-    {
-      "beat":0.076800000000000063,
-      "type":1,
-      "direction":0.0,
-      "wasHit":false,
-      "timeMS":36.000000000000028
-    },
     {
       "beat":0.57680000000000009,
       "type":1,
