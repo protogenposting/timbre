@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 button[0]={
 	name: "Back",
 	func: function(){
