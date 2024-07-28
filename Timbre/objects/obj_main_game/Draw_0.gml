@@ -81,6 +81,7 @@ for(var i=0;i<array_length(points)-1;i++)
 	{
 		_canHit=abs(timing)<=msWindow/4
 	}
+	points[i].wasHitThisFrame=false
 	if(_canHit&&hitKey&&!points[i].wasHit||global.botPlay&&abs(songMilliseconds-points[i].timeMS)<=botplayLeniency&&!points[i].wasHit&&points[i].type!=noteTypes.mine)
 	{
 		if(points[i].type==noteTypes.mine)
@@ -110,7 +111,17 @@ for(var i=0;i<array_length(points)-1;i++)
 			{
 				perfect++
 			}
-		
+			
+			if(global.gamemode==1)
+			{
+				var _inst=instance_create_depth(points[i].x,points[i].y,depth-1,obj_effect)
+				_inst.sprite_index=timings[timingID].sprite
+				_inst.timeLeft=20
+				_inst.totalTime=20
+				_inst.drawOnGui=true
+				_inst.moveDirection.y=-2
+			}
+			
 			hitTime=1.33
 			hitMessage=get_timing(timing)
 			if(timingID<=1)
@@ -329,8 +340,20 @@ for(var o=0; o<array_length(notes);o++)
 		{
 			attackKey[notes[o].intendedDirection]=false
 		}
+		
+		
+		
 		notes[o].wasHit=true
 		var timingID=get_timing_id(timing)
+		if(global.gamemode==1)
+		{
+			var _inst=instance_create_depth(notes[o].x,notes[o].y,depth-1,obj_effect)
+			_inst.sprite_index=timings[timingID].sprite
+			_inst.timeLeft=20
+			_inst.totalTime=20
+			_inst.drawOnGui=true
+			_inst.moveDirection.y=2
+		}
 		totalScore+=(msWindow-abs(timing))*global.songSpeed
 		array_push(accuracyList,timings[timingID].result)
 		array_push(trueAccuracyList,timing)

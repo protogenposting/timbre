@@ -582,12 +582,12 @@ showingFinalMessage=false
 
 function reset_timings()
 {
-	timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1},
-	{distance:msWindow/7,name:"Perfect!",result:1},
-	{distance:msWindow/5,name:"Good",result:0.8},
-	{distance:msWindow/3,name:"Ok",result:0.75},
-	{distance:msWindow,name:"Dull...",result:0.5},
-	{distance:msWindow*20000,name:"WORST",result:0.5}]
+	timings=[{distance:msWindow/30,name:"AMAZING!!!",result:1,sprite: spr_rating_amazing},
+	{distance:msWindow/7,name:"Perfect!",result:1,sprite: spr_rating_perfect},
+	{distance:msWindow/5,name:"Good",result:0.8,sprite: spr_rating_good},
+	{distance:msWindow/3,name:"Ok",result:0.75,sprite: spr_rating_ok},
+	{distance:msWindow*1000,name:"Dull...",result:0.5,sprite: spr_rating_dull},
+	{distance:msWindow*20000,name:"WORST",result:0.5,sprite: spr_rating_dull}]
 }
 
 reset_timings()
@@ -703,6 +703,8 @@ function get_inputs(){
 
 particles=[]
 
+spriteResetStall=0
+
 sprites={
 	player: spr_player,
 	arrow: spr_reverse_arrow,
@@ -719,7 +721,16 @@ sprites={
 	bob: spr_bob,
 	badArrow: spr_bad_arrow,
 	mine: spr_mine,
-	path: spr_path
+	path: spr_path,
+	
+	acornIdle: spr_acorn_idle,
+	acornLeft: spr_acorn_left,
+	acornRight: spr_acorn_right,
+	acornUp: spr_acorn_up,
+	acornDown: spr_acorn_down,
+	
+	acornDodge1: spr_acorn_dodge_1,
+	acornDodge2: spr_acorn_dodge_2,
 }
 
 

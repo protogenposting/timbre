@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-axisLast=[]
+timeLeft=0
 
-global.pressingMouseLeft=false
+totalTime=0
 
+moveDirection={x:0,y:0}
+
+drawOnGui=false

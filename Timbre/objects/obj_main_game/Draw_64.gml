@@ -44,6 +44,34 @@ if(global.showKeys)
 //all the drawing for MANIA mode
 if(global.gamemode==1)
 {
+	spriteResetStall--
+	if(spriteResetStall<=0)
+	{
+		sprite_index=sprites.acornIdle
+		if(turnKeyHold[noteDirections.left])
+		{
+			sprite_index=sprites.acornLeft
+		}
+		if(turnKeyHold[noteDirections.right])
+		{
+			sprite_index=sprites.acornRight
+		}
+		if(turnKeyHold[noteDirections.up])
+		{
+			sprite_index=sprites.acornUp
+		}
+		if(turnKeyHold[noteDirections.down])
+		{
+			sprite_index=sprites.acornDown
+		}
+		if(attackKey[noteDirections.down]||attackKey[noteDirections.up]||attackKey[noteDirections.left]||attackKey[noteDirections.right])
+		{
+			sprite_index=choose(sprites.acornDodge1,sprites.acornDodge2)
+			spriteResetStall=30
+		}
+	}
+	
+	camera_set_view_pos(view_camera[0],0,0)
 	var _camHeight=camera_get_view_height(view_camera[0])
 	var _camWidth=camera_get_view_width(view_camera[0])
 	
@@ -54,6 +82,8 @@ if(global.gamemode==1)
 			draw_sprite(sprites.grass,layer_background_get_index(background),_x,_y)
 		}
 	}
+	
+	draw_sprite(sprite_index,image_index,room_width/2,room_height/2)
 	
 	var _noteDistance=96
 	
@@ -85,6 +115,8 @@ if(global.gamemode==1)
 		{
 			continue;
 		}
+		notes[i].x=_x-32-_noteDistance*notes[i].intendedDirection
+		notes[i].y=128
 		draw_sprite_ext(sprites.log,0,_x-32-_noteDistance*notes[i].intendedDirection,_scrollPosition,1,1,notes[i].intendedDirection*90,notes[i].color,1)
 	}
 	
@@ -119,8 +151,11 @@ if(global.gamemode==1)
 		{
 			continue;
 		}
+		points[i].x=_xPos
+		points[i].y=room_height-96
 		draw_sprite_ext(_sprite,0,_xPos,_scrollPosition,1,1,points[i].direction*90,points[i].color,1)
 	}
+	
 }
 
 //all the stuff for NVDR mode
@@ -538,38 +573,38 @@ else
 	
 	comboMissTimer--
 	
-	if(combo>comboDanceAmount)
+	if(global.gamemode!=1)
 	{
-		sprite_index=spr_tv_highcombo
-	}
-	else if(comboMissTimer>0)
-	{
-		sprite_index=spr_tv_miss_combo
-	}
-	else if(get_accuracy()>=90)
-	{
-		sprite_index=spr_tv_really_good
-	}
-	else if(get_accuracy()>80)
-	{
-		sprite_index=spr_tv_good
-	}
-	else if(get_accuracy()<30)
-	{
-		sprite_index=spr_tv_really_bad
-	}
-	else if(get_accuracy()<50)
-	{
-		sprite_index=spr_tv_bad
-	}
-	else
-	{
-		sprite_index=spr_tv_idle
-	}
+		if(combo>comboDanceAmount)
+		{
+			sprite_index=spr_tv_highcombo
+		}
+		else if(comboMissTimer>0)
+		{
+			sprite_index=spr_tv_miss_combo
+		}
+		else if(get_accuracy()>=90)
+		{
+			sprite_index=spr_tv_really_good
+		}
+		else if(get_accuracy()>80)
+		{
+			sprite_index=spr_tv_good
+		}
+		else if(get_accuracy()<30)
+		{
+			sprite_index=spr_tv_really_bad
+		}
+		else if(get_accuracy()<50)
+		{
+			sprite_index=spr_tv_bad
+		}
+		else
+		{
+			sprite_index=spr_tv_idle
+		}
 	
-	if(!global.showKeys)
-	{
-		if(global.gamemode!=1)
+		if(!global.showKeys)
 		{
 			draw_sprite(sprite_index,image_index,room_width-128,room_height-128)
 		}
