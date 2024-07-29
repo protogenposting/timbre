@@ -212,6 +212,11 @@ function reset_buttons()
 			if(_file!="")
 			{
 				add_song(_file)
+				obj_level_select.wheelProgress=0
+				with(obj_level_select)
+				{
+					initialize_level(wheelProgress)
+				}
 			}
 		},
 		size:{x:128,y:64},
@@ -232,6 +237,11 @@ function reset_buttons()
 						{
 							var _packDirectory=filename_dir(_file)
 							add_song(_packDirectory+"/"+_str.levels[i]+"/data.json")
+						}
+						obj_level_select.wheelProgress=0
+						with(obj_level_select)
+						{
+							initialize_level(wheelProgress)
 						}
 					}
 					catch(e)
