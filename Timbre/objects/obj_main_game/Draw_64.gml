@@ -102,6 +102,18 @@ if(global.gamemode==1)
 		
 		draw_sprite_ext(sprites.axe,0,_x,_y,1,1,axeRotations[i],c_white,1)
 		
+		if(i==noteDirections.up)
+		{
+			draw_text(_x,_y-64,get_key_name(global.keyboardBinds.attacking.up))
+		}
+		if(i==noteDirections.right)
+		{
+			draw_text(_x,_y-64,get_key_name(global.keyboardBinds.attacking.right))
+		}
+		if(i==noteDirections.left)
+		{
+			draw_text(_x,_y-64,get_key_name(global.keyboardBinds.attacking.left))
+		}
 		_x+=_noteDistance
 	}
 	

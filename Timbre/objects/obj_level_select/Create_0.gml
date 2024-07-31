@@ -216,6 +216,8 @@ function reset_buttons()
 				with(obj_level_select)
 				{
 					initialize_level(wheelProgress)
+					alarm[1]=1
+					alarm[2]=1
 				}
 			}
 		},
@@ -242,6 +244,8 @@ function reset_buttons()
 						with(obj_level_select)
 						{
 							initialize_level(wheelProgress)
+							alarm[1]=1
+							alarm[2]=1
 						}
 					}
 					catch(e)

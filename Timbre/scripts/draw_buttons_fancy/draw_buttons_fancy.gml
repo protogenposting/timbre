@@ -54,7 +54,7 @@ function draw_buttons_fancy(){
 			draw_text_ext_transformed(_posX,_posY,string_upper(button[i].name),16,sizeX*2,stringSize,stringSize,0)
 			if(variable_struct_exists(button[i],"id"))
 			{
-				draw_sprite(difficulties[global.levels[button[i].id].difficulty].sprite,image_index,_posX+sizeX+32,_posY)
+				//draw_sprite(difficulties[global.levels[button[i].id].difficulty].sprite,image_index,_posX+sizeX+32,_posY)
 			}
 		}
 		catch(e)
