@@ -293,6 +293,8 @@
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Vol 3/Seven","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"grass.gif","CopyToMask":-1,"filePath":"datafiles/Vol 3/Seven","name":"grass.gif","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"seven.ogg","CopyToMask":-1,"filePath":"datafiles/Vol 3/Seven","name":"seven.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Vol 3/This Ship Is Going Places","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"ship.ogg","CopyToMask":-1,"filePath":"datafiles/Vol 3/This Ship Is Going Places","name":"ship.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
