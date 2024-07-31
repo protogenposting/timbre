@@ -104,15 +104,15 @@ if(global.gamemode==1)
 		
 		if(i==noteDirections.up)
 		{
-			draw_text(_x,_y-64,get_key_name(global.keyboardBinds.attacking.up))
+			draw_text(_x,_y-32,get_key_name(global.keyboardBinds.attacking.up))
 		}
 		if(i==noteDirections.right)
 		{
-			draw_text(_x,_y-64,get_key_name(global.keyboardBinds.attacking.right))
+			draw_text(_x,_y-32,get_key_name(global.keyboardBinds.attacking.right))
 		}
 		if(i==noteDirections.left)
 		{
-			draw_text(_x,_y-64,get_key_name(global.keyboardBinds.attacking.left))
+			draw_text(_x,_y-32,get_key_name(global.keyboardBinds.attacking.left))
 		}
 		_x+=_noteDistance
 	}
@@ -138,6 +138,23 @@ if(global.gamemode==1)
 	for(var i=0;i<4;i++)
 	{		
 		draw_sprite_ext(sprites.player,turnKeyHold[i]*2,_x,_y,1+turnKeyHold[i]*0.3,1+turnKeyHold[i]*0.3,i*90,c_white,1)
+		
+		if(i==noteDirections.up)
+		{
+			draw_text(_x,_y+32,get_key_name(global.keyboardBinds.turning.up))
+		}
+		if(i==noteDirections.down)
+		{
+			draw_text(_x,_y+32,get_key_name(global.keyboardBinds.turning.down))
+		}
+		if(i==noteDirections.right)
+		{
+			draw_text(_x,_y+32,get_key_name(global.keyboardBinds.turning.right))
+		}
+		if(i==noteDirections.left)
+		{
+			draw_text(_x,_y+32,get_key_name(global.keyboardBinds.turning.left))
+		}
 		
 		_x+=_noteDistance
 	}
