@@ -313,12 +313,12 @@ for(var o=0; o<array_length(notes);o++)
 		var shouldSkip=false
 		for(var i=0;i<array_length(usedTreeSpaces);i++)
 		{
-			if(usedTreeSpaces[i].x==notes[o].x&&usedTreeSpaces[i].y==notes[o].y)
+			if(usedTreeSpaces[i].x==notes[o].x&&usedTreeSpaces[i].y==notes[o].y&&!usedTreeSpaces[i].wasHit)
 			{
 				shouldSkip=true
 			}
 		}
-		array_push(usedTreeSpaces,{x:notes[o].x,y:notes[o].y})
+		array_push(usedTreeSpaces,{x:notes[o].x,y:notes[o].y,wasHit:notes[o].wasHit})
 		if(global.gamemode!=1&&!shouldSkip)
 		{
 			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
