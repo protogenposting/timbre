@@ -47,7 +47,10 @@ currentBeat=0
 
 previewNotes=[]
 
-audio_destroy_stream(global.song)
+if(global.song!=-4)
+{
+	audio_destroy_stream(global.song)
+}
 
 global.song=-4
 
@@ -154,7 +157,14 @@ function initialize_level(levelID){
 	else
 	{
 		try{
-			audio_destroy_stream(global.song)
+			try
+			{
+				audio_destroy_stream(global.song)
+			}
+			catch(e)
+			{
+				
+			}
 			var _leafToTreeRatio=array_create(10)
 			var beatLength=60/_file.bpm
 			var _noteBeats=[]

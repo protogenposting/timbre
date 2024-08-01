@@ -281,6 +281,7 @@ for(var i=array_length(points)-1;i>0;i--)
 var _nextNote=99999999999999
 var hitTrees=[]
 
+var usedTreeSpaces=[]
 //TREEES
 for(var o=0; o<array_length(notes);o++)
 {
@@ -309,7 +310,16 @@ for(var o=0; o<array_length(notes);o++)
 	
 	if(inCamera)
 	{
-		if(global.gamemode!=1)
+		var shouldSkip=false
+		for(var i=0;i<array_length(usedTreeSpaces);i++)
+		{
+			if(usedTreeSpaces[i].x==notes[o].x&&usedTreeSpaces[i].y==notes[o].y)
+			{
+				shouldSkip=true
+			}
+		}
+		array_push(usedTreeSpaces,{x:notes[o].x,y:notes[o].y})
+		if(global.gamemode!=1&&!shouldSkip)
 		{
 			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
 			if(notes[o].timeMS-songMilliseconds<msWindow*2&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)

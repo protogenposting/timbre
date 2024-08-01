@@ -11,13 +11,19 @@ if(comboParticles!=-4)
 	part_system_position(comboParticles,camera_get_view_x(view_camera[0])+1366/2,camera_get_view_y(view_camera[0]))
 }
 
-audio_sound_pitch(audio,global.songSpeed)
+if(audio!=-4)
+{
+	audio_sound_pitch(audio,global.songSpeed)
+}
 
 update_particles()
 
-songMilliseconds=audio_sound_get_track_position(audio)*1000 + global.audioOffset
+if(audio!=-4)
+{
+	songMilliseconds=audio_sound_get_track_position(audio)*1000 + global.audioOffset
+}
 
-if(global.deltaTime)
+if(global.deltaTime&&audio!=-4)
 {
 	songMilliseconds=abs(current_time-startTime)
 }
@@ -89,12 +95,12 @@ if(global.gamemode==0)
 
 #endregion
 
-if(!audio_is_playing(songID))
+if(audio==-4)
 {
 	startTime=current_time
 }
 
-if(!finished&&!audio_is_playing(songID)&&
+if(!finished&&audio==-4&&
 (array_contains(attackKey,1)||
 array_contains(turnKey,1)||
 !global.gamemodes[global.gamemode].usesNormalControls&&global.pressingMouseLeft))
@@ -108,7 +114,7 @@ if(currentPoint>=array_length(points)-2&&(array_equals(notes,[])||songMillisecon
 	audio_play_sound(finishHitSound,1000,false)
 }
 
-if(paused)
+if(paused&&audio!=-4)
 {
 	startTime+=delta_time/1000
 	audio_pause_sound(audio)
@@ -125,7 +131,7 @@ if(paused)
 		}
 	}
 }
-if(!paused)
+if(!paused&&audio!=-4)
 {
 	audio_resume_sound(audio)
 }

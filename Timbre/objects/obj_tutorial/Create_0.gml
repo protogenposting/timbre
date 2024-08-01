@@ -14,7 +14,10 @@ audio=-4
 
 currentBeat=0
 
-audio_destroy_stream(global.song)
+if(global.song!=-4)
+{
+	audio_destroy_stream(global.song)
+}
 
 global.song=-4
 
