@@ -313,7 +313,7 @@ for(var o=0; o<array_length(notes);o++)
 		var shouldSkip=false
 		for(var i=0;i<array_length(usedTreeSpaces);i++)
 		{
-			if(usedTreeSpaces[i].x==notes[o].x&&usedTreeSpaces[i].y==notes[o].y&&!usedTreeSpaces[i].wasHit)
+			if(abs(usedTreeSpaces[i].x-notes[o].x)<5&&abs(usedTreeSpaces[i].y-notes[o].y)<5&&!usedTreeSpaces[i].wasHit)
 			{
 				shouldSkip=true
 			}
