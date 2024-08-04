@@ -59,6 +59,7 @@
     {"name":"get_chart_style","order":12,"path":"scripts/get_chart_style/get_chart_style.yy",},
     {"name":"get_key_name","order":10,"path":"scripts/get_key_name/get_key_name.yy",},
     {"name":"gif_sprite","order":24,"path":"scripts/gif_sprite/gif_sprite.yy",},
+    {"name":"http_request_types","order":27,"path":"scripts/http_request_types/http_request_types.yy",},
     {"name":"load_file_raw","order":26,"path":"scripts/load_file_raw/load_file_raw.yy",},
     {"name":"load_file","order":2,"path":"scripts/load_file/load_file.yy",},
     {"name":"point_in_camera","order":6,"path":"scripts/point_in_camera/point_in_camera.yy",},

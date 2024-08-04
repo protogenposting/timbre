@@ -26,7 +26,7 @@ app.get('/api/users', (req,res) => {
 app.post('/api/newUser', (req,res) => {
   const result = userSchema.validate(req.body);
 
-  console.log(result)
+  console.log(req.body)
 
   if(result.error)
   {
@@ -36,11 +36,12 @@ app.post('/api/newUser', (req,res) => {
   
   if(users.find(c => c.username === req.params.username))
   {
-    
+    res.status(400).send("User exists already!")
+    return
   }
 
   const user = {
-    id: users.length + 1,
+    id: users.length,
     username: req.body.username,
     password: req.body.password,
   };

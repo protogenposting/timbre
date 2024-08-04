@@ -346,6 +346,7 @@
     {"id":{"name":"get_key_name","path":"scripts/get_key_name/get_key_name.yy",},},
     {"id":{"name":"gif_sprite","path":"scripts/gif_sprite/gif_sprite.yy",},},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},},
+    {"id":{"name":"http_request_types","path":"scripts/http_request_types/http_request_types.yy",},},
     {"id":{"name":"load_file_raw","path":"scripts/load_file_raw/load_file_raw.yy",},},
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
     {"id":{"name":"point_in_camera","path":"scripts/point_in_camera/point_in_camera.yy",},},

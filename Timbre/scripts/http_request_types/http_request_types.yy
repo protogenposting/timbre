@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"http_request_types",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"http_request_types",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
