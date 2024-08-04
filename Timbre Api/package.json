@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "START": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "better-sqlite3": "^11.1.2"
+    "better-sqlite3": "^11.1.2",
+    "express": "^4.19.2"
   }
 }
