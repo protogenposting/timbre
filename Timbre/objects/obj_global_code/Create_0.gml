@@ -3,3 +3,5 @@
 axisLast=[]
 
 global.pressingMouseLeft=false
+
+http_request_json("http://localhost:3000/api/users","GET")
