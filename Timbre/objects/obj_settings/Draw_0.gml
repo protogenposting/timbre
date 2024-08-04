@@ -30,7 +30,7 @@ for(var i=0;i<array_length(settings);i++)
 	false)
 	if(settings[i].type==settingTypes.slider)
 	{
-		//MAKE SLIDERS WORK YOU WHORE
+		
 	}
 	
 	if(_selected)
