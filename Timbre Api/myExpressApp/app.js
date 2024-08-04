@@ -4,6 +4,11 @@ const app = express();
 
 app.use(express.json())
 
+const userSchema = Joi.object({
+  username: Joi.string().min(3).max(30).required(),
+  password: Joi.string().min(3).max(30).required()
+});
+
 const users = [
   {id:0,username: "bob",password:"billybobjoe"},
   {id:1,username: "bob2",password:"billybobjoe2"},
@@ -18,24 +23,26 @@ app.get('/api/users', (req,res) => {
   res.send(users)
 });
 
-app.post('/api/users', (req,res) => {
-  const schema = Joi.object({
-    username: Joi.string().min(3).max(30).required()
-  });
-
-  const result = schema.validate(req.body);
+app.post('/api/newUser', (req,res) => {
+  const result = userSchema.validate(req.body);
 
   console.log(result)
 
-  if(!req.body.username)
+  if(result.error)
   {
-    res.status(400).send("Name required!!!")
+    res.status(400).send(result.error)
     return
+  }
+  
+  if(users.find(c => c.username === req.params.username))
+  {
+    
   }
 
   const user = {
     id: users.length + 1,
     username: req.body.username,
+    password: req.body.password,
   };
 
   users.push(user)
