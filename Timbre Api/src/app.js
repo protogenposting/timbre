@@ -4,6 +4,7 @@ const db = require('better-sqlite3')(databaseName);
 const express = require('express');
 
 const app = express();
+app.use(express.json());
 const port = 3000;
 const apiPath='/api/'
 
@@ -17,22 +18,6 @@ const query = `
 `;
 
 db.exec(query)
-
-const data = [
-    {name: "Protogen Posting", username: "protogenposting",password: "TimbreUnlock123"},
-]
-
-const insertData = db.prepare("INSERT INTO users (name, username, password) VALUES (?, ?, ?)");
-
-data.forEach((user)=>{
-    try{
-        insertData.run(user.name,user.username,user.password)
-    }
-    catch(e)
-    {
-        
-    }
-});
 
 app.get(apiPath+'users',(req,res) => {
     if(verify_token(req.headers.authorization))
@@ -59,6 +44,23 @@ app.get(apiPath+'user/:name',(req,res) => {
         console.log(user);
 
         res.json({user: user})
+    }
+    else
+    {
+        res.send("nuh uh tell me the secret password!!!")
+    }
+})
+
+app.post(apiPath+'newUser',(req,res) => {
+    if(verify_token(req.headers.authorization))
+    {
+        console.log(req.body)
+        
+        const insertData = db.prepare("INSERT INTO users (name, username, password) VALUES (?, ?, ?)");
+        
+        insertData.run(req.body.name,req.body.username,req.body.password)
+        
+        res.send("done :3")
     }
     else
     {
