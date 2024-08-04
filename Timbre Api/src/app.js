@@ -45,7 +45,24 @@ app.get(apiPath+'users',(req,res) => {
     }
     else
     {
-        res.send("nuh uh send me the secret password!!!")
+        res.send("nuh uh tell me the secret password!!!")
+    }
+})
+
+app.get(apiPath+'user/:name',(req,res) => {
+    if(verify_token(req.headers.authorization))
+    {
+        const user = db.prepare(`
+            SELECT * FROM users WHERE username = ?
+            `).get(req.params.name);
+
+        console.log(user);
+
+        res.json({user: user})
+    }
+    else
+    {
+        res.send("nuh uh tell me the secret password!!!")
     }
 })
 
