@@ -25,7 +25,7 @@ global.keyboardBinds=global.modeBinds[global.gamemode]
 
 if(room==rm_gameplay)
 {
-	var _uncappedFPS=false
+	var _uncappedFPS=true
 	if(_uncappedFPS)
 	{
 		game_set_speed(1,gamespeed_microseconds)

@@ -44,7 +44,7 @@ if(global.showKeys)
 //all the drawing for MANIA mode
 if(global.gamemode==1)
 {
-	spriteResetStall--
+	spriteResetStall-=delta_time/10000
 	if(spriteResetStall<=0)
 	{
 		sprite_index=sprites.acornIdle
@@ -62,8 +62,8 @@ if(global.gamemode==1)
 		}
 	}
 	
-	danceFromCenter.x-=sign(danceFromCenter.x)*2
-	danceFromCenter.y-=sign(danceFromCenter.y)*2
+	danceFromCenter.x-=sign(danceFromCenter.x)*delta_time/10000
+	danceFromCenter.y-=sign(danceFromCenter.y)*delta_time/10000
 	
 	draw_sprite(sprite_index,image_index,room_width/2+danceFromCenter.x,room_height/2+danceFromCenter.y)
 	
