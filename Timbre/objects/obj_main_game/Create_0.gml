@@ -33,7 +33,7 @@ function dance(note){
 	}
 	danceFromCenter.x=lengthdir_x(16,note.direction*90)
 	danceFromCenter.y=lengthdir_y(16,note.direction*90)
-	spriteResetStall=30
+	spriteResetStall=20
 }
 
 afterImages=[0,0,0]
