@@ -10,7 +10,30 @@ axeRotations=[0,0,0,0]
 if(global.gamemode==1)
 {
 	axeSpinSpeeds=[0,0,0,0]
-	
+}
+
+danceFromCenter={x:0,y:0}
+
+function dance(note){
+	if(note.direction==noteDirections.left)
+	{
+		sprite_index=sprites.acornLeft
+	}
+	if(note.direction==noteDirections.right)
+	{
+		sprite_index=sprites.acornRight
+	}
+	if(note.direction==noteDirections.up)
+	{
+		sprite_index=sprites.acornUp
+	}
+	if(note.direction==noteDirections.down)
+	{
+		sprite_index=sprites.acornDown
+	}
+	danceFromCenter.x=lengthdir_x(16,points[i].direction*90)
+	danceFromCenter.y=lengthdir_y(16,points[i].direction*90)
+	spriteResetStall=30
 }
 
 afterImages=[0,0,0]

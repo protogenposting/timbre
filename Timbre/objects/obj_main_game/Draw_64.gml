@@ -62,7 +62,10 @@ if(global.gamemode==1)
 		}
 	}
 	
-	draw_sprite(sprite_index,image_index,room_width/2,room_height/2)
+	danceFromCenter.x-=sign(danceFromCenter.x)*2
+	danceFromCenter.y-=sign(danceFromCenter.y)*2
+	
+	draw_sprite(sprite_index,image_index,room_width/2+danceFromCenter.x,room_height/2+danceFromCenter.y)
 	
 	var _noteDistance=96
 	

@@ -93,23 +93,7 @@ for(var i=0;i<array_length(points)-1;i++)
 		{
 			if(global.gamemode==1)
 			{
-				if(turnKeyHold[noteDirections.left])
-				{
-					sprite_index=sprites.acornLeft
-				}
-				if(turnKeyHold[noteDirections.right])
-				{
-					sprite_index=sprites.acornRight
-				}
-				if(turnKeyHold[noteDirections.up])
-				{
-					sprite_index=sprites.acornUp
-				}
-				if(turnKeyHold[noteDirections.down])
-				{
-					sprite_index=sprites.acornDown
-				}
-				spriteResetStall=30
+				dance(points[i])
 			}
 			turnKey[points[i].direction]=false
 			audio_play_sound(snd_turn,1000,false)
@@ -514,7 +498,8 @@ if(points[currentPoint].type==noteTypes.spider)
 	_currentY-lengthdir_y(64,currentDirection),1,1,currentDirection,c_white,1)
 	if(turnKeyHold[points[currentPoint].direction])
 	{
-		totalScore+=1
+		totalScore+=delta_time/10000
+		dance(points[currentPoint])
 	}
 }
 
