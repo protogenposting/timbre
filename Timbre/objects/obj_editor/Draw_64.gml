@@ -17,7 +17,7 @@ if(currentDifficulty==2)
 	notesToDraw=notesEasy
 }
 
-if(audio!=-4&&audio_is_playing(songLoaded))
+if(audio!=-4&&audio_is_playing(songLoaded)&&audio_is_playing(audio))
 {
 	draw_rectangle(0,0,room_width*(audio_sound_get_track_position(audio)/audio_sound_length(audio)),32,false)
 }
@@ -75,7 +75,7 @@ repeat(16)
 				{
 					draw_rectangle(_x-boxSize,_y-boxSize,_x+boxSize,_y+boxSize,false)
 					try{
-						if(songMilliseconds/1000>=beat*beatLength&&!notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded))
+						if(songMilliseconds/1000>=beat*beatLength&&!notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit&&audio!=-4&&audio_is_playing(songLoaded)&&audio_is_playing(audio))
 						{
 							audio_play_sound(noteSounds[_note],1000,false)
 							notesToDraw[notesInBeatEquivelants[noteOnBeat]].wasHit=true

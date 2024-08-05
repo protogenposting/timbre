@@ -1,10 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-songMilliseconds=audio_sound_get_track_position(audio)*1000
 
 if(audio==-4)
 {
 	songMilliseconds=0
+}
+else
+{
+	songMilliseconds=audio_sound_get_track_position(audio)*1000
 }
 
 var barPercentageLast = barPercentage
@@ -12,6 +15,7 @@ if(barPercentageLast<0)
 {
 	button[5].func()
 }
+
 var beatLength=60/bpm
 var needle = songMilliseconds/1000 
 var left = currentBeat * beatLength;
