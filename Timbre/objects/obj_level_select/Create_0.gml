@@ -135,7 +135,7 @@ function initialize_level(levelID){
 	_levels[levelID].availableDifficulties=[hasEasy,hasNormal,hasHard]
 	if(obj_level_select.selectedLevel==levelID)
 	{
-		audio_stop_sound(global.song)
+		//audio_stop_sound(global.song)
 		global.song=-4
 		currentShroomPose=-1
 		obj_level_select.selectedLevel=-4

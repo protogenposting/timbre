@@ -351,6 +351,7 @@
     {"id":{"name":"http_request_types","path":"scripts/http_request_types/http_request_types.yy",},},
     {"id":{"name":"load_file_raw","path":"scripts/load_file_raw/load_file_raw.yy",},},
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
+    {"id":{"name":"move_toward","path":"scripts/move_toward/move_toward.yy",},},
     {"id":{"name":"point_in_camera","path":"scripts/point_in_camera/point_in_camera.yy",},},
     {"id":{"name":"rank_data","path":"scripts/rank_data/rank_data.yy",},},
     {"id":{"name":"save_file","path":"scripts/save_file/save_file.yy",},},

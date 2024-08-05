@@ -62,6 +62,7 @@
     {"name":"http_request_types","order":27,"path":"scripts/http_request_types/http_request_types.yy",},
     {"name":"load_file_raw","order":26,"path":"scripts/load_file_raw/load_file_raw.yy",},
     {"name":"load_file","order":2,"path":"scripts/load_file/load_file.yy",},
+    {"name":"move_toward","order":28,"path":"scripts/move_toward/move_toward.yy",},
     {"name":"point_in_camera","order":6,"path":"scripts/point_in_camera/point_in_camera.yy",},
     {"name":"rank_data","order":21,"path":"scripts/rank_data/rank_data.yy",},
     {"name":"save_file","order":1,"path":"scripts/save_file/save_file.yy",},
