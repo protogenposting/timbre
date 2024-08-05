@@ -11,7 +11,7 @@ if(comboParticles!=-4)
 	part_system_position(comboParticles,camera_get_view_x(view_camera[0])+1366/2,camera_get_view_y(view_camera[0]))
 }
 
-if(audio!=-4)
+if(audio!=-4&&audio_is_playing(audio))
 {
 	audio_sound_pitch(audio,global.songSpeed)
 }
