@@ -63,7 +63,7 @@ if(global.gamemode==1)
 	}
 	
 	danceFromCenter.x=move_toward(danceFromCenter.x,0,delta_time/10000)
-	danceFromCenter.y=move_toward(danceFromCenter.x,0,delta_time/10000)
+	danceFromCenter.y=move_toward(danceFromCenter.y,0,delta_time/10000)
 	
 	draw_sprite(sprite_index,image_index,room_width/2+danceFromCenter.x,room_height/2+danceFromCenter.y)
 	
