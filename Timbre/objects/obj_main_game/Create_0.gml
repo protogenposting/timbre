@@ -31,8 +31,8 @@ function dance(note){
 	{
 		sprite_index=sprites.acornDown
 	}
-	danceFromCenter.x=lengthdir_x(16,points[i].direction*90)
-	danceFromCenter.y=lengthdir_y(16,points[i].direction*90)
+	danceFromCenter.x=lengthdir_x(16,note.direction*90)
+	danceFromCenter.y=lengthdir_y(16,note.direction*90)
 	spriteResetStall=30
 }
 
