@@ -91,6 +91,26 @@ for(var i=0;i<array_length(points)-1;i++)
 		}
 		else
 		{
+			if(global.gamemode==1)
+			{
+				if(turnKeyHold[noteDirections.left])
+				{
+					sprite_index=sprites.acornLeft
+				}
+				if(turnKeyHold[noteDirections.right])
+				{
+					sprite_index=sprites.acornRight
+				}
+				if(turnKeyHold[noteDirections.up])
+				{
+					sprite_index=sprites.acornUp
+				}
+				if(turnKeyHold[noteDirections.down])
+				{
+					sprite_index=sprites.acornDown
+				}
+				spriteResetStall=30
+			}
 			turnKey[points[i].direction]=false
 			audio_play_sound(snd_turn,1000,false)
 			points[i].wasHit=true

@@ -48,27 +48,6 @@ if(global.gamemode==1)
 	if(spriteResetStall<=0)
 	{
 		sprite_index=sprites.acornIdle
-		if(turnKeyHold[noteDirections.left])
-		{
-			sprite_index=sprites.acornLeft
-		}
-		if(turnKeyHold[noteDirections.right])
-		{
-			sprite_index=sprites.acornRight
-		}
-		if(turnKeyHold[noteDirections.up])
-		{
-			sprite_index=sprites.acornUp
-		}
-		if(turnKeyHold[noteDirections.down])
-		{
-			sprite_index=sprites.acornDown
-		}
-		if(attackKey[noteDirections.down]||attackKey[noteDirections.up]||attackKey[noteDirections.left]||attackKey[noteDirections.right])
-		{
-			sprite_index=choose(sprites.acornDodge1,sprites.acornDodge2)
-			spriteResetStall=30
-		}
 	}
 	
 	camera_set_view_pos(view_camera[0],0,0)
