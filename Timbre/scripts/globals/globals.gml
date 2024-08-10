@@ -72,6 +72,8 @@ global.musicVolume=1
 
 global.showKeys=false
 
+global.shouldShowNVDRLines=true
+
 global.saveLocation=game_save_id
 
 global.wasSaved=false

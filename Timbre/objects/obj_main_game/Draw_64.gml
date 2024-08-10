@@ -267,17 +267,20 @@ if(global.gamemode==2)
 			_beatDistance*16,1,270,c_white,1)
 		}
 		
-		points[i].x=_x
-		points[i].y=_scrollPosition
-		try{
-			if(points[i].y>0||points[i+1].y<room_height&&points[i+1].y>0)
-			{
-				draw_line_curved(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
-			}
-		}
-		catch(e)
+		if(global.shouldShowNVDRLines)
 		{
+			points[i].x=_x
+			points[i].y=_scrollPosition
+			try{
+				if(points[i].y>0||points[i+1].y<room_height&&points[i+1].y>0)
+				{
+					draw_line_curved(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
+				}
+			}
+			catch(e)
+			{
 			
+			}
 		}
 		
 		if(points[i].wasHit)
@@ -350,20 +353,23 @@ if(global.gamemode==2)
 		
 		var _xPos=_x-_noteDistance*(3-notes[i].direction)-96
 			
-		notes[i].x=_x
-		notes[i].y=_scrollPosition
-		
-		try{
-			if(notes[i].y>0||notes[i+1].y<room_height&&notes[i+1].y>0)
-			{
-				draw_set_color(c_black)
-				draw_line_curved(notes[i].x,notes[i].y,notes[i+1].x,notes[i+1].y)
-				draw_set_color(c_white)
-			}
-		}
-		catch(e)
+		if(global.shouldShowNVDRLines)
 		{
+			notes[i].x=_x
+			notes[i].y=_scrollPosition
+		
+			try{
+				if(notes[i].y>0||notes[i+1].y<room_height&&notes[i+1].y>0)
+				{
+					draw_set_color(c_black)
+					draw_line_curved(notes[i].x,notes[i].y,notes[i+1].x,notes[i+1].y)
+					draw_set_color(c_white)
+				}
+			}
+			catch(e)
+			{
 			
+			}
 		}
 		
 		if(notes[i].wasHit)
