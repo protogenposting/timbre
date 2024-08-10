@@ -177,7 +177,7 @@ if(global.gamemode==2)
 	var _noteDistance=_camWidth/6
 	var _logDistance=_camWidth/6
 	var _playerX=device_mouse_x_to_gui(0)
-	var _playerY=_camHeight-32
+	var _playerY=_camHeight-32 
 	
 	#region botplay stuff
 	var _nextType=noteTypes.turn
