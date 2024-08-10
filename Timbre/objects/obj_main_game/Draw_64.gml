@@ -267,6 +267,19 @@ if(global.gamemode==2)
 			_beatDistance*16,1,270,c_white,1)
 		}
 		
+		points[i].x=_x
+		points[i].y=_scrollPosition
+		try{
+			if(points[i].y>0||points[i+1].y<room_height&&points[i+1].y>0)
+			{
+				draw_line_curved(points[i].x,points[i].y,points[i+1].x,points[i+1].y)
+			}
+		}
+		catch(e)
+		{
+			
+		}
+		
 		if(points[i].wasHit)
 		{
 			continue;
@@ -325,31 +338,46 @@ if(global.gamemode==2)
 	_noteDistanceFromCenter[noteDirections.down]=1
 	for(var i=array_length(notes)-1;i>=0;i--)
 	{
-		if(notes[i].wasHit)
-		{
-			continue;
-		}
-		
-		
 		var _maxHitDistance=msWindow/4
 		
 		var _x=(_camWidth/2 - _logDistance) 
 		+ _logDistance 
 		* _noteDistanceFromCenter[notes[i].direction]
 		
-		if(global.botPlay&&_nextType==noteTypes.log&&_nextLog==i)
-		{
-			_playerX=_x
-		}
-		
 		var _timing=notes[i].timeMS-songMilliseconds
 		
 		var _scrollPosition=_y-(_timing)
 		
 		var _xPos=_x-_noteDistance*(3-notes[i].direction)-96
+			
+		notes[i].x=_x
+		notes[i].y=_scrollPosition
+		
+		try{
+			if(notes[i].y>0||notes[i+1].y<room_height&&notes[i+1].y>0)
+			{
+				draw_set_color(c_black)
+				draw_line_curved(notes[i].x,notes[i].y,notes[i+1].x,notes[i+1].y)
+				draw_set_color(c_white)
+			}
+		}
+		catch(e)
+		{
+			
+		}
+		
+		if(notes[i].wasHit)
+		{
+			continue;
+		}
 		
 		draw_sprite_ext(sprites.log,0,_x,_scrollPosition,
 			1,1,90,notes[i].color,1)
+		
+		if(global.botPlay&&_nextType==noteTypes.log&&_nextLog==i)
+		{
+			_playerX=_x
+		}
 		
 		var _touching=rectangle_in_rectangle(
 		_x-32,_scrollPosition-32,_x+32,_scrollPosition+32,

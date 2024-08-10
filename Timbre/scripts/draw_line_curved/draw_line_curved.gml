@@ -9,9 +9,13 @@ function draw_line_curved(_x1,_y1,_x2,_y2,_iterations=30,_axis="y"){
 		
 		var _per=i/_iterations
 		
-		var _xInc=_per*(_x2-_x1)
+		var _xDist=(_x2-_x1)
 		
-		var _yInc=_per*(_y2-_y1)
+		var _xInc=_perIteration*_xDist
+		
+		var _yDist=(_y2-_y1)
+		
+		var _yInc=_perIteration*_yDist
 		
 		var _nextX=_x+_xInc
 		
@@ -19,16 +23,19 @@ function draw_line_curved(_x1,_y1,_x2,_y2,_iterations=30,_axis="y"){
 		
 		if(_axis=="x")
 		{
-			_y=sin(pi*_per)
-			_nextY=_y+sin(pi*(_per+_perIteration))
+			_y=_y1+(sin(pi/2*_per)*_yDist)
+			_nextY=_y1+sin(pi/2*(_per+_perIteration))*_yDist
 		}
 		if(_axis=="y")
 		{
-			_x=sin(pi*_per)
-			_nextX=_x+sin(pi*(_per+_perIteration))
+			_x=_x1+(sin(pi/2*_per)*_xDist)
+			_nextX=_x1+sin(pi/2*(_per+_perIteration))*_xDist
 		}
 		
-		draw_line(_x,_y,_nextX,_nextY)
+		if(point_in_camera(_x,_y,_x,_y))
+		{	
+			draw_line(_x,_y,_nextX,_nextY)
+		}
 		
 		_x+=_xInc
 		_y+=_yInc
