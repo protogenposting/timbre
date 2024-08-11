@@ -46,6 +46,16 @@ image_index=round(barPercentage*24)
 if(global.gamemode==1)
 {
 	image_index=3-(spriteResetStall/danceTime)*3
+	
+	if(floor(image_index)==2)
+	{
+		animationEnded=true
+	}
+	
+	if(animationEnded)
+	{
+		image_index=2
+	}
 }
 
 //show_debug_message(image_index)

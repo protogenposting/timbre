@@ -45,9 +45,10 @@ if(global.showKeys)
 if(global.gamemode==1)
 {
 	spriteResetStall-=delta_time/10000
-	if(spriteResetStall<=0)
+	if(spriteResetStall<=-30)
 	{
 		sprite_index=sprites.acornIdle
+		animationEnded=false
 	}
 	
 	camera_set_view_pos(view_camera[0],0,0)

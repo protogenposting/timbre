@@ -16,7 +16,10 @@ danceFromCenter={x:0,y:0}
 
 danceTime=30
 
+animationEnded=false
+
 function dance(note){
+	image_index=0
 	if(note.direction==noteDirections.left)
 	{
 		sprite_index=sprites.acornLeft
@@ -33,7 +36,9 @@ function dance(note){
 	{
 		sprite_index=sprites.acornDown
 	}
-	spriteResetStall=danceTime
+	spriteResetStall=30
+	
+	animationEnded=false
 }
 
 afterImages=[0,0,0]
