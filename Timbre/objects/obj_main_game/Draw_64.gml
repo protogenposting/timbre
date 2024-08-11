@@ -106,7 +106,7 @@ if(global.gamemode==1)
 	{
 		var _timing=notes[i].timeMS-songMilliseconds
 		var _scrollPosition=_y+(_timing)*global.moveSpeed
-		if(_scrollPosition>_camHeight)
+		if(_scrollPosition>_camHeight||notes[i].wasHit)
 		{
 			continue;
 		}
@@ -159,7 +159,7 @@ if(global.gamemode==1)
 			draw_sprite_ext(sprites.web,0,_xPos,_scrollPosition,
 			_beatDistance*16,1,270,c_white,1)
 		}
-		if(points[i].wasHit)
+		if(points[i].wasHit||_scrollPosition<0)
 		{
 			continue;
 		}
