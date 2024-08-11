@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function draw_line_curved(_x1,_y1,_x2,_y2,_iterations=30,_axis="y"){
+function draw_line_curved(_x1,_y1,_x2,_y2,_iterations=10,_axis="y"){
 	var _x=_x1
 	var _y=_y1
 	for(var i=0;i<_iterations;i++)
