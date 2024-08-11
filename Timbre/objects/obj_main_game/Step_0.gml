@@ -43,6 +43,11 @@ finishTimerLast=finishTimer
 
 image_index=round(barPercentage*24)
 
+if(global.gamemode==1)
+{
+	image_index=3-(spriteResetStall/danceTime)*3
+}
+
 //show_debug_message(image_index)
 
 playerFrame=round(currentFracBeat*4)

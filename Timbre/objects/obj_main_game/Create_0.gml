@@ -14,6 +14,8 @@ if(global.gamemode==1)
 
 danceFromCenter={x:0,y:0}
 
+danceTime=30
+
 function dance(note){
 	if(note.direction==noteDirections.left)
 	{
@@ -31,7 +33,7 @@ function dance(note){
 	{
 		sprite_index=sprites.acornDown
 	}
-	spriteResetStall=20
+	spriteResetStall=danceTime
 }
 
 afterImages=[0,0,0]
