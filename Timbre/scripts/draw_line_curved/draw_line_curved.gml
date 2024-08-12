@@ -32,7 +32,7 @@ function draw_line_curved(_x1,_y1,_x2,_y2,_iterations=10,_axis="y"){
 			_nextX=_x1+sin(pi/2*(_per+_perIteration))*_xDist
 		}
 		
-		if(point_in_camera(_x,_y,_x,_y))
+		if(_y>0&&_y<1366)
 		{	
 			draw_line(_x,_y,_nextX,_nextY)
 		}
