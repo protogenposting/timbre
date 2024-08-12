@@ -120,26 +120,21 @@ for(var i=0;i<array_length(points)-1;i++)
 				perfect++
 			}
 			
-			if(global.gamemode==1)
+			var _inst=instance_create_depth(points[i].x,points[i].y,depth-1,obj_effect)
+			_inst.sprite_index=timings[timingID].sprite
+			_inst.timeLeft=20
+			_inst.totalTime=20
+			_inst.drawOnGui=true
+			_inst.moveDirection.y=-2
+			
+			if(global.gamemode==0)
 			{
-				var _inst=instance_create_depth(points[i].x,points[i].y,depth-1,obj_effect)
-				_inst.sprite_index=timings[timingID].sprite
-				_inst.timeLeft=20
-				_inst.totalTime=20
-				_inst.drawOnGui=true
-				_inst.moveDirection.y=-2
+				_inst.drawOnGui=false
+				_inst.moveDirection.y=-5
 			}
 			
 			hitTime=1.33
 			hitMessage=get_timing(timing)
-			if(timingID<=1)
-			{
-				var _p=part_system_create(p_arrow_perfect)
-				array_push(particles,{time:160,id:_p,updateTimer:0})
-				part_system_position(_p,points[i].x,points[i].y)
-				part_system_angle(_p,points[i].direction*90)
-				part_system_automatic_update(_p,false)
-			}
 		}
 	}
 	if(songMilliseconds>points[i].timeMS+msWindow&&!points[i].wasHit)
