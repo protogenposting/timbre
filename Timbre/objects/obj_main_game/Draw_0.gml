@@ -289,6 +289,11 @@ var usedTreeSpaces=[]
 //TREEES
 for(var o=0; o<array_length(notes);o++)
 {
+	if(global.gamemode==1&&notes[o].wasHit)
+	{
+		continue;
+	}
+	
 	var _spr=sprites.log
 	
 	var inCamera=point_in_camera(notes[o].x-32,notes[o].x+32,notes[o].y-32,notes[o].y+32)
