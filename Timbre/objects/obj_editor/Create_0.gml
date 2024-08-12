@@ -69,26 +69,26 @@ gridSize=512
 function generate_preview(_notes){
 	backgroundPoints=[]
 	_notes=sort_note_array(_notes)
+	var _notesToUse=[]
 	for(var i=0;i<array_length(_notes)-1;i++)
 	{
-		if(_notes[i].type==noteTypes.log)
+		if(_notes[i].type!=noteTypes.log)
 		{
-			array_delete(_notes,i,1)
-			i--
+			array_push(_notesToUse,_notes[i])
 		}
 	}
 	var _x=0
 	var _y=0
-	for(var i=0;i<array_length(_notes)-1;i++){
-		if(_notes[i].type==noteTypes.turn)
+	for(var i=0;i<array_length(_notesToUse)-1;i++){
+		if(_notesToUse[i].type==noteTypes.turn)
 		{
-			var _distanceToNext=_notes[i+1].beat-_notes[i].beat
-			array_push(backgroundPoints,{x: _x,y: _y, direction: _notes[i].direction*90,beat: _notes[i].beat,beatDistance: _distanceToNext,isSpider:false})
-			var _direction=_notes[i].direction*90
-			if(i>0&&(_notes[i-1].beat-_notes[i].beat)==0)
+			var _distanceToNext=_notesToUse[i+1].beat-_notesToUse[i].beat
+			array_push(backgroundPoints,{x: _x,y: _y, direction: _notesToUse[i].direction*90,beat: _notesToUse[i].beat,beatDistance: _distanceToNext,isSpider:false})
+			var _direction=_notesToUse[i].direction*90
+			if(i>0&&(_notesToUse[i-1].beat-_notesToUse[i].beat)==0)
 			{
-				_direction=(_notes[i-1].direction+_notes[i].direction)/2
-				if(abs(_notes[i].direction*90-_notes[i-1].direction*90)>180)
+				_direction=(_notesToUse[i-1].direction+_notesToUse[i].direction)/2
+				if(abs(_notesToUse[i].direction*90-_notesToUse[i-1].direction*90)>180)
 				{
 					_direction+=2
 				}
@@ -97,12 +97,12 @@ function generate_preview(_notes){
 			_x+=lengthdir_x(gridSize*_distanceToNext,_direction)
 			_y+=lengthdir_y(gridSize*_distanceToNext,_direction)
 		}
-		if(_notes[i].type==noteTypes.spider)
+		if(_notesToUse[i].type==noteTypes.spider)
 		{
-			var _distanceToNext=_notes[i+1].beat-_notes[i].beat
-			array_push(backgroundPoints,{x: _x,y: _y, direction: _notes[i].direction*90,beat: _notes[i].beat,beatDistance: _distanceToNext,isSpider:true})
-			//_x+=lengthdir_x(gridSize*_distanceToNext,_notes[i].direction*90)
-			//_y+=lengthdir_y(gridSize*_distanceToNext,_notes[i].direction*90)
+			var _distanceToNext=_notesToUse[i+1].beat-_notesToUse[i].beat
+			array_push(backgroundPoints,{x: _x,y: _y, direction: _notesToUse[i].direction*90,beat: _notesToUse[i].beat,beatDistance: _distanceToNext,isSpider:true})
+			//_x+=lengthdir_x(gridSize*_distanceToNext,_notesToUse[i].direction*90)
+			//_y+=lengthdir_y(gridSize*_distanceToNext,_notesToUse[i].direction*90)
 		}
 	}
 }
