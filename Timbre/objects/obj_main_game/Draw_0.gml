@@ -26,6 +26,10 @@ for(var i=0;i<array_length(bobs);i++)
 //check notes
 for(var i=0;i<array_length(points)-1;i++)
 {
+	if(global.gamemode==1&&points[i].wasHit)
+	{
+		continue;
+	}
 	var _color=c_white
 	if(points[i].release)
 	{

@@ -69,6 +69,14 @@ gridSize=512
 function generate_preview(_notes){
 	backgroundPoints=[]
 	_notes=sort_note_array(_notes)
+	for(var i=0;i<array_length(_notes)-1;i++)
+	{
+		if(_notes[i].type==noteTypes.log)
+		{
+			array_delete(_notes,i,1)
+			i--
+		}
+	}
 	var _x=0
 	var _y=0
 	for(var i=0;i<array_length(_notes)-1;i++){
