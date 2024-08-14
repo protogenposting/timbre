@@ -14,11 +14,17 @@ const query = `
         name STRING NOT NULL,
         username STRING NOT NULL UNIQUE,
         password STRING NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS baseStats (
+        id INTEGER PRIMARY KEY,
+        pp INTEGER NOT NULL,
+        cockSize INTEGER NOT NULL
     )
 `;
 
 db.exec(query)
 
+//get all the users
 app.get(apiPath+'users',(req,res) => {
     if(verify_token(req.headers.authorization))
     {
@@ -34,6 +40,7 @@ app.get(apiPath+'users',(req,res) => {
     }
 })
 
+//get a user by name
 app.get(apiPath+'user/:name',(req,res) => {
     if(verify_token(req.headers.authorization))
     {
@@ -51,6 +58,21 @@ app.get(apiPath+'user/:name',(req,res) => {
     }
 })
 
+//delete a user
+app.delete(apiPath+'user/:name',(req,res) => {
+    if(verify_token(req.headers.authorization))
+    {
+        db.prepare(`DELETE * FROM users WHERE username = ?`).run();
+
+        res.send("Ok did that");
+    }
+    else
+    {
+        res.send("nuh uh tell me the secret password!!!")
+    }
+})
+
+//create a user :3
 app.post(apiPath+'newUser',(req,res) => {
     if(verify_token(req.headers.authorization))
     {
