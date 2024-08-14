@@ -1,6 +1,6 @@
 event_inherited()
 
-minimumScrollSpeed=0.5
+minimumScrollSpeed=0.25
 
 maximumScrollSpeed=6
 
