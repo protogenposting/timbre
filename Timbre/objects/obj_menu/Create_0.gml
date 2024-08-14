@@ -77,7 +77,7 @@ button[1]={
 		audio_stop_all()
 	},
 	size:{x:256,y:128},
-	position:{x:room_width/2,y:room_height/2},
+	position:{x:room_width/2+140,y:room_height/2},
 	sizeMod:0
 }
 
@@ -89,7 +89,7 @@ button[2]={
 		audio_stop_all()
 	},
 	size:{x:256,y:128},
-	position:{x:room_width/2-140,y:room_height/2 +128},
+	position:{x:room_width/2-140,y:room_height/2},
 	sizeMod:0
 }
 
@@ -119,6 +119,15 @@ button[5]={
 	},
 	size:{x:256,y:128},
 	position:{x:room_width/2+140,y:room_height/2 + 128},
+	sizeMod:0
+}
+button[6]={
+	sprite: spr_account_button,
+	func: function(){
+		room_goto(rm_online)
+	},
+	size:{x:256,y:128},
+	position:{x:room_width/2-140,y:room_height/2 + 128},
 	sizeMod:0
 }
 

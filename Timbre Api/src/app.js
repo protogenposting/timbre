@@ -19,7 +19,7 @@ const query = `
         id INTEGER PRIMARY KEY,
         pp INTEGER NOT NULL,
         cockSize INTEGER NOT NULL
-    )
+    );
 `;
 
 db.exec(query)
