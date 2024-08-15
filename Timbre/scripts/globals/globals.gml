@@ -60,6 +60,21 @@ global.modeBinds=[
 	},
 ]
 
+global.skins=[]
+
+var _file=file_find_first(working_directory+"/"+"Skins",fa_directory)
+
+while(_file!="")
+{
+	array_push(global.skins,_file)
+	
+	_file=file_find_next()
+}
+
+file_find_close()
+
+global.skinSelected=0
+
 global.deltaTime=true
 
 global.playedDoorSlam=false
