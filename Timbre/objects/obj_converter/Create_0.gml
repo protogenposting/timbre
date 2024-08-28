@@ -52,6 +52,20 @@ array_push(button,{
 	color:c_red
 })
 
+array_push(button,{
+	name: "ADOFAI",
+	func: function(){
+		with(obj_converter)
+		{
+			adofai_convert()
+		}
+	},
+	size:{x:128,y:64},
+	position:{x:128,y:64+96+96+96+96},
+	sizeMod:0,
+	color:c_red
+})
+
 function fnf_convert(){
 	var _file=GetOpenFileName("","data.json","",@'Open')
 	if(_file!="")
@@ -202,6 +216,15 @@ function stepmania_convert(){
 	{
 		show_message(e)
 	}*/
+}
+	
+function adofai_convert(){
+	var _file=GetOpenFileName("","level.adofai","",@'Open')
+	if(_file!="")
+	{
+		load_file(_file)
+		show_debug_message(_file)
+	}
 }
 
 yOffset=0
