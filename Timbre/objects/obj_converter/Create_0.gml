@@ -222,8 +222,21 @@ function adofai_convert(){
 	var _file=GetOpenFileName("","level.adofai","",@'Open')
 	if(_file!="")
 	{
-		load_file(_file)
-		show_debug_message(_file)
+		var _buffer = buffer_load(_file)
+		var _string = buffer_read(_buffer,buffer_string)
+		buffer_delete(_buffer)
+		
+		var _position = string_pos("\"decorations\":",_string)
+		
+		_string=string_delete(_string,_position,string_length(_string))
+		
+		_string = _string + "}"
+		
+		_string = string_replace(_string,"\n","")
+		
+		_string = string_replace(_string,"\r","")
+		
+		show_debug_message(json_parse(_string))
 	}
 }
 
