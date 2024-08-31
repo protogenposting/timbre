@@ -75,7 +75,7 @@ file_find_close()
 
 global.skinSelected=0
 
-global.deltaTime=true
+global.deltaTime=false
 
 global.playedDoorSlam=false
 
