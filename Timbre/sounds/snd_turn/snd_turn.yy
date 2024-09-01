@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.118118,
+  "duration":3.2,
   "name":"snd_turn",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_turn.wav",
+  "soundFile":"snd_turn.ogg",
   "type":0,
-  "volume":0.48,
+  "volume":1.0,
 }
