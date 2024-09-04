@@ -92,12 +92,8 @@ function setting_set_value(_setting,_variable,_value){
 
 settings=[]
 
-array_push(settings,new setting(settingTypes.slider,"sfxVolume","SFX"))
-
-array_push(settings,new setting(settingTypes.slider,"musicVolume","Music"))
-
 array_push(settings,new setting(settingTypes.toggle,"epilepsyMode","Epilepsy Mode"))
 
 array_push(settings,new setting(settingTypes.toggle,"showKeys","Show Inputs"))
 
-array_push(settings,new setting(settingTypes.slider,"audioOffset","Audio Offset"))
+array_push(settings,new setting(settingTypes.toggle,"deltaTime","Delta Time"))

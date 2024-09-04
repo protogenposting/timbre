@@ -41,9 +41,9 @@ barPercentage = remap(needle, left, right, 0, 1);
 
 finishTimerLast=finishTimer
 
-image_index=round(barPercentage*24)
+image_index=round(barPercentage*sprite_get_number(sprite_index))
 
-if(global.gamemode==1)
+if(global.gamemode==1 && sprite_index!=spr_acorn_idle)
 {
 	image_index=3-(spriteResetStall/danceTime)*3
 	
