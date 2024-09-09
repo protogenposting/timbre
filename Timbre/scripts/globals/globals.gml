@@ -60,9 +60,9 @@ global.modeBinds=[
 	},
 ]
 
-global.skins=["Default Skin"]
+global.skins=[]//"Default Skin"]
 
-var _file=file_find_first(working_directory+"/"+"Skins",fa_directory)
+var _file=file_find_first(working_directory+"/"+"Skins/*",fa_directory)
 
 while(_file!="")
 {
