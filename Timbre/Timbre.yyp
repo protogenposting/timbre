@@ -361,6 +361,7 @@
     {"id":{"name":"draw_buttons_fancy","path":"scripts/draw_buttons_fancy/draw_buttons_fancy.yy",},},
     {"id":{"name":"draw_buttons","path":"scripts/draw_buttons/draw_buttons.yy",},},
     {"id":{"name":"draw_line_curved","path":"scripts/draw_line_curved/draw_line_curved.yy",},},
+    {"id":{"name":"file_find_all","path":"scripts/file_find_all/file_find_all.yy",},},
     {"id":{"name":"get_chart_style","path":"scripts/get_chart_style/get_chart_style.yy",},},
     {"id":{"name":"get_key_name","path":"scripts/get_key_name/get_key_name.yy",},},
     {"id":{"name":"gif_sprite","path":"scripts/gif_sprite/gif_sprite.yy",},},

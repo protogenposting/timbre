@@ -73,9 +73,18 @@ while(_file!="")
 }
 
 file_find_close()
+/*
+var _directory = game_save_id+"Songs/*"
 
-var _directory = working_directory+"Songs/*"
+if(!directory_exists(_directory))
+{
+	directory_create(_directory)
+	directory_copy(working_directory+"/Songs",_directory)
+}*/
 
+show_debug_message(file_find_all(working_directory+"/assets/songs"))
+
+/*
 //find songs
 _file = file_find_first(_directory,fa_directory)
 
@@ -87,8 +96,7 @@ while(_file!="")
 }
 
 file_find_close()
-
-show_message(directory_exists("/songs"))
+*/
 
 global.skinSelected=0
 
