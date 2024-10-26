@@ -180,6 +180,7 @@ function initialize_level(levelID){
 			if(os_type == os_linux)
 			{
 				_file.songName = string_lower(_file.songName)
+				_file.songName = string_replace_all(_file.songName," ","_")
 			}
 			
 			global.song=audio_create_stream(filename_dir(_path)+"/"+_file.songName)
