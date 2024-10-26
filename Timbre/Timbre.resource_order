@@ -48,6 +48,7 @@
     {"name":"rm_online","order":11,"path":"rooms/rm_online/rm_online.yy",},
     {"name":"rm_settings","order":6,"path":"rooms/rm_settings/rm_settings.yy",},
     {"name":"rm_tutorial","order":5,"path":"rooms/rm_tutorial/rm_tutorial.yy",},
+    {"name":"add_pack","order":29,"path":"scripts/add_pack/add_pack.yy",},
     {"name":"add_song","order":22,"path":"scripts/add_song/add_song.yy",},
     {"name":"array_create_2D","order":24,"path":"scripts/array_create_2D/array_create_2D.yy",},
     {"name":"array_index_looped_index","order":9,"path":"scripts/array_index_looped_index/array_index_looped_index.yy",},
