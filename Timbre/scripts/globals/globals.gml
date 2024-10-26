@@ -62,7 +62,36 @@ global.modeBinds=[
 
 global.skins=[]//"Default Skin"]
 
-var _file=file_find_first(working_directory+"/"+"Skins/*",fa_directory)
+var _dontLoadSongs = false
+
+if(!directory_exists(program_directory+"/"+"Skins"))
+{
+	directory_copy(working_directory+"/"+"Skins",program_directory+"/"+"Skins")
+	
+	directory_create(program_directory+"/"+"Skins")
+}
+
+if(!directory_exists(program_directory+"/"+"Songs"))
+{
+	_dontLoadSongs = true
+	directory_copy(working_directory+"/"+"Songs",program_directory+"/"+"Songs")
+	directory_create(program_directory+"/"+"Songs")
+	show_message(program_directory)
+}
+
+//find skins
+var _file=file_find_first(program_directory+"/"+"Skins/*",fa_directory)
+
+while(_file!="")
+{
+	array_push(global.skins,_file)
+	
+	_file=file_find_next()
+}
+
+file_find_close()
+
+_file = file_find_first(program_directory+"/"+"Skins/*",fa_directory)
 
 while(_file!="")
 {
@@ -125,7 +154,7 @@ global.gamemode=0
 
 global.audioOffset=0
 
-var _file=load_file(global.saveName)
+_file=load_file(global.saveName)
 
 function playlist(_name,_levels) constructor{
 	name=_name
@@ -140,12 +169,18 @@ global.playlists=[
 
 if(_file==false)
 {
-	global.levels=[
-	]
+	global.levels=[]
 }
 else
 {
-	global.levels=_file.levels
+	if(!_dontLoadSongs)
+	{
+		global.levels=_file.levels
+	}
+	else
+	{
+		global.levels=[]
+	}
 	try{
 		global.improvedControls=_file.controlType
 		global.epilepsyMode=_file.epilepsy
