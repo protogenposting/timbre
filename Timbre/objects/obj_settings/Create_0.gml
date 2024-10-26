@@ -49,7 +49,7 @@ button=[
 		size:{x:128,y:64},
 		position:{x:128,y:64+70},
 		sizeMod:0
-	},
+	},/*
 	{
 		name: "Skins",
 		func: function(){
@@ -58,7 +58,7 @@ button=[
 		size:{x:128,y:64},
 		position:{x:128,y:64+70+70},
 		sizeMod:0
-	},
+	},*/
 ]
 
 enum settingTypes{

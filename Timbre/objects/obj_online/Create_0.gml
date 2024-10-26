@@ -1,5 +1,10 @@
 /// @description Insert description here
-// You can write your code in this editor
+// You can write your code in this editor'
+
+show_message("No")
+
+room_goto(rm_menu)
+
 button[0]={
 	name: "Back",
 	func: function(){
