@@ -177,13 +177,13 @@ function initialize_level(levelID){
 							
 			}
 			
-			if(os_type == os_linux)
+			if(os_type == os_linux && !file_exists(filename_dir(_path)+"/"+_file.songName))
 			{
 				_file.songName = string_lower(_file.songName)
 				_file.songName = string_replace_all(_file.songName," ","_")
 			}
 			
-			global.song=audio_create_stream(filename_dir(_path)+"/"+_file.songName)
+			global.song = audio_create_stream(filename_dir(_path)+"/"+_file.songName)
 			
 			global.levelData=_file
 						

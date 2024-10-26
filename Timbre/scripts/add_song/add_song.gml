@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function add_song(_file){
+	show_debug_message("adding "+_file)
 	for(var i=0;i<array_length(global.levels);i++)
 	{
 		if(_file==global.levels[i].path)
@@ -48,7 +49,7 @@ function add_song(_file){
 		}
 		catch(e)
 		{
-			show_message("the file ("+_file+") is corrupted or not valid jsons")
+			show_message("the file ("+_file+") is corrupted or not valid json")
 		}		
 	}
 	else

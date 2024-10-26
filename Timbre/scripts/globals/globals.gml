@@ -160,6 +160,7 @@ else
 		
 	}
 }
+
 function get_playlist_levels(_playlistID){
 	var _returnValue=[]
 	var _unfoundLevels=[]
@@ -196,16 +197,6 @@ function reset_default_playlist()
 		array_push(global.playlists[0].levels,global.levels[i].path)
 	}
 	show_debug_message(global.playlists[0])
-}
-reset_default_playlist()
-
-for(var i=1;i<array_length(global.playlists);i++)
-{
-	if(array_length(global.playlists[i].levels)<=0)
-	{
-		array_delete(global.playlists,i,1)
-		i--
-	}
 }
 
 function GameMode(_name,_sprite,_usesNormalControls,_requirments=function(){return true}) constructor{
@@ -275,18 +266,38 @@ for(var i = 0; i < array_length(_allFiles); i++)
 	if(string_pos(".",_allFiles[i])!=0)
 	{
 		file_copy(_dir + _allFiles[i],_directory + _allFiles[i])
-		if(string_pos("pack.json",_allFiles[i]) != 0)
-		{
-			//add_pack(_directory + _allFiles[i])
-		}
+	}
+}
+
+_allFiles = file_find_all(_directory,"")
+
+for(var i = 0; i < array_length(_allFiles); i++)
+{
+	if(string_pos(".",_allFiles[i])!=0)
+	{
 		if(string_pos("data.json",_allFiles[i]) != 0)
 		{
-			add_song(_directory + _allFiles[i])
+			var _newDir = _allFiles[i]
+			
+			//_newDir = string_replace_all(_newDir," ","_")
+			
+			add_song(_newDir)
 		}
 	}
 }
 
 #endregion
+
+reset_default_playlist()
+
+for(var i=1;i<array_length(global.playlists);i++)
+{
+	if(array_length(global.playlists[i].levels)<=0)
+	{
+		array_delete(global.playlists,i,1)
+		i--
+	}
+}
 
 global.levels=sort_songlist(global.levels)
 
