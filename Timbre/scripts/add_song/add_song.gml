@@ -18,8 +18,8 @@ function add_song(_file){
 				highScore:0,
 				rank: array_create_2D(10,3,"")
 			}
-			var _nameLast=string_last_pos("\\",_struct.name)
-			if(string_count("\\",_struct.name)<=0)
+			var _nameLast=string_last_pos("/",_struct.name)
+			if(string_count("/",_struct.name)<=0)
 			{
 				_nameLast=string_last_pos("/",_struct.name)
 			}

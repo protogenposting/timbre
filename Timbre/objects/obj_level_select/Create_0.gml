@@ -176,15 +176,21 @@ function initialize_level(levelID){
 			{
 							
 			}
-						
-			global.song=audio_create_stream(filename_dir(_path)+"\\"+_file.songName)
+			
+			if(os_type == os_linux)
+			{
+				_file.songName = string_lower(_file.songName)
+			}
+			
+			global.song=audio_create_stream(filename_dir(_path)+"/"+_file.songName)
+			
 			global.levelData=_file
 						
 			obj_level_select.grass=spr_grass
 						
-			if(file_exists(filename_dir(_path)+"\\"+"grass.png"))
+			if(file_exists(filename_dir(_path)+"/"+"grass.png"))
 			{
-				obj_level_select.grass=sprite_add(filename_dir(_path)+"\\"+"grass.png",2,false,false,32,32)
+				obj_level_select.grass=sprite_add(filename_dir(_path)+"/"+"grass.png",2,false,false,32,32)
 			}
 						
 			obj_level_select.songMilliseconds=0
@@ -386,14 +392,14 @@ function reset_buttons()
 							_leafToTreeRatio[notesToGet[i].type]++
 						}
 						
-						global.song=audio_create_stream(filename_dir(path)+"\\"+_file.songName)
+						global.song=audio_create_stream(filename_dir(path)+"/"+_file.songName)
 						global.levelData=_file
 						
 						obj_level_select.grass=spr_grass
 						
-						if(file_exists(filename_dir(path)+"\\"+"grass.png"))
+						if(file_exists(filename_dir(path)+"/"+"grass.png"))
 						{
-							obj_level_select.grass=sprite_add(filename_dir(path)+"\\"+"grass.png",2,false,false,32,32)
+							obj_level_select.grass=sprite_add(filename_dir(path)+"/"+"grass.png",2,false,false,32,32)
 						}
 						
 						var _average=0

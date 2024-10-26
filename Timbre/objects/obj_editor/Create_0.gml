@@ -196,7 +196,7 @@ function load_level(_levelData){
 	
 	var directoryName=directory
 	directoryName=string_delete(directoryName,string_length(directoryName),1)
-	var directorySlash=string_last_pos("\\",directoryName)
+	var directorySlash=string_last_pos("/",directoryName)
 	directoryName=string_copy(directoryName,directorySlash+1,9999)
 	
 	var struct=load_file(_levelData)

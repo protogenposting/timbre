@@ -73,30 +73,6 @@ while(_file!="")
 }
 
 file_find_close()
-/*
-var _directory = game_save_id+"Songs/*"
-
-if(!directory_exists(_directory))
-{
-	directory_create(_directory)
-	directory_copy(working_directory+"/Songs",_directory)
-}*/
-
-show_debug_message(file_find_all(working_directory+"/assets/songs"))
-
-/*
-//find songs
-_file = file_find_first(_directory,fa_directory)
-
-while(_file!="")
-{
-	show_message(_file)
-	
-	_file=file_find_next()
-}
-
-file_find_close()
-*/
 
 global.skinSelected=0
 
@@ -169,14 +145,7 @@ if(_file==false)
 }
 else
 {
-	if(!_dontLoadSongs)
-	{
-		global.levels=_file.levels
-	}
-	else
-	{
-		global.levels=[]
-	}
+	global.levels=_file.levels
 	try{
 		global.improvedControls=_file.controlType
 		global.epilepsyMode=_file.epilepsy
@@ -290,6 +259,34 @@ global.difficultyMods=[
 		}
 	)
 ]
+
+#region get the songs!
+
+var _directory = game_save_id+"Songs"
+
+var _dir = working_directory+"/assets/songs"
+
+var _allFiles = file_find_all(_dir,"")
+
+for(var i = 0; i < array_length(_allFiles); i++)
+{
+	_allFiles[i] = string_replace(_allFiles[i],_dir,"")
+	_allFiles[i] = string_replace(_allFiles[i],"//Songs","/Songs")
+	if(string_pos(".",_allFiles[i])!=0)
+	{
+		file_copy(_dir + _allFiles[i],_directory + _allFiles[i])
+		if(string_pos("pack.json",_allFiles[i]) != 0)
+		{
+			//add_pack(_directory + _allFiles[i])
+		}
+		if(string_pos("data.json",_allFiles[i]) != 0)
+		{
+			add_song(_directory + _allFiles[i])
+		}
+	}
+}
+
+#endregion
 
 global.levels=sort_songlist(global.levels)
 
