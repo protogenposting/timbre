@@ -3,16 +3,23 @@
 function file_find_all(_dir){
 	var _files = []
 	
-	_file = file_find_first(_dir+"/*",fa_none)
+	var _file = file_find_first(_dir+"/*",fa_none)
 
 	while(_file!="")
 	{
-		array_push(_files,_file)
+		array_push(_files,_dir+"/"+_file)
 	
-		_file=file_find_next()
+		_file = file_find_next()
 	}
 
 	file_find_close()
+	
+	for(var i = 0; i < array_length(_files); i++)
+	{
+		var _newFiles = file_find_all(_files[i])
+		
+		array_combine(_files,_newFiles)
+	}
 	
 	return _files
 }
