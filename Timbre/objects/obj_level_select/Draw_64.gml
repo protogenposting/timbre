@@ -184,6 +184,7 @@ draw_set_color(c_white)
 repeat(_displayedLevels)
 {
 	var _size=_sizeMod-abs(sign(i-wheelProgress))/2
+	
 	var _rotation=0
 	var _isSelected=i==wheelProgress
 	var _y=camera_get_view_height(view_camera[0])/2 - _readyProgress*256
@@ -354,8 +355,10 @@ repeat(_displayedLevels)
 		_rotation=sin(current_time/5000)*5
 	}
 	
+	sprite_set_offset(_levels[i].cover,0,0)
+	
 	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,
-	_size,_size,_rotation,c_white,1)
+	(256/sprite_get_width(_levels[i].cover)) * _size, (256/sprite_get_height(_levels[i].cover)) * _size,_rotation,c_white,1)
 	
 	draw_sprite_ext(spr_cover_border,0,_x+ _progress * _coverDistance,_y,
 	_size,_size,_rotation,c_white,1)

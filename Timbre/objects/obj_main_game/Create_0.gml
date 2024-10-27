@@ -379,7 +379,7 @@ function create_points(){
 	array_push(pointArray,{x:_x,y:_y,
 		type:noteTypes.turn,beat: _pointBeat, 
 		timeMS: _pointBeat*beatLength*1000, 
-		wasHit:false,direction: currentDirection,
+		wasHit:true,direction: currentDirection,
 		continuing:false,color:c_white,release:false})
 	
 	for(var i=0;i<array_length(pointArray);i++)
