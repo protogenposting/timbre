@@ -315,6 +315,7 @@
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Songs/Vol 4/New High","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"music.ogg","CopyToMask":-1,"filePath":"datafiles/Songs/Vol 4/New High","name":"music.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"pack.json","CopyToMask":-1,"filePath":"datafiles/Songs/Vol 4","name":"pack.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"cover.png","CopyToMask":-1,"filePath":"datafiles/Songs/Vol 4/Tempaux Tutorial","name":"cover.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"data.json","CopyToMask":-1,"filePath":"datafiles/Songs/Vol 4/Tempaux Tutorial","name":"data.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"music.ogg","CopyToMask":-1,"filePath":"datafiles/Songs/Vol 4/Tempaux Tutorial","name":"music.ogg","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
