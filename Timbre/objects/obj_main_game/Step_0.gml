@@ -28,7 +28,7 @@ if(global.deltaTime&&audio!=-4)
 	songMilliseconds=abs(current_time-startTime)
 }
 
-show_debug_message(songMilliseconds)
+//show_debug_message(songMilliseconds)
 
 playFinishSound=false
 

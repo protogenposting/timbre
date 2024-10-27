@@ -160,6 +160,7 @@
     {"name":"spr_rank_c","order":4,"path":"sprites/spr_rank_c/spr_rank_c.yy",},
     {"name":"spr_rank_d","order":1,"path":"sprites/spr_rank_d/spr_rank_d.yy",},
     {"name":"spr_rank_minus","order":2,"path":"sprites/spr_rank_minus/spr_rank_minus.yy",},
+    {"name":"spr_rank_p_gold","order":9,"path":"sprites/spr_rank_p_gold/spr_rank_p_gold.yy",},
     {"name":"spr_rank_p","order":8,"path":"sprites/spr_rank_p/spr_rank_p.yy",},
     {"name":"spr_rank_plus","order":3,"path":"sprites/spr_rank_plus/spr_rank_plus.yy",},
     {"name":"spr_rank_s","order":7,"path":"sprites/spr_rank_s/spr_rank_s.yy",},

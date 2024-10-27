@@ -475,6 +475,7 @@
     {"id":{"name":"spr_rank_d","path":"sprites/spr_rank_d/spr_rank_d.yy",},},
     {"id":{"name":"spr_rank_f","path":"sprites/spr_rank_f/spr_rank_f.yy",},},
     {"id":{"name":"spr_rank_minus","path":"sprites/spr_rank_minus/spr_rank_minus.yy",},},
+    {"id":{"name":"spr_rank_p_gold","path":"sprites/spr_rank_p_gold/spr_rank_p_gold.yy",},},
     {"id":{"name":"spr_rank_p","path":"sprites/spr_rank_p/spr_rank_p.yy",},},
     {"id":{"name":"spr_rank_plus","path":"sprites/spr_rank_plus/spr_rank_plus.yy",},},
     {"id":{"name":"spr_rank_s","path":"sprites/spr_rank_s/spr_rank_s.yy",},},

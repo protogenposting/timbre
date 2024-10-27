@@ -1,7 +1,7 @@
-global.ranks=[{percent:115,name:"P+",messages:[
-	"WE IN OHIO FR FR"
+global.ranks=[{percent:115,name:"Golden P",messages:[
+	"GOLLDDDDD"
 	],
-	icon: spr_rank_p},
+	icon: spr_rank_p_gold},
 {percent:100,name:"P",messages:[
 	"PHENOMINAL!",
 	"P is for... PLEASE HAVE MY BABIES",
