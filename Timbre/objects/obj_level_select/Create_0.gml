@@ -299,6 +299,7 @@ function reset_buttons()
 		if(file_exists(_cover))
 		{
 			global.levels[i].cover=sprite_add(_cover,1,false,false,128,128)
+			sprite_set_offset(global.levels[i].cover,sprite_get_width(global.levels[i].cover)/2,sprite_get_height(global.levels[i].cover)/2)
 		}
 		else
 		{

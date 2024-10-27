@@ -355,10 +355,16 @@ repeat(_displayedLevels)
 		_rotation=sin(current_time/5000)*5
 	}
 	
-	sprite_set_offset(_levels[i].cover,0,0)
+	var _width = 256/sprite_get_width(_levels[i].cover)
 	
-	draw_sprite_ext(_levels[i].cover,0,_x+ _progress * _coverDistance,_y,
-	(256/sprite_get_width(_levels[i].cover)) * _size, (256/sprite_get_height(_levels[i].cover)) * _size,_rotation,c_white,1)
+	var _height = 256/sprite_get_height(_levels[i].cover)
+	
+	var _distanceX = 128 - sprite_get_width(_levels[i].cover) / 2
+	
+	var _distanceY = 128 - sprite_get_height(_levels[i].cover) / 2
+	
+	draw_sprite_ext(_levels[i].cover,0,_x + _progress * _coverDistance,_y,
+	_width * _size, _height * _size,_rotation,c_white,1)
 	
 	draw_sprite_ext(spr_cover_border,0,_x+ _progress * _coverDistance,_y,
 	_size,_size,_rotation,c_white,1)
