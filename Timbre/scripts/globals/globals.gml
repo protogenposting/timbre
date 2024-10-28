@@ -257,12 +257,16 @@ var _directory = game_save_id+"Songs"
 
 var _dir = working_directory+"/assets/songs"
 
+if(os_type == os_windows)
+{
+	 _dir = working_directory + "Songs"
+}
+
 var _allFiles = file_find_all(_dir,"")
 
 for(var i = 0; i < array_length(_allFiles); i++)
 {
 	_allFiles[i] = string_replace(_allFiles[i],_dir,"")
-	_allFiles[i] = string_replace(_allFiles[i],"//Songs","/Songs")
 	if(string_pos(".",_allFiles[i])!=0)
 	{
 		file_copy(_dir + _allFiles[i],_directory + _allFiles[i])

@@ -3,7 +3,16 @@
 function file_find_all(_dir,_mask){
 	var _files = []
 	
-	var _file = file_find_first(_dir+"/*",fa_none)
+	var _search = _dir+"/*"
+	
+	var _type = fa_none
+	
+	if(os_type == os_windows)
+	{
+		_type = fa_directory
+	}
+	
+	var _file = file_find_first(_search,_type)
 
 	while(_file!="")
 	{
