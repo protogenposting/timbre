@@ -18,7 +18,7 @@ if(_doorHeight==1&&!global.playedDoorSlam)
 
 draw_sprite(spr_sun,0,room_width/2,-128)
 
-draw_sprite_ext(spr_door,0,room_width/2,0,room_width/64,(room_height/64)*_doorHeight,0,c_white,1)
+draw_sprite_ext(spr_door,0,room_width/2,0,room_width/800,(room_height/450)*_doorHeight,0,c_white,1)
 
 draw_sprite(spr_dancc,currentShroomPose,gooberLocation.x,gooberLocation.y)
 
