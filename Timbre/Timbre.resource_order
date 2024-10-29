@@ -135,6 +135,7 @@
     {"name":"spr_grass_fc","order":7,"path":"sprites/spr_grass_fc/spr_grass_fc.yy",},
     {"name":"spr_grass","order":3,"path":"sprites/spr_grass/spr_grass.yy",},
     {"name":"spr_hard","order":2,"path":"sprites/spr_hard/spr_hard.yy",},
+    {"name":"spr_hit_sprite","order":36,"path":"sprites/spr_hit_sprite/spr_hit_sprite.yy",},
     {"name":"spr_insane","order":3,"path":"sprites/spr_insane/spr_insane.yy",},
     {"name":"spr_log_outline","order":27,"path":"sprites/spr_log_outline/spr_log_outline.yy",},
     {"name":"spr_log","order":8,"path":"sprites/spr_log/spr_log.yy",},
