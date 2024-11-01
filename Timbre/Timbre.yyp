@@ -327,7 +327,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.1100.0.665",
   },
   "name":"Timbre",
   "resources":[
@@ -380,6 +380,7 @@
     {"id":{"name":"gif_sprite","path":"scripts/gif_sprite/gif_sprite.yy",},},
     {"id":{"name":"globals","path":"scripts/globals/globals.yy",},},
     {"id":{"name":"http_request_types","path":"scripts/http_request_types/http_request_types.yy",},},
+    {"id":{"name":"http_update","path":"scripts/http_update/http_update.yy",},},
     {"id":{"name":"load_file_raw","path":"scripts/load_file_raw/load_file_raw.yy",},},
     {"id":{"name":"load_file","path":"scripts/load_file/load_file.yy",},},
     {"id":{"name":"move_toward","path":"scripts/move_toward/move_toward.yy",},},

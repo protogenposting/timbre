@@ -22,6 +22,10 @@ const query = `
     );
 `;
 
+const currentSessions = [
+
+]
+
 db.exec(query)
 
 //get all the users
@@ -80,9 +84,9 @@ app.post(apiPath+'newUser',(req,res) => {
         
         const insertData = db.prepare("INSERT INTO users (name, username, password) VALUES (?, ?, ?)");
         
-        insertData.run(req.body.name,req.body.username,req.body.password)
+        var result = insertData.run(req.body.name,req.body.username,req.body.password)
         
-        res.send("done :3")
+        res.send(result)
     }
     else
     {

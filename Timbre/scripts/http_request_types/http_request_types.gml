@@ -1,8 +1,10 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function http_request_json(_link,_method,_data=""){
+function http_request_json(_link,_method,_data="",_onEnd = function(_result){}){
 	var _headers = ds_map_create();
 	ds_map_add(_headers, "Content-Type", "application/json");
 	ds_map_add(_headers, "Authorization", "A92n5nIlklaPosfbngfbsYYhfkskaNuuHGFNJSA");
-	return http_request(_link,_method,_headers,_data)
+	
+	array_push(global.requests,new request(
+		http_request(_link,_method,_headers,_data),
+		_onEnd
+	))
 }
