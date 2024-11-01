@@ -22,7 +22,7 @@ button[2]={
 		http_request_json(
 			"http://localhost:3000/api/newUser",
 			"POST",
-			{name:"John undertale",username:"john",password:"password"},
+			json_stringify({name:"John undertale",username:"john",password:"password"}),
 			function(_result){
 				show_message(_result)
 			}
