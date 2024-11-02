@@ -94,6 +94,37 @@ app.post(apiPath+'newUser',(req,res) => {
     }
 })
 
+//create a login session
+app.post(apiPath+'login',(req,res) => {
+    if(verify_token(req.headers.authorization))
+    {
+        console.log(req.body)
+        
+        const user = db.prepare(`
+            SELECT * FROM users WHERE username = ? AND password = ?
+            `).get(req.body.name,req.body.password);
+        
+        
+        if(user == null)
+        {
+            res.send("WRONG EHHH")
+        }
+        else
+        {
+            var sessionID = 727
+            while(currentSessions.indexOf(sessionID)>-1)
+            {
+                sessionID = Math.random()
+            }
+            res.send({sessionID: sessionID})
+        }
+    }
+    else
+    {
+        res.send("nuh uh tell me the secret password!!!")
+    }
+})
+
 function verify_token(_token)
 {
     return _token == "A92n5nIlklaPosfbngfbsYYhfkskaNuuHGFNJSA"

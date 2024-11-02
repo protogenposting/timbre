@@ -10,7 +10,8 @@ button[0]={
 button[1]={
 	name: "Login",
 	func: function(){
-		
+		currentLoginState = loginState.LOGIN
+		get_login_async("","")
 	},
 	size:{x:128,y:64},
 	position:{x:128,y:128},
@@ -19,24 +20,27 @@ button[1]={
 button[2]={
 	name: "Create Account",
 	func: function(){
-		http_request_json(
-			"http://localhost:3000/api/newUser",
-			"POST",
-			json_stringify({name:"John undertale",username:"john",password:"password"}),
-			function(_result){
-				show_message(_result)
-			}
-		)
+		currentLoginState = loginState.CREATE
+		get_login_async("","")
 	},
 	size:{x:128,y:64},
 	position:{x:128,y:64+128},
 	sizeMod:0
 }
 
+enum loginState{
+	LOGIN,
+	CREATE
+}
+
+currentLoginState = loginState.LOGIN
+
 players=[]
 
+link = "http://localhost:3000/api/"
+
 http_request_json(
-	"http://localhost:3000/api/users",
+	link+"users",
 	"GET",
 	"",
 	function(_result){
