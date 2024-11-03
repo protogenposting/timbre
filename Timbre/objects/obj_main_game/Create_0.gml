@@ -313,19 +313,19 @@ function create_points(){
 		var _color=c_white
 		if(turns[i].direction==noteDirections.left)
 		{
-			_color=$ffffAA
+			_color=$ff2d2d
 		}
 		else if(turns[i].direction==noteDirections.right)
 		{
-			_color=$AAffAA
+			_color=$2d3eff
 		}
 		else if(turns[i].direction==noteDirections.up)
 		{
-			_color=$ffAAAA
+			_color=$41ff2d
 		}
 		else if(turns[i].direction==noteDirections.down)
 		{
-			_color=$AAAAff
+			_color=$f6ff2d
 		}
 		lastBeat=max(turns[i].beat,lastBeat)
 		var _type=turns[i].type
