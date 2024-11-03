@@ -15,6 +15,7 @@ function draw_buttons_fancy(){
 			buttonPosOffset=2
 			if(global.pressingMouseLeft)
 			{
+				audio_play_sound(snd_button_pressed,1000,false)
 				button[i].func()
 			}
 			if(mouse_check_button_pressed(mb_right))
@@ -28,7 +29,7 @@ function draw_buttons_fancy(){
 		try{
 			draw_set_alpha(0.3)
 			var _n=button[i].name
-			var _col=c_aqua
+			var _col=$ff3f3f
 			if(variable_struct_exists(button[i],"color"))
 			{
 				_col=button[i].color

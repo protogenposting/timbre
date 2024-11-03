@@ -81,6 +81,7 @@
     {"name":"sort_songlist_bpm","order":8,"path":"scripts/sort_songlist_bpm/sort_songlist_bpm.yy",},
     {"name":"sort_songlist","order":5,"path":"scripts/sort_songlist/sort_songlist.yy",},
     {"name":"snd_beat","order":12,"path":"sounds/snd_beat/snd_beat.yy",},
+    {"name":"snd_button_pressed","order":22,"path":"sounds/snd_button_pressed/snd_button_pressed.yy",},
     {"name":"snd_combo_loss","order":15,"path":"sounds/snd_combo_loss/snd_combo_loss.yy",},
     {"name":"snd_door_slam","order":20,"path":"sounds/snd_door_slam/snd_door_slam.yy",},
     {"name":"snd_hit_tree","order":4,"path":"sounds/snd_hit_tree/snd_hit_tree.yy",},

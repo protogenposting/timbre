@@ -399,6 +399,7 @@
     {"id":{"name":"sort_songlist_bpm","path":"scripts/sort_songlist_bpm/sort_songlist_bpm.yy",},},
     {"id":{"name":"sort_songlist","path":"scripts/sort_songlist/sort_songlist.yy",},},
     {"id":{"name":"snd_beat","path":"sounds/snd_beat/snd_beat.yy",},},
+    {"id":{"name":"snd_button_pressed","path":"sounds/snd_button_pressed/snd_button_pressed.yy",},},
     {"id":{"name":"snd_combo_loss","path":"sounds/snd_combo_loss/snd_combo_loss.yy",},},
     {"id":{"name":"snd_door_slam","path":"sounds/snd_door_slam/snd_door_slam.yy",},},
     {"id":{"name":"snd_hit_tree","path":"sounds/snd_hit_tree/snd_hit_tree.yy",},},
