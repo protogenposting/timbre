@@ -1,3 +1,12 @@
+class Session
+{
+    Session(_username,_key)
+    {
+        var username = _username
+        var key = _key
+    }
+}
+
 const databaseName='app.db'
 
 const db = require('better-sqlite3')(databaseName);
@@ -22,9 +31,7 @@ const query = `
     );
 `;
 
-const currentSessions = [
-
-]
+const currentSessions = []
 
 db.exec(query)
 
@@ -35,6 +42,8 @@ app.get(apiPath+'users',(req,res) => {
         const users = db.prepare('SELECT * FROM users').all();
 
         console.log(users);
+
+        remove_passwords(users)
 
         res.json({users: users})
     }
@@ -53,6 +62,8 @@ app.get(apiPath+'user/:name',(req,res) => {
             `).get(req.params.name);
 
         console.log(user);
+
+        delete user.password
 
         res.json({user: user})
     }
@@ -111,10 +122,10 @@ app.post(apiPath+'login',(req,res) => {
         }
         else
         {
-            var sessionID = 727
+            var sessionID = generate_session_key(80)
             while(currentSessions.indexOf(sessionID)>-1)
             {
-                sessionID = Math.random()
+                sessionID = generate_session_key(80)
             }
             res.send({sessionID: sessionID})
         }
@@ -128,6 +139,38 @@ app.post(apiPath+'login',(req,res) => {
 function verify_token(_token)
 {
     return _token == "A92n5nIlklaPosfbngfbsYYhfkskaNuuHGFNJSA"
+}
+//MAKE THIS WORK SLAG
+function verify_session_key(_token,_username)
+{
+    const sessionID = currentSessions.indexOf(_token)
+    if(sessionID > -1)
+    {
+        if(_username == sessionID)
+        {
+
+        }
+    }
+    return false
+}
+
+function remove_passwords(_users)
+{
+    _users.forEach(element => {
+        delete element.password
+    });
+}
+
+function generate_session_key(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
 }
 
 app.listen(port,() => {
