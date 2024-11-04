@@ -1,3 +1,6 @@
+/**
+ * Sessions are used to make sure a person has logged in before giving them any information from the server. Banned users will not be able to create a session.
+ */
 class Session
 {
     Session(_username,_key)
@@ -9,14 +12,19 @@ class Session
 
 const databaseName='app.db'
 
+//load in the database
 const db = require('better-sqlite3')(databaseName);
+
+//load in express
 const express = require('express');
 
+//activate express
 const app = express();
 app.use(express.json());
 const port = 3000;
 const apiPath='/api/'
 
+//create the tables if they don't exist
 const query = `
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY,
@@ -136,11 +144,22 @@ app.post(apiPath+'login',(req,res) => {
     }
 })
 
+/**
+ * Check if the provided toek is the same as our actual token
+ * @param {*} _token the token from the request
+ * @returns true or false depending on if the token matches
+ */
 function verify_token(_token)
 {
     return _token == "A92n5nIlklaPosfbngfbsYYhfkskaNuuHGFNJSA"
 }
-//MAKE THIS WORK SLAG
+
+/**
+ * verify if the session token and username match any of the other sessions, wip currently
+ * @param {*} _token 
+ * @param {*} _username 
+ * @returns boolean of whether the session key is accurate or not
+ */
 function verify_session_key(_token,_username)
 {
     const sessionID = currentSessions.indexOf(_token)
@@ -154,6 +173,10 @@ function verify_session_key(_token,_username)
     return false
 }
 
+/**
+ * Removes the password from all users returned in a list. Used so that you can't just get the passwords of every player.
+ * @param {*} _users 
+ */
 function remove_passwords(_users)
 {
     _users.forEach(element => {
@@ -161,6 +184,11 @@ function remove_passwords(_users)
     });
 }
 
+/**
+ * generates a random string based on length
+ * @param {*} length how long the session key should be
+ * @returns the session key
+ */
 function generate_session_key(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
