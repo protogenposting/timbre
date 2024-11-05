@@ -340,9 +340,9 @@ for(var o=0; o<array_length(notes);o++)
 			
 			if(_spr == sprites.player)
 			{
-				_xOffset = lengthdir_x(songMilliseconds-notes[o].timeMS,dir+90)
+				_xOffset = lengthdir_x((songMilliseconds-notes[o].timeMS)/1000 * gridSize,dir+90)
 				
-				_yOffset = lengthdir_y(songMilliseconds-notes[o].timeMS,dir+90)
+				_yOffset = lengthdir_y((songMilliseconds-notes[o].timeMS)/1000 * gridSize,dir+90)
 			}
 			
 			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x + _xOffset,notes[o].y + _yOffset,1,1,dir,notes[o].color,1)
