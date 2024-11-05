@@ -306,6 +306,11 @@ for(var o=0; o<array_length(notes);o++)
 		}
 	}
 	
+	if(notes[o].intendedDirection==noteDirections.down)
+	{
+		_spr = sprites.player
+	}
+	
 	if(notes[o].wasHit||sprites.log!=spr_log)
 	{
 		notes[o].color=c_white
@@ -329,7 +334,18 @@ for(var o=0; o<array_length(notes);o++)
 		array_push(usedTreeSpaces,{x:notes[o].x,y:notes[o].y,wasHit:notes[o].wasHit})
 		if(global.gamemode!=1&&!shouldSkip)
 		{
-			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x,notes[o].y,1,1,dir,notes[o].color,1)
+			var _xOffset = 0
+			
+			var _yOffset = 0
+			
+			if(_spr == sprites.player)
+			{
+				_xOffset = lengthdir_x(songMilliseconds-notes[o].timeMS,dir+90)
+				
+				_yOffset = lengthdir_y(songMilliseconds-notes[o].timeMS,dir+90)
+			}
+			
+			draw_sprite_ext(_spr,notes[o].wasHit,notes[o].x + _xOffset,notes[o].y + _yOffset,1,1,dir,notes[o].color,1)
 			if(notes[o].timeMS-songMilliseconds<msWindow*2&&!notes[o].wasHit&&notes[o].timeMS-songMilliseconds>-msWindow&&inCamera)
 			{
 				var _alpha=0.06

@@ -306,6 +306,8 @@ if(global.gamemode==2)
 			}
 			else
 			{
+				_timing = 0
+				
 				totalScore+=(msWindow-abs(_timing))*global.songSpeed
 			
 				hitMessage=get_timing(_timing)
@@ -394,6 +396,8 @@ if(global.gamemode==2)
 		
 		if(_touching&&audio_is_playing(audio))
 		{
+			_timing = 0
+			
 			totalScore+=(msWindow-abs(_timing))*global.songSpeed
 			
 			hitMessage=get_timing(_timing)

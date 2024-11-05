@@ -470,7 +470,7 @@ function create_points(){
 				}
 				if(dir==loop_rotation(_direction+180))
 				{
-					notes[o].color=c_blue
+					notes[o].color=c_black
 					notes[o].startX=notes[o].x
 					notes[o].startY=notes[o].y
 					notes[o].intendedDirection=noteDirections.down
