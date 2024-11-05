@@ -30,17 +30,13 @@ const query = `
         id INTEGER PRIMARY KEY UNIQUE,
         name STRING NOT NULL,
         username STRING NOT NULL UNIQUE,
-        password STRING NOT NULL
-    );
-    CREATE TABLE IF NOT EXISTS baseStats (
-        id INTEGER PRIMARY KEY UNIQUE,
+        password STRING NOT NULL,
         pp INTEGER NOT NULL,
-        cockSize INTEGER NOT NULL
+        title, STRING NOT NULL
     );
-    CREATE TABLE IF NOT EXISTS baseStats (
+    CREATE TABLE IF NOT EXISTS levels (
         id INTEGER PRIMARY KEY UNIQUE,
-        pp INTEGER NOT NULL,
-        cockSize INTEGER NOT NULL
+        name STRING NOT NULL
     );
 `;
 
