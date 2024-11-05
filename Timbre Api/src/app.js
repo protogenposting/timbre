@@ -10,6 +10,16 @@ class Session
     }
 }
 
+class LeaderboardEntry
+{ 
+    constructor(_username,_pp,_accuracy)
+    {
+        this.username = _username
+        this.pp = _pp
+        this.accuracy = _accuracy
+    }
+}
+
 const databaseName='app.db'
 
 //load in the database
@@ -43,6 +53,8 @@ const query = `
 const currentSessions = []
 
 db.exec(query)
+
+//#region user api calls
 
 //get all the users
 app.get(apiPath+'users',(req,res) => {
@@ -150,6 +162,28 @@ app.post(apiPath+'login',(req,res) => {
         res.send("nuh uh tell me the secret password!!!")
     }
 })
+
+//#endregion
+
+//#region level api calls
+//get all the levels
+app.get(apiPath+'level',(req,res) => {
+    //SESSION KEY CODE, USE THIS SOMEWHERE ELSE LATER
+    const session = JSON.parse(req.headers.session.toString())
+    if(verify_session_key(session.session,session.username))
+    {
+        const levels = db.prepare('SELECT * FROM levels').all();
+
+        console.log(levels);
+
+        res.json({levels: levels})
+    }
+    else
+    {
+        res.send("gimme yo session slag")
+    }
+})
+//#endregion
 
 /**
  * Check if the provided toek is the same as our actual token
