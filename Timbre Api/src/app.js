@@ -3,10 +3,10 @@
  */
 class Session
 { 
-    Session(_username,_key)
+    constructor(_username,_key)
     {
-        var username = _username
-        var key = _key
+        this.username = _username
+        this.key = _key
     }
 }
 
@@ -50,6 +50,10 @@ db.exec(query)
 
 //get all the users
 app.get(apiPath+'users',(req,res) => {
+    console.log(req.headers.session)
+    const session = JSON.parse(req.headers.session.toString())
+    console.log(currentSessions)
+    console.log(verify_session_key(session.token,session.username))
     if(verify_token(req.headers.authorization))
     {
         const users = db.prepare('SELECT * FROM users').all();
@@ -141,7 +145,7 @@ app.post(apiPath+'login',(req,res) => {
             {
                 sessionID = generate_session_key(120)
             }
-            currentSessions.push(sessionID);
+            currentSessions.push(new Session(req.body.name,sessionID));
             res.send({sessionID: sessionID})
         }
     }
