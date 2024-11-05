@@ -6,6 +6,8 @@ function http_run(_id, _result){
 		if(global.requests[i].id == _id)
 		{
 			global.requests[i].func(_result)
+			array_delete(global.requests,i,1)
+			i--
 		}
 	}
 }
