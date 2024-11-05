@@ -71,6 +71,7 @@ else if(global.session != "")
 	array_delete(button,1,2)
 }
 
+/*
 http_request_json(
 	link+"users",
 	"GET",
