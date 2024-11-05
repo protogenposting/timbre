@@ -50,10 +50,10 @@ db.exec(query)
 
 //get all the users
 app.get(apiPath+'users',(req,res) => {
-    console.log(req.headers.session)
+    //SESSION KEY CODE, USE THIS SOMEWHERE ELSE LATER
     const session = JSON.parse(req.headers.session.toString())
-    console.log(currentSessions)
-    console.log(verify_session_key(session.token,session.username))
+    console.log(session)
+    console.log(verify_session_key(session.session,session.username))
     if(verify_token(req.headers.authorization))
     {
         const users = db.prepare('SELECT * FROM users').all();
@@ -171,15 +171,18 @@ function verify_token(_token)
  * @param {*} _username 
  * @returns boolean of whether the session key is accurate or not
  */
-function verify_session_key(_token,_username)
+function verify_session_key(_key,_username)
 {
+    console.log(_key)
+    console.log(_username)
+    let returnsTrue = false;
     currentSessions.forEach(element => {
-        if(_token == element.token && _username == element.username)
+        if(_key.match(element.key) && _username.match(element.username))
         {
-            return true
+            returnsTrue = true
         }
     });
-    return false
+    return returnsTrue
 }
 
 /**
