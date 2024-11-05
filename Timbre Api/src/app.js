@@ -28,11 +28,17 @@ const db = require('better-sqlite3')(databaseName);
 //load in express
 const express = require('express');
 
+//load in multer
+const multer  = require('multer')
+
 //activate express
 const app = express();
 app.use(express.json());
 const port = 3000;
 const apiPath='/api/'
+
+//activate multer
+const upload = multer({ dest: 'uploads/' })
 
 //create the tables if they don't exist
 const query = `
@@ -166,9 +172,9 @@ app.post(apiPath+'login',(req,res) => {
 //#endregion
 
 //#region level api calls
+
 //get all the levels
 app.get(apiPath+'level',(req,res) => {
-    //SESSION KEY CODE, USE THIS SOMEWHERE ELSE LATER
     const session = JSON.parse(req.headers.session.toString())
     if(verify_session_key(session.session,session.username))
     {
@@ -181,6 +187,21 @@ app.get(apiPath+'level',(req,res) => {
     else
     {
         res.send("gimme yo session slag")
+    }
+})
+
+//upload a level
+app.get(apiPath+'levelUpload', upload.single('levels'),(req,res) => {
+    const session = JSON.parse(req.headers.session.toString())
+    if(verify_session_key(session.session,session.username))
+    {
+        req.file
+
+        res.sendStatus(200)
+    }
+    else
+    {
+        res.sendStatus(403)
     }
 })
 //#endregion
