@@ -2,7 +2,7 @@
  * Sessions are used to make sure a person has logged in before giving them any information from the server. Banned users will not be able to create a session.
  */
 class Session
-{
+{ 
     Session(_username,_key)
     {
         var username = _username
@@ -27,13 +27,18 @@ const apiPath='/api/'
 //create the tables if they don't exist
 const query = `
     CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY,
+        id INTEGER PRIMARY KEY UNIQUE,
         name STRING NOT NULL,
         username STRING NOT NULL UNIQUE,
         password STRING NOT NULL
     );
     CREATE TABLE IF NOT EXISTS baseStats (
-        id INTEGER PRIMARY KEY,
+        id INTEGER PRIMARY KEY UNIQUE,
+        pp INTEGER NOT NULL,
+        cockSize INTEGER NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS baseStats (
+        id INTEGER PRIMARY KEY UNIQUE,
         pp INTEGER NOT NULL,
         cockSize INTEGER NOT NULL
     );
@@ -126,15 +131,17 @@ app.post(apiPath+'login',(req,res) => {
         
         if(user == null)
         {
-            res.send("WRONG EHHH")
+            var sessionID = "0"
+            res.send({sessionID: sessionID})
         }
         else
         {
-            var sessionID = generate_session_key(80)
+            var sessionID = generate_session_key(120)
             while(currentSessions.indexOf(sessionID)>-1)
             {
-                sessionID = generate_session_key(80)
+                sessionID = generate_session_key(120)
             }
+            currentSessions.push(sessionID);
             res.send({sessionID: sessionID})
         }
     }
@@ -162,14 +169,12 @@ function verify_token(_token)
  */
 function verify_session_key(_token,_username)
 {
-    const sessionID = currentSessions.indexOf(_token)
-    if(sessionID > -1)
-    {
-        if(_username == sessionID)
+    currentSessions.forEach(element => {
+        if(_token == element.token && _username == element.username)
         {
-
+            return true
         }
-    }
+    });
     return false
 }
 

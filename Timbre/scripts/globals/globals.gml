@@ -60,6 +60,8 @@ global.modeBinds=[
 	},
 ]
 
+global.session = ""
+
 global.skins=[]//"Default Skin"]
 
 //find skins
@@ -139,6 +141,10 @@ global.playlists=[
 	new playlist("All Levels",[])
 ]
 
+global.username = ""
+
+global.password = ""
+
 if(_file==false)
 {
 	global.levels=[]
@@ -154,6 +160,12 @@ else
 		global.showKeys=_file.showKeys
 		global.modeBinds=_file.modeBinds
 		global.playlists=_file.playlists
+		if(variable_struct_exists(_file,"loginDetails"))
+		{
+			global.username = _file.loginDetails.username
+			
+			global.password = _file.loginDetails.password
+		}
 	}
 	catch(e)
 	{

@@ -20,6 +20,7 @@ function save_game(){
 		audioOffset:global.audioOffset,
 		showKeys: global.showKeys,
 		modeBinds: global.modeBinds,
-		playlists: global.playlists
+		playlists: global.playlists,
+		loginDetails : {username: global.username, password: global.password}
 	},global.saveName)
 }

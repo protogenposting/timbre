@@ -3,6 +3,10 @@ var _password = ds_map_find_value(async_load, "password");
 
 if(currentLoginState == loginState.CREATE)
 {
+	global.username = _username
+
+	global.password = _password
+	
 	http_request_json(
 		link+"newUser",
 		"POST",
@@ -17,18 +21,17 @@ if(currentLoginState == loginState.CREATE)
 			else
 			{
 				show_message("You created an account! Logging you in...")
+				
+				login(global.username,global.password)
 			}
 		}
 	)
 }
 if(currentLoginState == loginState.LOGIN)
 {
-	http_request_json(
-		link+"login",
-		"POST",
-		json_stringify({name: _username, username: _username, password: _password}),
-		function(_result){
-			show_message(_result)
-		}
-	)
+	global.username = _username
+
+	global.password = _password
+	
+	login(_username,_password)
 }

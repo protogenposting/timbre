@@ -8,3 +8,8 @@ if(keyboard_check(vk_control)&&keyboard_check_pressed(ord("S")))
 {
 	screen_save(game_save_id+(string(current_year)+string(current_day)+string(current_hour)+string(current_second)+string(current_time))+".png")
 }
+
+if(global.session != "" && room != rm_gameplay)
+{
+	draw_text(1366/2,room_height-64,"logged in as "+global.username)
+}
