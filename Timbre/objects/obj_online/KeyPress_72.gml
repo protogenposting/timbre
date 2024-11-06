@@ -1,17 +1,15 @@
+var body = "levelName"
+
 var form = new FormData();
-
-form.add_file("file",game_save_id+"test.zip");
-
-form.add_data("foo","bar");
 
 var headers = ds_map_create();
 
-ds_map_add(headers, "Content-Type", "application/json");
+ds_map_add(headers, "Session", json_stringify({username:global.username,session:global.session}));
 
-ds_map_add(headers, "Authorization", "A92n5nIlklaPosfbngfbsYYhfkskaNuuHGFNJSA");
+form.add_data("fileName",body);
 
-http(link+"levelUpload", "POST", form, {headers:headers}, function(http_status,result){
-	show_message(result);
-},function(http_status,result){
-	show_message("Error - " + result);
-});
+form.add_file("file",game_save_id+"test.zip");
+
+http(link+"levelUpload", "POST",form,{ headers, keep_header_map: false },function(status,result){
+	show_message_async(result);
+});	

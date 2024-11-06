@@ -14,7 +14,7 @@ if(currentLoginState == loginState.CREATE)
 		function(_result){
 			var _failed = string_pos("UNIQUE",_result) > 0
 				
-			if(_failed)
+			if(_failed )
 			{
 				show_message("Your username is not unique! REDO IT")
 			}

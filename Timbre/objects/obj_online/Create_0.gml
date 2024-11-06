@@ -10,7 +10,7 @@ button[0]={
 button[1]={
 	name: "Login",
 	func: function(){
-		currentLoginState = loginState.LOGIN
+		obj_online.currentLoginState = loginState.LOGIN
 		get_login_async("","")
 	},
 	size:{x:128,y:64},
@@ -20,7 +20,7 @@ button[1]={
 button[2]={
 	name: "Create Account",
 	func: function(){
-		currentLoginState = loginState.CREATE
+		obj_online.currentLoginState = loginState.CREATE
 		get_login_async("","")
 	},
 	size:{x:128,y:64},
@@ -47,11 +47,13 @@ function login(_username,_password)
 				
 				array_delete(button,1,2)
 			}
+			obj_online.currentLoginState = loginState.NONE
 		}
 	)
 }
 
 enum loginState{
+	NONE,
 	LOGIN,
 	CREATE
 }

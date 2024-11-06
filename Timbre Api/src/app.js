@@ -31,6 +31,9 @@ const express = require('express');
 //load in multer
 const multer  = require('multer')
 
+//copying thing load
+const fs = require('fs');
+
 //activate express
 const app = express();
 app.use(express.json());
@@ -38,7 +41,11 @@ const port = 3000;
 const apiPath='/api/'
 
 //activate multer
-const upload = multer({ dest: 'uploads/' })
+const directory = "uploads/"
+
+const levelDirectory = "levels/"
+
+const upload = multer({ dest: directory })
 
 //create the tables if they don't exist
 const query = `
@@ -47,8 +54,7 @@ const query = `
         name STRING NOT NULL,
         username STRING NOT NULL UNIQUE,
         password STRING NOT NULL,
-        pp INTEGER NOT NULL,
-        title, STRING NOT NULL
+        pp INTEGER NOT NULL
     );
     CREATE TABLE IF NOT EXISTS levels (
         id INTEGER PRIMARY KEY UNIQUE,
@@ -123,10 +129,16 @@ app.post(apiPath+'newUser',(req,res) => {
     if(verify_token(req.headers.authorization))
     {
         console.log(req.body)
+
+        if(req.body.name == "" || req.body.password == "")
+        {
+            req.send("UNIQUE")
+            return 0
+        }
         
-        const insertData = db.prepare("INSERT INTO users (name, username, password) VALUES (?, ?, ?)");
+        const insertData = db.prepare("INSERT INTO users (name, username, password, pp) VALUES (?, ?, ?, ?)");
         
-        var result = insertData.run(req.body.name,req.body.username,req.body.password)
+        var result = insertData.run(req.body.name,req.body.username,req.body.password,0)
         
         res.send(result)
     }
@@ -175,6 +187,11 @@ app.post(apiPath+'login',(req,res) => {
 
 //get all the levels
 app.get(apiPath+'level',(req,res) => {
+    const levels = db.prepare('SELECT * FROM levels').all();
+
+    console.log(levels);
+
+    res.json({levels: levels})
     const session = JSON.parse(req.headers.session.toString())
     if(verify_session_key(session.session,session.username))
     {
@@ -191,18 +208,33 @@ app.get(apiPath+'level',(req,res) => {
 })
 
 //upload a level
-app.get(apiPath+'levelUpload', upload.single('levels'),(req,res) => {
+app.post(apiPath+'levelUpload', upload.single('file'),(req,res) => {
     const session = JSON.parse(req.headers.session.toString())
+    var name = req.file.filename
     if(verify_session_key(session.session,session.username))
     {
-        req.file
-
         res.sendStatus(200)
+
+        const insertData = db.prepare("INSERT INTO levels (name) VALUES (?)");
+        
+        var result = insertData.run(req.body.fileName+".zip")
+
+        const levelSize = db.prepare('SELECT * FROM levels').all().length;
+
+        fs.copyFile(directory+name, levelDirectory+levelSize.toString()+"-"+req.body.fileName+".zip", (err) => {
+            if (err) throw err;
+            console.log('File was copied to destination');
+        });
     }
     else
     {
         res.sendStatus(403)
     }
+    
+    fs.unlink(directory+name, (err) => {
+        if (err) throw err;
+        console.log('File was deleted');
+    });
 })
 //#endregion
 
