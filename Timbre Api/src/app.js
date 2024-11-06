@@ -215,13 +215,15 @@ app.post(apiPath+'levelUpload', upload.single('file'),(req,res) => {
     {
         res.sendStatus(200)
 
+        var fileName = levelDirectory+levelSize.toString()+"-"+req.body.fileName+".zip"
+
         const insertData = db.prepare("INSERT INTO levels (name) VALUES (?)");
         
-        var result = insertData.run(req.body.fileName+".zip")
+        var result = insertData.run(fileName)
 
         const levelSize = db.prepare('SELECT * FROM levels').all().length;
 
-        fs.copyFile(directory+name, levelDirectory+levelSize.toString()+"-"+req.body.fileName+".zip", (err) => {
+        fs.copyFile(directory+name, fileName, (err) => {
             if (err) throw err;
             console.log('File was copied to destination');
         });
