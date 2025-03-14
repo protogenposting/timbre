@@ -781,7 +781,7 @@ for(var i=0;i<array_length(_spritesToGet);i++)
 	{
 		var _oldSprite=variable_struct_get(sprites,_spritesToGet[i])
 		var _frameDelays=[]
-		var _sprite = sprite_add_gif(_file,sprite_get_xoffset(_oldSprite),sprite_get_yoffset(_oldSprite),_frameDelays)
+		var _sprite = sprite_add_gif(_file,0,0,_frameDelays)
 		
 		variable_struct_set(sprites,_spritesToGet[i],_sprite)
 	}
